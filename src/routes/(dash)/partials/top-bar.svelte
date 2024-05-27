@@ -4,16 +4,22 @@
 	import * as DropdownMenu from '$lib/components/ui/dropdown-menu/index.js';
 	import { Input } from '$lib/components/ui/input/index.js';
 	import * as Sheet from '$lib/components/ui/sheet/index.js';
+	import { ChevronRight, CircleUser, Home, Menu, Search, ShoppingCart } from 'lucide-svelte';
 
-	import CircleUser from 'lucide-svelte/icons/circle-user';
-	import Home from 'lucide-svelte/icons/home';
-	import LineChart from 'lucide-svelte/icons/line-chart';
-	import Menu from 'lucide-svelte/icons/menu';
-	import Package from 'lucide-svelte/icons/package';
-	import Package2 from 'lucide-svelte/icons/package-2';
-	import Search from 'lucide-svelte/icons/search';
-	import ShoppingCart from 'lucide-svelte/icons/shopping-cart';
-	import Users from 'lucide-svelte/icons/users';
+	import pcuBlueLogo from './pcu-blue-logo.png';
+	import * as Collapsible from '$lib/components/ui/collapsible';
+	import { navigationEntries, NavigationSeparator, NavLink, NavDropdown } from '$lib/navigation';
+	import { Separator } from '$lib/components/ui/separator';
+	import clsx from 'clsx';
+	import { page } from '$app/stores';
+	import { ScrollArea } from '$lib/components/ui/scroll-area';
+
+	const activeClasses = 'bg-slate-800 hover:text-white';
+	let currentlyOpenDropdown: NavDropdown | null = null;
+
+	function isActive(href: string) {
+		return $page.url.pathname === href;
+	}
 </script>
 
 <header
@@ -26,51 +32,76 @@
 				<span class="sr-only">Toggle navigation menu</span>
 			</Button>
 		</Sheet.Trigger>
-		<Sheet.Content side="left" class="flex flex-col">
-			<nav class="grid gap-2 text-lg font-medium">
-				<a href="##" class="flex items-center gap-2 text-lg font-semibold">
-					<Package2 class="h-6 w-6" />
-					<span class="sr-only">Acme Inc</span>
-				</a>
-				<a
+		<Sheet.Content side="left" class="flex flex-col bg-slate-700 p-0 text-white">
+			<ScrollArea class="flex-1 p-4">
+				<nav class="grid gap-2 text-lg font-medium">
+					<a href="/berita" class="flex items-center gap-2 text-lg font-semibold">
+						<img
+							src={pcuBlueLogo}
+							alt="PCU Logo"
+							class="max-w-auto mb-2 h-24 max-h-full w-auto rounded-lg bg-slate-50 p-4 pb-3"
+						/>
+						<span class="sr-only">SIM Petra</span>
+					</a>
+					{#each navigationEntries as n}
+						{#if n instanceof NavigationSeparator}
+							<Separator class="my-2 h-[2px] rounded-sm bg-white/50" />
+							{#if n.afterSeparator}
+								<p class="pl-1 pt-1 text-white/50">{n.afterSeparator}</p>
+							{/if}
+						{:else if n instanceof NavLink}
+							<a
+								href={n.href}
+								class={clsx(
+									'flex items-center gap-3 rounded-lg px-2 py-2 pl-6 transition-all hover:text-gray-300',
+									isActive(n.href) && activeClasses
+								)}
+							>
+								{n.label}
+							</a>
+						{:else if n instanceof NavDropdown}
+							<Collapsible.Root
+								class={clsx('rounded-lg px-2 py-2', currentlyOpenDropdown === n && activeClasses)}
+								open={currentlyOpenDropdown === n}
+							>
+								<Collapsible.Trigger
+									class="relative items-center gap-3 pl-6 transition-all hover:text-gray-300"
+									on:click={() => {
+										currentlyOpenDropdown = currentlyOpenDropdown === n ? null : n;
+									}}
+								>
+									<ChevronRight
+										class={'absolute left-0 top-1/2 -translate-y-1/2 text-muted-foreground transition-all' +
+											(currentlyOpenDropdown === n ? ' rotate-90' : '')}
+									/>
+									{n.label}
+								</Collapsible.Trigger>
+								<Collapsible.Content class="grid gap-2">
+									<Separator class="mt-2 h-[2px] rounded-sm bg-white/50" />
+									{#each n.children as c}
+										<a
+											href={c.href}
+											class={clsx(
+												'flex items-center gap-3 rounded-lg px-2 py-2 pl-6 transition-all hover:text-gray-300',
+												isActive(c.href) && activeClasses
+											)}
+										>
+											{c.label}
+										</a>
+									{/each}
+								</Collapsible.Content>
+							</Collapsible.Root>
+						{/if}
+					{/each}
+					<!-- <a
 					href="##"
 					class="mx-[-0.65rem] flex items-center gap-4 rounded-xl px-3 py-2 text-muted-foreground hover:text-foreground"
 				>
 					<Home class="h-5 w-5" />
 					Dashboard
-				</a>
-				<a
-					href="##"
-					class="mx-[-0.65rem] flex items-center gap-4 rounded-xl bg-muted px-3 py-2 text-foreground hover:text-foreground"
-				>
-					<ShoppingCart class="h-5 w-5" />
-					Orders
-					<Badge class="ml-auto flex h-6 w-6 shrink-0 items-center justify-center rounded-full">
-						6
-					</Badge>
-				</a>
-				<a
-					href="##"
-					class="mx-[-0.65rem] flex items-center gap-4 rounded-xl px-3 py-2 text-muted-foreground hover:text-foreground"
-				>
-					<Package class="h-5 w-5" />
-					Products
-				</a>
-				<a
-					href="##"
-					class="mx-[-0.65rem] flex items-center gap-4 rounded-xl px-3 py-2 text-muted-foreground hover:text-foreground"
-				>
-					<Users class="h-5 w-5" />
-					Customers
-				</a>
-				<a
-					href="##"
-					class="mx-[-0.65rem] flex items-center gap-4 rounded-xl px-3 py-2 text-muted-foreground hover:text-foreground"
-				>
-					<LineChart class="h-5 w-5" />
-					Analytics
-				</a>
-			</nav>
+				</a> -->
+				</nav>
+			</ScrollArea>
 		</Sheet.Content>
 	</Sheet.Root>
 	<div class="w-full flex-1">

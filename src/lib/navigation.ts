@@ -1,7 +1,8 @@
 export class NavLink {
 	constructor(
 		public label: string,
-		public href: string
+		public href: string,
+		public isExternal: boolean = false
 	) {}
 }
 
@@ -48,5 +49,5 @@ export const navigationEntries = [
 		new NavLink('List Surat Keterangan', '/list-surat-keterangan')
 	]),
 	new NavigationSeparator(),
-	new NavLink('Angket', 'https://survei.petra.ac.id')
+	new NavLink('Angket', 'https://survey.petra.ac.id', true)
 ] as const;

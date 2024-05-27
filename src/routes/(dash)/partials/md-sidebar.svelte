@@ -1,12 +1,12 @@
 <script lang="ts">
 	import { page } from '$app/stores';
+	import * as Collapsible from '$lib/components/ui/collapsible';
+	import { ScrollArea } from '$lib/components/ui/scroll-area';
 	import { Separator } from '$lib/components/ui/separator';
 	import { NavDropdown, NavLink, NavigationSeparator, navigationEntries } from '$lib/navigation';
 	import clsx from 'clsx';
+	import { ChevronRight, ExternalLink } from 'lucide-svelte';
 	import pcuBlueLogo from './pcu-blue-logo.png';
-	import { ChevronRight } from 'lucide-svelte';
-	import * as Collapsible from '$lib/components/ui/collapsible';
-	import { ScrollArea } from '$lib/components/ui/scroll-area';
 
 	const activeClasses = 'bg-slate-800 hover:text-white';
 
@@ -41,6 +41,9 @@
 							)}
 						>
 							{n.label}
+							{#if n.isExternal}
+								<ExternalLink class="ml-auto h-4 w-4" />
+							{/if}
 						</a>
 					{:else if n instanceof NavDropdown}
 						<Collapsible.Root
