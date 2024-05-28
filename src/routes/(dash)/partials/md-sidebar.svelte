@@ -3,22 +3,25 @@
 	import * as Collapsible from '$lib/components/ui/collapsible';
 	import { ScrollArea } from '$lib/components/ui/scroll-area';
 	import { Separator } from '$lib/components/ui/separator';
-	import { NavDropdown, NavLink, NavigationSeparator, navigationEntries } from '$lib/navigation';
+	import {
+		NavDropdown,
+		NavLink,
+		NavigationSeparator,
+		isNavigationActive,
+		navigationEntries
+	} from '$lib/navigation';
 	import clsx from 'clsx';
 	import { ChevronRight, ExternalLink } from 'lucide-svelte';
 	import pcuBlueLogo from './pcu-blue-logo.png';
+	import { toast } from 'svelte-sonner';
 
 	const activeClasses = 'bg-slate-800 hover:text-white';
-
-	function isActive(href: string) {
-		return $page.url.pathname === href;
-	}
 
 	let currentlyOpenDropdown: NavDropdown | null = null;
 </script>
 
 <div class="hidden bg-slate-50 md:block">
-	<div class="flex h-full max-h-screen flex-col">
+	<div class="flex h-full min-h-screen flex-col">
 		<div class="flex h-16 items-center border-b-4 border-b-[#a9a9a9] px-4 lg:h-[60px] lg:px-6">
 			<a href="/home" class="flex h-full w-full items-center py-2 pt-3">
 				<img src={pcuBlueLogo} alt="PCU Logo" class="max-w-auto h-auto max-h-full w-auto" />
@@ -34,10 +37,11 @@
 						{/if}
 					{:else if n instanceof NavLink}
 						<a
-							href={n.href}
+							href={n.isDisabled ? undefined : n.href}
+							on:click={n.isDisabled ? () => toast.error('Fitur belum tersedia') : undefined}
 							class={clsx(
-								'flex items-center gap-3 rounded-lg px-2 py-2 pl-6 transition-all hover:text-gray-300',
-								isActive(n.href) && activeClasses
+								'flex cursor-pointer items-center gap-3 rounded-lg px-2 py-2 pl-6 transition-all hover:text-gray-300',
+								isNavigationActive(n.href, $page.url.pathname) && activeClasses
 							)}
 						>
 							{n.label}
@@ -66,10 +70,11 @@
 								<Separator class="mt-2 h-[2px] rounded-sm bg-white/50" />
 								{#each n.children as c}
 									<a
-										href={c.href}
+										href={c.isDisabled ? undefined : c.href}
+										on:click={c.isDisabled ? () => toast.error('Fitur belum tersedia') : undefined}
 										class={clsx(
-											'flex items-center gap-3 rounded-lg px-2 py-2 pl-6 transition-all hover:text-gray-300',
-											isActive(c.href) && activeClasses
+											'flex cursor-pointer items-center gap-3 rounded-lg px-2 py-2 pl-6 transition-all hover:text-gray-300',
+											isNavigationActive(c.href, $page.url.pathname) && activeClasses
 										)}
 									>
 										{c.label}

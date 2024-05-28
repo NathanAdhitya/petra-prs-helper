@@ -42,7 +42,7 @@
 						</div>
 						<Input id="password" type="password" required />
 					</div>
-					<Button type="submit" class="w-full" href="/home">Login</Button>
+					<Button type="submit" class="w-full" href="/berita">Login</Button>
 				</div>
 			</div>
 		</div>

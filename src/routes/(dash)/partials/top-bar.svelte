@@ -16,18 +16,22 @@
 
 	import pcuBlueLogo from './pcu-blue-logo.png';
 	import * as Collapsible from '$lib/components/ui/collapsible';
-	import { navigationEntries, NavigationSeparator, NavLink, NavDropdown } from '$lib/navigation';
+	import {
+		navigationEntries,
+		NavigationSeparator,
+		NavLink,
+		NavDropdown,
+		isNavigationActive
+	} from '$lib/navigation';
 	import { Separator } from '$lib/components/ui/separator';
 	import clsx from 'clsx';
 	import { page } from '$app/stores';
 	import { ScrollArea } from '$lib/components/ui/scroll-area';
+	import { toast } from 'svelte-sonner';
+	import { namaUser, nrpUser } from '$lib/mock-data';
 
 	const activeClasses = 'bg-slate-800 hover:text-white';
 	let currentlyOpenDropdown: NavDropdown | null = null;
-
-	function isActive(href: string) {
-		return $page.url.pathname === href;
-	}
 </script>
 
 <header
@@ -59,10 +63,11 @@
 							{/if}
 						{:else if n instanceof NavLink}
 							<a
-								href={n.href}
+								href={n.isDisabled ? undefined : n.href}
+								on:click={n.isDisabled ? () => toast.error('Fitur belum tersedia') : undefined}
 								class={clsx(
 									'flex items-center gap-3 rounded-lg px-2 py-2 pl-6 transition-all hover:text-gray-300',
-									isActive(n.href) && activeClasses
+									isNavigationActive(n.href, $page.url.pathname) && activeClasses
 								)}
 							>
 								{n.label}
@@ -91,10 +96,13 @@
 									<Separator class="mt-2 h-[2px] rounded-sm bg-white/50" />
 									{#each n.children as c}
 										<a
-											href={c.href}
+											href={c.isDisabled ? undefined : c.href}
+											on:click={c.isDisabled
+												? () => toast.error('Fitur belum tersedia')
+												: undefined}
 											class={clsx(
 												'flex items-center gap-3 rounded-lg px-2 py-2 pl-6 transition-all hover:text-gray-300',
-												isActive(c.href) && activeClasses
+												isNavigationActive(c.href, $page.url.pathname) && activeClasses
 											)}
 										>
 											{c.label}
@@ -135,9 +143,9 @@
 				class="h-full rounded-xl bg-neutral-200/80 hover:bg-neutral-300"
 			>
 				<div class="flex items-center gap-2 align-middle">
-					<div class="text-right leading-4">
-						<p>Nama</p>
-						<p class="text-xs text-muted-foreground">NRP</p>
+					<div class="text-right leading-3">
+						<p>{namaUser}</p>
+						<p class="text-xs text-muted-foreground">{nrpUser}</p>
 					</div>
 					<CircleUser class="h-8 w-8" />
 				</div>
@@ -145,8 +153,8 @@
 			</Button>
 		</DropdownMenu.Trigger>
 		<DropdownMenu.Content align="end">
-			<DropdownMenu.Label class="pb-0">Nama</DropdownMenu.Label>
-			<DropdownMenu.Label class="pt-0 text-xs text-muted-foreground">NRP</DropdownMenu.Label>
+			<DropdownMenu.Label class="pb-0">{namaUser}</DropdownMenu.Label>
+			<DropdownMenu.Label class="pt-0 text-xs text-muted-foreground">{nrpUser}</DropdownMenu.Label>
 			<DropdownMenu.Separator />
 			<DropdownMenu.Item href="/biodata">Biodata</DropdownMenu.Item>
 			<DropdownMenu.Separator />
