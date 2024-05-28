@@ -131,9 +131,29 @@
 										builders={[builder]}
 										variant="outline"
 										role="combobox"
-										class="w-[200px] justify-between"
+										class="w-full justify-between"
 									>
-										{chosenClasses[matkul.kode] || 'Pilih kelas...'}
+										{(chosenClasses[matkul.kode] &&
+											`${chosenClasses[matkul.kode][0]} (${
+												dowMap[
+													matkul.kelas.find((v) => v.kelas === chosenClasses[matkul.kode][0])
+														?.jadwal[0].dayOfWeek ?? 1
+												]
+											}, ${timeToString(
+												matkul.kelas.find((v) => v.kelas === chosenClasses[matkul.kode][0])
+													?.jadwal[0].startHour ?? 0,
+												matkul.kelas.find((v) => v.kelas === chosenClasses[matkul.kode][0])
+													?.jadwal[0].startMinute ?? 0
+											)} - ${timeToString(
+												matkul.kelas.find((v) => v.kelas === chosenClasses[matkul.kode][0])
+													?.jadwal[0].startHour ?? 0,
+												matkul.kelas.find((v) => v.kelas === chosenClasses[matkul.kode][0])
+													?.jadwal[0].startMinute ??
+													0 +
+														(matkul.kelas.find((v) => v.kelas === chosenClasses[matkul.kode][0])
+															?.jadwal[0].durasi ?? 0)
+											)})`) ||
+											'Pilih kelas...'}
 										<ChevronsUpDown class="ml-2 h-4 w-4 shrink-0 opacity-50" />
 									</Button>
 								</Popover.Trigger>
