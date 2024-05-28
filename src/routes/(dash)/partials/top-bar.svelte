@@ -4,7 +4,15 @@
 	import * as DropdownMenu from '$lib/components/ui/dropdown-menu/index.js';
 	import { Input } from '$lib/components/ui/input/index.js';
 	import * as Sheet from '$lib/components/ui/sheet/index.js';
-	import { ChevronRight, CircleUser, Home, Menu, Search, ShoppingCart } from 'lucide-svelte';
+	import {
+		ChevronRight,
+		CircleUser,
+		ExternalLink,
+		Home,
+		Menu,
+		Search,
+		ShoppingCart
+	} from 'lucide-svelte';
 
 	import pcuBlueLogo from './pcu-blue-logo.png';
 	import * as Collapsible from '$lib/components/ui/collapsible';
@@ -58,6 +66,9 @@
 								)}
 							>
 								{n.label}
+								{#if n.isExternal}
+									<ExternalLink class="ml-auto h-4 w-4" />
+								{/if}
 							</a>
 						{:else if n instanceof NavDropdown}
 							<Collapsible.Root
@@ -105,7 +116,7 @@
 		</Sheet.Content>
 	</Sheet.Root>
 	<div class="w-full flex-1">
-		<form>
+		<!-- <form>
 			<div class="relative">
 				<Search class="absolute left-2.5 top-1/2 h-4 w-4 -translate-y-1/2 text-muted-foreground" />
 				<Input
@@ -114,7 +125,7 @@
 					class="w-full appearance-none bg-background pl-8 shadow-none md:w-2/3 lg:w-1/3"
 				/>
 			</div>
-		</form>
+		</form> -->
 	</div>
 	<DropdownMenu.Root>
 		<DropdownMenu.Trigger asChild let:builder>
@@ -134,12 +145,12 @@
 			</Button>
 		</DropdownMenu.Trigger>
 		<DropdownMenu.Content align="end">
-			<DropdownMenu.Label>Nama</DropdownMenu.Label>
+			<DropdownMenu.Label class="pb-0">Nama</DropdownMenu.Label>
+			<DropdownMenu.Label class="pt-0 text-xs text-muted-foreground">NRP</DropdownMenu.Label>
 			<DropdownMenu.Separator />
-			<DropdownMenu.Item>Biodata</DropdownMenu.Item>
-			<DropdownMenu.Item>Butuh bantuan?</DropdownMenu.Item>
+			<DropdownMenu.Item href="/biodata">Biodata</DropdownMenu.Item>
 			<DropdownMenu.Separator />
-			<DropdownMenu.Item>Logout</DropdownMenu.Item>
+			<DropdownMenu.Item href="/login">Logout</DropdownMenu.Item>
 		</DropdownMenu.Content>
 	</DropdownMenu.Root>
 </header>
