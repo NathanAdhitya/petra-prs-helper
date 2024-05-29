@@ -12,6 +12,7 @@
 	import { dowMap, timeToString } from '$lib/mock-data';
 
 	import * as Dialog from '$lib/components/ui/dialog';
+	import * as Select from '$lib/components/ui/select/index.js';
 	export let data;
 
 	function properCase(str: string) {
@@ -50,9 +51,12 @@
 	let value = '';
 
 	let startingTimeHour = 7;
-	let startingTimeMinute = 0;
 	let endingTimeHour = 21;
-	let endingTimeMinute = 0;
+
+	let currentPlanSelected = {
+		label: 'Pilihan 1',
+		value: 0
+	};
 
 	let submitted = false;
 
@@ -94,7 +98,12 @@
 											if (chosenMatkul.includes(matkul.reference)) {
 												chosenMatkul = chosenMatkul.filter((item) => item !== matkul.reference);
 											} else {
-												if (chosenMatkul.length < chosenMatkulLimit) {
+												if (
+													chosenMatkul.length < chosenMatkulLimit &&
+													chosenMatkul.reduce((acc, matkul) => acc + matkul.sks, 0) +
+														matkul.reference.sks <=
+														sksMatkulLimit
+												) {
 													chosenMatkul = [...chosenMatkul, matkul.reference];
 												}
 											}
@@ -122,7 +131,7 @@
 				</Popover.Content>
 			</Popover.Root>
 		</Card.Header>
-		<Card.Content class="overflow-y-auto">
+		<Card.Content class="max-h-screen overflow-y-auto">
 			<div class="flex flex-col gap-2">
 				{#each chosenMatkul as matkul, i}
 					<Card.Root class={matkulColors[i]}>
@@ -140,23 +149,29 @@
 										class="w-full justify-between"
 									>
 										{(chosenClasses[matkul.kode] &&
-											`${chosenClasses[matkul.kode][0]} (${
+											`${chosenClasses[matkul.kode][currentPlanSelected.value]} (${
 												dowMap[
-													matkul.kelas.find((v) => v.kelas === chosenClasses[matkul.kode][0])
-														?.jadwal[0].dayOfWeek ?? 0
+													matkul.kelas.find(
+														(v) => v.kelas === chosenClasses[matkul.kode][currentPlanSelected.value]
+													)?.jadwal[0].dayOfWeek ?? 0
 												]
 											}, ${timeToString(
-												matkul.kelas.find((v) => v.kelas === chosenClasses[matkul.kode][0])
-													?.jadwal[0].startHour ?? 0,
-												matkul.kelas.find((v) => v.kelas === chosenClasses[matkul.kode][0])
-													?.jadwal[0].startMinute ?? 0
+												matkul.kelas.find(
+													(v) => v.kelas === chosenClasses[matkul.kode][currentPlanSelected.value]
+												)?.jadwal[0].startHour ?? 0,
+												matkul.kelas.find(
+													(v) => v.kelas === chosenClasses[matkul.kode][currentPlanSelected.value]
+												)?.jadwal[0].startMinute ?? 0
 											)} - ${timeToString(
-												matkul.kelas.find((v) => v.kelas === chosenClasses[matkul.kode][0])
-													?.jadwal[0].startHour ?? 0,
-												(matkul.kelas.find((v) => v.kelas === chosenClasses[matkul.kode][0])
-													?.jadwal[0].startMinute ?? 0) +
-													(matkul.kelas.find((v) => v.kelas === chosenClasses[matkul.kode][0])
-														?.jadwal[0].durasi ?? 0)
+												matkul.kelas.find(
+													(v) => v.kelas === chosenClasses[matkul.kode][currentPlanSelected.value]
+												)?.jadwal[0].startHour ?? 0,
+												(matkul.kelas.find(
+													(v) => v.kelas === chosenClasses[matkul.kode][currentPlanSelected.value]
+												)?.jadwal[0].startMinute ?? 0) +
+													(matkul.kelas.find(
+														(v) => v.kelas === chosenClasses[matkul.kode][currentPlanSelected.value]
+													)?.jadwal[0].durasi ?? 0)
 											)})`) ||
 											'Pilih kelas...'}
 										<ChevronsUpDown class="ml-2 h-4 w-4 shrink-0 opacity-50" />
@@ -181,7 +196,8 @@
 															'mr-2 h-4 w-4',
 															!(
 																chosenClasses[matkul.kode] &&
-																chosenClasses[matkul.kode][0] === kelas.kelas
+																chosenClasses[matkul.kode][currentPlanSelected.value] ===
+																	kelas.kelas
 															) && 'text-transparent'
 														)}
 													/>
@@ -275,15 +291,16 @@
 						{#each [1, 2, 3, 4, 5, 6] as day}
 							<td class="relative border">
 								{#each chosenMatkul as matkul, i}
-									{#if chosenClasses[matkul.kode] && chosenClasses[matkul.kode][0] && matkul.kelas.find((v) => v.kelas === chosenClasses[matkul.kode][0])?.jadwal[0].dayOfWeek === day && matkul.kelas.find((v) => v.kelas === chosenClasses[matkul.kode][0])?.jadwal[0].startHour === startingTimeHour + Math.floor(hour / 2) && matkul.kelas.find((v) => v.kelas === chosenClasses[matkul.kode][0])?.jadwal[0].startMinute === (hour % 2) * 30}
+									{#if chosenClasses[matkul.kode] && chosenClasses[matkul.kode][currentPlanSelected.value] && matkul.kelas.find((v) => v.kelas === chosenClasses[matkul.kode][currentPlanSelected.value])?.jadwal[0].dayOfWeek === day && matkul.kelas.find((v) => v.kelas === chosenClasses[matkul.kode][currentPlanSelected.value])?.jadwal[0].startHour === startingTimeHour + Math.floor(hour / 2) && matkul.kelas.find((v) => v.kelas === chosenClasses[matkul.kode][currentPlanSelected.value])?.jadwal[0].startMinute === (hour % 2) * 30}
 										<div
-											style={`height: ${((matkul.kelas.find((v) => v.kelas === chosenClasses[matkul.kode][0])?.jadwal[0].durasi ?? 0) * 100) / 30}%`}
-											class={`absolute top-1 w-full rounded-lg p-1 px-2 ${matkulColors[i]}`}
+											style={`height: ${((matkul.kelas.find((v) => v.kelas === chosenClasses[matkul.kode][currentPlanSelected.value])?.jadwal[0].durasi ?? 0) * 100) / 30}%`}
+											class={`absolute top-1 w-full rounded-lg p-1 px-2 ${matkulColors[i]} break-words`}
 										>
 											<div class="font-bold">{properCase(matkul.nama)}</div>
 											<div class="text-muted-foreground">
-												Kelas {matkul.kelas.find((v) => v.kelas === chosenClasses[matkul.kode][0])
-													?.kelas}
+												Kelas {matkul.kelas.find(
+													(v) => v.kelas === chosenClasses[matkul.kode][currentPlanSelected.value]
+												)?.kelas}
 											</div>
 										</div>
 									{/if}
