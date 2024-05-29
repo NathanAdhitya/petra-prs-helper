@@ -6,11 +6,15 @@
 	import { ArrowLeft } from 'lucide-svelte';
 </script>
 
-<div>
+<div class="mb-6">
 	<a href="/khs">
 		<ArrowLeft class="float-left h-8 w-8 rounded-full p-1 transition-all hover:bg-slate-200" />
 	</a>
-	<h1 class="mb-6 pb-2 text-center text-2xl font-bold">{data.name} ({data.kode})</h1>
+	<h1 class="text-center text-2xl font-bold">{data.name} ({data.kode})</h1>
+	<p class="text-center font-medium">Kelas {data.kelas}</p>
+	{#each data.dosen as dosen}
+		<p class="text-center text-xs text-muted-foreground">{dosen}</p>
+	{/each}
 </div>
 
 <h2 class="pb-2 text-center text-xl font-bold">Nilai</h2>
@@ -51,6 +55,7 @@
 			<Table.Head>#</Table.Head>
 			<Table.Head>Tanggal</Table.Head>
 			<Table.Head>Topik</Table.Head>
+			<Table.Head>Status</Table.Head>
 		</Table.Row>
 	</Table.Header>
 	<Table.Body>
@@ -60,6 +65,9 @@
 				<Table.Cell>{kehadiran.tanggal}</Table.Cell>
 				<Table.Cell>
 					{kehadiran.materi}
+				</Table.Cell>
+				<Table.Cell>
+					{kehadiran.status}
 				</Table.Cell>
 			</Table.Row>
 		{/each}

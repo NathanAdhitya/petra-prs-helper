@@ -23,7 +23,7 @@
 <div class="hidden bg-slate-50 md:block">
 	<div class="flex h-full min-h-screen flex-col">
 		<div class="flex h-16 items-center border-b-4 border-b-[#a9a9a9] px-4 lg:h-[60px] lg:px-6">
-			<a href="/home" class="flex h-full w-full items-center py-2 pt-3">
+			<a href="/berita" class="flex h-full w-full items-center py-2 pt-3">
 				<img src={pcuBlueLogo} alt="PCU Logo" class="max-w-auto h-auto max-h-full w-auto" />
 			</a>
 		</div>

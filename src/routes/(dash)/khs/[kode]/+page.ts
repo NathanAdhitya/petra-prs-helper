@@ -9,6 +9,8 @@ export const load: PageLoad = async (event) => {
 			name: 'Kecerdasan Buatan',
 			kode,
 			sks: 3,
+			kelas: 'A',
+			dosen: ['Dr. Dosen 1, S.Kom'],
 
 			nilai: [
 				{ nama: 'Ujian Tengah Semester', bobot: 0.3, nilai: 80 },
@@ -19,17 +21,20 @@ export const load: PageLoad = async (event) => {
 				{
 					pertemuan: 1,
 					tanggal: '2023-04-01',
-					materi: 'Pengenalan Kecerdasan Buatan'
+					materi: 'Pengenalan Kecerdasan Buatan',
+					status: 'Hadir'
 				},
 				{
 					pertemuan: 2,
 					tanggal: '2023-04-08',
-					materi: 'Pengenalan Machine Learning'
+					materi: 'Pengenalan Machine Learning',
+					status: 'Hadir'
 				},
 				{
 					pertemuan: 3,
 					tanggal: '2023-04-15',
-					materi: 'Pengenalan Deep Learning'
+					materi: 'Pengenalan Deep Learning',
+					status: 'Hadir'
 				}
 			]
 		};
@@ -38,6 +43,8 @@ export const load: PageLoad = async (event) => {
 			name: 'Grafik Komputer',
 			kode,
 			sks: 3,
+			kelas: 'A',
+			dosen: ['Dr. Dosen 1, S.Kom'],
 			nilai: [
 				{ nama: 'Ujian Tengah Semester', bobot: 0.3, nilai: 80 },
 				{ nama: 'Ujian Akhir Semester', bobot: 0.5, nilai: 90 }
@@ -46,17 +53,20 @@ export const load: PageLoad = async (event) => {
 				{
 					pertemuan: 1,
 					tanggal: '2023-04-01',
-					materi: 'Pengenalan Grafik Komputer'
+					materi: 'Pengenalan Grafik Komputer',
+					status: 'Hadir'
 				},
 				{
 					pertemuan: 2,
 					tanggal: '2023-04-08',
-					materi: 'Pengenalan OpenGL'
+					materi: 'Pengenalan OpenGL',
+					status: 'Hadir'
 				},
 				{
 					pertemuan: 3,
 					tanggal: '2023-04-15',
-					materi: 'Pengenalan WebGL'
+					materi: 'Pengenalan WebGL',
+					status: 'Hadir'
 				}
 			]
 		};
@@ -66,6 +76,9 @@ export const load: PageLoad = async (event) => {
 			kode,
 			sks: 2,
 
+			kelas: 'A',
+			dosen: ['Dr. Dosen 1, S.Kom'],
+
 			nilai: [
 				{ nama: 'Ujian Tengah Semester', bobot: 0.3, nilai: 80 },
 				{ nama: 'Ujian Akhir Semester', bobot: 0.5, nilai: 90 }
@@ -75,17 +88,20 @@ export const load: PageLoad = async (event) => {
 				{
 					pertemuan: 1,
 					tanggal: '2023-04-01',
-					materi: 'Pengenalan Cyber Operations'
+					materi: 'Pengenalan Cyber Operations',
+					status: 'Hadir'
 				},
 				{
 					pertemuan: 2,
 					tanggal: '2023-04-08',
-					materi: 'Pengenalan Penetration Testing'
+					materi: 'Pengenalan Penetration Testing',
+					status: 'Hadir'
 				},
 				{
 					pertemuan: 3,
 					tanggal: '2023-04-15',
-					materi: 'Pengenalan Incident Response'
+					materi: 'Pengenalan Incident Response',
+					status: 'Hadir'
 				}
 			]
 		};

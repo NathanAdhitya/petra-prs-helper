@@ -28,6 +28,7 @@
 	}));
 
 	const chosenMatkulLimit = 10;
+	const sksMatkulLimit = 24;
 	const matkulColors = [
 		'bg-red-100/75',
 		'bg-yellow-100/75',
@@ -101,7 +102,10 @@
 									}}
 								>
 									<span class="mr-4 text-muted-foreground">{matkul.kode} </span>
-									{matkul.label}
+									<span>
+										{matkul.label}
+										<span class="text-xs text-muted-foreground"> {matkul.reference.sks} SKS</span>
+									</span>
 									<Check
 										class={cn(
 											'ml-auto mr-2 h-4 w-4',
@@ -111,7 +115,9 @@
 								</Command.Item>
 							{/each}
 						</Command.Group>
-						<div class="px-4 py-2">{chosenMatkul.length}/{chosenMatkulLimit} dipilih</div>
+						<div class="px-4 py-2">
+							{chosenMatkul.reduce((acc, matkul) => acc + matkul.sks, 0)} / {sksMatkulLimit} SKS dipilih
+						</div>
 					</Command.Root>
 				</Popover.Content>
 			</Popover.Root>
@@ -137,7 +143,7 @@
 											`${chosenClasses[matkul.kode][0]} (${
 												dowMap[
 													matkul.kelas.find((v) => v.kelas === chosenClasses[matkul.kode][0])
-														?.jadwal[0].dayOfWeek ?? 1
+														?.jadwal[0].dayOfWeek ?? 0
 												]
 											}, ${timeToString(
 												matkul.kelas.find((v) => v.kelas === chosenClasses[matkul.kode][0])
@@ -147,11 +153,10 @@
 											)} - ${timeToString(
 												matkul.kelas.find((v) => v.kelas === chosenClasses[matkul.kode][0])
 													?.jadwal[0].startHour ?? 0,
-												matkul.kelas.find((v) => v.kelas === chosenClasses[matkul.kode][0])
-													?.jadwal[0].startMinute ??
-													0 +
-														(matkul.kelas.find((v) => v.kelas === chosenClasses[matkul.kode][0])
-															?.jadwal[0].durasi ?? 0)
+												(matkul.kelas.find((v) => v.kelas === chosenClasses[matkul.kode][0])
+													?.jadwal[0].startMinute ?? 0) +
+													(matkul.kelas.find((v) => v.kelas === chosenClasses[matkul.kode][0])
+														?.jadwal[0].durasi ?? 0)
 											)})`) ||
 											'Pilih kelas...'}
 										<ChevronsUpDown class="ml-2 h-4 w-4 shrink-0 opacity-50" />
@@ -213,7 +218,9 @@
 
 	<div class="flex h-full w-full flex-col gap-4">
 		<div class="flex items-center gap-4">
-			<div>Total SKS: {chosenMatkul.reduce((acc, matkul) => acc + matkul.sks, 0)}</div>
+			<div>
+				Total SKS: {chosenMatkul.reduce((acc, matkul) => acc + matkul.sks, 0)} / {sksMatkulLimit}
+			</div>
 			<div>Status: {submitted ? 'Menunggu validasi' : 'Menunggu dikirim'}</div>
 			<Dialog.Root bind:open={validationDialogOpen}>
 				<Dialog.Trigger class="ml-auto">
