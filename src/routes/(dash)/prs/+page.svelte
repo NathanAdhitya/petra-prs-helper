@@ -95,7 +95,7 @@
 
 <h1 class="text-4xl font-bold">Pendaftaran Rencana Studi</h1>
 <div class="flex h-full w-full gap-4">
-	<Card.Root class="flex h-full w-full max-w-sm flex-col">
+	<Card.Root class="flex h-full w-1/3 max-w-sm flex-col">
 		<Card.Header>
 			<Popover.Root bind:open let:ids>
 				<Popover.Trigger asChild let:builder>
@@ -290,7 +290,7 @@
 		</Card.Content>
 	</Card.Root>
 
-	<div class="flex h-full w-full flex-col gap-4">
+	<div class="flex h-full w-full flex-1 flex-col gap-4">
 		<div class="flex items-center gap-4">
 			<div>
 				Total SKS: {chosenMatkul.reduce((acc, matkul) => acc + matkul.sks, 0)} / {sksMatkulLimit}
