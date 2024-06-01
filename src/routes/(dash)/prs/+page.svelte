@@ -13,6 +13,7 @@
 
 	import * as Dialog from '$lib/components/ui/dialog';
 	import * as Select from '$lib/components/ui/select/index.js';
+	import clsx from 'clsx';
 	export let data;
 
 	function properCase(str: string) {
@@ -31,16 +32,16 @@
 	const chosenMatkulLimit = 10;
 	const sksMatkulLimit = 24;
 	const matkulColors = [
-		'bg-red-200',
-		'bg-yellow-200',
-		'bg-green-200',
-		'bg-blue-200',
-		'bg-indigo-200',
-		'bg-purple-200',
-		'bg-pink-200',
-		'bg-red-400',
-		'bg-yellow-400',
-		'bg-green-400'
+		'bg-blue-100',
+		'bg-green-100',
+		'bg-yellow-100',
+		'bg-red-100',
+		'bg-purple-100',
+		'bg-pink-100',
+		'bg-indigo-100',
+		'bg-cyan-100',
+		'bg-teal-100',
+		'bg-lime-100'
 	];
 	let chosenMatkul: MataKuliah[] = [];
 	let validationDialogOpen = false;
@@ -69,7 +70,7 @@
 
 <h1 class="text-4xl font-bold">Pendaftaran Rencana Studi</h1>
 <div class="flex h-full w-full gap-4">
-	<Card.Root class="h-full w-full max-w-sm">
+	<Card.Root class="flex h-full w-full max-w-sm flex-col">
 		<Card.Header>
 			<Popover.Root bind:open let:ids>
 				<Popover.Trigger asChild let:builder>
@@ -131,8 +132,8 @@
 				</Popover.Content>
 			</Popover.Root>
 		</Card.Header>
-		<Card.Content class="max-h-screen overflow-y-auto">
-			<div class="flex flex-col gap-2">
+		<Card.Content class="relative h-full overflow-hidden">
+			<div class="absolute left-0 top-0 flex h-full w-full flex-col gap-2 overflow-y-auto p-4">
 				{#each chosenMatkul as matkul, i}
 					<Card.Root class={matkulColors[i]}>
 						<Card.Header class="pb-2">
@@ -273,6 +274,7 @@
 			<table class="h-full w-full border-collapse overflow-auto rounded-lg bg-slate-50 p-4">
 				<thead>
 					<th class="sticky top-0 bg-slate-100 p-2"></th>
+					<th class="sticky top-0 bg-slate-100 p-2"></th>
 					{#each ['Senin', 'Selasa', 'Rabu', 'Kamis', 'Jumat', 'Sabtu'] as day}
 						<th class="sticky top-0 border bg-slate-100 p-2">{day}</th>
 					{/each}
@@ -289,15 +291,46 @@
 										).padStart(2, '0')}`
 									: ''}
 							</td>
+							<td class="w-2 border-y bg-slate-100"></td>
 							{#each [1, 2, 3, 4, 5, 6] as day}
 								<td class="relative border">
 									{#each chosenMatkul as matkul, i}
 										{#if chosenClasses[matkul.kode] && chosenClasses[matkul.kode][currentPlanSelected.value] && matkul.kelas.find((v) => v.kelas === chosenClasses[matkul.kode][currentPlanSelected.value])?.jadwal[0].dayOfWeek === day && matkul.kelas.find((v) => v.kelas === chosenClasses[matkul.kode][currentPlanSelected.value])?.jadwal[0].startHour === startingTimeHour + Math.floor(hour / 2) && matkul.kelas.find((v) => v.kelas === chosenClasses[matkul.kode][currentPlanSelected.value])?.jadwal[0].startMinute === (hour % 2) * 30}
 											<div
-												style={`height: ${((matkul.kelas.find((v) => v.kelas === chosenClasses[matkul.kode][currentPlanSelected.value])?.jadwal[0].durasi ?? 0) * 100) / 30}%`}
-												class={`absolute right-0 top-0 w-full rounded-lg p-2 ${matkulColors[i]} break-words`}
+												style={`height: calc(${((matkul.kelas.find((v) => v.kelas === chosenClasses[matkul.kode][currentPlanSelected.value])?.jadwal[0].durasi ?? 0) * 100) / 30}% + ${(matkul.kelas.find((v) => v.kelas === chosenClasses[matkul.kode][currentPlanSelected.value])?.jadwal[0].durasi ?? 0) / 30}px)`}
+												class={clsx(
+													`absolute right-0 top-0 w-full break-words rounded-lg p-2 shadow-sm`,
+													matkulColors[i]
+												)}
 											>
-												<div class="font-bold">{properCase(matkul.nama)}</div>
+												<div class="lading-3 text-xs text-muted-foreground">
+													{timeToString(
+														matkul.kelas.find(
+															(v) =>
+																v.kelas === chosenClasses[matkul.kode][currentPlanSelected.value]
+														)?.jadwal[0].startHour ?? 0,
+														matkul.kelas.find(
+															(v) =>
+																v.kelas === chosenClasses[matkul.kode][currentPlanSelected.value]
+														)?.jadwal[0].startMinute ?? 0
+													)} - {timeToString(
+														matkul.kelas.find(
+															(v) =>
+																v.kelas === chosenClasses[matkul.kode][currentPlanSelected.value]
+														)?.jadwal[0].startHour ?? 0,
+														(matkul.kelas.find(
+															(v) =>
+																v.kelas === chosenClasses[matkul.kode][currentPlanSelected.value]
+														)?.jadwal[0].startMinute ?? 0) +
+															(matkul.kelas.find(
+																(v) =>
+																	v.kelas === chosenClasses[matkul.kode][currentPlanSelected.value]
+															)?.jadwal[0].durasi ?? 0)
+													)}
+												</div>
+												<div class="font-semibold leading-5 max-xl:text-sm">
+													{properCase(matkul.nama)}
+												</div>
 												<div class="text-muted-foreground">
 													Kelas {matkul.kelas.find(
 														(v) => v.kelas === chosenClasses[matkul.kode][currentPlanSelected.value]
