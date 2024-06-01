@@ -2,7 +2,7 @@
 	import { Button } from '$lib/components/ui/button';
 	import * as Card from '$lib/components/ui/card';
 	import * as Popover from '$lib/components/ui/popover';
-	import { Check, ChevronsUpDown } from 'lucide-svelte';
+	import { Check, ChevronsUpDown, SlidersHorizontal } from 'lucide-svelte';
 
 	import * as Command from '$lib/components/ui/command/index.js';
 	import { cn } from '$lib/utils.js';
@@ -14,6 +14,7 @@
 	import * as Dialog from '$lib/components/ui/dialog';
 	import * as Select from '$lib/components/ui/select/index.js';
 	import clsx from 'clsx';
+	import { Trigger } from '$lib/components/ui/collapsible';
 	export let data;
 
 	function properCase(str: string) {
@@ -109,9 +110,23 @@
 						<ChevronsUpDown class="ml-2 h-4 w-4 shrink-0 opacity-50" />
 					</Button>
 				</Popover.Trigger>
-				<Popover.Content class="w-full max-w-md p-0" side="top-start">
+				<Popover.Content class="w-full max-w-md p-0" side="bottom-start">
 					<Command.Root class="max-h-72">
-						<Command.Input placeholder="Cari mata kuliah..." />
+						<div class="relative">
+							<Command.Input class="w-full" placeholder="Cari mata kuliah..." />
+							<div class="absolute right-0 top-0 m-0.5">
+								<Popover.Root>
+									<Popover.Trigger asChild let:builder>
+										<Button builders={[builder]} variant="outline" size="icon">
+											<SlidersHorizontal class="h-4 w-4" />
+										</Button>
+									</Popover.Trigger>
+									<Popover.Content strategy="fixed" side="right-start" sideOffset={4}>
+										<h2 class="text-lg font-semibold">Filters</h2>
+									</Popover.Content>
+								</Popover.Root>
+							</div>
+						</div>
 						<Command.Empty>Mata kuliah tidak ditemukan...</Command.Empty>
 						<Command.Group class="!overflow-auto">
 							{#each matkulOptions as matkul}
