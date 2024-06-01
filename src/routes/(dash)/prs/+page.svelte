@@ -8,7 +8,7 @@
 	import { cn } from '$lib/utils.js';
 	import ScrollArea from '$lib/components/ui/scroll-area/scroll-area.svelte';
 	import type { MataKuliah } from '$lib/mata-kuliah';
-	import { tick } from 'svelte';
+	import { onMount, tick } from 'svelte';
 	import { dowMap, timeToString } from '$lib/mock-data';
 
 	import * as Dialog from '$lib/components/ui/dialog';
@@ -28,6 +28,30 @@
 		kode: item.kode,
 		reference: item
 	}));
+
+	let holdingShift = false;
+
+	onMount(() => {
+		const onKeyUp = (e: KeyboardEvent) => {
+			if (e.key === 'Shift') {
+				holdingShift = false;
+			}
+		};
+
+		const onKeyDown = (e: KeyboardEvent) => {
+			if (e.key === 'Shift') {
+				holdingShift = true;
+			}
+		};
+
+		document.addEventListener('keyup', onKeyUp);
+		document.addEventListener('keydown', onKeyDown);
+
+		return () => {
+			document.removeEventListener('keyup', onKeyUp);
+			document.removeEventListener('keydown', onKeyDown);
+		};
+	});
 
 	const chosenMatkulLimit = 10;
 	const sksMatkulLimit = 24;
@@ -109,6 +133,11 @@
 												}
 											}
 										}
+
+										if (!holdingShift) {
+											closeAndFocusTrigger(ids.trigger);
+											open = false;
+										}
 									}}
 								>
 									<span class="mr-4 text-muted-foreground">{matkul.kode} </span>
@@ -125,15 +154,28 @@
 								</Command.Item>
 							{/each}
 						</Command.Group>
-						<div class="px-4 py-2">
-							{chosenMatkul.reduce((acc, matkul) => acc + matkul.sks, 0)} / {sksMatkulLimit} SKS dipilih
+						<div class="flex items-center justify-center px-4 py-2">
+							<div>
+								<p class="text-sm text-muted-foreground">
+									Hold
+									<kbd
+										class="pointer-events-none inline-flex h-5 select-none items-center gap-1 rounded border bg-muted px-1.5 font-mono text-[10px] font-medium text-muted-foreground opacity-100"
+									>
+										<span class="text-xs">Shift</span>
+									</kbd>
+									to stay
+								</p>
+							</div>
+							<div class="ml-auto text-sm text-muted-foreground">
+								{chosenMatkul.reduce((acc, matkul) => acc + matkul.sks, 0)} / {sksMatkulLimit} SKS dipilih
+							</div>
 						</div>
 					</Command.Root>
 				</Popover.Content>
 			</Popover.Root>
 		</Card.Header>
 		<Card.Content class="relative h-full overflow-hidden">
-			<div class="absolute left-0 top-0 flex h-full w-full flex-col gap-2 overflow-y-auto p-4">
+			<div class="absolute left-0 top-0 flex h-full w-full flex-col gap-2 overflow-y-auto p-4 pt-0">
 				{#each chosenMatkul as matkul, i}
 					<Card.Root class={matkulColors[i]}>
 						<Card.Header class="pb-2">
