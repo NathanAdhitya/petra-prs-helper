@@ -1,11 +1,26 @@
 <script lang="ts">
-	import { Popover as PopoverPrimitive } from "bits-ui";
-	import { cn, flyAndScale } from "$lib/utils.js";
+	import { Popover as PopoverPrimitive } from 'bits-ui';
+	import { cn, flyAndScale } from '$lib/utils.js';
 
-	type $$Props = PopoverPrimitive.ContentProps;
-	let className: $$Props["class"] = undefined;
-	export let transition: $$Props["transition"] = flyAndScale;
-	export let transitionConfig: $$Props["transitionConfig"] = undefined;
+	interface $$Props extends Omit<PopoverPrimitive.ContentProps, 'side'> {
+		side?:
+			| 'top'
+			| 'top-start'
+			| 'top-end'
+			| 'right'
+			| 'right-start'
+			| 'right-end'
+			| 'bottom'
+			| 'bottom-start'
+			| 'bottom-end'
+			| 'left'
+			| 'left-start'
+			| 'left-end';
+	}
+
+	let className: $$Props['class'] = undefined;
+	export let transition: $$Props['transition'] = flyAndScale;
+	export let transitionConfig: $$Props['transitionConfig'] = undefined;
 	export { className as class };
 </script>
 
@@ -13,7 +28,7 @@
 	{transition}
 	{transitionConfig}
 	class={cn(
-		"z-50 w-72 rounded-md border bg-popover p-4 text-popover-foreground shadow-md outline-none",
+		'z-50 w-72 rounded-md border bg-popover p-4 text-popover-foreground shadow-md outline-none',
 		className
 	)}
 	{...$$restProps}

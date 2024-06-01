@@ -109,8 +109,8 @@
 						<ChevronsUpDown class="ml-2 h-4 w-4 shrink-0 opacity-50" />
 					</Button>
 				</Popover.Trigger>
-				<Popover.Content class="w-96 p-0">
-					<Command.Root class="max-h-52">
+				<Popover.Content class="w-full max-w-md p-0" side="top-start">
+					<Command.Root class="max-h-72">
 						<Command.Input placeholder="Cari mata kuliah..." />
 						<Command.Empty>Mata kuliah tidak ditemukan...</Command.Empty>
 						<Command.Group class="!overflow-auto">
@@ -163,7 +163,7 @@
 									>
 										<span class="text-xs">Shift</span>
 									</kbd>
-									to stay
+									to select more
 								</p>
 							</div>
 							<div class="ml-auto text-sm text-muted-foreground">
