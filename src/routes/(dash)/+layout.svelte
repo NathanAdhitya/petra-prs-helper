@@ -16,17 +16,9 @@
 	}
 
 	type NavigationComponent = NavigationMenu | NavigationSeparator | NavigationComponent[];
-
-	const navigationEntries: NavigationComponent[] = [
-		{
-			icon: Newspaper,
-			label: 'Berita',
-			href: '/home'
-		}
-	];
 </script>
 
-<div class="grid min-h-screen w-full md:grid-cols-[220px_1fr] lg:grid-cols-[280px_1fr]">
+<div class="grid min-h-screen w-full lg:grid-cols-[280px_1fr]">
 	<MdSidebar />
 	<div class="flex flex-col">
 		<TopBar />

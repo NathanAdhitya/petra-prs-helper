@@ -31,16 +31,16 @@
 	const chosenMatkulLimit = 10;
 	const sksMatkulLimit = 24;
 	const matkulColors = [
-		'bg-red-100/75',
-		'bg-yellow-100/75',
-		'bg-green-100/75',
-		'bg-blue-100/75',
-		'bg-indigo-100/75',
-		'bg-purple-100/75',
-		'bg-pink-100/75',
-		'bg-red-200/75',
-		'bg-yellow-200/75',
-		'bg-green-200/75'
+		'bg-red-200',
+		'bg-yellow-200',
+		'bg-green-200',
+		'bg-blue-200',
+		'bg-indigo-200',
+		'bg-purple-200',
+		'bg-pink-200',
+		'bg-red-400',
+		'bg-yellow-400',
+		'bg-green-400'
 	];
 	let chosenMatkul: MataKuliah[] = [];
 	let validationDialogOpen = false;
@@ -269,47 +269,49 @@
 				</Dialog.Content>
 			</Dialog.Root>
 		</div>
-		<table class="border-collapse rounded-lg bg-slate-50 p-4">
-			<thead>
-				<th class="border p-2">Waktu</th>
-				{#each ['Senin', 'Selasa', 'Rabu', 'Kamis', 'Jumat', 'Sabtu'] as day}
-					<th class="border p-2">{day}</th>
-				{/each}
-			</thead>
-			<tbody>
-				{#each Array.from({ length: (endingTimeHour - startingTimeHour) * 2 }, (_, i) => i) as hour}
-					<tr>
-						<td class="border px-4 py-1">
-							{`${String(startingTimeHour + Math.floor(hour / 2)).padStart(2, '0')}:${String(
-								(hour % 2) * 30
-							).padStart(2, '0')}`}
-							-
-							{`${String(
-								startingTimeHour + Math.floor(hour / 2) + Math.floor(((hour % 2) * 30 + 30) / 60)
-							).padStart(2, '0')}:${String(((hour % 2) * 30 + 30) % 60).padStart(2, '0')}`}
-						</td>
-						{#each [1, 2, 3, 4, 5, 6] as day}
-							<td class="relative border">
-								{#each chosenMatkul as matkul, i}
-									{#if chosenClasses[matkul.kode] && chosenClasses[matkul.kode][currentPlanSelected.value] && matkul.kelas.find((v) => v.kelas === chosenClasses[matkul.kode][currentPlanSelected.value])?.jadwal[0].dayOfWeek === day && matkul.kelas.find((v) => v.kelas === chosenClasses[matkul.kode][currentPlanSelected.value])?.jadwal[0].startHour === startingTimeHour + Math.floor(hour / 2) && matkul.kelas.find((v) => v.kelas === chosenClasses[matkul.kode][currentPlanSelected.value])?.jadwal[0].startMinute === (hour % 2) * 30}
-										<div
-											style={`height: ${((matkul.kelas.find((v) => v.kelas === chosenClasses[matkul.kode][currentPlanSelected.value])?.jadwal[0].durasi ?? 0) * 100) / 30}%`}
-											class={`absolute top-1 w-full rounded-lg p-1 px-2 ${matkulColors[i]} break-words`}
-										>
-											<div class="font-bold">{properCase(matkul.nama)}</div>
-											<div class="text-muted-foreground">
-												Kelas {matkul.kelas.find(
-													(v) => v.kelas === chosenClasses[matkul.kode][currentPlanSelected.value]
-												)?.kelas}
-											</div>
-										</div>
-									{/if}
-								{/each}
+		<div class="h-full w-full overflow-auto rounded-lg border-2">
+			<table class="h-full w-full border-collapse overflow-auto rounded-lg bg-slate-50 p-4">
+				<thead>
+					<th class="sticky top-0 bg-slate-100 p-2"></th>
+					{#each ['Senin', 'Selasa', 'Rabu', 'Kamis', 'Jumat', 'Sabtu'] as day}
+						<th class="sticky top-0 border bg-slate-100 p-2">{day}</th>
+					{/each}
+				</thead>
+				<tbody>
+					{#each Array.from({ length: (endingTimeHour - startingTimeHour) * 2 }, (_, i) => i) as hour}
+						<tr>
+							<td
+								class="h-6 w-0 -translate-y-1/2 bg-slate-100 px-4 py-1 pr-2 text-xs text-muted-foreground"
+							>
+								{hour % 2 === 0
+									? `${String(startingTimeHour + Math.floor(hour / 2)).padStart(2, '0')}:${String(
+											(hour % 2) * 30
+										).padStart(2, '0')}`
+									: ''}
 							</td>
-						{/each}
-					</tr>
-				{/each}
-			</tbody>
-		</table>
+							{#each [1, 2, 3, 4, 5, 6] as day}
+								<td class="relative border">
+									{#each chosenMatkul as matkul, i}
+										{#if chosenClasses[matkul.kode] && chosenClasses[matkul.kode][currentPlanSelected.value] && matkul.kelas.find((v) => v.kelas === chosenClasses[matkul.kode][currentPlanSelected.value])?.jadwal[0].dayOfWeek === day && matkul.kelas.find((v) => v.kelas === chosenClasses[matkul.kode][currentPlanSelected.value])?.jadwal[0].startHour === startingTimeHour + Math.floor(hour / 2) && matkul.kelas.find((v) => v.kelas === chosenClasses[matkul.kode][currentPlanSelected.value])?.jadwal[0].startMinute === (hour % 2) * 30}
+											<div
+												style={`height: ${((matkul.kelas.find((v) => v.kelas === chosenClasses[matkul.kode][currentPlanSelected.value])?.jadwal[0].durasi ?? 0) * 100) / 30}%`}
+												class={`absolute right-0 top-0 w-full rounded-lg p-2 ${matkulColors[i]} break-words`}
+											>
+												<div class="font-bold">{properCase(matkul.nama)}</div>
+												<div class="text-muted-foreground">
+													Kelas {matkul.kelas.find(
+														(v) => v.kelas === chosenClasses[matkul.kode][currentPlanSelected.value]
+													)?.kelas}
+												</div>
+											</div>
+										{/if}
+									{/each}
+								</td>
+							{/each}
+						</tr>
+					{/each}
+				</tbody>
+			</table>
+		</div>
 	</div>
 </div>

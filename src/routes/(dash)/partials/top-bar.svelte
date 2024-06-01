@@ -39,12 +39,12 @@
 >
 	<Sheet.Root>
 		<Sheet.Trigger asChild let:builder>
-			<Button variant="outline" size="icon" class="shrink-0 md:hidden" builders={[builder]}>
+			<Button variant="outline" size="icon" class="shrink-0 lg:hidden" builders={[builder]}>
 				<Menu class="h-5 w-5" />
 				<span class="sr-only">Toggle navigation menu</span>
 			</Button>
 		</Sheet.Trigger>
-		<Sheet.Content side="left" class="flex flex-col bg-slate-700 p-0 text-white">
+		<Sheet.Content side="left" class="flex max-w-[100vw] flex-col bg-slate-700 p-0 text-white">
 			<ScrollArea class="flex-1 p-4">
 				<nav class="grid gap-2 text-lg font-medium">
 					<a href="/berita" class="flex items-center gap-2 text-lg font-semibold">
