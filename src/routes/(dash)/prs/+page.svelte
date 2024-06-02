@@ -95,6 +95,14 @@
 	let openMatkulFocusedClass: string | null = null;
 
 	let pilihanValue = ['1', '2', '3'];
+
+	$: {
+		if (!pilihanValue || pilihanValue.length === 0) {
+			tick().then(() => {
+				pilihanValue = ['1', '2', '3'];
+			});
+		}
+	}
 	$: pilihanIndexes = pilihanValue.map((v) => parseInt(v) - 1);
 
 	const onOpenChanged = (kodeMatkul: string) => {

@@ -91,8 +91,8 @@
 						on:click={() => {
 							// Slice at planIdx to remove the selected plan, then reduce the plan count
 							chosenClasses[matkul.kode] = [
-								...chosenClasses[matkul.kode].slice(0, planIdx),
-								...chosenClasses[matkul.kode].slice(planIdx + 1)
+								...(chosenClasses[matkul.kode] ?? []).slice(0, planIdx),
+								...(chosenClasses[matkul.kode] ?? []).slice(planIdx + 1)
 							];
 							planCount--;
 						}}
