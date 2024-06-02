@@ -14,7 +14,7 @@
 	import clsx from 'clsx';
 
 	export const startingTimeHour = 7;
-	export const endingTimeHour = 19;
+	export const endingTimeHour = 21;
 
 	export let schedules: Schedule[] = [];
 
@@ -155,7 +155,7 @@
 									{#if schedule.startHour === Math.floor(startingTimeHour + stepTime / 2) && schedule.startMinute === (stepTime % 2) * 30}
 										<div
 											style={`height: calc(${(schedule.lengthMinutes / 30) * 100}% + ${schedule.lengthMinutes / 30}px); left: ${(colIdx / cols.length) * 100}%; width: ${(expand(schedule, colIdx, cols) / cols.length) * 100}%;`}
-											class={clsx(`absolute top-0 p-0.5`)}
+											class={clsx(`absolute top-0 z-10 p-0.5`)}
 										>
 											<slot {schedule} {day} {stepTime} />
 										</div>

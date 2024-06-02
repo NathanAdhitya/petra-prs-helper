@@ -93,6 +93,13 @@ export const jadwalKuliah: MataKuliah[] = [
 				jadwal: [
 					{
 						dayOfWeek: 1,
+						startHour: 8,
+						startMinute: 30,
+						durasi: 120,
+						ruang: 'P.504'
+					},
+					{
+						dayOfWeek: 1,
 						startHour: 16,
 						startMinute: 0,
 						durasi: 180,

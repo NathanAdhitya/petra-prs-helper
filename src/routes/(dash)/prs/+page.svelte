@@ -2,24 +2,20 @@
 	import { Button } from '$lib/components/ui/button';
 	import * as Card from '$lib/components/ui/card';
 	import * as Popover from '$lib/components/ui/popover';
-	import { Check, ChevronsUpDown, CircleMinus, SlidersHorizontal } from 'lucide-svelte';
+	import { Check, ChevronsUpDown, SlidersHorizontal } from 'lucide-svelte';
 
 	import * as Command from '$lib/components/ui/command/index.js';
 	import type { MataKuliah } from '$lib/mata-kuliah';
-	import { dowMap, timeToString } from '$lib/mock-data';
+	import { timeToString } from '$lib/mock-data';
 	import { cn } from '$lib/utils.js';
 	import { onMount, tick } from 'svelte';
 
 	import * as Dialog from '$lib/components/ui/dialog';
+	import { lazyShortenMatkulName, properCase } from '$lib/mk-utils';
 	import clsx from 'clsx';
 	import Schedule from './schedule.svelte';
+	import MatkulCard from './matkul-card.svelte';
 	export let data;
-
-	function properCase(str: string) {
-		return str.replace(/\w\S*/g, function (txt) {
-			return txt.charAt(0).toUpperCase() + txt.substring(1).toLowerCase();
-		});
-	}
 
 	let matkulOptions = data.pilihanMataKuliah.map((item) => ({
 		label: properCase(item.nama).trim(),
@@ -74,9 +70,6 @@
 	let open = false;
 	let value = '';
 
-	let startingTimeHour = 7;
-	let endingTimeHour = 21;
-
 	let currentPlanSelected = {
 		label: 'Pilihan 1',
 		value: 0
@@ -95,25 +88,60 @@
 		return value !== null && value !== undefined;
 	}
 
+	let emphasizeMatkulKode: string | null = null;
+	let openMatkulSelectionKode: string | null = null;
+	let openMatkulFocusedClass: string | null = null;
+
+	const onOpenChanged = (kodeMatkul: string) => {
+		return (v: boolean) => {
+			openMatkulSelectionKode = v ? kodeMatkul : null;
+		};
+	};
+
+	const onFocusedToChanged = (focusedTo: string | null) => {
+		openMatkulFocusedClass = focusedTo;
+	};
+
 	$: computedSchedule = chosenMatkul
 		.map((matkul) => {
-			if (!(matkul.kode in chosenClasses)) return undefined;
-			if (!chosenClasses[matkul.kode][currentPlanSelected.value]) return undefined;
-			const matchedKelas = matkul.kelas.find(
-				(v) => v.kelas === chosenClasses[matkul.kode][currentPlanSelected.value]
-			);
+			if (openMatkulSelectionKode === matkul.kode) {
+				// If current matkul is open, show all classes
+				return matkul.kelas
+					.map((kelas) =>
+						kelas.jadwal.map((jadwal) => ({
+							dayOfWeek: jadwal.dayOfWeek - 1,
+							startHour: jadwal.startHour,
+							startMinute: jadwal.startMinute,
+							lengthMinutes: jadwal.durasi,
+							...matkul,
+							...kelas,
+							currentlySelected: openMatkulFocusedClass === kelas.kelas.toLowerCase()
+						}))
+					)
+					.flat(1);
+			} else {
+				if (!(matkul.kode in chosenClasses)) return undefined;
+				if (!chosenClasses[matkul.kode][currentPlanSelected.value]) return undefined;
+				const matchedKelas = matkul.kelas.find(
+					(v) => v.kelas === chosenClasses[matkul.kode][currentPlanSelected.value]
+				);
 
-			if (matchedKelas) {
-				return {
-					dayOfWeek: matchedKelas.jadwal[0].dayOfWeek - 1,
-					startHour: matchedKelas.jadwal[0].startHour,
-					startMinute: matchedKelas.jadwal[0].startMinute,
-					lengthMinutes: matchedKelas.jadwal[0].durasi,
-					...matkul,
-					...matchedKelas
-				};
+				if (matchedKelas) {
+					return matchedKelas.jadwal
+						.map((jadwal) => ({
+							dayOfWeek: jadwal.dayOfWeek - 1,
+							startHour: jadwal.startHour,
+							startMinute: jadwal.startMinute,
+							lengthMinutes: jadwal.durasi,
+							...matkul,
+							...matchedKelas,
+							currentlySelected: true
+						}))
+						.flat(1);
+				}
 			}
 		})
+		.flat(1)
 		.filter(notEmpty);
 </script>
 
@@ -216,102 +244,17 @@
 		<Card.Content class="relative h-full overflow-hidden">
 			<div class="absolute left-0 top-0 flex h-full w-full flex-col gap-2 overflow-y-auto p-4 pt-0">
 				{#each chosenMatkul as matkul, i}
-					<Card.Root class={matkulColors[i]}>
-						<Card.Header class="pb-2">
-							<div class="flex items-center justify-center">
-								<Card.Title class="text-wrap">
-									{properCase(matkul.nama)}
-								</Card.Title>
-								<button
-									class="ml-auto size-5 text-slate-500 transition-colors hover:text-slate-700"
-									on:click={() => {
-										chosenMatkul = chosenMatkul.filter((item) => item !== matkul);
-									}}
-								>
-									<CircleMinus class="h-full w-full transition-colors" />
-								</button>
-							</div>
-
-							<Card.Description>{matkul.kode} - {matkul.sks} SKS</Card.Description>
-						</Card.Header>
-						<Card.Content class="pb-2">
-							<Popover.Root let:ids>
-								<Popover.Trigger asChild let:builder>
-									<Button
-										builders={[builder]}
-										variant="outline"
-										role="combobox"
-										class="w-full justify-between"
-									>
-										{(chosenClasses[matkul.kode] &&
-											`${chosenClasses[matkul.kode][currentPlanSelected.value]} (${
-												dowMap[
-													matkul.kelas.find(
-														(v) => v.kelas === chosenClasses[matkul.kode][currentPlanSelected.value]
-													)?.jadwal[0].dayOfWeek ?? 0
-												]
-											}, ${timeToString(
-												matkul.kelas.find(
-													(v) => v.kelas === chosenClasses[matkul.kode][currentPlanSelected.value]
-												)?.jadwal[0].startHour ?? 0,
-												matkul.kelas.find(
-													(v) => v.kelas === chosenClasses[matkul.kode][currentPlanSelected.value]
-												)?.jadwal[0].startMinute ?? 0
-											)} - ${timeToString(
-												matkul.kelas.find(
-													(v) => v.kelas === chosenClasses[matkul.kode][currentPlanSelected.value]
-												)?.jadwal[0].startHour ?? 0,
-												(matkul.kelas.find(
-													(v) => v.kelas === chosenClasses[matkul.kode][currentPlanSelected.value]
-												)?.jadwal[0].startMinute ?? 0) +
-													(matkul.kelas.find(
-														(v) => v.kelas === chosenClasses[matkul.kode][currentPlanSelected.value]
-													)?.jadwal[0].durasi ?? 0)
-											)})`) ||
-											'Pilih kelas...'}
-										<ChevronsUpDown class="ml-2 h-4 w-4 shrink-0 opacity-50" />
-									</Button>
-								</Popover.Trigger>
-								<Popover.Content class="w-auto p-0">
-									<Command.Root>
-										<Command.Input placeholder="Cari kelas..." />
-										<Command.Empty>Kelas tidak ditemukan.</Command.Empty>
-										<Command.Group>
-											{#each matkul.kelas as kelas}
-												<Command.Item
-													onSelect={(currentValue) => {
-														chosenClasses = {
-															...chosenClasses,
-															[matkul.kode]: [kelas.kelas]
-														};
-													}}
-												>
-													<Check
-														class={cn(
-															'mr-2 h-4 w-4',
-															!(
-																chosenClasses[matkul.kode] &&
-																chosenClasses[matkul.kode][currentPlanSelected.value] ===
-																	kelas.kelas
-															) && 'text-transparent'
-														)}
-													/>
-													{kelas.kelas} ({dowMap[kelas.jadwal[0].dayOfWeek]}, {timeToString(
-														kelas.jadwal[0].startHour,
-														kelas.jadwal[0].startMinute
-													)} - {timeToString(
-														kelas.jadwal[0].startHour,
-														kelas.jadwal[0].startMinute + kelas.jadwal[0].durasi
-													)}) <span class="ml-4 text-muted-foreground">0/75</span>
-												</Command.Item>
-											{/each}
-										</Command.Group>
-									</Command.Root>
-								</Popover.Content>
-							</Popover.Root>
-						</Card.Content>
-						<Card.Footer></Card.Footer>
-					</Card.Root>
+					<MatkulCard
+						{matkul}
+						{matkulColors}
+						bind:emphasizeMatkulKode
+						bind:chosenMatkul
+						bind:chosenClasses
+						bind:currentPlanSelected
+						{i}
+						onOpenChanged={onOpenChanged(matkul.kode)}
+						{onFocusedToChanged}
+					/>
 				{/each}
 			</div>
 		</Card.Content>
@@ -356,13 +299,40 @@
 		</div>
 		<div class="h-full w-full overflow-auto rounded-lg border-2">
 			<Schedule schedules={computedSchedule} let:schedule>
+				<!-- svelte-ignore a11y-no-static-element-interactions -->
+				<!-- svelte-ignore a11y-click-events-have-key-events -->
 				<div
 					class={clsx(
-						'h-full w-full rounded-lg px-1 py-0.5',
-						matkulColors[
-							chosenMatkul.findIndex((v) => v.kode === schedule.kode) % matkulColors.length
-						]
+						'z-10 h-full w-full overflow-hidden break-words rounded-lg px-1 py-0.5 transition-all',
+						schedule.currentlySelected
+							? matkulColors[
+									chosenMatkul.findIndex((v) => v.kode === schedule.kode) % matkulColors.length
+								]
+							: 'bg-slate-200',
+						emphasizeMatkulKode === schedule.kode && 'shadow-xl',
+						schedule.currentlySelected && openMatkulSelectionKode === schedule.kode && 'shadow-xl',
+						openMatkulSelectionKode === schedule.kode &&
+							'pointer-events-auto cursor-pointer border-2 border-slate-300'
 					)}
+					on:mouseenter={() => {
+						if (openMatkulSelectionKode === schedule.kode) {
+							openMatkulFocusedClass = schedule.kelas.toLowerCase();
+						}
+					}}
+					on:click={(e) => {
+						// BUG: This is not working as intended, the popover captures the click event and closes the popover
+						// while the click event should be captured by this.
+						// Doing a hacky workaround with dispatchEvent stuff on the popover side.
+						// Need to test on other browsers, probably?
+
+						if (openMatkulSelectionKode === schedule.kode) {
+							chosenClasses = {
+								...chosenClasses,
+								[schedule.kode]: [schedule.kelas]
+							};
+						}
+					}}
+					data-priority-click
 				>
 					<div class="text-xs leading-3 text-muted-foreground">
 						{timeToString(schedule.startHour, schedule.startMinute)} - {timeToString(
@@ -371,7 +341,7 @@
 						)}
 					</div>
 					<div class="font-semibold leading-5 max-xl:text-sm">
-						{properCase(schedule.nama)}
+						{lazyShortenMatkulName(properCase(schedule.nama))}
 					</div>
 					<div class="text-sm text-muted-foreground">
 						Kelas {schedule.kelas}
