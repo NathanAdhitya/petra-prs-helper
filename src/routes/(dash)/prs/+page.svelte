@@ -2,7 +2,7 @@
 	import { Button } from '$lib/components/ui/button';
 	import * as Card from '$lib/components/ui/card';
 	import * as Popover from '$lib/components/ui/popover';
-	import { Check, ChevronsUpDown, SlidersHorizontal } from 'lucide-svelte';
+	import { Check, ChevronsUpDown, CircleMinus, SlidersHorizontal } from 'lucide-svelte';
 
 	import * as Command from '$lib/components/ui/command/index.js';
 	import type { MataKuliah } from '$lib/mata-kuliah';
@@ -218,7 +218,20 @@
 				{#each chosenMatkul as matkul, i}
 					<Card.Root class={matkulColors[i]}>
 						<Card.Header class="pb-2">
-							<Card.Title class="text-wrap">{properCase(matkul.nama)}</Card.Title>
+							<div class="flex items-center justify-center">
+								<Card.Title class="text-wrap">
+									{properCase(matkul.nama)}
+								</Card.Title>
+								<button
+									class="ml-auto size-5 text-slate-500 transition-colors hover:text-slate-700"
+									on:click={() => {
+										chosenMatkul = chosenMatkul.filter((item) => item !== matkul);
+									}}
+								>
+									<CircleMinus class="h-full w-full transition-colors" />
+								</button>
+							</div>
+
 							<Card.Description>{matkul.kode} - {matkul.sks} SKS</Card.Description>
 						</Card.Header>
 						<Card.Content class="pb-2">
@@ -297,17 +310,7 @@
 								</Popover.Content>
 							</Popover.Root>
 						</Card.Content>
-						<Card.Footer>
-							<Button
-								class="ml-auto"
-								variant="outline"
-								on:click={() => {
-									chosenMatkul = chosenMatkul.filter((item) => item !== matkul);
-								}}
-							>
-								-
-							</Button>
-						</Card.Footer>
+						<Card.Footer></Card.Footer>
 					</Card.Root>
 				{/each}
 			</div>
