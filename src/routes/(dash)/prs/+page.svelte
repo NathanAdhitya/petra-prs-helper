@@ -435,7 +435,7 @@
 										[schedule.kode]: [
 											...(chosenClasses[schedule.kode] ?? []).slice(0, openMatkulPlanIdx ?? 0),
 											schedule.kelas[0],
-											...(chosenClasses[schedule.kode] ?? []).slice(openMatkulPlanIdx ?? 0 + 1)
+											...(chosenClasses[schedule.kode] ?? []).slice((openMatkulPlanIdx ?? 0) + 1)
 										]
 										// [schedule.kode]: [schedule.kelas[0]]
 									};
