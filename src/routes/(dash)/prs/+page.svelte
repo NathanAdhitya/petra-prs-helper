@@ -3,6 +3,7 @@
 	import * as Card from '$lib/components/ui/card';
 	import * as Popover from '$lib/components/ui/popover';
 	import { Check, ChevronDown, ChevronsUpDown, SlidersHorizontal } from 'lucide-svelte';
+	import * as Select from '$lib/components/ui/select';
 
 	import * as Command from '$lib/components/ui/command/index.js';
 	import type { MataKuliah } from '$lib/mata-kuliah';
@@ -447,7 +448,34 @@
 								{lazyShortenMatkulName(properCase(schedule.nama))}
 							</div>
 							<div class="text-sm leading-5 text-muted-foreground">
-								Kelas {schedule.kelas.join(', ')}
+								Kelas
+								{#if openMatkulSelectionKode === schedule.kode && schedule.kelas.length > 1}
+									{#each schedule.kelas as kelas, i}
+										<button
+											class="border-b border-dashed border-b-blue-600 leading-3"
+											on:click={(e) => {
+												chosenClasses = {
+													...chosenClasses,
+													[schedule.kode]: [
+														...(chosenClasses[schedule.kode] ?? []).slice(
+															0,
+															openMatkulPlanIdx ?? 0
+														),
+														kelas,
+														...(chosenClasses[schedule.kode] ?? []).slice(
+															(openMatkulPlanIdx ?? 0) + 1
+														)
+													]
+												};
+											}}
+											data-priority-click
+										>
+											{kelas}
+										</button>{(i < schedule.kelas.length - 1 && ', ') || ''}
+									{/each}
+								{:else}
+									{schedule.kelas.join(', ')}
+								{/if}
 							</div>
 							<div class="text-xs leading-3 text-muted-foreground">
 								{timeToString(schedule.startHour, schedule.startMinute)} - {timeToString(
@@ -459,10 +487,7 @@
 								{#if schedule.planIdx.every((v) => v === -1)}
 									Pilih
 								{:else}
-									Pilihan {schedule.planIdx
-										.sort()
-										.map((v) => v + 1)
-										.join(', ')}
+									Pilihan {schedule.planIdx.map((v) => v + 1).join(', ')}
 								{/if}
 							</div>
 						</div>

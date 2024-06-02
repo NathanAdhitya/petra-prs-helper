@@ -102,7 +102,7 @@
 						}}
 					>
 						{#if chosenClasses[matkul.kode] && chosenClasses[matkul.kode].includes(kelas.kelas) && chosenClasses[matkul.kode][planIdx] !== kelas.kelas}
-							<TriangleAlert class="mr-2 h-4 w-4 text-yellow-400" />
+							<TriangleAlert class="mr-2 h-4 w-4 text-yellow-500" />
 						{:else}
 							<Check
 								class={cn(
