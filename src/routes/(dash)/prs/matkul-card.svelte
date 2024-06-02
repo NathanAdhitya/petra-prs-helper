@@ -2,7 +2,7 @@
 	import { Button } from '$lib/components/ui/button';
 	import * as Card from '$lib/components/ui/card';
 	import * as Popover from '$lib/components/ui/popover';
-	import { Check, ChevronsUpDown, CircleMinus } from 'lucide-svelte';
+	import { Check, ChevronDown, CircleMinus } from 'lucide-svelte';
 
 	import * as Command from '$lib/components/ui/command/index.js';
 	import { dowMap, timeToString } from '$lib/mock-data';
@@ -29,6 +29,9 @@
 
 	$: onFocusedToChanged(open ? $state.value.split(' (')[0].toLowerCase() : null);
 	$: onOpenChanged(open);
+	$: maximumPlanCount = Math.min(3, matkul.kelas.length);
+
+	let planCount = 1;
 
 	$: {
 		// UX: If there is only one available class for the matkul, select it
@@ -56,7 +59,7 @@
 				{properCase(matkul.nama)}
 			</Card.Title>
 			<button
-				class="ml-auto size-5 text-slate-500 transition-colors hover:text-slate-700"
+				class="ml-auto size-5 shrink-0 text-slate-500 transition-colors hover:text-slate-700"
 				on:click={() => {
 					chosenMatkul = chosenMatkul.filter((item) => item !== matkul);
 				}}
@@ -99,7 +102,7 @@
 					builders={[builder]}
 					variant="outline"
 					role="combobox"
-					class="w-full justify-between"
+					class="w-full justify-between overflow-hidden"
 				>
 					{(chosenClasses[matkul.kode] &&
 						`${chosenClasses[matkul.kode][currentPlanSelected.value]} (${
@@ -109,7 +112,7 @@
 							(jadwal?.startMinute ?? 0) + (jadwal?.durasi ?? 0)
 						)})`) ||
 						'Pilih kelas...'}
-					<ChevronsUpDown class="ml-2 h-4 w-4 shrink-0 opacity-50" />
+					<ChevronDown class="ml-2 h-4 w-4 shrink-0 opacity-50" />
 				</Button>
 			</Popover.Trigger>
 			<Popover.Content class="w-auto p-0">
@@ -121,9 +124,10 @@
 							{@const jadwal = kelas.jadwal[0]}
 							<Command.Item
 								onSelect={(currentValue) => {
+									// replace first element of the array
 									chosenClasses = {
 										...chosenClasses,
-										[matkul.kode]: [kelas.kelas]
+										[matkul.kode]: [kelas.kelas, ...(chosenClasses[matkul.kode] ?? []).slice(1)]
 									};
 
 									open = false;
