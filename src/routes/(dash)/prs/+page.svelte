@@ -5,16 +5,13 @@
 	import { Check, ChevronsUpDown, SlidersHorizontal } from 'lucide-svelte';
 
 	import * as Command from '$lib/components/ui/command/index.js';
-	import { cn } from '$lib/utils.js';
-	import ScrollArea from '$lib/components/ui/scroll-area/scroll-area.svelte';
 	import type { MataKuliah } from '$lib/mata-kuliah';
-	import { onMount, tick } from 'svelte';
 	import { dowMap, timeToString } from '$lib/mock-data';
+	import { cn } from '$lib/utils.js';
+	import { onMount, tick } from 'svelte';
 
 	import * as Dialog from '$lib/components/ui/dialog';
-	import * as Select from '$lib/components/ui/select/index.js';
 	import clsx from 'clsx';
-	import { Trigger } from '$lib/components/ui/collapsible';
 	import Schedule from './schedule.svelte';
 	export let data;
 
@@ -355,80 +352,6 @@
 			</Dialog.Root>
 		</div>
 		<div class="h-full w-full overflow-auto rounded-lg border-2">
-			<!-- <table class="h-full w-full border-collapse overflow-auto rounded-lg bg-slate-50 p-4">
-				<thead>
-					<th class="sticky top-0 bg-slate-100 p-2"></th>
-					<th class="sticky top-0 bg-slate-100 p-2"></th>
-					{#each ['Senin', 'Selasa', 'Rabu', 'Kamis', 'Jumat', 'Sabtu'] as day}
-						<th class="sticky top-0 border bg-slate-100 p-2">{day}</th>
-					{/each}
-				</thead>
-				<tbody>
-					{#each Array.from({ length: (endingTimeHour - startingTimeHour) * 2 }, (_, i) => i) as hour}
-						<tr>
-							<td
-								class="h-6 w-0 -translate-y-1/2 bg-slate-100 px-4 py-1 pr-2 text-xs text-muted-foreground"
-							>
-								{hour % 2 === 0
-									? `${String(startingTimeHour + Math.floor(hour / 2)).padStart(2, '0')}:${String(
-											(hour % 2) * 30
-										).padStart(2, '0')}`
-									: ''}
-							</td>
-							<td class="w-2 border-y bg-slate-100"></td>
-							{#each [1, 2, 3, 4, 5, 6] as day}
-								<td class="relative border">
-									{#each chosenMatkul as matkul, i}
-										{#if chosenClasses[matkul.kode] && chosenClasses[matkul.kode][currentPlanSelected.value] && matkul.kelas.find((v) => v.kelas === chosenClasses[matkul.kode][currentPlanSelected.value])?.jadwal[0].dayOfWeek === day && matkul.kelas.find((v) => v.kelas === chosenClasses[matkul.kode][currentPlanSelected.value])?.jadwal[0].startHour === startingTimeHour + Math.floor(hour / 2) && matkul.kelas.find((v) => v.kelas === chosenClasses[matkul.kode][currentPlanSelected.value])?.jadwal[0].startMinute === (hour % 2) * 30}
-											<div
-												style={`height: calc(${((matkul.kelas.find((v) => v.kelas === chosenClasses[matkul.kode][currentPlanSelected.value])?.jadwal[0].durasi ?? 0) * 100) / 30}% + ${(matkul.kelas.find((v) => v.kelas === chosenClasses[matkul.kode][currentPlanSelected.value])?.jadwal[0].durasi ?? 0) / 30}px)`}
-												class={clsx(
-													`absolute right-0 top-0 w-full break-words rounded-lg p-2 shadow-sm`,
-													matkulColors[i]
-												)}
-											>
-												<div class="lading-3 text-xs text-muted-foreground">
-													{timeToString(
-														matkul.kelas.find(
-															(v) =>
-																v.kelas === chosenClasses[matkul.kode][currentPlanSelected.value]
-														)?.jadwal[0].startHour ?? 0,
-														matkul.kelas.find(
-															(v) =>
-																v.kelas === chosenClasses[matkul.kode][currentPlanSelected.value]
-														)?.jadwal[0].startMinute ?? 0
-													)} - {timeToString(
-														matkul.kelas.find(
-															(v) =>
-																v.kelas === chosenClasses[matkul.kode][currentPlanSelected.value]
-														)?.jadwal[0].startHour ?? 0,
-														(matkul.kelas.find(
-															(v) =>
-																v.kelas === chosenClasses[matkul.kode][currentPlanSelected.value]
-														)?.jadwal[0].startMinute ?? 0) +
-															(matkul.kelas.find(
-																(v) =>
-																	v.kelas === chosenClasses[matkul.kode][currentPlanSelected.value]
-															)?.jadwal[0].durasi ?? 0)
-													)}
-												</div>
-												<div class="font-semibold leading-5 max-xl:text-sm">
-													{properCase(matkul.nama)}
-												</div>
-												<div class="text-muted-foreground">
-													Kelas {matkul.kelas.find(
-														(v) => v.kelas === chosenClasses[matkul.kode][currentPlanSelected.value]
-													)?.kelas}
-												</div>
-											</div>
-										{/if}
-									{/each}
-								</td>
-							{/each}
-						</tr>
-					{/each}
-				</tbody>
-			</table> -->
 			<Schedule schedules={computedSchedule} let:schedule>
 				<div
 					class={clsx(
