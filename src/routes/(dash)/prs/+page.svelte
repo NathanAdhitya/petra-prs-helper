@@ -15,6 +15,7 @@
 	import * as Select from '$lib/components/ui/select/index.js';
 	import clsx from 'clsx';
 	import { Trigger } from '$lib/components/ui/collapsible';
+	import Schedule from './schedule.svelte';
 	export let data;
 
 	function properCase(str: string) {
@@ -91,6 +92,32 @@
 			document.getElementById(triggerId)?.focus();
 		});
 	}
+
+	// Quick TS Helper to tell TS that the value is not null or undefined
+	function notEmpty<TValue>(value: TValue | null | undefined): value is TValue {
+		return value !== null && value !== undefined;
+	}
+
+	$: computedSchedule = chosenMatkul
+		.map((matkul) => {
+			if (!(matkul.kode in chosenClasses)) return undefined;
+			if (!chosenClasses[matkul.kode][currentPlanSelected.value]) return undefined;
+			const matchedKelas = matkul.kelas.find(
+				(v) => v.kelas === chosenClasses[matkul.kode][currentPlanSelected.value]
+			);
+
+			if (matchedKelas) {
+				return {
+					dayOfWeek: matchedKelas.jadwal[0].dayOfWeek - 1,
+					startHour: matchedKelas.jadwal[0].startHour,
+					startMinute: matchedKelas.jadwal[0].startMinute,
+					lengthMinutes: matchedKelas.jadwal[0].durasi,
+					...matkul,
+					...matchedKelas
+				};
+			}
+		})
+		.filter(notEmpty);
 </script>
 
 <h1 class="text-4xl font-bold">Pendaftaran Rencana Studi</h1>
@@ -328,7 +355,7 @@
 			</Dialog.Root>
 		</div>
 		<div class="h-full w-full overflow-auto rounded-lg border-2">
-			<table class="h-full w-full border-collapse overflow-auto rounded-lg bg-slate-50 p-4">
+			<!-- <table class="h-full w-full border-collapse overflow-auto rounded-lg bg-slate-50 p-4">
 				<thead>
 					<th class="sticky top-0 bg-slate-100 p-2"></th>
 					<th class="sticky top-0 bg-slate-100 p-2"></th>
@@ -401,7 +428,30 @@
 						</tr>
 					{/each}
 				</tbody>
-			</table>
+			</table> -->
+			<Schedule schedules={computedSchedule} let:schedule>
+				<div
+					class={clsx(
+						'h-full w-full rounded-lg px-1 py-0.5',
+						matkulColors[
+							chosenMatkul.findIndex((v) => v.kode === schedule.kode) % matkulColors.length
+						]
+					)}
+				>
+					<div class="text-xs leading-3 text-muted-foreground">
+						{timeToString(schedule.startHour, schedule.startMinute)} - {timeToString(
+							schedule.startHour,
+							schedule.startMinute + schedule.lengthMinutes
+						)}
+					</div>
+					<div class="font-semibold leading-5 max-xl:text-sm">
+						{properCase(schedule.nama)}
+					</div>
+					<div class="text-sm text-muted-foreground">
+						Kelas {schedule.kelas}
+					</div>
+				</div>
+			</Schedule>
 		</div>
 	</div>
 </div>
