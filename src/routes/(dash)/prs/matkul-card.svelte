@@ -24,11 +24,6 @@
 	export let onOpenChanged: (open: boolean) => void = () => {};
 	export let onFocusedToChanged: (focusedTo: string | null) => void = () => {};
 
-	const state = createState();
-	let open = false;
-
-	$: onFocusedToChanged(open ? $state.value.split(' (')[0].toLowerCase() : null);
-	$: onOpenChanged(open);
 	$: maximumPlanCount = Math.min(3, matkul.kelas.length);
 
 	let planCount = 1;
@@ -86,7 +81,13 @@
 	<Card.Content class="flex flex-col gap-2 pb-2">
 		{#each Array.from({ length: planCount }) as _, planIdx}
 			<div class="flex gap-2">
-				<MatkulClassSelector {planIdx} bind:matkul bind:chosenClasses />
+				<MatkulClassSelector
+					{planIdx}
+					bind:matkul
+					bind:chosenClasses
+					{onFocusedToChanged}
+					{onOpenChanged}
+				/>
 				{#if planCount > 1}
 					<Button
 						variant="outline"

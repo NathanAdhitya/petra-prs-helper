@@ -18,7 +18,14 @@
 
 	export let planIdx: number;
 	export let matkul: MataKuliah;
+
 	export let chosenClasses: Record<string, string[]>;
+
+	export let onOpenChanged: (open: boolean) => void = () => {};
+	export let onFocusedToChanged: (focusedTo: string | null) => void = () => {};
+
+	$: onFocusedToChanged(open ? $state.value.split(' (')[0].toLowerCase() : null);
+	$: onOpenChanged(open);
 </script>
 
 <Popover.Root

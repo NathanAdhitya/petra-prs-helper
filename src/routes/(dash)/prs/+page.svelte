@@ -70,13 +70,6 @@
 	let chosenClasses: Record<string, string[]> = {};
 
 	let open = false;
-	let value = '';
-
-	let currentPlanSelected = {
-		label: 'Pilihan 1',
-		value: 0
-	};
-
 	let submitted = false;
 
 	function closeAndFocusTrigger(triggerId: string) {
@@ -120,20 +113,42 @@
 		.map((matkul) => {
 			if (openMatkulSelectionKode === matkul.kode) {
 				// If current matkul is open, show all classes
-				return matkul.kelas
-					.map((kelas) =>
-						kelas.jadwal.map((jadwal) => ({
-							dayOfWeek: jadwal.dayOfWeek - 1,
-							startHour: jadwal.startHour,
-							startMinute: jadwal.startMinute,
-							lengthMinutes: jadwal.durasi,
-							...matkul,
-							...kelas,
-							currentlySelected: openMatkulFocusedClass === kelas.kelas.toLowerCase(),
-							planIdx: chosenClasses[matkul.kode]?.indexOf(kelas.kelas) ?? -1
-						}))
-					)
-					.flat(1);
+				return (
+					matkul.kelas
+						.map((kelas) =>
+							kelas.jadwal.map((jadwal) => ({
+								dayOfWeek: jadwal.dayOfWeek - 1,
+								startHour: jadwal.startHour,
+								startMinute: jadwal.startMinute,
+								lengthMinutes: jadwal.durasi,
+								...matkul,
+								kelas: [kelas.kelas],
+								currentlySelected: openMatkulFocusedClass === kelas.kelas.toLowerCase(),
+								planIdx: [chosenClasses[matkul.kode]?.indexOf(kelas.kelas) ?? -1]
+							}))
+						)
+						// Merge schedules that has the same: dayOfWeek, startHour, startMinute, lengthMinute
+						// .reduce((acc, val) => {
+						// 	const existing = acc.find(
+						// 		(v) =>
+						// 			v.dayOfWeek === val[0].dayOfWeek &&
+						// 			v.startHour === val[0].startHour &&
+						// 			v.startMinute === val[0].startMinute &&
+						// 			v.lengthMinutes === val[0].lengthMinutes
+						// 	);
+
+						// 	// If the schedule already exists, then turn kelas into a string array, and planIdx into a number array
+						// 	if (existing) {
+						// 		existing.kelas = [...existing.kelas, val[0].kelas[0]];
+						// 		existing.planIdx = [...existing.planIdx, val[0].planIdx[0]];
+						// 	} else {
+						// 		acc.push(val[0]);
+						// 	}
+
+						// 	return acc;
+						// }, [])
+						.flat(1)
+				);
 			} else {
 				if (!(matkul.kode in chosenClasses)) return undefined;
 				return pilihanIndexes
@@ -152,9 +167,9 @@
 									startMinute: jadwal.startMinute,
 									lengthMinutes: jadwal.durasi,
 									...matkul,
-									...matchedKelas,
+									kelas: [matchedKelas.kelas],
 									currentlySelected: true,
-									planIdx: idx
+									planIdx: [idx]
 								}))
 								.flat(1);
 						}
@@ -164,6 +179,8 @@
 		})
 		.flat(1)
 		.filter(notEmpty);
+
+	$: console.log(computedSchedule);
 </script>
 
 <h1 class="text-4xl font-bold">Pendaftaran Rencana Studi</h1>
@@ -386,18 +403,18 @@
 									'shadow-xl',
 								openMatkulSelectionKode === schedule.kode &&
 									'pointer-events-auto cursor-pointer border-2 border-slate-300',
-								emphasizePilihan === schedule.planIdx + 1 && 'shadow-xl'
+								schedule.planIdx.some((v) => v === (emphasizePilihan ?? -1) - 1) && 'shadow-xl'
 							)}
 							on:mouseenter={() => {
 								if (openMatkulSelectionKode === schedule.kode) {
-									openMatkulFocusedClass = schedule.kelas.toLowerCase();
+									openMatkulFocusedClass = schedule.kelas[0].toLowerCase();
 								}
 							}}
 							on:click={(e) => {
 								if (openMatkulSelectionKode === schedule.kode) {
 									chosenClasses = {
 										...chosenClasses,
-										[schedule.kode]: [schedule.kelas]
+										[schedule.kode]: [schedule.kelas[0]]
 									};
 								}
 							}}
@@ -416,10 +433,10 @@
 								)}
 							</div>
 							<div class="ml-auto mt-auto text-xs">
-								{#if schedule.planIdx === -1}
+								{#if schedule.planIdx.every((v) => v === -1)}
 									Pilih
 								{:else}
-									Pilihan {schedule.planIdx + 1}
+									Pilihan {schedule.planIdx.map((v) => v + 1).join(', ')}
 								{/if}
 							</div>
 						</div>
