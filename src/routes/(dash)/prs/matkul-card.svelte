@@ -1,17 +1,11 @@
 <script lang="ts">
 	import { Button } from '$lib/components/ui/button';
 	import * as Card from '$lib/components/ui/card';
-	import * as Popover from '$lib/components/ui/popover';
-	import { Check, ChevronDown, CircleMinus, Trash } from 'lucide-svelte';
+	import { CircleMinus, Trash } from 'lucide-svelte';
 
-	import * as Command from '$lib/components/ui/command/index.js';
-	import { dowMap, timeToString } from '$lib/mock-data';
-	import { cn } from '$lib/utils.js';
-
-	import { properCase } from '$lib/mk-utils';
 	import type { MataKuliah } from '$lib/mata-kuliah';
-	import { createState } from 'cmdk-sv';
-	import { onDestroy, tick } from 'svelte';
+	import { properCase } from '$lib/mk-utils';
+	import { onDestroy } from 'svelte';
 	import MatkulClassSelector from './matkul-class-selector.svelte';
 
 	export let matkulColors: string[];
@@ -21,12 +15,12 @@
 	export let i: number;
 	export let chosenClasses: Record<string, string[]>;
 
-	export let onOpenChanged: (open: boolean) => void = () => {};
+	export let onOpenChanged: (open: boolean, planIdx: number) => void = () => {};
 	export let onFocusedToChanged: (focusedTo: string | null) => void = () => {};
 
 	$: maximumPlanCount = Math.min(3, matkul.kelas.length);
 
-	let planCount = 1;
+	$: planCount = 1;
 
 	$: {
 		// Make sure to cut the chosenClasses array to the maximum plan count
@@ -83,10 +77,12 @@
 			<div class="flex gap-2">
 				<MatkulClassSelector
 					{planIdx}
-					bind:matkul
+					{matkul}
 					bind:chosenClasses
 					{onFocusedToChanged}
-					{onOpenChanged}
+					onOpenChanged={(v) => {
+						onOpenChanged(v, planIdx);
+					}}
 				/>
 				{#if planCount > 1}
 					<Button

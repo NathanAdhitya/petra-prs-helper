@@ -1,14 +1,12 @@
 <script lang="ts">
 	import { Button } from '$lib/components/ui/button';
-	import * as Card from '$lib/components/ui/card';
 	import * as Popover from '$lib/components/ui/popover';
-	import { Ban, Check, ChevronDown, CircleMinus, TriangleAlert } from 'lucide-svelte';
+	import { Check, ChevronDown, TriangleAlert } from 'lucide-svelte';
 
 	import * as Command from '$lib/components/ui/command/index.js';
 	import { dowMap, timeToString } from '$lib/mock-data';
 	import { cn } from '$lib/utils.js';
 
-	import { properCase } from '$lib/mk-utils';
 	import type { MataKuliah } from '$lib/mata-kuliah';
 	import { createState } from 'cmdk-sv';
 	import { tick } from 'svelte';

@@ -86,6 +86,7 @@
 	let emphasizeMatkulKode: string | null = null;
 	let openMatkulSelectionKode: string | null = null;
 	let openMatkulFocusedClass: string | null = null;
+	let openMatkulPlanIdx: number | null = null;
 	let emphasizePilihan: number | null = null;
 
 	let pilihanValue = ['1', '2', '3'];
@@ -100,14 +101,46 @@
 	$: pilihanIndexes = pilihanValue.map((v) => parseInt(v) - 1);
 
 	const onOpenChanged = (kodeMatkul: string) => {
-		return (v: boolean) => {
+		return (v: boolean, planIdx: number) => {
 			openMatkulSelectionKode = v ? kodeMatkul : null;
+			openMatkulPlanIdx = v ? planIdx : null;
 		};
 	};
 
 	const onFocusedToChanged = (focusedTo: string | null) => {
 		openMatkulFocusedClass = focusedTo;
 	};
+
+	interface ComputedSchedule extends Omit<MataKuliah, 'kelas'> {
+		dayOfWeek: number;
+		startHour: number;
+		startMinute: number;
+		lengthMinutes: number;
+		kelas: string[];
+		currentlySelected: boolean;
+		planIdx: number[];
+	}
+
+	function mergeSimilarSchedules(acc: ComputedSchedule[], val: ComputedSchedule) {
+		const existing = acc.find(
+			(v) =>
+				v.dayOfWeek === val.dayOfWeek &&
+				v.startHour === val.startHour &&
+				v.startMinute === val.startMinute &&
+				v.lengthMinutes === val.lengthMinutes
+		);
+
+		// If the schedule already exists, then turn kelas into a string array, and planIdx into a number array
+		if (existing) {
+			existing.kelas = [...existing.kelas, ...val.kelas];
+			existing.planIdx = [...existing.planIdx, ...val.planIdx];
+			existing.currentlySelected ||= val.currentlySelected;
+		} else {
+			acc.push(val);
+		}
+
+		return acc;
+	}
 
 	$: computedSchedule = chosenMatkul
 		.map((matkul) => {
@@ -124,36 +157,20 @@
 								...matkul,
 								kelas: [kelas.kelas],
 								currentlySelected: openMatkulFocusedClass === kelas.kelas.toLowerCase(),
-								planIdx: [chosenClasses[matkul.kode]?.indexOf(kelas.kelas) ?? -1]
+								planIdx: chosenClasses[matkul.kode]
+									?.map((v, i) => (v === kelas.kelas ? i : null))
+									.filter(notEmpty) ?? [-1]
 							}))
 						)
-						// Merge schedules that has the same: dayOfWeek, startHour, startMinute, lengthMinute
-						// .reduce((acc, val) => {
-						// 	const existing = acc.find(
-						// 		(v) =>
-						// 			v.dayOfWeek === val[0].dayOfWeek &&
-						// 			v.startHour === val[0].startHour &&
-						// 			v.startMinute === val[0].startMinute &&
-						// 			v.lengthMinutes === val[0].lengthMinutes
-						// 	);
-
-						// 	// If the schedule already exists, then turn kelas into a string array, and planIdx into a number array
-						// 	if (existing) {
-						// 		existing.kelas = [...existing.kelas, val[0].kelas[0]];
-						// 		existing.planIdx = [...existing.planIdx, val[0].planIdx[0]];
-						// 	} else {
-						// 		acc.push(val[0]);
-						// 	}
-
-						// 	return acc;
-						// }, [])
 						.flat(1)
+						// Merge schedules that has the same: dayOfWeek, startHour, startMinute, lengthMinute
+						.reduce(mergeSimilarSchedules, [])
 				);
 			} else {
 				if (!(matkul.kode in chosenClasses)) return undefined;
 				return pilihanIndexes
 					.map((idx) => {
-						if (!chosenClasses[matkul.kode][idx]) return undefined;
+						if (!chosenClasses[matkul.kode][idx]) return [];
 
 						const matchedKelas = matkul.kelas.find(
 							(v) => v.kelas === chosenClasses[matkul.kode][idx]
@@ -173,14 +190,15 @@
 								}))
 								.flat(1);
 						}
+
+						return [];
 					})
-					.flat(1);
+					.flat(1) // Merge schedules that has the same: dayOfWeek, startHour, startMinute, lengthMinute
+					.reduce(mergeSimilarSchedules, []);
 			}
 		})
 		.flat(1)
 		.filter(notEmpty);
-
-	$: console.log(computedSchedule);
 </script>
 
 <h1 class="text-4xl font-bold">Pendaftaran Rencana Studi</h1>
@@ -294,7 +312,7 @@
 								diambil.
 							</div>
 						{:else}
-							{#each chosenMatkul as matkul, i}
+							{#each chosenMatkul as matkul, i (matkul)}
 								<MatkulCard
 									{matkul}
 									{matkulColors}
@@ -414,7 +432,12 @@
 								if (openMatkulSelectionKode === schedule.kode) {
 									chosenClasses = {
 										...chosenClasses,
-										[schedule.kode]: [schedule.kelas[0]]
+										[schedule.kode]: [
+											...(chosenClasses[schedule.kode] ?? []).slice(0, openMatkulPlanIdx ?? 0),
+											schedule.kelas[0],
+											...(chosenClasses[schedule.kode] ?? []).slice(openMatkulPlanIdx ?? 0 + 1)
+										]
+										// [schedule.kode]: [schedule.kelas[0]]
 									};
 								}
 							}}
@@ -424,7 +447,7 @@
 								{lazyShortenMatkulName(properCase(schedule.nama))}
 							</div>
 							<div class="text-sm leading-5 text-muted-foreground">
-								Kelas {schedule.kelas}
+								Kelas {schedule.kelas.join(', ')}
 							</div>
 							<div class="text-xs leading-3 text-muted-foreground">
 								{timeToString(schedule.startHour, schedule.startMinute)} - {timeToString(
@@ -436,7 +459,10 @@
 								{#if schedule.planIdx.every((v) => v === -1)}
 									Pilih
 								{:else}
-									Pilihan {schedule.planIdx.map((v) => v + 1).join(', ')}
+									Pilihan {schedule.planIdx
+										.sort()
+										.map((v) => v + 1)
+										.join(', ')}
 								{/if}
 							</div>
 						</div>
