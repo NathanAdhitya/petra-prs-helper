@@ -93,6 +93,7 @@
 	let emphasizeMatkulKode: string | null = null;
 	let openMatkulSelectionKode: string | null = null;
 	let openMatkulFocusedClass: string | null = null;
+	let emphasizePilihan: number | null = null;
 
 	let pilihanValue = ['1', '2', '3'];
 
@@ -159,26 +160,6 @@
 						}
 					})
 					.flat(1);
-				// if (!chosenClasses[matkul.kode][currentPlanSelected.value]) return undefined;
-
-				// const matchedKelas = matkul.kelas.find(
-				// 	(v) => v.kelas === chosenClasses[matkul.kode][currentPlanSelected.value]
-				// );
-
-				// if (matchedKelas) {
-				// 	return matchedKelas.jadwal
-				// 		.map((jadwal) => ({
-				// 			dayOfWeek: jadwal.dayOfWeek - 1,
-				// 			startHour: jadwal.startHour,
-				// 			startMinute: jadwal.startMinute,
-				// 			lengthMinutes: jadwal.durasi,
-				// 			...matkul,
-				// 			...matchedKelas,
-				// 			currentlySelected: true,
-				// 			planIdx: currentPlanSelected.value
-				// 		}))
-				// 		.flat(1);
-				// }
 			}
 		})
 		.flat(1)
@@ -290,19 +271,25 @@
 					<div
 						class="absolute left-0 top-0 flex h-full w-full flex-col gap-2 overflow-y-auto p-4 pt-0"
 					>
-						{#each chosenMatkul as matkul, i}
-							<MatkulCard
-								{matkul}
-								{matkulColors}
-								bind:emphasizeMatkulKode
-								bind:chosenMatkul
-								bind:chosenClasses
-								bind:currentPlanSelected
-								{i}
-								onOpenChanged={onOpenChanged(matkul.kode)}
-								{onFocusedToChanged}
-							/>
-						{/each}
+						{#if chosenMatkul.length === 0}
+							<div class="px-4 text-center text-muted-foreground">
+								Mata kuliah yang telah dipilih akan muncul di sini. Pilih mata kuliah yang ingin
+								diambil.
+							</div>
+						{:else}
+							{#each chosenMatkul as matkul, i}
+								<MatkulCard
+									{matkul}
+									{matkulColors}
+									bind:emphasizeMatkulKode
+									bind:chosenMatkul
+									bind:chosenClasses
+									{i}
+									onOpenChanged={onOpenChanged(matkul.kode)}
+									{onFocusedToChanged}
+								/>
+							{/each}
+						{/if}
 					</div>
 				</Card.Content>
 			</Card.Root>
@@ -314,13 +301,34 @@
 					<div class="flex items-center gap-4 rounded-lg">
 						<div class="text-lg font-medium">Pilihan</div>
 						<ToggleGroup.Root size="sm" type="multiple" bind:value={pilihanValue}>
+							<!-- svelte-ignore a11y-mouse-events-have-key-events -->
 							{#each [1, 2, 3] as i}
-								<ToggleGroup.Item
-									value={i.toString()}
-									class="data-[state=on]:bg-primary data-[state=on]:text-primary-foreground"
+								<!-- svelte-ignore a11y-no-static-element-interactions -->
+								<div
+									on:mouseover={() => {
+										emphasizePilihan = i;
+										// console.log(emphasizePilihan);
+									}}
+									on:focusin={() => {
+										emphasizePilihan = i;
+										// console.log(emphasizePilihan);
+									}}
+									on:focusout={() => {
+										emphasizePilihan = emphasizePilihan === i ? null : emphasizePilihan;
+										// console.log(emphasizePilihan);
+									}}
+									on:mouseleave={() => {
+										emphasizePilihan = emphasizePilihan === i ? null : emphasizePilihan;
+										// console.log(emphasizePilihan);
+									}}
 								>
-									{i}
-								</ToggleGroup.Item>
+									<ToggleGroup.Item
+										value={i.toString()}
+										class="data-[state=on]:bg-primary data-[state=on]:text-primary-foreground"
+									>
+										{i}
+									</ToggleGroup.Item>
+								</div>
 							{/each}
 						</ToggleGroup.Root>
 					</div>
@@ -377,7 +385,8 @@
 									openMatkulSelectionKode === schedule.kode &&
 									'shadow-xl',
 								openMatkulSelectionKode === schedule.kode &&
-									'pointer-events-auto cursor-pointer border-2 border-slate-300'
+									'pointer-events-auto cursor-pointer border-2 border-slate-300',
+								emphasizePilihan === schedule.planIdx + 1 && 'shadow-xl'
 							)}
 							on:mouseenter={() => {
 								if (openMatkulSelectionKode === schedule.kode) {
