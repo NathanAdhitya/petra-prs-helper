@@ -73,7 +73,7 @@
 		<Card.Description>{matkul.kode} - {matkul.sks} SKS</Card.Description>
 	</Card.Header>
 	<Card.Content class="flex flex-col gap-2 pb-2">
-		{#each Array.from({ length: planCount }) as _, planIdx (planIdx)}
+		{#each Array.from({ length: planCount }) as _, planIdx}
 			<div class="flex gap-2">
 				<MatkulClassSelector
 					{planIdx}
