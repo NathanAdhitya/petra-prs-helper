@@ -12,8 +12,6 @@
 <div
 	class={cn('rounded-lg border bg-card text-card-foreground shadow-sm', className)}
 	{...$$restProps}
-	on:mouseenter
-	on:mouseleave
 >
 	<slot />
 </div>

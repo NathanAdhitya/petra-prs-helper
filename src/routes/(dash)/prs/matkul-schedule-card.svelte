@@ -4,6 +4,7 @@
 	import { Button } from '$lib/components/ui/button';
 	import type { ComputedSchedule } from './+page.svelte';
 	import clsx from 'clsx';
+	import { ChosenClassesUtils, chosenMatkul } from '$lib/mk-state';
 
 	export let matkulColors: string[];
 	export let schedule: ComputedSchedule;
@@ -12,9 +13,6 @@
 	export let emphasizePilihan: number | null;
 	export let openMatkulPlanIdx: number | null;
 	export let openMatkulFocusedClass: string | null;
-	export let chosenMatkul: { kode: string; nama: string }[];
-
-	export let chosenClasses: Record<string, string[]>;
 
 	// Separated to easily use new bounding boxes to shorten text
 	// and to make the text more readable
@@ -32,7 +30,7 @@
 	class={clsx(
 		'z-10 flex h-full w-full flex-col overflow-hidden break-words rounded-lg p-2 transition-all',
 		schedule.currentlySelected
-			? matkulColors[chosenMatkul.findIndex((v) => v.kode === schedule.kode) % matkulColors.length]
+			? matkulColors[$chosenMatkul.findIndex((v) => v.kode === schedule.kode) % matkulColors.length]
 			: 'bg-slate-200',
 		emphasizeMatkulKode === schedule.kode && 'shadow-2xl',
 		schedule.currentlySelected && openMatkulSelectionKode === schedule.kode && 'shadow-2xl',
@@ -56,15 +54,7 @@
 	}}
 	on:click={(e) => {
 		if (openMatkulSelectionKode === schedule.kode) {
-			chosenClasses = {
-				...chosenClasses,
-				[schedule.kode]: [
-					...(chosenClasses[schedule.kode] ?? []).slice(0, openMatkulPlanIdx ?? 0),
-					schedule.kelas[0],
-					...(chosenClasses[schedule.kode] ?? []).slice((openMatkulPlanIdx ?? 0) + 1)
-				]
-				// [schedule.kode]: [schedule.kelas[0]]
-			};
+			ChosenClassesUtils.setPlan(schedule.kode, openMatkulPlanIdx ?? 0, schedule.kelas[0]);
 		}
 	}}
 	data-priority-click
@@ -75,20 +65,12 @@
 	</div>
 	<div class="text-sm leading-5 text-muted-foreground">
 		{#if openMatkulSelectionKode === schedule.kode && schedule.kelas.length > 1}
-			<!-- <span>Kelas</span> -->
 			{#each schedule.kelas as kelas, i}
 				<Button
 					class="mr-1 px-1 py-1 font-normal leading-3"
 					size="unstyled"
 					on:click={(e) => {
-						chosenClasses = {
-							...chosenClasses,
-							[schedule.kode]: [
-								...(chosenClasses[schedule.kode] ?? []).slice(0, openMatkulPlanIdx ?? 0),
-								kelas,
-								...(chosenClasses[schedule.kode] ?? []).slice((openMatkulPlanIdx ?? 0) + 1)
-							]
-						};
+						ChosenClassesUtils.setPlan(schedule.kode, openMatkulPlanIdx ?? 0, kelas);
 					}}
 					data-priority-click
 				>

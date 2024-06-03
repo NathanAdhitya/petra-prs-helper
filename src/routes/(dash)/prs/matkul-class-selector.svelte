@@ -5,19 +5,18 @@
 
 	import * as Command from '$lib/components/ui/command/index.js';
 	import { dowMap, timeToString } from '$lib/mock-data';
-	import { cn } from '$lib/utils.js';
+	import { cn, focusTriggerNextTick } from '$lib/utils.js';
 
 	import type { KelasMataKuliah, MataKuliah } from '$lib/mata-kuliah';
 	import { createState } from 'cmdk-sv';
 	import { tick } from 'svelte';
+	import { ChosenClassesUtils, chosenClasses } from '$lib/mk-state';
 
 	let open = false;
 	let state = createState();
 
 	export let planIdx: number;
 	export let matkul: MataKuliah;
-
-	export let chosenClasses: Record<string, string[]>;
 
 	export let onOpenChanged: (open: boolean) => void = () => {};
 	export let onFocusedToChanged: (focusedTo: string | null) => void = () => {};
@@ -28,11 +27,11 @@
 	function correctCurrentFocused(isOpen: boolean) {
 		if (isOpen) {
 			tick().then(() => {
-				const selected = chosenClasses[matkul.kode] && chosenClasses[matkul.kode][planIdx];
+				const selected = $chosenClasses[matkul.kode] && $chosenClasses[matkul.kode][planIdx];
 
 				if (selected) {
 					const findKelas = matkul.kelas.find(
-						(v) => v.kelas === chosenClasses[matkul.kode][planIdx]
+						(v) => v.kelas === $chosenClasses[matkul.kode][planIdx]
 					);
 					if (findKelas) $state.value = stringifyKelas(findKelas) ?? $state.value;
 				}
@@ -69,6 +68,7 @@
 
 			// Hacky fix to make sure the other card gets clicked before the popover closes.
 			tick().then(() => {
+				// focusTriggerNextTick(ids.trigger);
 				open = false;
 			});
 		}
@@ -76,15 +76,15 @@
 >
 	<Popover.Trigger asChild let:builder>
 		{@const currentKelas =
-			chosenClasses[matkul.kode] &&
-			matkul.kelas.find((v) => v.kelas === chosenClasses[matkul.kode][planIdx])}
+			$chosenClasses[matkul.kode] &&
+			matkul.kelas.find((v) => v.kelas === $chosenClasses[matkul.kode][planIdx])}
 		<Button
 			builders={[builder]}
 			variant="outline"
 			role="combobox"
 			class="w-full justify-between overflow-hidden"
 		>
-			{(currentKelas && chosenClasses[matkul.kode][planIdx] && stringifyKelas(currentKelas)) ||
+			{(currentKelas && $chosenClasses[matkul.kode][planIdx] && stringifyKelas(currentKelas)) ||
 				`Pilih kelas pilihan ${planIdx + 1}...`}
 			<ChevronDown class="ml-2 h-4 w-4 shrink-0 opacity-50" />
 		</Button>
@@ -98,27 +98,20 @@
 					<Command.Item
 						onSelect={(currentValue) => {
 							// modify the chosenClasses object for the correct planIdx
-							chosenClasses = {
-								...chosenClasses,
-								[matkul.kode]: [
-									...(chosenClasses[matkul.kode] ?? []).slice(0, planIdx),
-									kelas.kelas,
-									...(chosenClasses[matkul.kode] ?? []).slice(planIdx + 1)
-								]
-							};
+							ChosenClassesUtils.setPlan(matkul.kode, planIdx, kelas.kelas);
 							open = false;
 						}}
 						value={stringifyKelas(kelas)}
 					>
-						{#if chosenClasses[matkul.kode] && chosenClasses[matkul.kode].includes(kelas.kelas) && chosenClasses[matkul.kode][planIdx] !== kelas.kelas}
+						{#if $chosenClasses[matkul.kode] && $chosenClasses[matkul.kode].includes(kelas.kelas) && $chosenClasses[matkul.kode][planIdx] !== kelas.kelas}
 							<TriangleAlert class="mr-2 h-4 w-4 text-yellow-500" />
 						{:else}
 							<Check
 								class={cn(
 									'mr-2 h-4 w-4',
 									!(
-										chosenClasses[matkul.kode] &&
-										chosenClasses[matkul.kode][planIdx] === kelas.kelas
+										$chosenClasses[matkul.kode] &&
+										$chosenClasses[matkul.kode][planIdx] === kelas.kelas
 									) && 'text-transparent'
 								)}
 							/>

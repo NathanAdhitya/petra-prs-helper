@@ -14,25 +14,24 @@
 	import { Button } from '$lib/components/ui/button';
 	import * as Card from '$lib/components/ui/card';
 	import * as Popover from '$lib/components/ui/popover';
-	import { Check, ChevronDown, ChevronsUpDown, SlidersHorizontal } from 'lucide-svelte';
-	import * as Select from '$lib/components/ui/select';
+	import { Check, ChevronDown, SlidersHorizontal } from 'lucide-svelte';
 
 	import * as Command from '$lib/components/ui/command/index.js';
-	import type { MataKuliah } from '$lib/mata-kuliah';
-	import { timeToString } from '$lib/mock-data';
-	import { cn } from '$lib/utils.js';
-	import { onMount, tick } from 'svelte';
 	import * as ToggleGroup from '$lib/components/ui/toggle-group/index.js';
+	import type { MataKuliah } from '$lib/mata-kuliah';
+	import { focusTriggerNextTick, cn, notEmpty } from '$lib/utils.js';
+	import { onMount, tick } from 'svelte';
 
 	import * as Dialog from '$lib/components/ui/dialog';
-	import { lazyShortenMatkulName, properCase } from '$lib/mk-utils';
-	import clsx from 'clsx';
-	import Schedule from './schedule.svelte';
-	import MatkulCard from './matkul-card.svelte';
 	import * as Resizable from '$lib/components/ui/resizable';
-	import { slide } from 'svelte/transition';
+	import { properCase } from '$lib/mk-utils';
+	import clsx from 'clsx';
 	import { quartOut } from 'svelte/easing';
+	import { slide } from 'svelte/transition';
+	import MatkulCard from './matkul-card.svelte';
 	import MatkulScheduleCard from './matkul-schedule-card.svelte';
+	import Schedule from './schedule.svelte';
+	import { chosenClasses, chosenMatkul } from '$lib/mk-state';
 	export let data;
 
 	let matkulOptions = data.pilihanMataKuliah.map((item) => ({
@@ -80,24 +79,11 @@
 		'bg-teal-200',
 		'bg-lime-200'
 	];
-	let chosenMatkul: MataKuliah[] = [];
-	let validationDialogOpen = false;
 
-	let chosenClasses: Record<string, string[]> = {};
+	let validationDialogOpen = false;
 
 	let open = false;
 	let submitted = false;
-
-	function closeAndFocusTrigger(triggerId: string) {
-		tick().then(() => {
-			document.getElementById(triggerId)?.focus();
-		});
-	}
-
-	// Quick TS Helper to tell TS that the value is not null or undefined
-	function notEmpty<TValue>(value: TValue | null | undefined): value is TValue {
-		return value !== null && value !== undefined;
-	}
 
 	let emphasizeMatkulKode: string | null = null;
 	let openMatkulSelectionKode: string | null = null;
@@ -107,6 +93,7 @@
 
 	let pilihanValue = ['1', '2', '3'];
 
+	// Auto reset pilihanValue if all became unset
 	$: {
 		if (!pilihanValue || pilihanValue.length === 0) {
 			tick().then(() => {
@@ -118,10 +105,8 @@
 
 	const onOpenChanged = (kodeMatkul: string) => {
 		return (v: boolean, planIdx: number) => {
-			tick().then(() => {
-				openMatkulSelectionKode = v ? kodeMatkul : null;
-				openMatkulPlanIdx = v ? planIdx : null;
-			});
+			openMatkulSelectionKode = v ? kodeMatkul : null;
+			openMatkulPlanIdx = v ? planIdx : null;
 		};
 	};
 
@@ -150,7 +135,7 @@
 		return acc;
 	}
 
-	$: computedSchedule = chosenMatkul
+	$: computedSchedule = $chosenMatkul
 		.map((matkul) => {
 			if (openMatkulSelectionKode === matkul.kode) {
 				// If current matkul is open, show all classes
@@ -165,7 +150,7 @@
 								...matkul,
 								kelas: [kelas.kelas],
 								currentlySelected: openMatkulFocusedClass === kelas.kelas.toLowerCase(),
-								planIdx: chosenClasses[matkul.kode]
+								planIdx: $chosenClasses[matkul.kode]
 									?.map((v, i) => (v === kelas.kelas ? i : null))
 									.filter(notEmpty) ?? [-1]
 							}))
@@ -175,13 +160,13 @@
 						.reduce(mergeSimilarSchedules, [])
 				);
 			} else {
-				if (!(matkul.kode in chosenClasses)) return undefined;
+				if (!(matkul.kode in $chosenClasses)) return undefined;
 				return pilihanIndexes
 					.map((idx) => {
-						if (!chosenClasses[matkul.kode][idx]) return [];
+						if (!$chosenClasses[matkul.kode][idx]) return [];
 
 						const matchedKelas = matkul.kelas.find(
-							(v) => v.kelas === chosenClasses[matkul.kode][idx]
+							(v) => v.kelas === $chosenClasses[matkul.kode][idx]
 						);
 
 						if (matchedKelas) {
@@ -253,23 +238,25 @@
 											onSelect={() => {
 												if (!submitted) {
 													// either remove or add
-													if (chosenMatkul.includes(matkul.reference)) {
-														chosenMatkul = chosenMatkul.filter((item) => item !== matkul.reference);
+													if ($chosenMatkul.includes(matkul.reference)) {
+														$chosenMatkul = $chosenMatkul.filter(
+															(item) => item !== matkul.reference
+														);
 													} else {
 														if (
-															chosenMatkul.length < chosenMatkulLimit &&
-															chosenMatkul.reduce((acc, matkul) => acc + matkul.sks, 0) +
+															$chosenMatkul.length < chosenMatkulLimit &&
+															$chosenMatkul.reduce((acc, matkul) => acc + matkul.sks, 0) +
 																matkul.reference.sks <=
 																sksMatkulLimit
 														) {
-															chosenMatkul = [...chosenMatkul, matkul.reference];
+															$chosenMatkul = [...$chosenMatkul, matkul.reference];
 														}
 													}
 												}
 
 												if (!holdingShift) {
-													closeAndFocusTrigger(ids.trigger);
 													open = false;
+													focusTriggerNextTick(ids.trigger);
 												}
 											}}
 										>
@@ -283,7 +270,7 @@
 											<Check
 												class={cn(
 													'ml-auto mr-2 h-4 w-4',
-													!chosenMatkul.includes(matkul.reference) && 'text-transparent'
+													!$chosenMatkul.includes(matkul.reference) && 'text-transparent'
 												)}
 											/>
 										</Command.Item>
@@ -307,7 +294,7 @@
 										</p>
 									</div>
 									<div class="ml-auto text-sm text-muted-foreground">
-										{chosenMatkul.reduce((acc, matkul) => acc + matkul.sks, 0)} / {sksMatkulLimit} SKS
+										{$chosenMatkul.reduce((acc, matkul) => acc + matkul.sks, 0)} / {sksMatkulLimit} SKS
 										dipilih
 									</div>
 								</div>
@@ -317,20 +304,27 @@
 				</Card.Header>
 				<Card.Content class="relative h-full overflow-hidden">
 					<div class="absolute left-0 top-0 flex h-full w-full flex-col overflow-y-auto p-4 pt-0">
-						{#if chosenMatkul.length === 0}
+						{#if $chosenMatkul.length === 0}
 							<div class="px-4 text-center text-muted-foreground">
 								Mata kuliah yang telah dipilih akan muncul di sini. Pilih mata kuliah yang ingin
 								diambil.
 							</div>
 						{:else}
-							{#each chosenMatkul as matkul, i (matkul)}
-								<div in:slide={{ easing: quartOut }} class="mb-2">
+							{#each $chosenMatkul as matkul, i (matkul)}
+								<!-- svelte-ignore a11y-no-static-element-interactions -->
+								<div
+									class="mb-2"
+									in:slide={{ easing: quartOut }}
+									on:mouseenter={() => {
+										emphasizeMatkulKode = matkul.kode;
+									}}
+									on:mouseleave={() => {
+										if (emphasizeMatkulKode === matkul.kode) emphasizeMatkulKode = null;
+									}}
+								>
 									<MatkulCard
 										{matkul}
 										{matkulColors}
-										bind:emphasizeMatkulKode
-										bind:chosenMatkul
-										bind:chosenClasses
 										{i}
 										onOpenChanged={onOpenChanged(matkul.kode)}
 										{onFocusedToChanged}
@@ -355,19 +349,15 @@
 								<div
 									on:mouseover={() => {
 										emphasizePilihan = i;
-										// console.log(emphasizePilihan);
 									}}
 									on:focusin={() => {
 										emphasizePilihan = i;
-										// console.log(emphasizePilihan);
 									}}
 									on:focusout={() => {
 										emphasizePilihan = emphasizePilihan === i ? null : emphasizePilihan;
-										// console.log(emphasizePilihan);
 									}}
 									on:mouseleave={() => {
 										emphasizePilihan = emphasizePilihan === i ? null : emphasizePilihan;
-										// console.log(emphasizePilihan);
 									}}
 								>
 									<ToggleGroup.Item
@@ -381,7 +371,7 @@
 						</ToggleGroup.Root>
 					</div>
 					<div class="ml-auto">
-						Total SKS: {chosenMatkul.reduce((acc, matkul) => acc + matkul.sks, 0)} / {sksMatkulLimit}
+						Total SKS: {$chosenMatkul.reduce((acc, matkul) => acc + matkul.sks, 0)} / {sksMatkulLimit}
 					</div>
 					<div>Status: {submitted ? 'Menunggu validasi' : 'Menunggu dikirim'}</div>
 					<Dialog.Root bind:open={validationDialogOpen}>
@@ -424,8 +414,6 @@
 							{openMatkulSelectionKode}
 							bind:openMatkulFocusedClass
 							{openMatkulPlanIdx}
-							bind:chosenClasses
-							{chosenMatkul}
 							{emphasizeMatkulKode}
 							{emphasizePilihan}
 						/>

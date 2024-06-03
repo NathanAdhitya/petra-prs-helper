@@ -10,56 +10,34 @@
 	import { quartOut } from 'svelte/easing';
 	import { slide } from 'svelte/transition';
 	import MatkulClassSelector from './matkul-class-selector.svelte';
+	import { ChosenClassesUtils, chosenMatkul } from '$lib/mk-state';
 
 	export let matkulColors: string[];
-	export let emphasizeMatkulKode: string | null;
 	export let matkul: MataKuliah;
-	export let chosenMatkul: MataKuliah[];
 	export let i: number;
-	export let chosenClasses: Record<string, string[]>;
 
 	export let onOpenChanged: (open: boolean, planIdx: number) => void = () => {};
 	export let onFocusedToChanged: (focusedTo: string | null) => void = () => {};
 
-	$: maximumPlanCount = Math.min(3, matkul.kelas.length);
-
 	$: planCount = 1;
+	$: maximumPlanCount = Math.min(3, matkul.kelas.length);
 
 	$: {
 		// Make sure to cut the chosenClasses array to the maximum plan count
-		if (chosenClasses[matkul.kode])
-			chosenClasses[matkul.kode].length = Math.min(
-				chosenClasses[matkul.kode].length,
-				maximumPlanCount
-			);
+		ChosenClassesUtils.trimPlans(matkul.kode, maximumPlanCount);
 	}
-
-	// onDestroy(() => {
-	// 	delete chosenClasses[matkul.kode];
-	// });
 
 	onMount(() => {
 		// UX: If there is only one available class for the matkul, select it
 		if (matkul.kelas.length === 1) {
 			tick().then(() => {
-				chosenClasses = {
-					...chosenClasses,
-					[matkul.kode]: [matkul.kelas[0].kelas]
-				};
+				ChosenClassesUtils.setPlan(matkul.kode, 0, matkul.kelas[0].kelas);
 			});
 		}
 	});
 </script>
 
-<Card.Root
-	class={clsx(matkulColors[i], 'transition-all')}
-	on:mouseenter={() => {
-		emphasizeMatkulKode = matkul.kode;
-	}}
-	on:mouseleave={() => {
-		if (emphasizeMatkulKode === matkul.kode) emphasizeMatkulKode = null;
-	}}
->
+<Card.Root class={clsx(matkulColors[i], 'transition-all')}>
 	<Card.Header class="pb-2">
 		<div class="flex items-center justify-center gap-4">
 			<Card.Title class="text-wrap">
@@ -68,7 +46,7 @@
 			<button
 				class="ml-auto size-5 shrink-0 text-slate-500 transition-colors hover:text-slate-700"
 				on:click={() => {
-					chosenMatkul = chosenMatkul.filter((item) => item !== matkul);
+					$chosenMatkul = $chosenMatkul.filter((item) => item !== matkul);
 				}}
 			>
 				<CircleMinus class="h-full w-full transition-colors" />
@@ -83,11 +61,8 @@
 				<MatkulClassSelector
 					{planIdx}
 					{matkul}
-					bind:chosenClasses
 					{onFocusedToChanged}
-					onOpenChanged={(v) => {
-						onOpenChanged(v, planIdx);
-					}}
+					onOpenChanged={(v) => onOpenChanged(v, planIdx)}
 				/>
 				{#if planCount > 1}
 					<div transition:slide={{ easing: quartOut, axis: 'x' }} class="pl-2">
@@ -96,10 +71,7 @@
 							size="icon"
 							on:click={() => {
 								// Slice at planIdx to remove the selected plan, then reduce the plan count
-								chosenClasses[matkul.kode] = [
-									...(chosenClasses[matkul.kode] ?? []).slice(0, planIdx),
-									...(chosenClasses[matkul.kode] ?? []).slice(planIdx + 1)
-								];
+								ChosenClassesUtils.removePlan(matkul.kode, planIdx);
 								planCount--;
 							}}
 						>
