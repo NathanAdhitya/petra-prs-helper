@@ -427,7 +427,18 @@
 									'shadow-2xl',
 								openMatkulSelectionKode === schedule.kode &&
 									'pointer-events-auto cursor-pointer border-2 border-slate-300',
-								schedule.planIdx.some((v) => v === (emphasizePilihan ?? -1) - 1) && 'shadow-2xl'
+
+								// Deemphasize when not selected
+								openMatkulSelectionKode !== null &&
+									openMatkulSelectionKode !== schedule.kode &&
+									'opacity-50',
+
+								// Emphasize when plan pilihan is hovered on
+								schedule.planIdx.some((v) => v === (emphasizePilihan ?? -1) - 1) && 'shadow-2xl',
+								// Deemphasize if not selected
+								emphasizePilihan !== null &&
+									!schedule.planIdx.some((v) => v === (emphasizePilihan ?? -1) - 1) &&
+									'opacity-50'
 							)}
 							on:mouseenter={() => {
 								if (openMatkulSelectionKode === schedule.kode) {
