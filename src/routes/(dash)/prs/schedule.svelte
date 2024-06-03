@@ -141,7 +141,7 @@
 	<tbody>
 		{#each Array.from({ length: (endingTimeHour - startingTimeHour) * 2 }, (_, i) => i) as stepTime}
 			<tr>
-				<td class="h-6 w-0 bg-slate-100 px-4 py-0.5 pr-2 text-xs text-muted-foreground">
+				<td class="h-5 w-0 bg-slate-100 px-4 py-0.5 pr-2 text-xs text-muted-foreground 2xl:h-6">
 					<div class="h-full w-full -translate-y-1/2">
 						{stepTime % 2 === 0 ? `${timeToString(startingTimeHour + stepTime / 2, 0)}` : ''}
 					</div>

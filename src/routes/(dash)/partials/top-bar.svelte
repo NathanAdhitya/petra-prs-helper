@@ -39,11 +39,12 @@
 >
 	<Sheet.Root>
 		<Sheet.Trigger asChild let:builder>
-			<Button variant="outline" size="icon" class="shrink-0 lg:hidden" builders={[builder]}>
+			<Button variant="outline" size="icon" class="shrink-0 2xl:hidden" builders={[builder]}>
 				<Menu class="h-5 w-5" />
 				<span class="sr-only">Toggle navigation menu</span>
 			</Button>
 		</Sheet.Trigger>
+
 		<Sheet.Content side="left" class="flex max-w-[100vw] flex-col bg-slate-700 p-0 text-white">
 			<ScrollArea class="flex-1 p-4">
 				<nav class="grid gap-2 text-lg font-medium">
@@ -123,6 +124,14 @@
 			</ScrollArea>
 		</Sheet.Content>
 	</Sheet.Root>
+	<a href="/berita" class="block h-full 2xl:hidden">
+		<img
+			src={pcuBlueLogo}
+			alt="PCU Logo"
+			class="max-w-auto mb-2 h-auto max-h-full w-auto rounded-lg bg-slate-50 pt-1"
+		/>
+		<span class="sr-only">SIM Petra</span>
+	</a>
 	<div class="w-full flex-1">
 		<!-- <form>
 			<div class="relative">

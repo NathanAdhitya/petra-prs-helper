@@ -5,7 +5,7 @@
 
 	import type { MataKuliah } from '$lib/mata-kuliah';
 	import { properCase } from '$lib/mk-utils';
-	import { onDestroy } from 'svelte';
+	import { onDestroy, tick, onMount } from 'svelte';
 	import MatkulClassSelector from './matkul-class-selector.svelte';
 
 	export let matkulColors: string[];
@@ -35,15 +35,17 @@
 		delete chosenClasses[matkul.kode];
 	});
 
-	$: {
+	onMount(() => {
 		// UX: If there is only one available class for the matkul, select it
 		if (matkul.kelas.length === 1) {
-			chosenClasses = {
-				...chosenClasses,
-				[matkul.kode]: [matkul.kelas[0].kelas]
-			};
+			tick().then(() => {
+				chosenClasses = {
+					...chosenClasses,
+					[matkul.kode]: [matkul.kelas[0].kelas]
+				};
+			});
 		}
-	}
+	});
 </script>
 
 <Card.Root

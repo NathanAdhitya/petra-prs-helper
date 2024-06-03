@@ -54,16 +54,16 @@
 	const chosenMatkulLimit = 10;
 	const sksMatkulLimit = 24;
 	const matkulColors = [
-		'bg-blue-100',
-		'bg-green-100',
-		'bg-yellow-100',
-		'bg-red-100',
-		'bg-purple-100',
-		'bg-pink-100',
-		'bg-indigo-100',
-		'bg-cyan-100',
-		'bg-teal-100',
-		'bg-lime-100'
+		'bg-blue-200',
+		'bg-green-200',
+		'bg-yellow-200',
+		'bg-red-200',
+		'bg-purple-200',
+		'bg-pink-200',
+		'bg-indigo-200',
+		'bg-cyan-200',
+		'bg-teal-200',
+		'bg-lime-200'
 	];
 	let chosenMatkul: MataKuliah[] = [];
 	let validationDialogOpen = false;
@@ -205,7 +205,7 @@
 <h1 class="text-4xl font-bold">Pendaftaran Rencana Studi</h1>
 <div class="flex h-full w-full gap-4">
 	<Resizable.PaneGroup direction="horizontal" class="gap-2">
-		<Resizable.Pane minSize={10} defaultSize={20}>
+		<Resizable.Pane minSize={20} defaultSize={30}>
 			<Card.Root class="flex h-full flex-col">
 				<Card.Header>
 					<Popover.Root bind:open let:ids>
@@ -285,13 +285,13 @@
 								<div class="flex items-center justify-center px-4 py-2">
 									<div>
 										<p class="text-sm text-muted-foreground">
-											Hold
+											Tahan
 											<kbd
 												class="pointer-events-none inline-flex h-5 select-none items-center gap-1 rounded border bg-muted px-1.5 font-mono text-[10px] font-medium text-muted-foreground opacity-100"
 											>
 												<span class="text-xs">Shift</span>
 											</kbd>
-											to select more
+											untuk memilih massal
 										</p>
 									</div>
 									<div class="ml-auto text-sm text-muted-foreground">
@@ -335,7 +335,7 @@
 			<div class="flex h-full w-full flex-1 flex-col gap-4">
 				<div class="flex items-center gap-4 rounded-lg border-2 bg-slate-50 p-2 px-4">
 					<div class="flex items-center gap-4 rounded-lg">
-						<div class="text-lg font-medium">Pilihan</div>
+						<div class="text-lg font-medium">Tampilkan Pilihan</div>
 						<ToggleGroup.Root size="sm" type="multiple" bind:value={pilihanValue}>
 							<!-- svelte-ignore a11y-mouse-events-have-key-events -->
 							{#each [1, 2, 3] as i}
@@ -360,7 +360,7 @@
 								>
 									<ToggleGroup.Item
 										value={i.toString()}
-										class="data-[state=on]:bg-primary data-[state=on]:text-primary-foreground"
+										class="data-[state=on]:bg-primary data-[state=on]:text-primary-foreground data-[state=on]:hover:bg-primary/90 data-[state=on]:hover:shadow-2xl"
 									>
 										{i}
 									</ToggleGroup.Item>
@@ -416,13 +416,13 @@
 											chosenMatkul.findIndex((v) => v.kode === schedule.kode) % matkulColors.length
 										]
 									: 'bg-slate-200',
-								emphasizeMatkulKode === schedule.kode && 'shadow-xl',
+								emphasizeMatkulKode === schedule.kode && 'shadow-2xl',
 								schedule.currentlySelected &&
 									openMatkulSelectionKode === schedule.kode &&
-									'shadow-xl',
+									'shadow-2xl',
 								openMatkulSelectionKode === schedule.kode &&
 									'pointer-events-auto cursor-pointer border-2 border-slate-300',
-								schedule.planIdx.some((v) => v === (emphasizePilihan ?? -1) - 1) && 'shadow-xl'
+								schedule.planIdx.some((v) => v === (emphasizePilihan ?? -1) - 1) && 'shadow-2xl'
 							)}
 							on:mouseenter={() => {
 								if (openMatkulSelectionKode === schedule.kode) {
@@ -451,8 +451,9 @@
 								Kelas
 								{#if openMatkulSelectionKode === schedule.kode && schedule.kelas.length > 1}
 									{#each schedule.kelas as kelas, i}
-										<button
-											class="border-b border-dashed border-b-blue-600 leading-3"
+										<Button
+											class="px-1 py-1 font-normal leading-3"
+											size="unstyled"
 											on:click={(e) => {
 												chosenClasses = {
 													...chosenClasses,
@@ -471,13 +472,13 @@
 											data-priority-click
 										>
 											{kelas}
-										</button>{(i < schedule.kelas.length - 1 && ', ') || ''}
+										</Button>{(i < schedule.kelas.length - 1 && ', ') || ''}
 									{/each}
 								{:else}
 									{schedule.kelas.join(', ')}
 								{/if}
 							</div>
-							<div class="text-xs leading-3 text-muted-foreground">
+							<div class="text-xs leading-3 text-muted-foreground max-xl:hidden">
 								{timeToString(schedule.startHour, schedule.startMinute)} - {timeToString(
 									schedule.startHour,
 									schedule.startMinute + schedule.lengthMinutes
@@ -485,7 +486,7 @@
 							</div>
 							<div class="ml-auto mt-auto text-xs">
 								{#if schedule.planIdx.every((v) => v === -1)}
-									Pilih
+									<Button size="unstyled" class="px-2 py-0.5">Pilih</Button>
 								{:else}
 									Pilihan {schedule.planIdx.map((v) => v + 1).join(', ')}
 								{/if}

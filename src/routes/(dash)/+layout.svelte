@@ -18,7 +18,7 @@
 	type NavigationComponent = NavigationMenu | NavigationSeparator | NavigationComponent[];
 </script>
 
-<div class="grid min-h-screen w-full xl:grid-cols-[280px_1fr]">
+<div class="grid min-h-screen w-full 2xl:grid-cols-[280px_1fr]">
 	<MdSidebar />
 	<div class="flex flex-col">
 		<TopBar />
