@@ -18,6 +18,8 @@
 	import Schedule from './schedule.svelte';
 	import MatkulCard from './matkul-card.svelte';
 	import * as Resizable from '$lib/components/ui/resizable';
+	import { slide } from 'svelte/transition';
+	import { quartOut } from 'svelte/easing';
 	export let data;
 
 	let matkulOptions = data.pilihanMataKuliah.map((item) => ({
@@ -309,9 +311,7 @@
 					</Popover.Root>
 				</Card.Header>
 				<Card.Content class="relative h-full overflow-hidden">
-					<div
-						class="absolute left-0 top-0 flex h-full w-full flex-col gap-2 overflow-y-auto p-4 pt-0"
-					>
+					<div class="absolute left-0 top-0 flex h-full w-full flex-col overflow-y-auto p-4 pt-0">
 						{#if chosenMatkul.length === 0}
 							<div class="px-4 text-center text-muted-foreground">
 								Mata kuliah yang telah dipilih akan muncul di sini. Pilih mata kuliah yang ingin
@@ -319,16 +319,18 @@
 							</div>
 						{:else}
 							{#each chosenMatkul as matkul, i (matkul)}
-								<MatkulCard
-									{matkul}
-									{matkulColors}
-									bind:emphasizeMatkulKode
-									bind:chosenMatkul
-									bind:chosenClasses
-									{i}
-									onOpenChanged={onOpenChanged(matkul.kode)}
-									{onFocusedToChanged}
-								/>
+								<div in:slide={{ easing: quartOut }} class="mb-2">
+									<MatkulCard
+										{matkul}
+										{matkulColors}
+										bind:emphasizeMatkulKode
+										bind:chosenMatkul
+										bind:chosenClasses
+										{i}
+										onOpenChanged={onOpenChanged(matkul.kode)}
+										{onFocusedToChanged}
+									/>
+								</div>
 							{/each}
 						{/if}
 					</div>

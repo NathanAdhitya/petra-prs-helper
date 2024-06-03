@@ -29,9 +29,12 @@
 		if (isOpen) {
 			tick().then(() => {
 				const selected = chosenClasses[matkul.kode] && chosenClasses[matkul.kode][planIdx];
-				const findKelas = matkul.kelas.find((v) => v.kelas === chosenClasses[matkul.kode][planIdx]);
-				if (selected && findKelas) {
-					$state.value = stringifyKelas(findKelas) ?? $state.value;
+
+				if (selected) {
+					const findKelas = matkul.kelas.find(
+						(v) => v.kelas === chosenClasses[matkul.kode][planIdx]
+					);
+					if (findKelas) $state.value = stringifyKelas(findKelas) ?? $state.value;
 				}
 			});
 		}

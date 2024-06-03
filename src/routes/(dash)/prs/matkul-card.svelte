@@ -7,6 +7,9 @@
 	import { properCase } from '$lib/mk-utils';
 	import { onDestroy, tick, onMount } from 'svelte';
 	import MatkulClassSelector from './matkul-class-selector.svelte';
+	import clsx from 'clsx';
+	import { scale, slide } from 'svelte/transition';
+	import { quartIn, quartOut, quintIn, quintInOut, quintOut } from 'svelte/easing';
 
 	export let matkulColors: string[];
 	export let emphasizeMatkulKode: string | null;
@@ -31,9 +34,9 @@
 			);
 	}
 
-	onDestroy(() => {
-		delete chosenClasses[matkul.kode];
-	});
+	// onDestroy(() => {
+	// 	delete chosenClasses[matkul.kode];
+	// });
 
 	onMount(() => {
 		// UX: If there is only one available class for the matkul, select it
@@ -49,7 +52,7 @@
 </script>
 
 <Card.Root
-	class={matkulColors[i]}
+	class={clsx(matkulColors[i], 'transition-all')}
 	on:mouseenter={() => {
 		emphasizeMatkulKode = matkul.kode;
 	}}
@@ -74,9 +77,9 @@
 
 		<Card.Description>{matkul.kode} - {matkul.sks} SKS</Card.Description>
 	</Card.Header>
-	<Card.Content class="flex flex-col gap-2 pb-2">
+	<Card.Content class="flex flex-col pb-0">
 		{#each Array.from({ length: planCount }) as _, planIdx}
-			<div class="flex gap-2">
+			<div class="mb-2 flex" transition:slide={{ easing: quartOut }}>
 				<MatkulClassSelector
 					{planIdx}
 					{matkul}
@@ -87,30 +90,36 @@
 					}}
 				/>
 				{#if planCount > 1}
-					<Button
-						variant="outline"
-						size="icon"
-						on:click={() => {
-							// Slice at planIdx to remove the selected plan, then reduce the plan count
-							chosenClasses[matkul.kode] = [
-								...(chosenClasses[matkul.kode] ?? []).slice(0, planIdx),
-								...(chosenClasses[matkul.kode] ?? []).slice(planIdx + 1)
-							];
-							planCount--;
-						}}
-					>
-						<Trash class="h-4 w-4" />
-					</Button>
+					<div transition:slide={{ easing: quartOut, axis: 'x' }} class="pl-2">
+						<Button
+							variant="outline"
+							size="icon"
+							on:click={() => {
+								// Slice at planIdx to remove the selected plan, then reduce the plan count
+								chosenClasses[matkul.kode] = [
+									...(chosenClasses[matkul.kode] ?? []).slice(0, planIdx),
+									...(chosenClasses[matkul.kode] ?? []).slice(planIdx + 1)
+								];
+								planCount--;
+							}}
+						>
+							<Trash class="h-4 w-4" />
+						</Button>
+					</div>
 				{/if}
 			</div>
 		{/each}
 		{#if planCount < maximumPlanCount}
-			<Button
-				size="sm"
-				on:click={() => {
-					if (planCount < maximumPlanCount) planCount++;
-				}}>Tambah Pilihan</Button
-			>
+			<div class="flex w-full flex-col" transition:slide={{ easing: quartOut }}>
+				<Button
+					size="sm"
+					on:click={() => {
+						if (planCount < maximumPlanCount) planCount++;
+					}}
+				>
+					Tambah Pilihan
+				</Button>
+			</div>
 		{/if}
 	</Card.Content>
 	<Card.Footer></Card.Footer>
