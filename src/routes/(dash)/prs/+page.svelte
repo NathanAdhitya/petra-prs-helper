@@ -229,7 +229,7 @@
 										<Popover.Root>
 											<Popover.Trigger asChild let:builder>
 												<Button builders={[builder]} variant="outline" size="icon">
-													<SlidersHorizontal class="h-4 w-4" />
+													<SlidersHorizontal class="h-5 w-5" />
 												</Button>
 											</Popover.Trigger>
 											<Popover.Content strategy="fixed" side="right-start" sideOffset={4}>
@@ -287,7 +287,12 @@
 										<p class="text-sm text-muted-foreground">
 											Tahan
 											<kbd
-												class="pointer-events-none inline-flex h-5 select-none items-center gap-1 rounded border bg-muted px-1.5 font-mono text-[10px] font-medium text-muted-foreground opacity-100"
+												class={clsx(
+													'pointer-events-none inline-flex h-5 select-none items-center gap-1 rounded border bg-muted px-1.5 font-mono text-[10px] font-medium opacity-100 transition-colors',
+													holdingShift
+														? 'bg-primary text-primary-foreground'
+														: 'bg-muted text-muted-foreground'
+												)}
 											>
 												<span class="text-xs">Shift</span>
 											</kbd>
