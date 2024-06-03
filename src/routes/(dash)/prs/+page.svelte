@@ -205,7 +205,7 @@
 <h1 class="text-4xl font-bold">Pendaftaran Rencana Studi</h1>
 <div class="flex h-full w-full gap-4">
 	<Resizable.PaneGroup direction="horizontal" class="gap-2">
-		<Resizable.Pane minSize={20} defaultSize={30}>
+		<Resizable.Pane minSize={20} defaultSize={20}>
 			<Card.Root class="flex h-full flex-col">
 				<Card.Header>
 					<Popover.Root bind:open let:ids>

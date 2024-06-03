@@ -7,7 +7,7 @@
 	import { dowMap, timeToString } from '$lib/mock-data';
 	import { cn } from '$lib/utils.js';
 
-	import type { MataKuliah } from '$lib/mata-kuliah';
+	import type { KelasMataKuliah, MataKuliah } from '$lib/mata-kuliah';
 	import { createState } from 'cmdk-sv';
 	import { tick } from 'svelte';
 
@@ -24,6 +24,30 @@
 
 	$: onFocusedToChanged(open ? $state.value.split(' (')[0].toLowerCase() : null);
 	$: onOpenChanged(open);
+
+	function correctCurrentFocused(isOpen: boolean) {
+		if (isOpen) {
+			tick().then(() => {
+				const selected = chosenClasses[matkul.kode] && chosenClasses[matkul.kode][planIdx];
+				const findKelas = matkul.kelas.find((v) => v.kelas === chosenClasses[matkul.kode][planIdx]);
+				if (selected && findKelas) {
+					$state.value = stringifyKelas(findKelas) ?? $state.value;
+				}
+			});
+		}
+	}
+
+	// When the popover is opened, make sure the selected state is in sync with the chosenClasses
+	$: correctCurrentFocused(open);
+
+	function stringifyKelas(kelas: KelasMataKuliah) {
+		const jadwal = kelas.jadwal[0];
+
+		return `${kelas.kelas} (${dowMap[jadwal.dayOfWeek]}, ${timeToString(
+			jadwal.startHour,
+			jadwal.startMinute
+		)} - ${timeToString(jadwal.startHour, jadwal.startMinute + jadwal.durasi)})`;
+	}
 </script>
 
 <Popover.Root
@@ -48,23 +72,16 @@
 	}}
 >
 	<Popover.Trigger asChild let:builder>
-		{@const jadwal =
+		{@const currentKelas =
 			chosenClasses[matkul.kode] &&
-			matkul.kelas.find((v) => v.kelas === chosenClasses[matkul.kode][planIdx])?.jadwal[0]}
+			matkul.kelas.find((v) => v.kelas === chosenClasses[matkul.kode][planIdx])}
 		<Button
 			builders={[builder]}
 			variant="outline"
 			role="combobox"
 			class="w-full justify-between overflow-hidden"
 		>
-			{(chosenClasses[matkul.kode] &&
-				chosenClasses[matkul.kode][planIdx] &&
-				`${chosenClasses[matkul.kode][planIdx]} (${
-					dowMap[jadwal?.dayOfWeek ?? 0]
-				}, ${timeToString(jadwal?.startHour ?? 0, jadwal?.startMinute ?? 0)} - ${timeToString(
-					jadwal?.startHour ?? 0,
-					(jadwal?.startMinute ?? 0) + (jadwal?.durasi ?? 0)
-				)})`) ||
+			{(currentKelas && chosenClasses[matkul.kode][planIdx] && stringifyKelas(currentKelas)) ||
 				`Pilih kelas pilihan ${planIdx + 1}...`}
 			<ChevronDown class="ml-2 h-4 w-4 shrink-0 opacity-50" />
 		</Button>
@@ -75,13 +92,8 @@
 			<Command.Empty>Kelas tidak ditemukan.</Command.Empty>
 			<Command.Group>
 				{#each matkul.kelas as kelas}
-					{@const jadwal = kelas.jadwal[0]}
 					<Command.Item
 						onSelect={(currentValue) => {
-							// do not allow select if class is already picked
-							// if (chosenClasses[matkul.kode] && chosenClasses[matkul.kode].includes(kelas.kelas))
-							// 	return;
-
 							// modify the chosenClasses object for the correct planIdx
 							chosenClasses = {
 								...chosenClasses,
@@ -91,15 +103,9 @@
 									...(chosenClasses[matkul.kode] ?? []).slice(planIdx + 1)
 								]
 							};
-
-							// // replace first element of the array
-							// chosenClasses = {
-							// 	...chosenClasses,
-							// 	[matkul.kode]: [kelas.kelas, ...(chosenClasses[matkul.kode] ?? []).slice(1)]
-							// };
-
 							open = false;
 						}}
+						value={stringifyKelas(kelas)}
 					>
 						{#if chosenClasses[matkul.kode] && chosenClasses[matkul.kode].includes(kelas.kelas) && chosenClasses[matkul.kode][planIdx] !== kelas.kelas}
 							<TriangleAlert class="mr-2 h-4 w-4 text-yellow-500" />
@@ -115,12 +121,7 @@
 							/>
 						{/if}
 
-						{kelas.kelas} ({dowMap[jadwal.dayOfWeek]}, {timeToString(
-							jadwal.startHour,
-							jadwal.startMinute
-						)} - {timeToString(jadwal.startHour, jadwal.startMinute + jadwal.durasi)})<span
-							class="ml-4 text-muted-foreground">0/75</span
-						>
+						{stringifyKelas(kelas)} <span class="ml-auto pl-2 text-muted-foreground">0/75</span>
 					</Command.Item>
 				{/each}
 			</Command.Group>
