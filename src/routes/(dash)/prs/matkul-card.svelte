@@ -5,11 +5,11 @@
 
 	import type { MataKuliah } from '$lib/mata-kuliah';
 	import { properCase } from '$lib/mk-utils';
-	import { onDestroy, tick, onMount } from 'svelte';
-	import MatkulClassSelector from './matkul-class-selector.svelte';
 	import clsx from 'clsx';
-	import { scale, slide } from 'svelte/transition';
-	import { quartIn, quartOut, quintIn, quintInOut, quintOut } from 'svelte/easing';
+	import { onMount, tick } from 'svelte';
+	import { quartOut } from 'svelte/easing';
+	import { slide } from 'svelte/transition';
+	import MatkulClassSelector from './matkul-class-selector.svelte';
 
 	export let matkulColors: string[];
 	export let emphasizeMatkulKode: string | null;

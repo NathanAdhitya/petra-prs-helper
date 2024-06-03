@@ -103,31 +103,6 @@
 			return groups;
 		});
 	}
-
-	// // Function for calculating overlapping schedules and assigning them different sizes.
-	// // Also calculate their left offset.
-	// function calculateDaySizes(dayOfWeek: keyof typeof dayLabels) {
-	// 	const daySchedules = schedules.filter((v) => v.dayOfWeek === dayOfWeek);
-	// 	const sortedSchedules = daySchedules.sort((a, b) => {
-	// 		if (a.startHour === b.startHour) {
-	// 			return a.startMinute - b.startMinute;
-	// 		}
-	// 		return a.startHour - b.startHour;
-	// 	});
-
-	// 	const scheduleSizes = sortedSchedules.map((v) => {
-	// 		const overlappingSchedules = sortedSchedules.filter(
-	// 			(v2) =>
-	// 				v2.startHour < v.startHour + v.lengthMinutes / 60 &&
-	// 				v2.startHour + v2.lengthMinutes / 60 > v.startHour
-	// 		);
-	// 		const leftOffset = overlappingSchedules.indexOf(v) / overlappingSchedules.length;
-	// 		const width = 1 / overlappingSchedules.length;
-	// 		return { ...v, leftOffset, width };
-	// 	});
-
-	// 	return scheduleSizes;
-	// }
 </script>
 
 <table class="h-full w-full border-collapse overflow-auto rounded-lg bg-slate-50 p-4">
@@ -162,14 +137,6 @@
 									{/if}
 								{/each}
 							{/each}
-							<!-- {#if schedule.startHour === Math.floor(startingTimeHour + stepTime / 2) && schedule.startMinute === (stepTime % 2) * 30}
-								<div
-									style={`height: calc(${(schedule.lengthMinutes / 30) * 100}% + ${schedule.lengthMinutes / 30}px); left: ${schedule.leftOffset * 100}%; width: ${schedule.width * 100}%;`}
-									class={clsx(`absolute top-0 p-0.5`)}
-								>
-									<slot {schedule} {day} {stepTime} />
-								</div>
-							{/if} -->
 						{/each}
 					</td>
 				{/each}

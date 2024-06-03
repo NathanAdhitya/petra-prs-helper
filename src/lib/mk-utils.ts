@@ -12,14 +12,14 @@ export function lazyShortenMatkulName(str: string, force = false) {
 	 * 2. Is longer than 15 characters
 	 */
 	const words = str.split(' ');
-	if (words.length > 2 || str.length > 15 || force) {
-		return shortenMatkulName(str);
+	if (words.length > 2 || str.length > 12 || force) {
+		return shortenMatkulName(str, force);
 	} else {
 		return str;
 	}
 }
 
-export function shortenMatkulName(str: string) {
+export function shortenMatkulName(str: string, force = false) {
 	/**
 	 * Rules for shortening matkul name:
 	 * 1. If the matkul name consists of two words excluding "dan" or "and", take the first syllable of each word
@@ -36,7 +36,7 @@ export function shortenMatkulName(str: string) {
 	);
 
 	// If there are only two words, then take the first syllable of each word
-	if (filteredWords.length === 2) {
+	if (filteredWords.length === 2 && !force) {
 		const firstSyllables = filteredWords.map((word) => {
 			// Find the first vowel in the word followed by a consonant
 			const match = word.match(/[aeiou][^aeiou]/i);
@@ -52,7 +52,7 @@ export function shortenMatkulName(str: string) {
 		let combined = firstSyllables.join('');
 
 		// If the combined name is longer than 8 characters, then only take the initials of each word
-		if (combined.length > 8) {
+		if (combined.length > 8 || force) {
 			const initials = filteredWords.map((word) => word[0]);
 			combined = initials.join('');
 		}

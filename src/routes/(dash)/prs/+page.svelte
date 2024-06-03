@@ -1,3 +1,15 @@
+<script lang="ts" context="module">
+	export interface ComputedSchedule extends Omit<MataKuliah, 'kelas'> {
+		dayOfWeek: number;
+		startHour: number;
+		startMinute: number;
+		lengthMinutes: number;
+		kelas: string[];
+		currentlySelected: boolean;
+		planIdx: number[];
+	}
+</script>
+
 <script lang="ts">
 	import { Button } from '$lib/components/ui/button';
 	import * as Card from '$lib/components/ui/card';
@@ -20,6 +32,7 @@
 	import * as Resizable from '$lib/components/ui/resizable';
 	import { slide } from 'svelte/transition';
 	import { quartOut } from 'svelte/easing';
+	import MatkulScheduleCard from './matkul-schedule-card.svelte';
 	export let data;
 
 	let matkulOptions = data.pilihanMataKuliah.map((item) => ({
@@ -105,24 +118,16 @@
 
 	const onOpenChanged = (kodeMatkul: string) => {
 		return (v: boolean, planIdx: number) => {
-			openMatkulSelectionKode = v ? kodeMatkul : null;
-			openMatkulPlanIdx = v ? planIdx : null;
+			tick().then(() => {
+				openMatkulSelectionKode = v ? kodeMatkul : null;
+				openMatkulPlanIdx = v ? planIdx : null;
+			});
 		};
 	};
 
 	const onFocusedToChanged = (focusedTo: string | null) => {
 		openMatkulFocusedClass = focusedTo;
 	};
-
-	interface ComputedSchedule extends Omit<MataKuliah, 'kelas'> {
-		dayOfWeek: number;
-		startHour: number;
-		startMinute: number;
-		lengthMinutes: number;
-		kelas: string[];
-		currentlySelected: boolean;
-		planIdx: number[];
-	}
 
 	function mergeSimilarSchedules(acc: ComputedSchedule[], val: ComputedSchedule) {
 		const existing = acc.find(
@@ -413,103 +418,17 @@
 				</div>
 				<div class="h-full w-full overflow-auto rounded-lg border-2">
 					<Schedule schedules={computedSchedule} let:schedule>
-						<!-- svelte-ignore a11y-no-static-element-interactions -->
-						<!-- svelte-ignore a11y-click-events-have-key-events -->
-						<div
-							class={clsx(
-								'z-10 flex h-full w-full flex-col overflow-hidden break-words rounded-lg p-2 transition-all',
-								schedule.currentlySelected
-									? matkulColors[
-											chosenMatkul.findIndex((v) => v.kode === schedule.kode) % matkulColors.length
-										]
-									: 'bg-slate-200',
-								emphasizeMatkulKode === schedule.kode && 'shadow-2xl',
-								schedule.currentlySelected &&
-									openMatkulSelectionKode === schedule.kode &&
-									'shadow-2xl',
-								openMatkulSelectionKode === schedule.kode &&
-									'pointer-events-auto cursor-pointer border-2 border-slate-300',
-
-								// Deemphasize when not selected
-								openMatkulSelectionKode !== null &&
-									openMatkulSelectionKode !== schedule.kode &&
-									'opacity-50',
-
-								// Emphasize when plan pilihan is hovered on
-								schedule.planIdx.some((v) => v === (emphasizePilihan ?? -1) - 1) && 'shadow-2xl',
-								// Deemphasize if not selected
-								emphasizePilihan !== null &&
-									!schedule.planIdx.some((v) => v === (emphasizePilihan ?? -1) - 1) &&
-									'opacity-50'
-							)}
-							on:mouseenter={() => {
-								if (openMatkulSelectionKode === schedule.kode) {
-									openMatkulFocusedClass = schedule.kelas[0].toLowerCase();
-								}
-							}}
-							on:click={(e) => {
-								if (openMatkulSelectionKode === schedule.kode) {
-									chosenClasses = {
-										...chosenClasses,
-										[schedule.kode]: [
-											...(chosenClasses[schedule.kode] ?? []).slice(0, openMatkulPlanIdx ?? 0),
-											schedule.kelas[0],
-											...(chosenClasses[schedule.kode] ?? []).slice((openMatkulPlanIdx ?? 0) + 1)
-										]
-										// [schedule.kode]: [schedule.kelas[0]]
-									};
-								}
-							}}
-							data-priority-click
-						>
-							<div class="font-medium leading-5 max-xl:text-sm">
-								{lazyShortenMatkulName(properCase(schedule.nama))}
-							</div>
-							<div class="text-sm leading-5 text-muted-foreground">
-								Kelas
-								{#if openMatkulSelectionKode === schedule.kode && schedule.kelas.length > 1}
-									{#each schedule.kelas as kelas, i}
-										<Button
-											class="px-1 py-1 font-normal leading-3"
-											size="unstyled"
-											on:click={(e) => {
-												chosenClasses = {
-													...chosenClasses,
-													[schedule.kode]: [
-														...(chosenClasses[schedule.kode] ?? []).slice(
-															0,
-															openMatkulPlanIdx ?? 0
-														),
-														kelas,
-														...(chosenClasses[schedule.kode] ?? []).slice(
-															(openMatkulPlanIdx ?? 0) + 1
-														)
-													]
-												};
-											}}
-											data-priority-click
-										>
-											{kelas}
-										</Button>{(i < schedule.kelas.length - 1 && ', ') || ''}
-									{/each}
-								{:else}
-									{schedule.kelas.join(', ')}
-								{/if}
-							</div>
-							<div class="text-xs leading-3 text-muted-foreground max-xl:hidden">
-								{timeToString(schedule.startHour, schedule.startMinute)} - {timeToString(
-									schedule.startHour,
-									schedule.startMinute + schedule.lengthMinutes
-								)}
-							</div>
-							<div class="ml-auto mt-auto text-xs">
-								{#if schedule.planIdx.every((v) => v === -1)}
-									<Button size="unstyled" class="px-2 py-0.5">Pilih</Button>
-								{:else}
-									Pilihan {schedule.planIdx.map((v) => v + 1).join(', ')}
-								{/if}
-							</div>
-						</div>
+						<MatkulScheduleCard
+							{schedule}
+							{matkulColors}
+							{openMatkulSelectionKode}
+							bind:openMatkulFocusedClass
+							{openMatkulPlanIdx}
+							bind:chosenClasses
+							{chosenMatkul}
+							{emphasizeMatkulKode}
+							{emphasizePilihan}
+						/>
 					</Schedule>
 				</div>
 			</div>
