@@ -91,7 +91,7 @@
 	let openMatkulPlanIdx: number | null = null;
 	let emphasizePilihan: number | null = null;
 
-	let pilihanValue: string | undefined = '';
+	let pilihanValue: string | undefined = 'Semua';
 	$: {
 		if (pilihanValue === undefined) {
 			tick().then(() => {
