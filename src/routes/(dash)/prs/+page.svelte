@@ -100,8 +100,6 @@
 		}
 	}
 
-	$: console.log(pilihanValue);
-
 	$: pilihanIndexes =
 		!pilihanValue || pilihanValue === 'Semua' ? [0, 1, 2] : [parseInt(pilihanValue) - 1];
 

@@ -45,33 +45,33 @@ export interface EntryJadwalKuliahGlobal {
 	catatan?: string;
 }
 
-import data from './jadwal.json';
-const jadwal: Record<string, JadwalGlobal> = {};
+// import data from './jadwal.json';
+// const jadwal: Record<string, JadwalGlobal> = {};
 
-Object.values(data).forEach((v) => {
-	// Parse all dates as Date objects
-	const unit = v.unit;
+// Object.values(data).forEach((v) => {
+// 	// Parse all dates as Date objects
+// 	const unit = v.unit;
 
-	jadwal[unit] = {
-		unit,
-		periode: v.periode,
-		jadwal: {}
-	};
+// 	jadwal[unit] = {
+// 		unit,
+// 		periode: v.periode,
+// 		jadwal: {}
+// 	};
 
-	Object.entries(v.jadwal).forEach(([mk, entry]) => {
-		jadwal[unit].jadwal[mk] = {
-			kuliah: entry.kuliah as EntryJadwalKuliahGlobal[],
-			uts: entry.uts.map((e) => ({
-				...e,
-				date: new Date(e.date)
-			})),
+// 	Object.entries(v.jadwal).forEach(([mk, entry]) => {
+// 		jadwal[unit].jadwal[mk] = {
+// 			kuliah: entry.kuliah as EntryJadwalKuliahGlobal[],
+// 			uts: entry.uts.map((e) => ({
+// 				...e,
+// 				date: new Date(e.date)
+// 			})),
 
-			uas: entry.uas.map((e) => ({
-				...e,
-				date: new Date(e.date)
-			}))
-		};
-	});
-});
+// 			uas: entry.uas.map((e) => ({
+// 				...e,
+// 				date: new Date(e.date)
+// 			}))
+// 		};
+// 	});
+// });
 
-export { jadwal };
+// export { jadwal };
