@@ -37,7 +37,7 @@
 
 		// Sync the current planCount to the length of the chosenClasses array
 		if ($chosenClasses[matkul.kode]) {
-			planCount = $chosenClasses[matkul.kode].length;
+			planCount = Math.min($chosenClasses[matkul.kode].length, 1);
 		}
 	});
 </script>
