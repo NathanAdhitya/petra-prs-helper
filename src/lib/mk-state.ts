@@ -44,6 +44,9 @@ export class ChosenClassesUtils {
 	 */
 	static removePlan(kode: MataKuliah['kode'], plan: number) {
 		chosenClasses.update((classes) => {
+			if (!classes[kode]) {
+				return classes;
+			}
 			classes[kode].splice(plan, 1);
 
 			return classes;

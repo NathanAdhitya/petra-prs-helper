@@ -1,10 +1,17 @@
 <script lang="ts">
-	import { lazyShortenMatkulName, properCase } from '$lib/mk-utils';
+	import { lazyShortenMatkulName, properCase, stringifyKelas } from '$lib/mk-utils';
 	import { timeToString } from '$lib/mock-data';
 	import { Button } from '$lib/components/ui/button';
 	import type { ComputedSchedule } from './+page.svelte';
 	import clsx from 'clsx';
-	import { ChosenClassesUtils, chosenMatkul } from '$lib/mk-state';
+	import { ChosenClassesUtils, chosenMatkul, chosenClasses } from '$lib/mk-state';
+	import * as HoverCard from '$lib/components/ui/hover-card/index.js';
+	import * as Select from '$lib/components/ui/select';
+	import { ArrowUpNarrowWide, ChevronDown } from 'lucide-svelte';
+	import * as Command from '$lib/components/ui/command';
+	import * as Popover from '$lib/components/ui/popover';
+	import { Check, TriangleAlert } from 'lucide-svelte';
+	import { cn } from 'tailwind-variants';
 
 	export let matkulColors: string[];
 	export let schedule: ComputedSchedule;
@@ -17,9 +24,10 @@
 	// Separated to easily use new bounding boxes to shorten text
 	// and to make the text more readable
 	let contentRect: DOMRect;
+	let open = false;
 
-	$: forceShortenMatkulName = contentRect ? contentRect.width < 50 : false;
-	$: showKelasLabel = contentRect ? contentRect.width > 60 : false;
+	// $: forceShortenMatkulName = contentRect ? contentRect.width < 50 : false;
+	const forceShortenMatkulName = true;
 	$: showTime = contentRect ? contentRect.width > 70 : false;
 </script>
 
@@ -34,8 +42,10 @@
 			: 'bg-slate-200',
 		emphasizeMatkulKode === schedule.kode && 'shadow-2xl',
 		schedule.currentlySelected && openMatkulSelectionKode === schedule.kode && 'shadow-2xl',
+		openMatkulSelectionKode === schedule.kode && 'border-2 border-slate-300',
 		openMatkulSelectionKode === schedule.kode &&
-			'pointer-events-auto cursor-pointer border-2 border-slate-300',
+			schedule.kelas.length === 1 &&
+			'pointer-events-auto cursor-pointer',
 
 		// Deemphasize when not selected
 		openMatkulSelectionKode !== null && openMatkulSelectionKode !== schedule.kode && 'opacity-50',
@@ -53,7 +63,7 @@
 		}
 	}}
 	on:click={(e) => {
-		if (openMatkulSelectionKode === schedule.kode) {
+		if (openMatkulSelectionKode === schedule.kode && schedule.kelas.length === 1) {
 			ChosenClassesUtils.setPlan(schedule.kode, openMatkulPlanIdx ?? 0, schedule.kelas[0]);
 		}
 	}}
@@ -61,26 +71,7 @@
 >
 	<div class="font-medium leading-5 max-xl:text-sm">
 		{lazyShortenMatkulName(properCase(schedule.nama), forceShortenMatkulName)}
-		{#if !showKelasLabel}<span class="text-xs"> ({schedule.kelas.join(', ')})</span>{/if}
-	</div>
-	<div class="text-sm leading-5 text-muted-foreground">
-		{#if openMatkulSelectionKode === schedule.kode && schedule.kelas.length > 1}
-			{#each schedule.kelas as kelas, i}
-				<Button
-					class="mr-1 px-1 py-1 font-normal leading-3"
-					size="unstyled"
-					on:click={(e) => {
-						ChosenClassesUtils.setPlan(schedule.kode, openMatkulPlanIdx ?? 0, kelas);
-					}}
-					data-priority-click
-				>
-					{kelas}
-				</Button>
-			{/each}
-		{:else if showKelasLabel}
-			<span>Kelas</span>
-			{schedule.kelas.join(', ')}
-		{/if}
+		<span class="text-xs"> ({schedule.kelas.join(', ')})</span>
 	</div>
 	{#if showTime}
 		<div class="text-xs leading-3 text-muted-foreground max-xl:hidden">
@@ -90,11 +81,78 @@
 			)}
 		</div>
 	{/if}
-	<div class="ml-auto mt-auto text-xs">
-		{#if schedule.planIdx.every((v) => v === -1)}
-			<Button size="unstyled" class="px-2 py-0.5">Pilih</Button>
-		{:else}
-			Pilihan {schedule.planIdx.map((v) => v + 1).join(', ')}
+
+	<div
+		class={clsx(
+			'mt-auto flex flex-wrap items-end',
+			(openMatkulSelectionKode !== schedule.kode ||
+				schedule.planIdx.length - schedule.planIdx.filter((v) => v === -1).length === 0) &&
+				'ml-auto'
+		)}
+	>
+		{#if !schedule.planIdx.every((v) => v === -1)}
+			<div class="flex text-xs text-muted-foreground">
+				<ArrowUpNarrowWide class="h-4 w-4 opacity-50" />
+				{schedule.planIdx
+					.map((v) => v + 1)
+					.sort()
+					.join(', ')}
+			</div>
 		{/if}
+		<div class="absolute bottom-0 right-0 ml-auto p-2 text-xs">
+			{#if openMatkulSelectionKode === schedule.kode && schedule.kelas.length > 1}
+				<Popover.Root let:ids bind:open>
+					<Popover.Trigger asChild let:builder>
+						<Button
+							size="unstyled"
+							class="gap-1 px-2 py-0.5 font-normal"
+							builders={[builder]}
+							data-priority-click
+							data-priority-click-prevent-default
+						>
+							Pilih <ChevronDown class="h-4 w-4 opacity-50" />
+						</Button>
+					</Popover.Trigger>
+					<Popover.Content class="w-auto p-0">
+						<Command.Root>
+							<Command.Input placeholder="Cari kelas..." />
+							<Command.Empty>Kelas tidak ditemukan.</Command.Empty>
+							<Command.Group>
+								{#each schedule.kelas as kelas, i}
+									<Command.Item
+										onSelect={(currentValue) => {
+											// modify the chosenClasses object for the correct planIdx
+											ChosenClassesUtils.setPlan(schedule.kode, openMatkulPlanIdx ?? 0, kelas);
+											open = false;
+										}}
+										value={kelas}
+										data-priority-click-prevent-default={false}
+									>
+										{#if $chosenClasses[schedule.kode] && $chosenClasses[schedule.kode].includes(kelas) && $chosenClasses[schedule.kode][openMatkulPlanIdx ?? 0] !== kelas}
+											<TriangleAlert class="mr-2 h-4 w-4 text-yellow-500" />
+										{:else}
+											<Check
+												class={clsx(
+													'mr-2 h-4 w-4',
+													!(
+														$chosenClasses[schedule.kode] &&
+														$chosenClasses[schedule.kode][openMatkulPlanIdx ?? 0] === kelas
+													) && 'text-transparent'
+												)}
+											/>
+										{/if}
+
+										{kelas}
+										<span class="ml-auto pl-2 text-muted-foreground">0/75</span>
+									</Command.Item>
+								{/each}
+							</Command.Group>
+						</Command.Root>
+					</Popover.Content>
+				</Popover.Root>
+			{:else if schedule.planIdx.every((v) => v === -1)}
+				<Button size="unstyled" class="px-2 py-0.5 font-normal">Pilih</Button>
+			{/if}
+		</div>
 	</div>
 </div>

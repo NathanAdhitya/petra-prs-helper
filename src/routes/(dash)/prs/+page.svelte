@@ -91,17 +91,19 @@
 	let openMatkulPlanIdx: number | null = null;
 	let emphasizePilihan: number | null = null;
 
-	let pilihanValue = ['1', '2', '3'];
-
-	// Auto reset pilihanValue if all became unset
+	let pilihanValue: string | undefined = '';
 	$: {
-		if (!pilihanValue || pilihanValue.length === 0) {
+		if (pilihanValue === undefined) {
 			tick().then(() => {
-				pilihanValue = ['1', '2', '3'];
+				pilihanValue = 'Semua';
 			});
 		}
 	}
-	$: pilihanIndexes = pilihanValue.map((v) => parseInt(v) - 1);
+
+	$: console.log(pilihanValue);
+
+	$: pilihanIndexes =
+		!pilihanValue || pilihanValue === 'Semua' ? [0, 1, 2] : [parseInt(pilihanValue) - 1];
 
 	const onOpenChanged = (kodeMatkul: string) => {
 		return (v: boolean, planIdx: number) => {
@@ -340,36 +342,6 @@
 		<Resizable.Pane minSize={60} defaultSize={70}>
 			<div class="flex h-full w-full flex-1 flex-col gap-4">
 				<div class="flex items-center gap-4 rounded-lg border-2 bg-slate-50 p-2 px-4">
-					<div class="flex items-center gap-4 rounded-lg">
-						<div class="text-lg font-medium">Tampilkan Pilihan</div>
-						<ToggleGroup.Root size="sm" type="multiple" bind:value={pilihanValue}>
-							<!-- svelte-ignore a11y-mouse-events-have-key-events -->
-							{#each [1, 2, 3] as i}
-								<!-- svelte-ignore a11y-no-static-element-interactions -->
-								<div
-									on:mouseover={() => {
-										emphasizePilihan = i;
-									}}
-									on:focusin={() => {
-										emphasizePilihan = i;
-									}}
-									on:focusout={() => {
-										emphasizePilihan = emphasizePilihan === i ? null : emphasizePilihan;
-									}}
-									on:mouseleave={() => {
-										emphasizePilihan = emphasizePilihan === i ? null : emphasizePilihan;
-									}}
-								>
-									<ToggleGroup.Item
-										value={i.toString()}
-										class="data-[state=on]:bg-primary data-[state=on]:text-primary-foreground data-[state=on]:hover:bg-primary/90 data-[state=on]:hover:shadow-2xl"
-									>
-										{i}
-									</ToggleGroup.Item>
-								</div>
-							{/each}
-						</ToggleGroup.Root>
-					</div>
 					<div class="ml-auto">
 						Total SKS: {$chosenMatkul.reduce((acc, matkul) => acc + matkul.sks, 0)} / {sksMatkulLimit}
 					</div>
@@ -407,7 +379,12 @@
 					</Dialog.Root>
 				</div>
 				<div class="h-full w-full overflow-auto rounded-lg border-2">
-					<Schedule schedules={computedSchedule} let:schedule>
+					<Schedule
+						bind:emphasizePilihan
+						bind:pilihanValue
+						schedules={computedSchedule}
+						let:schedule
+					>
 						<MatkulScheduleCard
 							{schedule}
 							{matkulColors}

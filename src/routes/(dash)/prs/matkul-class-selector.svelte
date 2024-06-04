@@ -11,6 +11,7 @@
 	import { createState } from 'cmdk-sv';
 	import { tick } from 'svelte';
 	import { ChosenClassesUtils, chosenClasses } from '$lib/mk-state';
+	import { stringifyKelas } from '$lib/mk-utils';
 
 	let open = false;
 	let state = createState();
@@ -41,15 +42,6 @@
 
 	// When the popover is opened, make sure the selected state is in sync with the chosenClasses
 	$: correctCurrentFocused(open);
-
-	function stringifyKelas(kelas: KelasMataKuliah) {
-		const jadwal = kelas.jadwal[0];
-
-		return `${kelas.kelas} (${dowMap[jadwal.dayOfWeek]}, ${timeToString(
-			jadwal.startHour,
-			jadwal.startMinute
-		)} - ${timeToString(jadwal.startHour, jadwal.startMinute + jadwal.durasi)})`;
-	}
 </script>
 
 <Popover.Root
@@ -57,12 +49,30 @@
 	bind:open
 	onOutsideClick={(e) => {
 		if (!(e instanceof PointerEvent)) return;
-		if (!(e.target instanceof HTMLElement)) return;
+		if (
+			!(
+				e.target instanceof HTMLElement ||
+				e.target instanceof SVGElement ||
+				e.target instanceof SVGSVGElement
+			)
+		)
+			return;
 
 		// If clicking on anything which parent/current element has data-priority-click, don't close the popover
 		const closestPriority = e.target.closest('[data-priority-click]');
 		if (closestPriority) {
+			console.log('Priority click detected');
 			e.preventDefault();
+
+			// If the target also has data-priority-click-prevent-default, then prevent the next action
+			const preventDefault = e.target.closest('[data-priority-click-prevent-default]');
+			if (
+				preventDefault &&
+				!(preventDefault.getAttribute('data-priority-click-prevent-default') === 'false')
+			) {
+				console.log('Preventing default');
+				return;
+			}
 
 			closestPriority.dispatchEvent(new PointerEvent('click', { pointerType: 'mouse' }));
 
@@ -85,7 +95,7 @@
 			class="w-full justify-between overflow-hidden"
 		>
 			{(currentKelas && $chosenClasses[matkul.kode][planIdx] && stringifyKelas(currentKelas)) ||
-				`Pilih kelas pilihan ${planIdx + 1}...`}
+				`Pilih kelas prioritas ${planIdx + 1}...`}
 			<ChevronDown class="ml-2 h-4 w-4 shrink-0 opacity-50" />
 		</Button>
 	</Popover.Trigger>

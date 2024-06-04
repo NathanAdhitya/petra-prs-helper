@@ -1,7 +1,7 @@
 <script lang="ts">
 	import { Button } from '$lib/components/ui/button';
 	import * as Card from '$lib/components/ui/card';
-	import { CircleMinus, Trash } from 'lucide-svelte';
+	import { CircleMinus, Plus, Trash } from 'lucide-svelte';
 
 	import type { MataKuliah } from '$lib/mata-kuliah';
 	import { properCase } from '$lib/mk-utils';
@@ -10,7 +10,7 @@
 	import { quartOut } from 'svelte/easing';
 	import { slide } from 'svelte/transition';
 	import MatkulClassSelector from './matkul-class-selector.svelte';
-	import { ChosenClassesUtils, chosenMatkul } from '$lib/mk-state';
+	import { ChosenClassesUtils, chosenClasses, chosenMatkul } from '$lib/mk-state';
 
 	export let matkulColors: string[];
 	export let matkul: MataKuliah;
@@ -34,12 +34,17 @@
 				ChosenClassesUtils.setPlan(matkul.kode, 0, matkul.kelas[0].kelas);
 			});
 		}
+
+		// Sync the current planCount to the length of the chosenClasses array
+		if ($chosenClasses[matkul.kode]) {
+			planCount = $chosenClasses[matkul.kode].length;
+		}
 	});
 </script>
 
 <Card.Root class={clsx(matkulColors[i], 'transition-all')}>
 	<Card.Header class="pb-2">
-		<div class="flex items-center justify-center gap-4">
+		<div class="flex items-start justify-center gap-4">
 			<Card.Title class="text-wrap">
 				{properCase(matkul.nama)}
 			</Card.Title>
@@ -57,13 +62,15 @@
 	</Card.Header>
 	<Card.Content class="flex flex-col pb-0">
 		{#each Array.from({ length: planCount }) as _, planIdx}
-			<div class="mb-2 flex" transition:slide={{ easing: quartOut }}>
-				<MatkulClassSelector
-					{planIdx}
-					{matkul}
-					{onFocusedToChanged}
-					onOpenChanged={(v) => onOpenChanged(v, planIdx)}
-				/>
+			<div class="mb-2 flex w-full" transition:slide={{ easing: quartOut }}>
+				<div class="flex min-w-0 flex-1">
+					<MatkulClassSelector
+						{planIdx}
+						{matkul}
+						{onFocusedToChanged}
+						onOpenChanged={(v) => onOpenChanged(v, planIdx)}
+					/>
+				</div>
 				{#if planCount > 1}
 					<div transition:slide={{ easing: quartOut, axis: 'x' }} class="pl-2">
 						<Button
@@ -82,14 +89,16 @@
 			</div>
 		{/each}
 		{#if planCount < maximumPlanCount}
-			<div class="flex w-full flex-col" transition:slide={{ easing: quartOut }}>
+			<div transition:slide={{ easing: quartOut }} class="flex w-full flex-col">
 				<Button
-					size="sm"
+					variant="outline"
+					size="icon"
+					class="w-full"
 					on:click={() => {
 						if (planCount < maximumPlanCount) planCount++;
 					}}
 				>
-					Tambah Pilihan
+					<Plus class="h-4 w-4" />
 				</Button>
 			</div>
 		{/if}

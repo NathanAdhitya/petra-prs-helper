@@ -11,12 +11,15 @@
 
 <script lang="ts" generics="Schedule extends ScheduleEvent">
 	import { timeToString } from '$lib/mock-data';
+	import * as ToggleGroup from '$lib/components/ui/toggle-group/index.js';
 	import clsx from 'clsx';
 
 	export const startingTimeHour = 7;
 	export const endingTimeHour = 21;
 
 	export let schedules: Schedule[] = [];
+	export let pilihanValue: string | undefined;
+	export let emphasizePilihan: number | null;
 
 	// This code is adapted from the following StackOverflow answer.
 	// @see {@link https://stackoverflow.com/a/66252263}
@@ -107,17 +110,74 @@
 
 <table class="h-full w-full border-collapse overflow-auto rounded-lg bg-slate-50 p-4">
 	<thead>
-		<th class="sticky top-0 bg-slate-100 p-2"></th>
-		<th class="sticky top-0 bg-slate-100 p-2"></th>
-		{#each dayLabels as day}
-			<th class="sticky top-0 border bg-slate-100 p-2">{day}</th>
-		{/each}
+		<tr>
+			<th
+				colspan={dayLabels.length + 2}
+				class="top sticky border-b bg-slate-100 p-2 px-4 text-left"
+			>
+				<div class="flex h-full w-full items-center gap-2">
+					<div class="text-lg">Visualisasi Jadwal</div>
+					<div class="ml-auto flex items-center gap-2 rounded-lg">
+						<div class="text-sm font-medium">Tampilkan Prioritas:</div>
+						<ToggleGroup.Root
+							size="unstyled"
+							type="single"
+							bind:value={pilihanValue}
+							class="!gap-0 rounded-lg border-2"
+						>
+							<!-- svelte-ignore a11y-mouse-events-have-key-events -->
+							{#each ['Semua', 1, 2, 3] as i}
+								<!-- svelte-ignore a11y-no-static-element-interactions -->
+								<div
+									on:mouseover={() => {
+										if (
+											typeof i === 'number' &&
+											(Number.parseInt(pilihanValue ?? '') === i || pilihanValue === 'Semua')
+										)
+											emphasizePilihan = i;
+									}}
+									on:focusin={() => {
+										if (
+											typeof i === 'number' &&
+											(Number.parseInt(pilihanValue ?? '') === i || pilihanValue === 'Semua')
+										)
+											emphasizePilihan = i;
+									}}
+									on:focusout={() => {
+										if (typeof i === 'number')
+											emphasizePilihan = emphasizePilihan === i ? null : emphasizePilihan;
+									}}
+									on:mouseleave={() => {
+										if (typeof i === 'number')
+											emphasizePilihan = emphasizePilihan === i ? null : emphasizePilihan;
+									}}
+								>
+									<ToggleGroup.Item
+										value={i.toString()}
+										class="px-2 py-1 hover:bg-primary/20 hover:text-primary data-[state=on]:bg-primary data-[state=on]:text-primary-foreground data-[state=on]:hover:bg-primary/90 data-[state=on]:hover:shadow-2xl"
+									>
+										{i}
+									</ToggleGroup.Item>
+								</div>
+							{/each}
+						</ToggleGroup.Root>
+					</div>
+				</div>
+			</th>
+		</tr>
+		<tr>
+			<th class="sticky top-0 bg-slate-100 px-2 py-1"></th>
+			<th class="sticky top-0 bg-slate-100 px-2 py-1"></th>
+			{#each dayLabels as day}
+				<th class="sticky top-0 border bg-slate-100 p-1 px-2">{day}</th>
+			{/each}
+		</tr>
 	</thead>
 	<tbody>
 		{#each Array.from({ length: (endingTimeHour - startingTimeHour) * 2 }, (_, i) => i) as stepTime}
 			<tr>
-				<td class="h-5 w-0 bg-slate-100 px-4 py-0.5 pr-2 text-xs text-muted-foreground 2xl:h-6">
-					<div class="h-full w-full -translate-y-1/2">
+				<td class="h-5 w-0 bg-slate-100 px-4 py-0.5 pr-2 text-xs text-muted-foreground">
+					<div class="h-full w-full -translate-y-1/2 leading-3">
 						{stepTime % 2 === 0 ? `${timeToString(startingTimeHour + stepTime / 2, 0)}` : ''}
 					</div>
 				</td>

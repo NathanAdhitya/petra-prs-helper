@@ -1,3 +1,6 @@
+import type { KelasMataKuliah } from './mata-kuliah';
+import { dowMap, timeToString } from './mock-data';
+
 export function properCase(str: string) {
 	return str.replace(/\w\S*/g, function (txt) {
 		if (txt.toLowerCase() === 'dan') return txt.toLowerCase();
@@ -75,4 +78,13 @@ export function guessMatkulSks(durationMinutes: number[]) {
 
 	// Guess the SKS based on the median duration
 	return Math.floor(median / 60);
+}
+
+export function stringifyKelas(kelas: KelasMataKuliah) {
+	const jadwal = kelas.jadwal[0];
+
+	return `${kelas.kelas} (${dowMap[jadwal.dayOfWeek]}, ${timeToString(
+		jadwal.startHour,
+		jadwal.startMinute
+	)} - ${timeToString(jadwal.startHour, jadwal.startMinute + jadwal.durasi)})`;
 }
