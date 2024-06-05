@@ -3,6 +3,7 @@ export interface MataKuliah {
 	sks: number;
 	unit: string;
 	kode: string;
+	recommended: boolean;
 
 	kelas: KelasMataKuliah[];
 }

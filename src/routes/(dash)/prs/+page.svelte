@@ -20,7 +20,7 @@
 	import * as ToggleGroup from '$lib/components/ui/toggle-group/index.js';
 	import type { MataKuliah } from '$lib/mata-kuliah';
 	import { focusTriggerNextTick, cn, notEmpty } from '$lib/utils.js';
-	import { onMount, tick } from 'svelte';
+	import { onDestroy, onMount, tick } from 'svelte';
 
 	import * as Dialog from '$lib/components/ui/dialog';
 	import * as Resizable from '$lib/components/ui/resizable';
@@ -34,17 +34,22 @@
 	import { chosenClasses, chosenMatkul } from '$lib/mk-state';
 	import Input from '$lib/components/ui/input/input.svelte';
 	export let data;
+	import Switch from '$lib/components/ui/switch/switch.svelte';
+	import Separator from '$lib/components/ui/separator/separator.svelte';
+	// console.log(data.pilihanMataKuliah.slice(10));
 
 	let matkulOptions = data.pilihanMataKuliah.map((item) => ({
 		label: properCase(item.nama).trim(),
 		value: item.kode + ' - ' + properCase(item.nama).trim(),
 		kode: item.kode,
+		recommended: item.recommended,
 		reference: item
 	}));
 
-	let listJurusan = Array.from(new Set(data.pilihanMataKuliah.map((m) => m.unit)))
+	let listJurusan = Array.from(new Set(data.pilihanMataKuliah.map((m) => m.unit)));
+	let rekomFilter = false;
 
-	let chosenFilters: string[] = []
+	let chosenFilters: string[] = [data.dataUser.jurusan];
 
 	let holdingShift = false;
 
@@ -139,9 +144,10 @@
 
 		return acc;
 	}
-
-	let filteredMakul = []
-	$: filteredMakul = chosenFilters.length > 0 ? matkulOptions.filter(m => chosenFilters.includes(m.reference.unit)) : matkulOptions
+	let filteredMakul = [];
+	$: filteredMakul = rekomFilter
+		? matkulOptions.filter((m) => m.recommended === true)
+		: matkulOptions.filter((m) => chosenFilters.includes(m.reference.unit));
 
 	$: computedSchedule = $chosenMatkul
 		.map((matkul) => {
@@ -232,46 +238,50 @@
 													<SlidersHorizontal class="h-5 w-5" />
 												</Button>
 											</Popover.Trigger>
-											<Popover.Content  strategy="fixed" side="right-start" sideOffset={4}>
-												<h2 class="text-lg font-semibold ">Filter Jurusan</h2>
+											<Popover.Content strategy="fixed" side="right-start" sideOffset={4}>
+												<h2 class="text-lg font-semibold">Filter mata kuliah</h2>
+												<Separator />
+												<div class="flex items-center justify-between gap-2">
+													<h3 class="my-4 font-semibold">Rekomendasi</h3>
+													<Switch bind:checked={rekomFilter} />
+												</div>
 												<Command.Root>
-													<Command.Input />
-								<Command.Empty>Jurusan tidak ditemukan...</Command.Empty>
-													<div class="max-h-96 overflow-y-auto">
-													{#each listJurusan as jurusan}
-													<Command.Item
-														value={jurusan}
-														onSelect={() => {
-															if (!submitted) {
-																// either remove or add
-																if (chosenFilters.includes(jurusan)) {
-																	chosenFilters = chosenFilters.filter(
-																		(item) => item !== jurusan
-																	);
-																} else {
-																		chosenFilters = [...chosenFilters, jurusan];
-																	
-																}
-															}
-			
-															if (!holdingShift) {
-																open = true;
-																focusTriggerNextTick(ids.trigger);
-															}
-														}}
-													>
-														<span>
-															{jurusan}
-														</span>
-														<Check
-															class={cn(
-																'ml-auto mr-2 h-4 w-4',
-																!chosenFilters.includes(jurusan) && 'text-transparent'
-															)}
-														/>
-													</Command.Item>
-												{/each}
-											</div>
+													<Command.Input placeholder="Cari jurusan" />
+													<Command.Empty>Jurusan tidak ditemukan...</Command.Empty>
+													<div class="max-h-72 overflow-y-auto">
+														{#each listJurusan as jurusan}
+															<Command.Item
+																value={jurusan}
+																onSelect={() => {
+																	if (!submitted) {
+																		// either remove or add
+																		if (chosenFilters.includes(jurusan)) {
+																			chosenFilters = chosenFilters.filter(
+																				(item) => item !== jurusan
+																			);
+																		} else {
+																			chosenFilters = [...chosenFilters, jurusan];
+																		}
+																	}
+
+																	if (!holdingShift) {
+																		open = true;
+																		focusTriggerNextTick(ids.trigger);
+																	}
+																}}
+															>
+																<span>
+																	{jurusan}
+																</span>
+																<Check
+																	class={cn(
+																		'ml-auto mr-2 h-4 w-4',
+																		!chosenFilters.includes(jurusan) && 'text-transparent'
+																	)}
+																/>
+															</Command.Item>
+														{/each}
+													</div>
 												</Command.Root>
 											</Popover.Content>
 										</Popover.Root>
