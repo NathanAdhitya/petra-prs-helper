@@ -32,6 +32,7 @@
 	import MatkulScheduleCard from './matkul-schedule-card.svelte';
 	import Schedule from './schedule.svelte';
 	import { chosenClasses, chosenMatkul } from '$lib/mk-state';
+	import { derived } from 'svelte/store';
 	export let data;
 
 	let matkulOptions = data.pilihanMataKuliah.map((item) => ({
@@ -80,6 +81,10 @@
 		'bg-lime-200'
 	];
 
+	const chosenSksCount = derived(chosenMatkul, ($chosenMatkul) =>
+		$chosenMatkul.reduce((acc, matkul) => acc + matkul.sks, 0)
+	);
+
 	let validationDialogOpen = false;
 
 	let open = false;
@@ -112,6 +117,30 @@
 
 	const onFocusedToChanged = (focusedTo: string | null) => {
 		openMatkulFocusedClass = focusedTo;
+	};
+
+	const onSelectMatkul = (matkul: (typeof matkulOptions)[number], ids: { trigger: string }) => {
+		return () => {
+			if (!submitted) {
+				// either remove or add
+				if ($chosenMatkul.includes(matkul.reference)) {
+					$chosenMatkul = $chosenMatkul.filter((item) => item !== matkul.reference);
+				} else {
+					if (
+						$chosenMatkul.length < chosenMatkulLimit &&
+						$chosenMatkul.reduce((acc, matkul) => acc + matkul.sks, 0) + matkul.reference.sks <=
+							sksMatkulLimit
+					) {
+						$chosenMatkul = [...$chosenMatkul, matkul.reference];
+					}
+				}
+			}
+
+			if (!holdingShift) {
+				open = false;
+				focusTriggerNextTick(ids.trigger);
+			}
+		};
 	};
 
 	function mergeSimilarSchedules(acc: ComputedSchedule[], val: ComputedSchedule) {
@@ -192,6 +221,8 @@
 		})
 		.flat(1)
 		.filter(notEmpty);
+
+	// $: console.log(matkulOptions.length);
 </script>
 
 <h1 class="text-4xl font-bold">Pendaftaran Rencana Studi</h1>
@@ -232,34 +263,8 @@
 								</div>
 								<Command.Empty>Mata kuliah tidak ditemukan...</Command.Empty>
 								<Command.Group class="!overflow-auto">
-									{#each matkulOptions as matkul}
-										<Command.Item
-											value={matkul.value}
-											onSelect={() => {
-												if (!submitted) {
-													// either remove or add
-													if ($chosenMatkul.includes(matkul.reference)) {
-														$chosenMatkul = $chosenMatkul.filter(
-															(item) => item !== matkul.reference
-														);
-													} else {
-														if (
-															$chosenMatkul.length < chosenMatkulLimit &&
-															$chosenMatkul.reduce((acc, matkul) => acc + matkul.sks, 0) +
-																matkul.reference.sks <=
-																sksMatkulLimit
-														) {
-															$chosenMatkul = [...$chosenMatkul, matkul.reference];
-														}
-													}
-												}
-
-												if (!holdingShift) {
-													open = false;
-													focusTriggerNextTick(ids.trigger);
-												}
-											}}
-										>
+									{#each matkulOptions as matkul, i (i)}
+										<Command.Item value={matkul.value} onSelect={onSelectMatkul(matkul, ids)}>
 											<span class="mr-4 text-muted-foreground">{matkul.kode} </span>
 											<span>
 												{matkul.label}
@@ -294,8 +299,7 @@
 										</p>
 									</div>
 									<div class="ml-auto text-sm text-muted-foreground">
-										{$chosenMatkul.reduce((acc, matkul) => acc + matkul.sks, 0)} / {sksMatkulLimit} SKS
-										dipilih
+										{$chosenSksCount} / {sksMatkulLimit} SKS dipilih
 									</div>
 								</div>
 							</Command.Root>
