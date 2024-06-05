@@ -32,6 +32,7 @@
 	import MatkulScheduleCard from './matkul-schedule-card.svelte';
 	import Schedule from './schedule.svelte';
 	import { chosenClasses, chosenMatkul } from '$lib/mk-state';
+	import Input from '$lib/components/ui/input/input.svelte';
 	export let data;
 
 	let matkulOptions = data.pilihanMataKuliah.map((item) => ({
@@ -40,6 +41,10 @@
 		kode: item.kode,
 		reference: item
 	}));
+
+	let listJurusan = Array.from(new Set(data.pilihanMataKuliah.map((m) => m.unit)))
+
+	let chosenFilters: string[] = []
 
 	let holdingShift = false;
 
@@ -135,6 +140,9 @@
 		return acc;
 	}
 
+	let filteredMakul = []
+	$: filteredMakul = chosenFilters.length > 0 ? matkulOptions.filter(m => chosenFilters.includes(m.reference.unit)) : matkulOptions
+
 	$: computedSchedule = $chosenMatkul
 		.map((matkul) => {
 			if (openMatkulSelectionKode === matkul.kode) {
@@ -224,15 +232,54 @@
 													<SlidersHorizontal class="h-5 w-5" />
 												</Button>
 											</Popover.Trigger>
-											<Popover.Content strategy="fixed" side="right-start" sideOffset={4}>
-												<h2 class="text-lg font-semibold">Filters</h2>
+											<Popover.Content  strategy="fixed" side="right-start" sideOffset={4}>
+												<h2 class="text-lg font-semibold ">Filter Jurusan</h2>
+												<Command.Root>
+													<Command.Input />
+								<Command.Empty>Jurusan tidak ditemukan...</Command.Empty>
+													<div class="max-h-96 overflow-y-auto">
+													{#each listJurusan as jurusan}
+													<Command.Item
+														value={jurusan}
+														onSelect={() => {
+															if (!submitted) {
+																// either remove or add
+																if (chosenFilters.includes(jurusan)) {
+																	chosenFilters = chosenFilters.filter(
+																		(item) => item !== jurusan
+																	);
+																} else {
+																		chosenFilters = [...chosenFilters, jurusan];
+																	
+																}
+															}
+			
+															if (!holdingShift) {
+																open = true;
+																focusTriggerNextTick(ids.trigger);
+															}
+														}}
+													>
+														<span>
+															{jurusan}
+														</span>
+														<Check
+															class={cn(
+																'ml-auto mr-2 h-4 w-4',
+																!chosenFilters.includes(jurusan) && 'text-transparent'
+															)}
+														/>
+													</Command.Item>
+												{/each}
+											</div>
+												</Command.Root>
 											</Popover.Content>
 										</Popover.Root>
 									</div>
 								</div>
 								<Command.Empty>Mata kuliah tidak ditemukan...</Command.Empty>
 								<Command.Group class="!overflow-auto">
-									{#each matkulOptions as matkul}
+									{#each filteredMakul as matkul}
 										<Command.Item
 											value={matkul.value}
 											onSelect={() => {
