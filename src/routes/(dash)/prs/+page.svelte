@@ -32,6 +32,7 @@
 	import MatkulScheduleCard from './matkul-schedule-card.svelte';
 	import Schedule from './schedule.svelte';
 	import { chosenClasses, chosenMatkul } from '$lib/mk-state';
+	import { derived } from 'svelte/store';
 	import Input from '$lib/components/ui/input/input.svelte';
 	export let data;
 	import Switch from '$lib/components/ui/switch/switch.svelte';
@@ -75,7 +76,7 @@
 		};
 	});
 
-	const chosenMatkulLimit = 10;
+	const chosenMatkulLimit = 15;
 	const sksMatkulLimit = 24;
 	const matkulColors = [
 		'bg-blue-200',
@@ -89,6 +90,10 @@
 		'bg-teal-200',
 		'bg-lime-200'
 	];
+
+	const chosenSksCount = derived(chosenMatkul, ($chosenMatkul) =>
+		$chosenMatkul.reduce((acc, matkul) => acc + matkul.sks, 0)
+	);
 
 	let validationDialogOpen = false;
 
@@ -122,6 +127,28 @@
 
 	const onFocusedToChanged = (focusedTo: string | null) => {
 		openMatkulFocusedClass = focusedTo;
+	};
+
+	const onSelectMatkul = (matkul: (typeof matkulOptions)[number], ids: { trigger: string }) => {
+		if (!submitted) {
+			// either remove or add
+			if ($chosenMatkul.includes(matkul.reference)) {
+				$chosenMatkul = $chosenMatkul.filter((item) => item !== matkul.reference);
+			} else {
+				if (
+					$chosenMatkul.length < chosenMatkulLimit &&
+					$chosenMatkul.reduce((acc, matkul) => acc + matkul.sks, 0) + matkul.reference.sks <=
+						sksMatkulLimit
+				) {
+					$chosenMatkul = [...$chosenMatkul, matkul.reference];
+				}
+			}
+		}
+
+		if (!holdingShift) {
+			open = false;
+			focusTriggerNextTick(ids.trigger);
+		}
 	};
 
 	function mergeSimilarSchedules(acc: ComputedSchedule[], val: ComputedSchedule) {
@@ -206,6 +233,8 @@
 		})
 		.flat(1)
 		.filter(notEmpty);
+
+	// $: console.log(matkulOptions.length);
 </script>
 
 <h1 class="text-4xl font-bold">Pendaftaran Rencana Studi</h1>
@@ -231,6 +260,8 @@
 							<Command.Root class="max-h-72">
 								<div class="relative">
 									<Command.Input class="w-full" placeholder="Cari mata kuliah..." />
+
+									<!-- This part is filter, should be moved because I kept editing the wrong code... -->
 									<div class="absolute right-0 top-0 m-0.5">
 										<Popover.Root>
 											<Popover.Trigger asChild let:builder>
@@ -286,53 +317,35 @@
 											</Popover.Content>
 										</Popover.Root>
 									</div>
-								</div>
-								<Command.Empty>Mata kuliah tidak ditemukan...</Command.Empty>
-								<Command.Group class="!overflow-auto">
-									{#each filteredMakul as matkul}
-										<Command.Item
-											value={matkul.value}
-											onSelect={() => {
-												if (!submitted) {
-													// either remove or add
-													if ($chosenMatkul.includes(matkul.reference)) {
-														$chosenMatkul = $chosenMatkul.filter(
-															(item) => item !== matkul.reference
-														);
-													} else {
-														if (
-															$chosenMatkul.length < chosenMatkulLimit &&
-															$chosenMatkul.reduce((acc, matkul) => acc + matkul.sks, 0) +
-																matkul.reference.sks <=
-																sksMatkulLimit
-														) {
-															$chosenMatkul = [...$chosenMatkul, matkul.reference];
-														}
-													}
-												}
 
-												if (!holdingShift) {
-													open = false;
-													focusTriggerNextTick(ids.trigger);
-												}
-											}}
-										>
-											<span class="mr-4 text-muted-foreground">{matkul.kode} </span>
-											<span>
-												{matkul.label}
-												<span class="text-xs text-muted-foreground">
-													{matkul.reference.sks} SKS</span
-												>
-											</span>
-											<Check
-												class={cn(
-													'ml-auto mr-2 h-4 w-4',
-													!$chosenMatkul.includes(matkul.reference) && 'text-transparent'
-												)}
-											/>
-										</Command.Item>
-									{/each}
-								</Command.Group>
+									<!-- end of filter -->
+								</div>
+
+								<Command.List>
+									<Command.Empty>Mata kuliah tidak ditemukan...</Command.Empty>
+									<Command.Group class="!overflow-auto">
+										{#each matkulOptions as matkul (matkul.kode)}
+											<Command.Item
+												value={matkul.value}
+												onSelect={() => onSelectMatkul(matkul, ids)}
+											>
+												<span class="mr-4 text-muted-foreground">{matkul.kode} </span>
+												<span>
+													{matkul.label}
+													<span class="text-xs text-muted-foreground">
+														{matkul.reference.sks} SKS</span
+													>
+												</span>
+												<Check
+													class={cn(
+														'ml-auto mr-2 h-4 w-4',
+														!$chosenMatkul.includes(matkul.reference) && 'text-transparent'
+													)}
+												/>
+											</Command.Item>
+										{/each}
+									</Command.Group>
+								</Command.List>
 								<div class="flex items-center justify-center px-4 py-2">
 									<div>
 										<p class="text-sm text-muted-foreground">
@@ -351,8 +364,7 @@
 										</p>
 									</div>
 									<div class="ml-auto text-sm text-muted-foreground">
-										{$chosenMatkul.reduce((acc, matkul) => acc + matkul.sks, 0)} / {sksMatkulLimit} SKS
-										dipilih
+										{$chosenSksCount} / {sksMatkulLimit} SKS dipilih
 									</div>
 								</div>
 							</Command.Root>

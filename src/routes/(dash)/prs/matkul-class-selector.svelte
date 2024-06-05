@@ -61,7 +61,6 @@
 		// If clicking on anything which parent/current element has data-priority-click, don't close the popover
 		const closestPriority = e.target.closest('[data-priority-click]');
 		if (closestPriority) {
-			console.log('Priority click detected');
 			e.preventDefault();
 
 			// If the target also has data-priority-click-prevent-default, then prevent the next action
@@ -70,7 +69,6 @@
 				preventDefault &&
 				!(preventDefault.getAttribute('data-priority-click-prevent-default') === 'false')
 			) {
-				console.log('Preventing default');
 				return;
 			}
 
@@ -99,11 +97,11 @@
 			<ChevronDown class="ml-2 h-4 w-4 shrink-0 opacity-50" />
 		</Button>
 	</Popover.Trigger>
-	<Popover.Content class="w-auto p-0">
-		<Command.Root {state}>
+	<Popover.Content class="w-auto p-0" side="bottom-start">
+		<Command.Root class="max-h-72" {state}>
 			<Command.Input placeholder="Cari kelas..." />
 			<Command.Empty>Kelas tidak ditemukan.</Command.Empty>
-			<Command.Group>
+			<Command.Group class="!overflow-auto">
 				{#each matkul.kelas as kelas}
 					<Command.Item
 						onSelect={(currentValue) => {
