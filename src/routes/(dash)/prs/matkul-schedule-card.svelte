@@ -48,14 +48,16 @@
 			'pointer-events-auto cursor-pointer',
 
 		// Deemphasize when not selected
-		openMatkulSelectionKode !== null && openMatkulSelectionKode !== schedule.kode && 'opacity-50',
+		openMatkulSelectionKode !== null &&
+			openMatkulSelectionKode !== schedule.kode &&
+			'opacity-50 brightness-75',
 
 		// Emphasize when plan pilihan is hovered on
 		schedule.planIdx.some((v) => v === (emphasizePilihan ?? -1) - 1) && 'shadow-2xl',
 		// Deemphasize if not selected
 		emphasizePilihan !== null &&
 			!schedule.planIdx.some((v) => v === (emphasizePilihan ?? -1) - 1) &&
-			'opacity-50'
+			'opacity-50 brightness-75'
 	)}
 	on:mouseenter={() => {
 		if (openMatkulSelectionKode === schedule.kode) {
