@@ -324,7 +324,7 @@
 								<Command.List>
 									<Command.Empty>Mata kuliah tidak ditemukan...</Command.Empty>
 									<Command.Group class="!overflow-auto">
-										{#each matkulOptions as matkul (matkul.kode)}
+										{#each filteredMakul as matkul (matkul.kode)}
 											<Command.Item
 												value={matkul.value}
 												onSelect={() => onSelectMatkul(matkul, ids)}
