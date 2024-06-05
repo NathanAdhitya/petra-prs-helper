@@ -62,7 +62,8 @@
 	{/key}
 {:else}
 	<div {...listAttrs} bind:this={el} {...$$restProps}>
-		<div {...sizerAttrs} use:sizerAction>
+		<!-- <div {...sizerAttrs} use:sizerAction> -->
+		<div {...sizerAttrs}>
 			{#key $state.search === ''}
 				<slot />
 			{/key}

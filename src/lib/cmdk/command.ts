@@ -257,6 +257,7 @@ export function createCommand(props: CommandProps) {
 	}
 
 	function filterItems(state: State, shouldFilterVal?: boolean): State {
+		console.log('filterItems');
 		const $shouldFilter = shouldFilterVal ?? shouldFilter;
 		if (!state.search || !$shouldFilter) {
 			state.filtered.count = $allItems.size;
@@ -527,7 +528,8 @@ export function createCommand(props: CommandProps) {
 		state: stateStore,
 		handleRootKeydown,
 		commandEl,
-		ids
+		ids,
+		context
 	};
 }
 

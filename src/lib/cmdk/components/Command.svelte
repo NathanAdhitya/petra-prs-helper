@@ -25,7 +25,8 @@
 		commandEl,
 		handleRootKeydown,
 		ids: commandIds,
-		state: stateStore
+		state: stateStore,
+		context: contextStore
 	} = createCommand({
 		label,
 		shouldFilter,
@@ -41,6 +42,8 @@
 		state,
 		ids
 	});
+
+	export let context: $$Props['context'] = contextStore;
 
 	function syncValueAndState(value: string | undefined) {
 		if (value && value !== $stateStore.value) {
@@ -84,18 +87,21 @@
 		attrs: rootAttrs
 	};
 
+	let element: HTMLDivElement;
+
 	$: slotProps = {
 		root,
 		label: { attrs: labelAttrs },
 		stateStore,
-		state: $stateStore
+		state: $stateStore,
+		element
 	};
 </script>
 
 {#if asChild}
 	<slot {...slotProps} />
 {:else}
-	<div use:rootAction {...rootAttrs} {...$$restProps}>
+	<div use:rootAction {...rootAttrs} {...$$restProps} bind:this={element}>
 		<!-- svelte-ignore a11y-label-has-associated-control applied in attrs -->
 		<label {...labelAttrs}>
 			{label ?? ''}

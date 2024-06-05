@@ -4,6 +4,7 @@
 	type $$Props = CommandPrimitive.GroupProps;
 
 	let className: string | undefined | null = undefined;
+	export let element: $$Props['element'] = undefined;
 	export { className as class };
 </script>
 
@@ -13,6 +14,7 @@
 		className
 	)}
 	{...$$restProps}
+	bind:element
 >
 	<slot />
 </CommandPrimitive.Group>

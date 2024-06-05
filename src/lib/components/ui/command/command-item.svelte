@@ -5,8 +5,10 @@
 	type $$Props = CommandPrimitive.ItemProps;
 
 	export let asChild = false;
+	export let element: $$Props['element'] = undefined;
 
 	let className: string | undefined | null = undefined;
+
 	export { className as class };
 </script>
 
@@ -19,6 +21,7 @@
 	{...$$restProps}
 	let:action
 	let:attrs
+	bind:element
 >
 	<slot {action} {attrs} />
 </CommandPrimitive.Item>

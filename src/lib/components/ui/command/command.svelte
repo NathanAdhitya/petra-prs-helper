@@ -5,6 +5,7 @@
 	type $$Props = CommandPrimitive.CommandProps;
 
 	export let value: $$Props['value'] = undefined;
+	export let context: $$Props['context'] = undefined;
 
 	let className: string | undefined | null = undefined;
 	export { className as class };
@@ -16,6 +17,7 @@
 		className
 	)}
 	bind:value
+	bind:context
 	{...$$restProps}
 >
 	<slot />

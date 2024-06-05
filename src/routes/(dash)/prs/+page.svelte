@@ -21,6 +21,7 @@
 	import type { MataKuliah } from '$lib/mata-kuliah';
 	import { focusTriggerNextTick, cn, notEmpty } from '$lib/utils.js';
 	import { onMount, tick } from 'svelte';
+	import * as CommandPrimitive from '$lib/cmdk';
 
 	import * as Dialog from '$lib/components/ui/dialog';
 	import * as Resizable from '$lib/components/ui/resizable';
@@ -34,14 +35,20 @@
 	import { chosenClasses, chosenMatkul } from '$lib/mk-state';
 	import { derived } from 'svelte/store';
 	import Input from '$lib/components/ui/input/input.svelte';
+	import { createVirtualizer } from '@tanstack/svelte-virtual';
+	import { createState } from '$lib/cmdk/command';
+	import type { Context as CommandContext } from '$lib/cmdk/types';
 	export let data;
 
 	let matkulOptions = data.pilihanMataKuliah.map((item) => ({
 		label: properCase(item.nama).trim(),
 		value: item.kode + ' - ' + properCase(item.nama).trim(),
 		kode: item.kode,
+		id: item.kode,
 		reference: item
 	}));
+
+	let matkulMap = new Map(matkulOptions.map((m) => [m.kode, m]));
 
 	let listJurusan = Array.from(new Set(data.pilihanMataKuliah.map((m) => m.unit)));
 
@@ -231,7 +238,45 @@
 		.flat(1)
 		.filter(notEmpty);
 
+	let virtualListEl: HTMLDivElement;
+	let virtualItemEls: HTMLDivElement[] = [];
+
+	const matkulCommandState = createState();
+	const filteredCount = derived(
+		matkulCommandState,
+		($matkulCommandState) => $matkulCommandState.filtered.count
+	);
+
+	$: matkulVirtualizer = createVirtualizer<HTMLDivElement, HTMLDivElement>({
+		count: $filteredCount,
+		getScrollElement: () => virtualListEl,
+		estimateSize: () => 32
+	});
+
+	$: virtualItems = $matkulVirtualizer.getVirtualItems();
+
+	// $: {
+	// 	if (virtualItemEls.length)
+	// 		virtualItemEls.forEach((el) => $matkulVirtualizer.measureElement(el));
+	// }
+
 	// $: console.log(matkulOptions.length);
+	$: commandFilteredMatkul = [...$matkulCommandState.filtered.items.entries()];
+
+	let matkulCommandContext: CommandContext;
+	$: console.log('matkul cmd state', $matkulCommandState);
+	$: console.log('cmd filtered matkul', commandFilteredMatkul);
+	$: console.log('virtual items', virtualItems);
+	$: console.log('filtered count', $filteredCount);
+
+	// Initialize the values
+	$: {
+		if (matkulCommandContext)
+			matkulOptions.forEach((matkul) => {
+				matkulCommandContext.value(matkul.kode, matkul.value);
+				matkulCommandContext.item(matkul.kode, undefined);
+			});
+	}
 </script>
 
 <h1 class="text-4xl font-bold">Pendaftaran Rencana Studi</h1>
@@ -254,7 +299,7 @@
 							</Button>
 						</Popover.Trigger>
 						<Popover.Content class="w-full max-w-md p-0" side="bottom-start">
-							<Command.Root class="max-h-72">
+							<Command.Root state={matkulCommandState} asChild bind:context={matkulCommandContext}>
 								<div class="relative">
 									<Command.Input class="w-full" placeholder="Cari mata kuliah..." />
 
@@ -313,13 +358,53 @@
 									<!-- end of filter -->
 								</div>
 
-								<Command.List>
+								<Command.List class="h-72">
 									<Command.Empty>Mata kuliah tidak ditemukan...</Command.Empty>
-									<Command.Group class="!overflow-auto">
-										{#each matkulOptions as matkul (matkul.kode)}
+									<Command.Group>
+										<div class="h-72 !overflow-auto contain-strict" bind:this={virtualListEl}>
+											<div class="relative" style="height: {$matkulVirtualizer.getTotalSize()}px">
+												<div
+													style="position: absolute; top: 0; left: 0; width: 100%; transform: translateY({virtualItems[0]
+														? virtualItems[0].start
+														: 0}px);"
+												>
+													{#each virtualItems as row, idx (row.index)}
+														{@const matkul = matkulMap.get(commandFilteredMatkul[row.index][0])}
+														{#if matkul}
+															<Command.Item
+																value={matkul?.value}
+																onSelect={() => onSelectMatkul(matkul, ids)}
+																id={matkul?.kode}
+																skipInit
+																bind:element={virtualItemEls[idx]}
+																data-index={row.index}
+																alwaysRender={true}
+															>
+																<span class="mr-4 text-muted-foreground">{matkul.kode} </span>
+																<span>
+																	{matkul.label}
+																	<span class="text-xs text-muted-foreground">
+																		{matkul.reference.sks} SKS</span
+																	>
+																</span>
+																<Check
+																	class={cn(
+																		'ml-auto mr-2 h-4 w-4',
+																		!$chosenMatkul.includes(matkul.reference) && 'text-transparent'
+																	)}
+																/>
+															</Command.Item>
+														{/if}
+													{/each}
+												</div>
+											</div>
+										</div>
+										<!-- {#each matkulOptions as matkul (matkul.kode)}
 											<Command.Item
 												value={matkul.value}
 												onSelect={() => onSelectMatkul(matkul, ids)}
+												id={`${matkul.kode}`}
+												skipInit
 											>
 												<span class="mr-4 text-muted-foreground">{matkul.kode} </span>
 												<span>
@@ -335,7 +420,7 @@
 													)}
 												/>
 											</Command.Item>
-										{/each}
+										{/each} -->
 									</Command.Group>
 								</Command.List>
 								<div class="flex items-center justify-center px-4 py-2">

@@ -52,6 +52,11 @@ type BaseCommandProps = {
 	state?: Writable<State>;
 
 	/**
+	 * Custom behaviour: direct context access
+	 */
+	context?: Context;
+
+	/**
 	 * An accessible label for the command menu.
 	 * Not visible & only used for screen readers.
 	 */
@@ -165,6 +170,8 @@ export type GroupProps = {
 	 * only have `attrs` to be applied to the respective elements.
 	 */
 	asChild?: boolean;
+
+	element?: HTMLDivElement;
 } & HTMLDivAttributes;
 
 export type ItemProps = {
@@ -205,6 +212,13 @@ export type ItemProps = {
 	 * in very specific cases.
 	 */
 	id?: string;
+
+	/**
+	 * Custom behaviour: skip intialization
+	 */
+	skipInit?: boolean;
+
+	element?: HTMLDivElement;
 } & HTMLDivAttributes;
 
 type TransitionProps =

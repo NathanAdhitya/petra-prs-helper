@@ -74,12 +74,14 @@
 	$: group = {
 		attrs: groupAttrs
 	};
+
+	export let element: $$Props['element'] = undefined;
 </script>
 
 {#if asChild}
 	<slot {container} {group} heading={{ attrs: headingAttrs }} />
 {:else}
-	<div use:containerAction {...containerAttrs} {...$$restProps}>
+	<div use:containerAction {...containerAttrs} {...$$restProps} bind:this={element}>
 		{#if heading}
 			<div {...headingAttrs}>
 				{heading}

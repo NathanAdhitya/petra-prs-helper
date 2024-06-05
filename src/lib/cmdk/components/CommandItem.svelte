@@ -18,6 +18,7 @@
 	export let alwaysRender: $$Props['alwaysRender'] = false;
 	export let asChild: $$Props['asChild'] = false;
 	export let id: string = generateId();
+	export let skipInit: $$Props['skipInit'] = false;
 
 	const groupContext = getGroup();
 	const context = getCtx();
@@ -36,8 +37,10 @@
 
 	onMount(() => {
 		isFirstRender = false;
-		const unsub = context.item(id, groupContext?.id);
-		return unsub;
+		if (!skipInit) {
+			const unsub = context.item(id, groupContext?.id);
+			return unsub;
+		}
 	});
 
 	const selected = derived(state, ($state) => $state.value === value);
@@ -46,7 +49,11 @@
 		if (!value && node.textContent) {
 			value = node.textContent.trim().toLowerCase();
 		}
-		context.value(id, value);
+
+		if (!skipInit) {
+			// a slightly expensive call
+			context.value(id, value);
+		}
 		node.setAttribute(VALUE_ATTR, value);
 
 		const unsubEvents = executeCallbacks(
@@ -86,13 +93,15 @@
 		role: 'option',
 		id
 	};
+
+	export let element: $$Props['element'] = undefined;
 </script>
 
 {#if $render || isFirstRender}
 	{#if asChild}
 		<slot {action} {attrs} />
 	{:else}
-		<div {...attrs} use:action {...$$restProps}>
+		<div {...attrs} use:action {...$$restProps} bind:this={element}>
 			<slot {action} {attrs} />
 		</div>
 	{/if}

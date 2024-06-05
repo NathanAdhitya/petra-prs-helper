@@ -8,7 +8,7 @@
 	import { cn, focusTriggerNextTick } from '$lib/utils.js';
 
 	import type { KelasMataKuliah, MataKuliah } from '$lib/mata-kuliah';
-	import { createState } from 'cmdk-sv';
+	import { createState } from '$lib/cmdk/command';
 	import { tick } from 'svelte';
 	import { ChosenClassesUtils, chosenClasses } from '$lib/mk-state';
 	import { stringifyKelas } from '$lib/mk-utils';
