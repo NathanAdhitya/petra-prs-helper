@@ -6,6 +6,8 @@
 		startHour: number;
 		startMinute: number;
 		lengthMinutes: number;
+
+		priority: number;
 	}
 </script>
 

@@ -44,7 +44,6 @@
 <!-- svelte-ignore a11y-no-static-element-interactions -->
 <!-- svelte-ignore a11y-click-events-have-key-events -->
 <div
-	transition:fade={{ duration: 100, easing: quartOut }}
 	bind:contentRect
 	class={clsx(
 		'z-10 flex h-full w-full flex-col overflow-hidden break-words rounded-sm p-1 transition-all',
@@ -145,7 +144,6 @@
 										onSelect={(currentValue) => {
 											// modify the chosenClasses object for the correct planIdx
 											ChosenClassesUtils.setPlan(schedule.kode, openMatkulPlanIdx ?? 0, kelas);
-											open = false;
 
 											// Fire a global event to close all other popovers
 											document.dispatchEvent(new CustomEvent('close-popovers'));
@@ -154,6 +152,7 @@
 											document.dispatchEvent(
 												new CustomEvent('selection-made', {
 													detail: {
+														kode: schedule.kode,
 														planIdx: openMatkulPlanIdx
 													}
 												})
