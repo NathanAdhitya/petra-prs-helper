@@ -74,10 +74,10 @@
 	});
 </script>
 
-<Card.Root class={clsx(coloredClasses, 'transition-all')}>
+<Card.Root class={clsx(coloredClasses, 'transition-all contain-content')}>
 	<Card.Header class="pb-2">
-		<div class="flex items-start justify-center gap-4">
-			<Card.Title class="text-wrap">
+		<div class="flex items-start justify-center gap-4 max-lg:px-4">
+			<Card.Title class="max-w-full text-wrap break-words">
 				{properCase(matkul.nama)}
 			</Card.Title>
 			<button

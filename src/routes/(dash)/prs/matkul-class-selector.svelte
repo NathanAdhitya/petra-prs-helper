@@ -1,7 +1,7 @@
 <script lang="ts">
 	import { Button } from '$lib/components/ui/button';
 	import * as Popover from '$lib/components/ui/popover';
-	import { Check, ChevronDown, TriangleAlert } from 'lucide-svelte';
+	import { Check, ChevronDown, CircleSlash, TriangleAlert } from 'lucide-svelte';
 
 	import * as Command from '$lib/components/ui/command/index.js';
 	import { cn } from '$lib/utils.js';
@@ -13,6 +13,7 @@
 	import { onMount, tick } from 'svelte';
 	import clsx from 'clsx';
 	import { executeCallbacks, addEventListener } from '$lib/internal';
+	import * as Tooltip from '$lib/components/ui/tooltip';
 
 	let state = createState();
 	export let planIdx: number;
@@ -132,7 +133,23 @@
 						value={stringifyKelas(kelas)}
 					>
 						{#if $chosenClasses[matkul.kode] && $chosenClasses[matkul.kode].includes(kelas.kelas) && $chosenClasses[matkul.kode][planIdx] !== kelas.kelas}
-							<TriangleAlert class="mr-2 h-4 w-4 text-yellow-500" />
+							<Tooltip.Root openDelay={0}>
+								<Tooltip.Trigger>
+									<CircleSlash class="mr-2 h-4 w-4 text-yellow-500" />
+								</Tooltip.Trigger>
+								<Tooltip.Content side="right">
+									Kelas ini sudah dipilih di prioritas lain.
+								</Tooltip.Content>
+							</Tooltip.Root>
+						{:else if $chosenClasses[matkul.kode] && $chosenClasses[matkul.kode].filter((k) => k === kelas.kelas).length > 1 && $chosenClasses[matkul.kode][planIdx] === kelas.kelas}
+							<Tooltip.Root openDelay={0}>
+								<Tooltip.Trigger>
+									<Check class="mr-2 h-4 w-4 text-yellow-500" />
+								</Tooltip.Trigger>
+								<Tooltip.Content side="right">
+									Kelas ini digunakan di prioritas ini dan prioritas lain.
+								</Tooltip.Content>
+							</Tooltip.Root>
 						{:else}
 							<Check
 								class={cn(

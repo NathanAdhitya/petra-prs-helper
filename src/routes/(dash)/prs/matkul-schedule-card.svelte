@@ -65,7 +65,7 @@
 	}}
 	data-priority-click
 >
-	<div class="font-medium leading-5 max-xl:text-sm">
+	<div class="text-sm font-medium leading-5 max-xl:text-xs">
 		{lazyShortenMatkulName(properCase(schedule.nama), forceShortenMatkulName)}
 		<span class="text-xs"> ({schedule.kelas.join(', ')})</span>
 	</div>
