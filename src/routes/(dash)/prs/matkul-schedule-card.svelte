@@ -36,7 +36,7 @@
 <div
 	bind:contentRect
 	class={clsx(
-		'z-10 flex h-full w-full flex-col overflow-hidden break-words rounded-lg p-2 transition-all',
+		'z-10 flex h-full w-full flex-col overflow-hidden break-words rounded-sm p-1 transition-all',
 		schedule.currentlySelected
 			? matkulColors[$chosenMatkul.findIndex((v) => v.kode === schedule.kode) % matkulColors.length]
 			: 'bg-slate-200',

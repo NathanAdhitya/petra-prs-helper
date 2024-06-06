@@ -1,4 +1,6 @@
 <script lang="ts" context="module">
+	import type { MataKuliah } from '$lib/mata-kuliah';
+
 	export interface ComputedSchedule extends Omit<MataKuliah, 'kelas'> {
 		dayOfWeek: number;
 		startHour: number;
@@ -8,48 +10,50 @@
 		currentlySelected: boolean;
 		planIdx: number[];
 	}
+
+	export interface MatkulOption {
+		label: string;
+		value: string;
+		kode: string;
+		recommended: boolean;
+		reference: MataKuliah;
+	}
 </script>
 
 <script lang="ts">
 	import { Button } from '$lib/components/ui/button';
 	import * as Card from '$lib/components/ui/card';
 	import * as Popover from '$lib/components/ui/popover';
-	import { Check, ChevronDown, SlidersHorizontal } from 'lucide-svelte';
+	import { Check, ChevronDown } from 'lucide-svelte';
 
 	import * as Command from '$lib/components/ui/command/index.js';
-	import * as ToggleGroup from '$lib/components/ui/toggle-group/index.js';
-	import type { MataKuliah } from '$lib/mata-kuliah';
-	import { focusTriggerNextTick, cn, notEmpty } from '$lib/utils.js';
-	import { onDestroy, onMount, tick } from 'svelte';
+	import { cn, focusTriggerNextTick, notEmpty } from '$lib/utils.js';
+	import { onMount, tick } from 'svelte';
 
 	import * as Dialog from '$lib/components/ui/dialog';
 	import * as Resizable from '$lib/components/ui/resizable';
+	import { chosenClasses, chosenMatkul } from '$lib/mk-state';
 	import { properCase } from '$lib/mk-utils';
 	import clsx from 'clsx';
 	import { quartOut } from 'svelte/easing';
+	import { derived } from 'svelte/store';
 	import { slide } from 'svelte/transition';
+	import MatkulFilter, { type FilterFunction } from '../matkul-filter.svelte';
 	import MatkulCard from './matkul-card.svelte';
 	import MatkulScheduleCard from './matkul-schedule-card.svelte';
 	import Schedule from './schedule.svelte';
-	import { chosenClasses, chosenMatkul } from '$lib/mk-state';
-	import { derived } from 'svelte/store';
-	import Input from '$lib/components/ui/input/input.svelte';
-	export let data;
-	import Switch from '$lib/components/ui/switch/switch.svelte';
-	import Separator from '$lib/components/ui/separator/separator.svelte';
-	// console.log(data.pilihanMataKuliah.slice(10));
 
-	let matkulOptions = data.pilihanMataKuliah.map((item) => ({
+	export let data;
+
+	$: matkulOptions = data.pilihanMataKuliah.map((item) => ({
 		label: properCase(item.nama).trim(),
 		value: item.kode + ' - ' + properCase(item.nama).trim(),
 		kode: item.kode,
 		recommended: item.recommended,
 		reference: item
-	}));
+	})) satisfies MatkulOption[];
 
 	let listJurusan = Array.from(new Set(data.pilihanMataKuliah.map((m) => m.unit)));
-	let rekomFilter = false;
-
 	let chosenFilters: string[] = [data.dataUser.jurusan];
 
 	let holdingShift = false;
@@ -172,9 +176,8 @@
 		return acc;
 	}
 	let filteredMakul = [];
-	$: filteredMakul = rekomFilter
-		? matkulOptions.filter((m) => m.recommended === true)
-		: matkulOptions.filter((m) => chosenFilters.includes(m.reference.unit));
+	let filterFunction: FilterFunction = () => false;
+	$: filteredMakul = matkulOptions.filter(filterFunction);
 
 	$: computedSchedule = $chosenMatkul
 		.map((matkul) => {
@@ -260,65 +263,7 @@
 							<Command.Root class="max-h-72">
 								<div class="relative">
 									<Command.Input class="w-full" placeholder="Cari mata kuliah..." />
-
-									<!-- This part is filter, should be moved because I kept editing the wrong code... -->
-									<div class="absolute right-0 top-0 m-0.5">
-										<Popover.Root>
-											<Popover.Trigger asChild let:builder>
-												<Button builders={[builder]} variant="outline" size="icon">
-													<SlidersHorizontal class="h-5 w-5" />
-												</Button>
-											</Popover.Trigger>
-											<Popover.Content strategy="fixed" side="right-start" sideOffset={4}>
-												<h2 class="text-lg font-semibold">Filter mata kuliah</h2>
-												<Separator />
-												<div class="flex items-center justify-between gap-2">
-													<h3 class="my-4 font-semibold">Rekomendasi</h3>
-													<Switch bind:checked={rekomFilter} />
-												</div>
-												<Command.Root>
-													<Command.Input placeholder="Cari jurusan" />
-													<Command.Empty>Jurusan tidak ditemukan...</Command.Empty>
-													<div class="max-h-72 overflow-y-auto">
-														{#each listJurusan as jurusan}
-															<Command.Item
-																value={jurusan}
-																onSelect={() => {
-																	if (!submitted) {
-																		// either remove or add
-																		if (chosenFilters.includes(jurusan)) {
-																			chosenFilters = chosenFilters.filter(
-																				(item) => item !== jurusan
-																			);
-																		} else {
-																			chosenFilters = [...chosenFilters, jurusan];
-																		}
-																	}
-
-																	if (!holdingShift) {
-																		open = true;
-																		focusTriggerNextTick(ids.trigger);
-																	}
-																}}
-															>
-																<span>
-																	{jurusan}
-																</span>
-																<Check
-																	class={cn(
-																		'ml-auto mr-2 h-4 w-4',
-																		!chosenFilters.includes(jurusan) && 'text-transparent'
-																	)}
-																/>
-															</Command.Item>
-														{/each}
-													</div>
-												</Command.Root>
-											</Popover.Content>
-										</Popover.Root>
-									</div>
-
-									<!-- end of filter -->
+									<MatkulFilter {listJurusan} disabled={submitted} bind:filterFunction />
 								</div>
 
 								<Command.List>

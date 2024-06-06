@@ -1,9 +1,14 @@
 import type { KelasMataKuliah } from './mata-kuliah';
 import { dowMap, timeToString } from './mock-data';
 
+export function isRomanNumeral(str: string) {
+	return /^[IVXLCDM]+$/.test(str);
+}
+
 export function properCase(str: string) {
 	return str.replace(/\w\S*/g, function (txt) {
 		if (txt.toLowerCase() === 'dan') return txt.toLowerCase();
+		if (isRomanNumeral(txt)) return txt.toUpperCase();
 		return txt.charAt(0).toUpperCase() + txt.substring(1).toLowerCase();
 	});
 }
@@ -33,10 +38,18 @@ export function shortenMatkulName(str: string, force = false) {
 	// Split the string into words
 	const words = str.split(' ');
 
+	// If the last word is a roman numeral, preserve as-is
+	const postfix = isRomanNumeral(words[words.length - 1]) ? ` ${words.pop()}` : '';
+
 	// Remove any words that are "dan"
 	const filteredWords = words.filter(
 		(word) => word.toLowerCase() !== 'dan' && word.toLowerCase() !== 'and'
 	);
+
+	// If it only contains one word, then return the entire word
+	if (filteredWords.length === 1) {
+		return filteredWords[0] + postfix;
+	}
 
 	// If there are only two words, then take the first syllable of each word
 	if (filteredWords.length === 2 && !force) {
@@ -52,7 +65,7 @@ export function shortenMatkulName(str: string, force = false) {
 		});
 
 		// Combine the first syllables
-		let combined = firstSyllables.join('');
+		let combined = firstSyllables.join('') + postfix;
 
 		// If the combined name is longer than 8 characters, then only take the initials of each word
 		if (combined.length > 8 || force) {
@@ -60,12 +73,12 @@ export function shortenMatkulName(str: string, force = false) {
 			combined = initials.join('');
 		}
 
-		return combined;
+		return combined + postfix;
 	}
 
-	// If there are more than two words, then take the initial of each word
-	const initials = filteredWords.map((word) => word[0]);
-	return initials.join('');
+	// If there are more than two words, then take the initial of each word if the word is not a roman numeral
+	const initials = filteredWords.map((word) => (isRomanNumeral(word) ? word : word[0]));
+	return initials.join('') + postfix;
 }
 
 export function guessMatkulSks(durationMinutes: number[]) {
