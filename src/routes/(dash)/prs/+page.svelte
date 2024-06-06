@@ -60,6 +60,9 @@
 	import Schedule from './schedule.svelte';
 	import { addEventListener, executeCallbacks } from '$lib/internal';
 	import { keyboardStore } from '$lib/kbd';
+	import { titleStore } from '$lib/stores';
+
+	onMount(() => ($titleStore = 'PRS'));
 
 	export let data;
 

@@ -1,8 +1,6 @@
 <script lang="ts">
 	import * as Card from '$lib/components/ui/card';
 	import { namaUser, nrpUser } from '$lib/mock-data';
-	import * as Select from '$lib/components/ui/select';
-	import * as Table from '$lib/components/ui/table';
 
 	const khsData: Record<
 		string,

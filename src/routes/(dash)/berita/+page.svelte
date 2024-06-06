@@ -9,6 +9,8 @@
 
 	import type { CarouselAPI } from '$lib/components/ui/carousel/context.js';
 	import clsx from 'clsx';
+	import { onMount } from 'svelte';
+	import { titleStore } from '$lib/stores.js';
 
 	let api: CarouselAPI;
 	let current = 0;
@@ -22,6 +24,8 @@
 			current = api.selectedScrollSnap() + 1;
 		});
 	}
+
+	onMount(() => ($titleStore = 'KHS'));
 
 	export let data;
 </script>

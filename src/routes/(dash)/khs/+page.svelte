@@ -3,6 +3,8 @@
 	import { namaUser, nrpUser } from '$lib/mock-data';
 	import * as Select from '$lib/components/ui/select';
 	import * as Table from '$lib/components/ui/table';
+	import { titleStore } from '$lib/stores';
+	import { onMount } from 'svelte';
 
 	const khsData: Record<
 		string,
@@ -40,6 +42,8 @@
 		label: 'Semua Semester',
 		value: 'all'
 	};
+
+	onMount(() => ($titleStore = 'Berita'));
 </script>
 
 <h1 class="pb-2 text-center text-2xl font-bold">Transkrip</h1>

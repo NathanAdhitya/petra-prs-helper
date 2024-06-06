@@ -5,6 +5,7 @@
 	import { navigating } from '$app/stores';
 	import { Toaster } from '$lib/components/ui/sonner';
 	import { ModeWatcher } from 'mode-watcher';
+	import { titleStore } from '$lib/stores';
 
 	const tricklingProgress = createTrickling({
 		showSpinner: false
@@ -18,6 +19,10 @@
 		}
 	}
 </script>
+
+<svelte:head>
+	<title>{$titleStore} • SIA Petra</title>
+</svelte:head>
 
 <ModeWatcher track={false} defaultMode="light" />
 <Toaster theme="light" />
