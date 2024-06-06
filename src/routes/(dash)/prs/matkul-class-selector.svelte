@@ -14,6 +14,7 @@
 	import clsx from 'clsx';
 	import { executeCallbacks, addEventListener } from '$lib/internal';
 	import * as Tooltip from '$lib/components/ui/tooltip';
+	import { keyboardStore } from '$lib/kbd';
 
 	let state = createState();
 	export let planIdx: number;
@@ -45,21 +46,14 @@
 	// When the popover is opened, make sure the selected state is in sync with the chosenClasses
 	$: correctCurrentFocused(open);
 
-	let holdingShift = false;
+	$: holdingShift = $keyboardStore.shift;
 
 	onMount(() => {
-		const onKeyUp = (e: KeyboardEvent) => {
-			if (e.key === 'Shift') holdingShift = false;
+		const onPopoverClose = (e: CustomEvent) => {
+			open = false;
 		};
 
-		const onKeyDown = (e: KeyboardEvent) => {
-			if (e.key === 'Shift') holdingShift = true;
-		};
-
-		return executeCallbacks(
-			addEventListener(document, 'keyup', onKeyUp),
-			addEventListener(document, 'keydown', onKeyDown)
-		);
+		return executeCallbacks(addEventListener(document, 'close-popovers', onPopoverClose));
 	});
 </script>
 

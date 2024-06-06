@@ -3,21 +3,21 @@
 	import * as Card from '$lib/components/ui/card';
 	import { CircleMinus, Plus, Trash } from 'lucide-svelte';
 
-	import { properCase } from '$lib/mk-utils';
+	import { addEventListener, executeCallbacks } from '$lib/internal';
+	import {
+		ChosenClassesUtils,
+		ChosenMatkulUtils,
+		chosenClasses,
+		type MataKuliahWithColor
+	} from '$lib/mk-state';
+	import { lazyShortenMatkulName, properCase } from '$lib/mk-utils';
 	import clsx from 'clsx';
 	import { onMount, tick } from 'svelte';
 	import { quartOut } from 'svelte/easing';
 	import { slide } from 'svelte/transition';
 	import MatkulClassSelector from './matkul-class-selector.svelte';
-	import {
-		ChosenClassesUtils,
-		ChosenMatkulUtils,
-		chosenClasses,
-		chosenMatkul,
-		type MataKuliahWithColor
-	} from '$lib/mk-state';
-	import type { State } from 'cmdk-sv';
-	import type { Writable } from 'svelte/store';
+	import { keyboardStore } from '$lib/kbd';
+	import { get } from 'svelte/store';
 
 	export let matkul: MataKuliahWithColor;
 	$: coloredClasses = matkul.colorClasses;
@@ -41,13 +41,15 @@
 			attemptAddPlan();
 		}
 
-		// If the currentIdx is not the last plan count, then move to the next plan
-		if (currentIdx < planCount - 1) {
-			open[currentIdx] = false;
-			tick().then(() => {
-				open[currentIdx + 1] = true;
-			});
-		}
+		tick().then(() => {
+			// If the currentIdx is not the last plan count, then move to the next plan
+			if (currentIdx < planCount - 1) {
+				open[currentIdx] = false;
+				tick().then(() => {
+					open[currentIdx + 1] = true;
+				});
+			}
+		});
 	};
 
 	$: {
@@ -71,6 +73,21 @@
 		if ($chosenClasses[matkul.kode]) {
 			planCount = Math.max($chosenClasses[matkul.kode].length, 1);
 		}
+
+		return executeCallbacks(
+			addEventListener(document, 'selection-made', (e: CustomEvent) => {
+				if (e.detail) {
+					if (
+						typeof e.detail.planIdx === 'number' &&
+						typeof e.detail.kode === 'string' &&
+						open &&
+						e.detail.kode === matkul.kode &&
+						get(keyboardStore).shift
+					)
+						nextPlan(e.detail.planIdx)();
+				}
+			})
+		);
 	});
 </script>
 
@@ -78,7 +95,7 @@
 	<Card.Header class="pb-2">
 		<div class="flex items-start justify-center gap-4 max-lg:px-4">
 			<Card.Title class="max-w-full text-wrap break-words">
-				{properCase(matkul.nama)}
+				{properCase(matkul.nama)} ({lazyShortenMatkulName(properCase(matkul.nama), true)})
 			</Card.Title>
 			<button
 				class="ml-auto size-5 shrink-0 text-slate-500 transition-colors hover:text-slate-700"

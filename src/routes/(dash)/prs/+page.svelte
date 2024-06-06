@@ -48,6 +48,7 @@
 	import MatkulScheduleCard from './matkul-schedule-card.svelte';
 	import Schedule from './schedule.svelte';
 	import { addEventListener, executeCallbacks } from '$lib/internal';
+	import { keyboardStore } from '$lib/kbd';
 
 	export let data;
 
@@ -60,22 +61,7 @@
 	})) satisfies MatkulOption[];
 
 	let listJurusan = Array.from(new Set(data.pilihanMataKuliah.map((m) => m.unit)));
-	let holdingShift = false;
-
-	onMount(() => {
-		const onKeyUp = (e: KeyboardEvent) => {
-			if (e.key === 'Shift') holdingShift = false;
-		};
-
-		const onKeyDown = (e: KeyboardEvent) => {
-			if (e.key === 'Shift') holdingShift = true;
-		};
-
-		return executeCallbacks(
-			addEventListener(document, 'keyup', onKeyUp),
-			addEventListener(document, 'keydown', onKeyDown)
-		);
-	});
+	$: holdingShift = $keyboardStore.shift;
 
 	const chosenSksCount = derived(chosenMatkul, ($chosenMatkul) =>
 		$chosenMatkul.reduce((acc, matkul) => acc + matkul.sks, 0)
@@ -245,8 +231,8 @@
 												value={matkul.value}
 												onSelect={() => onSelectMatkul(matkul, ids)}
 											>
-												<span class="mr-4 text-muted-foreground">{matkul.kode} </span>
-												<span>
+												<span class="absolute text-muted-foreground">{matkul.kode} </span>
+												<span class="ml-[6ch]">
 													{matkul.label}
 													<span class="text-xs text-muted-foreground">
 														{matkul.reference.sks} SKS</span

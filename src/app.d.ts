@@ -8,6 +8,14 @@ declare global {
 		// interface PageState {}
 		// interface Platform {}
 	}
+
+	interface HTMLElementEventMap {
+		/** Close all open popovers/dialogs/whatever */
+		'close-popovers': CustomEvent;
+
+		/** Used for certain behaviours to advance to the next section automatically */
+		'selection-made': CustomEvent;
+	}
 }
 import 'unplugin-icons/types/svelte';
 export {};

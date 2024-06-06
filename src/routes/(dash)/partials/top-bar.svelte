@@ -165,7 +165,7 @@
 			<DropdownMenu.Label class="pb-0">{namaUser}</DropdownMenu.Label>
 			<DropdownMenu.Label class="pt-0 text-xs text-muted-foreground">{nrpUser}</DropdownMenu.Label>
 			<DropdownMenu.Separator />
-			<DropdownMenu.Item href="/biodata">Biodata</DropdownMenu.Item>
+			<DropdownMenu.Item>Biodata</DropdownMenu.Item>
 			<DropdownMenu.Separator />
 			<DropdownMenu.Item href="/login">Logout</DropdownMenu.Item>
 		</DropdownMenu.Content>

@@ -6,8 +6,22 @@
 	import { lazyShortenMatkulName, properCase } from '$lib/mk-utils';
 	import { timeToString } from '$lib/mock-data';
 	import clsx from 'clsx';
-	import { ArrowUpNarrowWide, Check, ChevronDown, TriangleAlert } from 'lucide-svelte';
+	import {
+		ArrowUpNarrowWide,
+		Check,
+		ChevronDown,
+		CircleSlash,
+		TheaterIcon,
+		TriangleAlert
+	} from 'lucide-svelte';
 	import type { ComputedSchedule } from './+page.svelte';
+	import { cn } from '$lib/utils';
+	import * as Tooltip from '$lib/components/ui/tooltip';
+	import { tick } from 'svelte';
+	import { keyboardStore } from '$lib/kbd';
+	import Alert from '$lib/components/ui/alert/alert.svelte';
+	import { fade, scale } from 'svelte/transition';
+	import { quartOut } from 'svelte/easing';
 
 	export let schedule: ComputedSchedule;
 	export let openMatkulSelectionKode: string | null;
@@ -30,6 +44,7 @@
 <!-- svelte-ignore a11y-no-static-element-interactions -->
 <!-- svelte-ignore a11y-click-events-have-key-events -->
 <div
+	transition:fade={{ duration: 100, easing: quartOut }}
 	bind:contentRect
 	class={clsx(
 		'z-10 flex h-full w-full flex-col overflow-hidden break-words rounded-sm p-1 transition-all',
@@ -59,8 +74,19 @@
 		}
 	}}
 	on:click={(e) => {
+		if (e.isTrusted) return;
+
 		if (openMatkulSelectionKode === schedule.kode && schedule.kelas.length === 1) {
 			ChosenClassesUtils.setPlan(schedule.kode, openMatkulPlanIdx ?? 0, schedule.kelas[0]);
+
+			document.dispatchEvent(
+				new CustomEvent('selection-made', {
+					detail: {
+						kode: schedule.kode,
+						planIdx: openMatkulPlanIdx
+					}
+				})
+			);
 		}
 	}}
 	data-priority-click
@@ -120,15 +146,43 @@
 											// modify the chosenClasses object for the correct planIdx
 											ChosenClassesUtils.setPlan(schedule.kode, openMatkulPlanIdx ?? 0, kelas);
 											open = false;
+
+											// Fire a global event to close all other popovers
+											document.dispatchEvent(new CustomEvent('close-popovers'));
+
+											// Fire an event to indicate that a selection has been made
+											document.dispatchEvent(
+												new CustomEvent('selection-made', {
+													detail: {
+														planIdx: openMatkulPlanIdx
+													}
+												})
+											);
 										}}
 										value={kelas}
 										data-priority-click-prevent-default={false}
 									>
 										{#if $chosenClasses[schedule.kode] && $chosenClasses[schedule.kode].includes(kelas) && $chosenClasses[schedule.kode][openMatkulPlanIdx ?? 0] !== kelas}
-											<TriangleAlert class="mr-2 h-4 w-4 text-yellow-500" />
+											<Tooltip.Root openDelay={0}>
+												<Tooltip.Trigger>
+													<CircleSlash class="mr-2 h-4 w-4 text-yellow-500" />
+												</Tooltip.Trigger>
+												<Tooltip.Content side="right">
+													Kelas ini sudah dipilih di prioritas lain.
+												</Tooltip.Content>
+											</Tooltip.Root>
+										{:else if $chosenClasses[schedule.kode] && $chosenClasses[schedule.kode].filter((k) => k === kelas).length > 1 && $chosenClasses[schedule.kode][openMatkulPlanIdx ?? 0] === kelas}
+											<Tooltip.Root openDelay={0}>
+												<Tooltip.Trigger>
+													<Check class="mr-2 h-4 w-4 text-yellow-500" />
+												</Tooltip.Trigger>
+												<Tooltip.Content side="right">
+													Kelas ini digunakan di prioritas ini dan prioritas lain.
+												</Tooltip.Content>
+											</Tooltip.Root>
 										{:else}
 											<Check
-												class={clsx(
+												class={cn(
 													'mr-2 h-4 w-4',
 													!(
 														$chosenClasses[schedule.kode] &&
