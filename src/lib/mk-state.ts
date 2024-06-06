@@ -28,7 +28,7 @@ export class ChosenMatkulUtils {
 		'bg-pink-200',
 		'bg-indigo-200',
 		'bg-cyan-200',
-		'bg-teal-200',
+		'bg-teal-100',
 		'bg-lime-200',
 		'bg-orange-200',
 		'bg-violet-200'
