@@ -1,25 +1,21 @@
 <script lang="ts">
-	import { lazyShortenMatkulName, properCase, stringifyKelas } from '$lib/mk-utils';
-	import { timeToString } from '$lib/mock-data';
 	import { Button } from '$lib/components/ui/button';
-	import type { ComputedSchedule } from './+page.svelte';
-	import clsx from 'clsx';
-	import { ChosenClassesUtils, chosenMatkul, chosenClasses } from '$lib/mk-state';
-	import * as HoverCard from '$lib/components/ui/hover-card/index.js';
-	import * as Select from '$lib/components/ui/select';
-	import { ArrowUpNarrowWide, ChevronDown } from 'lucide-svelte';
 	import * as Command from '$lib/components/ui/command';
 	import * as Popover from '$lib/components/ui/popover';
-	import { Check, TriangleAlert } from 'lucide-svelte';
-	import { cn } from 'tailwind-variants';
+	import { ChosenClassesUtils, chosenClasses } from '$lib/mk-state';
+	import { lazyShortenMatkulName, properCase } from '$lib/mk-utils';
+	import { timeToString } from '$lib/mock-data';
+	import clsx from 'clsx';
+	import { ArrowUpNarrowWide, Check, ChevronDown, TriangleAlert } from 'lucide-svelte';
+	import type { ComputedSchedule } from './+page.svelte';
 
-	export let matkulColors: string[];
 	export let schedule: ComputedSchedule;
 	export let openMatkulSelectionKode: string | null;
 	export let emphasizeMatkulKode: string | null;
 	export let emphasizePilihan: number | null;
 	export let openMatkulPlanIdx: number | null;
 	export let openMatkulFocusedClass: string | null;
+	$: coloredClasses = schedule.colorClasses;
 
 	// Separated to easily use new bounding boxes to shorten text
 	// and to make the text more readable
@@ -37,9 +33,7 @@
 	bind:contentRect
 	class={clsx(
 		'z-10 flex h-full w-full flex-col overflow-hidden break-words rounded-sm p-1 transition-all',
-		schedule.currentlySelected
-			? matkulColors[$chosenMatkul.findIndex((v) => v.kode === schedule.kode) % matkulColors.length]
-			: 'bg-slate-200',
+		schedule.currentlySelected ? coloredClasses : 'bg-slate-200',
 		emphasizeMatkulKode === schedule.kode && 'shadow-2xl',
 		schedule.currentlySelected && openMatkulSelectionKode === schedule.kode && 'shadow-2xl',
 		openMatkulSelectionKode === schedule.kode && 'border-2 border-slate-300',

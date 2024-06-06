@@ -3,18 +3,24 @@
 	import * as Card from '$lib/components/ui/card';
 	import { CircleMinus, Plus, Trash } from 'lucide-svelte';
 
-	import type { MataKuliah } from '$lib/mata-kuliah';
 	import { properCase } from '$lib/mk-utils';
 	import clsx from 'clsx';
 	import { onMount, tick } from 'svelte';
 	import { quartOut } from 'svelte/easing';
 	import { slide } from 'svelte/transition';
 	import MatkulClassSelector from './matkul-class-selector.svelte';
-	import { ChosenClassesUtils, chosenClasses, chosenMatkul } from '$lib/mk-state';
+	import {
+		ChosenClassesUtils,
+		ChosenMatkulUtils,
+		chosenClasses,
+		chosenMatkul,
+		type MataKuliahWithColor
+	} from '$lib/mk-state';
+	import type { State } from 'cmdk-sv';
+	import type { Writable } from 'svelte/store';
 
-	export let matkulColors: string[];
-	export let matkul: MataKuliah;
-	export let i: number;
+	export let matkul: MataKuliahWithColor;
+	$: coloredClasses = matkul.colorClasses;
 
 	export let onOpenChanged: (open: boolean, planIdx: number) => void = () => {};
 	export let onFocusedToChanged: (focusedTo: string | null) => void = () => {};
@@ -22,9 +28,35 @@
 	$: planCount = 1;
 	$: maximumPlanCount = Math.min(3, matkul.kelas.length);
 
+	let open: boolean[] = [];
+	let search = '';
+
+	const attemptAddPlan = () => {
+		if (planCount < maximumPlanCount) planCount++;
+	};
+
+	const nextPlan = (currentIdx: number) => () => {
+		// If the currentIdx is the last index, try adding a new plan
+		if (currentIdx === planCount - 1) {
+			attemptAddPlan();
+		}
+
+		// If the currentIdx is not the last plan count, then move to the next plan
+		if (currentIdx < planCount - 1) {
+			open[currentIdx] = false;
+			tick().then(() => {
+				open[currentIdx + 1] = true;
+			});
+		}
+	};
+
 	$: {
 		// Make sure to cut the chosenClasses array to the maximum plan count
 		ChosenClassesUtils.trimPlans(matkul.kode, maximumPlanCount);
+	}
+
+	$: {
+		open.length = Math.min(open.length, planCount);
 	}
 
 	onMount(() => {
@@ -37,12 +69,12 @@
 
 		// Sync the current planCount to the length of the chosenClasses array
 		if ($chosenClasses[matkul.kode]) {
-			planCount = Math.min($chosenClasses[matkul.kode].length, 1);
+			planCount = Math.max($chosenClasses[matkul.kode].length, 1);
 		}
 	});
 </script>
 
-<Card.Root class={clsx(matkulColors[i], 'transition-all')}>
+<Card.Root class={clsx(coloredClasses, 'transition-all')}>
 	<Card.Header class="pb-2">
 		<div class="flex items-start justify-center gap-4">
 			<Card.Title class="text-wrap">
@@ -51,7 +83,7 @@
 			<button
 				class="ml-auto size-5 shrink-0 text-slate-500 transition-colors hover:text-slate-700"
 				on:click={() => {
-					$chosenMatkul = $chosenMatkul.filter((item) => item !== matkul);
+					ChosenMatkulUtils.remove(matkul);
 				}}
 			>
 				<CircleMinus class="h-full w-full transition-colors" />
@@ -68,6 +100,8 @@
 						{planIdx}
 						{matkul}
 						{onFocusedToChanged}
+						open={open[planIdx]}
+						next={nextPlan(planIdx)}
 						onOpenChanged={(v) => onOpenChanged(v, planIdx)}
 					/>
 				</div>
@@ -90,14 +124,7 @@
 		{/each}
 		{#if planCount < maximumPlanCount}
 			<div transition:slide={{ easing: quartOut }} class="flex w-full flex-col">
-				<Button
-					variant="outline"
-					size="icon"
-					class="w-full"
-					on:click={() => {
-						if (planCount < maximumPlanCount) planCount++;
-					}}
-				>
+				<Button variant="outline" size="icon" class="w-full" on:click={attemptAddPlan}>
 					<Plus class="h-4 w-4" />
 				</Button>
 			</div>

@@ -1,5 +1,5 @@
 <script context="module" lang="ts">
-	import type { MatkulOption } from './prs/+page.svelte';
+	import type { MatkulOption } from './+page.svelte';
 	export type FilterFunction = (m: MatkulOption) => boolean;
 </script>
 

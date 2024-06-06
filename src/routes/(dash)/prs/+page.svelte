@@ -1,7 +1,7 @@
 <script lang="ts" context="module">
 	import type { MataKuliah } from '$lib/mata-kuliah';
 
-	export interface ComputedSchedule extends Omit<MataKuliah, 'kelas'> {
+	export interface ComputedSchedule extends Omit<MataKuliahWithColor, 'kelas'> {
 		dayOfWeek: number;
 		startHour: number;
 		startMinute: number;
@@ -32,16 +32,22 @@
 
 	import * as Dialog from '$lib/components/ui/dialog';
 	import * as Resizable from '$lib/components/ui/resizable';
-	import { chosenClasses, chosenMatkul } from '$lib/mk-state';
+	import {
+		ChosenMatkulUtils,
+		chosenClasses,
+		chosenMatkul,
+		type MataKuliahWithColor
+	} from '$lib/mk-state';
 	import { properCase } from '$lib/mk-utils';
 	import clsx from 'clsx';
 	import { quartOut } from 'svelte/easing';
 	import { derived } from 'svelte/store';
 	import { slide } from 'svelte/transition';
-	import MatkulFilter, { type FilterFunction } from '../matkul-filter.svelte';
+	import MatkulFilter, { type FilterFunction } from './matkul-filter.svelte';
 	import MatkulCard from './matkul-card.svelte';
 	import MatkulScheduleCard from './matkul-schedule-card.svelte';
 	import Schedule from './schedule.svelte';
+	import { addEventListener, executeCallbacks } from '$lib/internal';
 
 	export let data;
 
@@ -54,46 +60,22 @@
 	})) satisfies MatkulOption[];
 
 	let listJurusan = Array.from(new Set(data.pilihanMataKuliah.map((m) => m.unit)));
-	let chosenFilters: string[] = [data.dataUser.jurusan];
-
 	let holdingShift = false;
 
 	onMount(() => {
 		const onKeyUp = (e: KeyboardEvent) => {
-			if (e.key === 'Shift') {
-				holdingShift = false;
-			}
+			if (e.key === 'Shift') holdingShift = false;
 		};
 
 		const onKeyDown = (e: KeyboardEvent) => {
-			if (e.key === 'Shift') {
-				holdingShift = true;
-			}
+			if (e.key === 'Shift') holdingShift = true;
 		};
 
-		document.addEventListener('keyup', onKeyUp);
-		document.addEventListener('keydown', onKeyDown);
-
-		return () => {
-			document.removeEventListener('keyup', onKeyUp);
-			document.removeEventListener('keydown', onKeyDown);
-		};
+		return executeCallbacks(
+			addEventListener(document, 'keyup', onKeyUp),
+			addEventListener(document, 'keydown', onKeyDown)
+		);
 	});
-
-	const chosenMatkulLimit = 15;
-	const sksMatkulLimit = 24;
-	const matkulColors = [
-		'bg-blue-200',
-		'bg-green-200',
-		'bg-yellow-200',
-		'bg-red-200',
-		'bg-purple-200',
-		'bg-pink-200',
-		'bg-indigo-200',
-		'bg-cyan-200',
-		'bg-teal-200',
-		'bg-lime-200'
-	];
 
 	const chosenSksCount = derived(chosenMatkul, ($chosenMatkul) =>
 		$chosenMatkul.reduce((acc, matkul) => acc + matkul.sks, 0)
@@ -135,18 +117,7 @@
 
 	const onSelectMatkul = (matkul: (typeof matkulOptions)[number], ids: { trigger: string }) => {
 		if (!submitted) {
-			// either remove or add
-			if ($chosenMatkul.includes(matkul.reference)) {
-				$chosenMatkul = $chosenMatkul.filter((item) => item !== matkul.reference);
-			} else {
-				if (
-					$chosenMatkul.length < chosenMatkulLimit &&
-					$chosenMatkul.reduce((acc, matkul) => acc + matkul.sks, 0) + matkul.reference.sks <=
-						sksMatkulLimit
-				) {
-					$chosenMatkul = [...$chosenMatkul, matkul.reference];
-				}
-			}
+			ChosenMatkulUtils.toggle(matkul.reference);
 		}
 
 		if (!holdingShift) {
@@ -284,7 +255,8 @@
 												<Check
 													class={cn(
 														'ml-auto mr-2 h-4 w-4',
-														!$chosenMatkul.includes(matkul.reference) && 'text-transparent'
+														!$chosenMatkul.some((v) => v.kode === matkul.reference.kode) &&
+															'text-transparent'
 													)}
 												/>
 											</Command.Item>
@@ -309,7 +281,7 @@
 										</p>
 									</div>
 									<div class="ml-auto text-sm text-muted-foreground">
-										{$chosenSksCount} / {sksMatkulLimit} SKS dipilih
+										{$chosenSksCount} / {ChosenMatkulUtils.sksLimit} SKS dipilih
 									</div>
 								</div>
 							</Command.Root>
@@ -324,11 +296,10 @@
 								diambil.
 							</div>
 						{:else}
-							{#each $chosenMatkul as matkul, i (matkul)}
+							{#each $chosenMatkul as matkul, i (matkul.kode)}
 								<!-- svelte-ignore a11y-no-static-element-interactions -->
 								<div
 									class="mb-2"
-									in:slide={{ easing: quartOut }}
 									on:mouseenter={() => {
 										emphasizeMatkulKode = matkul.kode;
 									}}
@@ -338,8 +309,6 @@
 								>
 									<MatkulCard
 										{matkul}
-										{matkulColors}
-										{i}
 										onOpenChanged={onOpenChanged(matkul.kode)}
 										{onFocusedToChanged}
 									/>
@@ -355,13 +324,14 @@
 			<div class="flex h-full w-full flex-1 flex-col gap-4">
 				<div class="flex items-center gap-4 rounded-lg border-2 bg-slate-50 p-2 px-4">
 					<div class="ml-auto">
-						Total SKS: {$chosenMatkul.reduce((acc, matkul) => acc + matkul.sks, 0)} / {sksMatkulLimit}
+						Total SKS: {$chosenMatkul.reduce((acc, matkul) => acc + matkul.sks, 0)} / {ChosenMatkulUtils.sksLimit}
 					</div>
 					<div>Status: {submitted ? 'Menunggu validasi' : 'Menunggu dikirim'}</div>
 					<Dialog.Root bind:open={validationDialogOpen}>
 						<Dialog.Trigger>
-							<Button disabled={submitted}>{submitted ? 'Terkirim' : 'Kirim untuk Validasi'}</Button
-							>
+							<Button disabled={submitted}>
+								{submitted ? 'Terkirim' : 'Kirim untuk Validasi'}
+							</Button>
 						</Dialog.Trigger>
 						<Dialog.Content>
 							<Dialog.Header>
@@ -399,7 +369,6 @@
 					>
 						<MatkulScheduleCard
 							{schedule}
-							{matkulColors}
 							{openMatkulSelectionKode}
 							bind:openMatkulFocusedClass
 							{openMatkulPlanIdx}

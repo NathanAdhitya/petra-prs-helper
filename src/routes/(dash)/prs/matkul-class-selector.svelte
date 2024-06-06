@@ -4,23 +4,24 @@
 	import { Check, ChevronDown, TriangleAlert } from 'lucide-svelte';
 
 	import * as Command from '$lib/components/ui/command/index.js';
-	import { dowMap, timeToString } from '$lib/mock-data';
-	import { cn, focusTriggerNextTick } from '$lib/utils.js';
+	import { cn } from '$lib/utils.js';
 
-	import type { KelasMataKuliah, MataKuliah } from '$lib/mata-kuliah';
-	import { createState } from 'cmdk-sv';
-	import { tick } from 'svelte';
+	import type { MataKuliah } from '$lib/mata-kuliah';
 	import { ChosenClassesUtils, chosenClasses } from '$lib/mk-state';
 	import { stringifyKelas } from '$lib/mk-utils';
+	import { createState } from 'cmdk-sv';
+	import { onMount, tick } from 'svelte';
+	import clsx from 'clsx';
+	import { executeCallbacks, addEventListener } from '$lib/internal';
 
-	let open = false;
 	let state = createState();
-
 	export let planIdx: number;
 	export let matkul: MataKuliah;
 
 	export let onOpenChanged: (open: boolean) => void = () => {};
 	export let onFocusedToChanged: (focusedTo: string | null) => void = () => {};
+	export let open = false;
+	export let next: () => void = () => {};
 
 	$: onFocusedToChanged(open ? $state.value.split(' (')[0].toLowerCase() : null);
 	$: onOpenChanged(open);
@@ -42,6 +43,23 @@
 
 	// When the popover is opened, make sure the selected state is in sync with the chosenClasses
 	$: correctCurrentFocused(open);
+
+	let holdingShift = false;
+
+	onMount(() => {
+		const onKeyUp = (e: KeyboardEvent) => {
+			if (e.key === 'Shift') holdingShift = false;
+		};
+
+		const onKeyDown = (e: KeyboardEvent) => {
+			if (e.key === 'Shift') holdingShift = true;
+		};
+
+		return executeCallbacks(
+			addEventListener(document, 'keyup', onKeyUp),
+			addEventListener(document, 'keydown', onKeyDown)
+		);
+	});
 </script>
 
 <Popover.Root
@@ -99,7 +117,7 @@
 	</Popover.Trigger>
 	<Popover.Content class="w-auto p-0" side="bottom-start">
 		<Command.Root class="max-h-72" {state}>
-			<Command.Input placeholder="Cari kelas..." />
+			<Command.Input placeholder="Cari kelas prioritas {planIdx + 1}..." />
 			<Command.Empty>Kelas tidak ditemukan.</Command.Empty>
 			<Command.Group class="!overflow-auto">
 				{#each matkul.kelas as kelas}
@@ -108,6 +126,8 @@
 							// modify the chosenClasses object for the correct planIdx
 							ChosenClassesUtils.setPlan(matkul.kode, planIdx, kelas.kelas);
 							open = false;
+
+							if (holdingShift) next();
 						}}
 						value={stringifyKelas(kelas)}
 					>
@@ -129,6 +149,24 @@
 					</Command.Item>
 				{/each}
 			</Command.Group>
+			<div class="flex items-center justify-center px-4 py-2">
+				<div>
+					<p class="text-sm text-muted-foreground">
+						Tahan
+						<kbd
+							class={clsx(
+								'pointer-events-none inline-flex h-5 select-none items-center gap-1 rounded border bg-muted px-1.5 font-mono text-[10px] font-medium opacity-100 transition-colors',
+								holdingShift
+									? 'bg-primary text-primary-foreground'
+									: 'bg-muted text-muted-foreground'
+							)}
+						>
+							<span class="text-xs">Shift</span>
+						</kbd>
+						untuk memilih cepat
+					</p>
+				</div>
+			</div>
 		</Command.Root>
 	</Popover.Content>
 </Popover.Root>
