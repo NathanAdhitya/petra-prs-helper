@@ -2,26 +2,15 @@
 	import { Button } from '$lib/components/ui/button';
 	import * as Command from '$lib/components/ui/command';
 	import * as Popover from '$lib/components/ui/popover';
+	import * as Tooltip from '$lib/components/ui/tooltip';
 	import { ChosenClassesUtils, chosenClasses } from '$lib/mk-state';
 	import { lazyShortenMatkulName, properCase } from '$lib/mk-utils';
 	import { timeToString } from '$lib/mock-data';
-	import clsx from 'clsx';
-	import {
-		ArrowUpNarrowWide,
-		Check,
-		ChevronDown,
-		CircleSlash,
-		TheaterIcon,
-		TriangleAlert
-	} from 'lucide-svelte';
-	import type { ComputedSchedule } from './+page.svelte';
 	import { cn } from '$lib/utils';
-	import * as Tooltip from '$lib/components/ui/tooltip';
-	import { tick } from 'svelte';
-	import { keyboardStore } from '$lib/kbd';
-	import Alert from '$lib/components/ui/alert/alert.svelte';
-	import { fade, scale } from 'svelte/transition';
-	import { quartOut } from 'svelte/easing';
+	import clsx from 'clsx';
+	import { ArrowUpNarrowWide, Check, ChevronDown, CircleSlash } from 'lucide-svelte';
+	import type { ComputedSchedule } from './+page.svelte';
+	import { builderActions, getAttrs, type Builder } from 'bits-ui';
 
 	export let schedule: ComputedSchedule;
 	export let openMatkulSelectionKode: string | null;
@@ -29,6 +18,7 @@
 	export let emphasizePilihan: number | null;
 	export let openMatkulPlanIdx: number | null;
 	export let openMatkulFocusedClass: string | null;
+	export let builders: Builder[] = [];
 	$: coloredClasses = schedule.colorClasses;
 
 	// Separated to easily use new bounding boxes to shorten text
@@ -45,6 +35,8 @@
 <!-- svelte-ignore a11y-click-events-have-key-events -->
 <div
 	bind:contentRect
+	use:builderActions={{ builders }}
+	{...getAttrs(builders)}
 	class={clsx(
 		'z-10 flex h-full w-full flex-col overflow-hidden break-words rounded-sm p-1 transition-all',
 		schedule.currentlySelected ? coloredClasses : 'bg-slate-200',

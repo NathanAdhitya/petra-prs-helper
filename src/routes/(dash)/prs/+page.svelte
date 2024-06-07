@@ -32,7 +32,8 @@
 		TriangleAlert,
 		CircleX,
 		Info,
-		LoaderCircle
+		LoaderCircle,
+		ArrowUpNarrowWide
 	} from 'lucide-svelte';
 
 	import * as Command from '$lib/components/ui/command/index.js';
@@ -49,7 +50,7 @@
 		prsSubmitted,
 		type MataKuliahWithColor
 	} from '$lib/mk-state';
-	import { properCase } from '$lib/mk-utils';
+	import { lazyShortenMatkulName, properCase } from '$lib/mk-utils';
 	import clsx from 'clsx';
 	import { quartOut } from 'svelte/easing';
 	import { derived } from 'svelte/store';
@@ -139,6 +140,7 @@
 			existing.kelas = [...existing.kelas, ...val.kelas];
 			existing.planIdx = [...existing.planIdx, ...val.planIdx];
 			existing.currentlySelected ||= val.currentlySelected;
+			existing.priority = Math.max(existing.priority, val.priority);
 		} else {
 			acc.push(val);
 		}
@@ -475,14 +477,49 @@
 						schedules={computedSchedule}
 						let:schedule
 					>
-						<MatkulScheduleCard
-							{schedule}
-							{openMatkulSelectionKode}
-							bind:openMatkulFocusedClass
-							{openMatkulPlanIdx}
-							{emphasizeMatkulKode}
-							{emphasizePilihan}
-						/>
+						{@const busy = openMatkulSelectionKode !== null}
+						<Popover.Root>
+							<Popover.Trigger asChild let:builder>
+								{#key busy}
+									<MatkulScheduleCard
+										builders={busy ? [] : [builder]}
+										{schedule}
+										{openMatkulSelectionKode}
+										bind:openMatkulFocusedClass
+										{openMatkulPlanIdx}
+										{emphasizeMatkulKode}
+										{emphasizePilihan}
+									/>
+								{/key}
+							</Popover.Trigger>
+							<Popover.Content side="right-start" class="w-80">
+								<div class="grid gap-4">
+									<div class="space-y-2">
+										<h4 class="font-medium leading-none">
+											{properCase(schedule.nama)} ({lazyShortenMatkulName(
+												properCase(schedule.nama),
+												true
+											)})
+										</h4>
+										<div class="text-sm text-muted-foreground">
+											{schedule.kode} - {schedule.sks} SKS
+										</div>
+										<div class="text-sm text-muted-foreground">
+											Terpilih pada prioritas
+											<div class="inline-flex text-muted-foreground">
+												<ArrowUpNarrowWide class="h-4 w-4 opacity-50" />
+												<p>
+													{schedule.planIdx
+														.map((v) => v + 1)
+														.sort()
+														.join(', ')}
+												</p>
+											</div>
+										</div>
+									</div>
+								</div>
+							</Popover.Content>
+						</Popover.Root>
 					</Schedule>
 				</div>
 			</div>

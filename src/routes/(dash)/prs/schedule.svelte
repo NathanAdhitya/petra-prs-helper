@@ -60,6 +60,7 @@
 			// Sort schedules by start time
 			const sortedSchedules = daySchedules.sort((a, b) => {
 				if (a.startHour === b.startHour) {
+					// if (a.startMinute === b.startMinute) return b.priority - a.priority;
 					return a.startMinute - b.startMinute;
 				}
 				return a.startHour - b.startHour;

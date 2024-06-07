@@ -79,14 +79,15 @@ export class ChosenMatkulUtils {
 	/**
 	 * Remove a matkul
 	 */
-	static remove(matkul: MataKuliah | MataKuliahWithColor) {
+	static remove(matkul: MataKuliah | MataKuliahWithColor | string) {
 		chosenMatkul.update(($chosenMatkul) => {
-			const removed = $chosenMatkul.find((m) => m.kode === matkul.kode);
+			const kode = typeof matkul === 'string' ? matkul : matkul.kode;
+			const removed = $chosenMatkul.find((m) => m.kode === kode);
 
 			// Return the colors
 			if (removed) this.availableColors.add(removed.colorClasses);
 
-			return $chosenMatkul.filter((m) => m.kode !== matkul.kode);
+			return $chosenMatkul.filter((m) => m.kode !== kode);
 		});
 
 		return true;
