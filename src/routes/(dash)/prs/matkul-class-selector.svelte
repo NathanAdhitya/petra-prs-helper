@@ -19,6 +19,7 @@
 	let state = createState();
 	export let planIdx: number;
 	export let matkul: MataKuliah;
+	export let pilihanIndexes: number[];
 
 	export let onOpenChanged: (open: boolean) => void = () => {};
 	export let onFocusedToChanged: (focusedTo: string | null) => void = () => {};
@@ -103,7 +104,10 @@
 			builders={[builder]}
 			variant="outline"
 			role="combobox"
-			class="w-full justify-between overflow-hidden"
+			class={clsx(
+				'w-full justify-between overflow-hidden',
+				!pilihanIndexes.includes(planIdx) && 'brightness-75'
+			)}
 		>
 			{(currentKelas && $chosenClasses[matkul.kode][planIdx] && stringifyKelas(currentKelas)) ||
 				`Pilih kelas prioritas ${planIdx + 1}...`}

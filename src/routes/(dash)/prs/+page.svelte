@@ -94,12 +94,15 @@
 	let emphasizePilihan: number | null = null;
 
 	let pilihanValue: string | undefined = 'Semua';
+	let lastPilihanValue: string | undefined = pilihanValue;
 	$: {
-		if (pilihanValue === undefined) {
-			tick().then(() => {
-				pilihanValue = 'Semua';
-			});
-		}
+		tick().then(() => {
+			if (pilihanValue === undefined) {
+				pilihanValue = lastPilihanValue;
+			} else {
+				lastPilihanValue = pilihanValue;
+			}
+		});
 	}
 
 	$: pilihanIndexes =
@@ -316,6 +319,7 @@
 										}}
 									>
 										<MatkulCard
+											{pilihanIndexes}
 											{matkul}
 											onOpenChanged={onOpenChanged(matkul.kode)}
 											{onFocusedToChanged}

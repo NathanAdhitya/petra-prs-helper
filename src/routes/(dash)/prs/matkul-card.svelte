@@ -21,6 +21,7 @@
 	import * as Tooltip from '$lib/components/ui/tooltip';
 
 	export let matkul: MataKuliahWithColor;
+	export let pilihanIndexes: number[];
 	$: coloredClasses = matkul.colorClasses;
 
 	export let onOpenChanged: (open: boolean, planIdx: number) => void = () => {};
@@ -117,6 +118,7 @@
 					<MatkulClassSelector
 						{planIdx}
 						{matkul}
+						{pilihanIndexes}
 						{onFocusedToChanged}
 						open={open[planIdx]}
 						next={nextPlan(planIdx)}
@@ -128,6 +130,7 @@
 						<Button
 							variant="outline"
 							size="icon"
+							class={clsx(!pilihanIndexes.includes(planIdx) && 'brightness-75')}
 							on:click={() => {
 								// Slice at planIdx to remove the selected plan, then reduce the plan count
 								ChosenClassesUtils.removePlan(matkul.kode, planIdx);
