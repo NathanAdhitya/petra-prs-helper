@@ -14,6 +14,7 @@ export type ChosenClassesStore = Writable<Record<MataKuliah['kode'], string[]>>;
 export const chosenMatkul: ChosenMatkulStore = writable([]);
 export const chosenClasses: ChosenClassesStore = writable({});
 export const prsSubmitted = writable(false);
+export const chosenJurusanFilters = writable<string[]>(['Informatika', 'DMU']);
 
 export class ChosenMatkulUtils {
 	static sksLimit = 24;
@@ -73,7 +74,11 @@ export class ChosenMatkulUtils {
 			chosenMatkul.update(($chosenMatkul) => {
 				return [{ ...matkul, colorClasses: color }, ...$chosenMatkul];
 			});
+
+			return true;
 		}
+
+		return false;
 	}
 
 	/**

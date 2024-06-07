@@ -2,7 +2,7 @@
 	{
 		"nama": "BAHASA INDONESIA",
 		"sks": 2,
-		"unit": "DU",
+		"unit": "DMU",
 		"kode": "DU001",
 		"kelas": [
 			{
@@ -179,7 +179,7 @@
 	{
 		"nama": "BAHASA INDONESIA PENUTUR ASING II",
 		"sks": 2,
-		"unit": "DU",
+		"unit": "DMU",
 		"kode": "DU002",
 		"kelas": [
 			{
@@ -228,7 +228,7 @@
 	{
 		"nama": "ETIKA PROFESI",
 		"sks": 2,
-		"unit": "DU",
+		"unit": "DMU",
 		"kode": "DU003",
 		"kelas": [
 			{
@@ -609,7 +609,7 @@
 	{
 		"nama": "PANCASILA",
 		"sks": 2,
-		"unit": "DU",
+		"unit": "DMU",
 		"kode": "DU004",
 		"kelas": [
 			{
@@ -894,7 +894,7 @@
 	{
 		"nama": "DIGITAL LEADERSHIP",
 		"sks": 2,
-		"unit": "DU",
+		"unit": "DMU",
 		"kode": "DU005",
 		"kelas": [
 			{
@@ -1011,7 +1011,7 @@
 	{
 		"nama": "KEWARGANEGARAAN",
 		"sks": 2,
-		"unit": "DU",
+		"unit": "DMU",
 		"kode": "DU006",
 		"kelas": [
 			{
@@ -1032,7 +1032,7 @@
 	{
 		"nama": "ETIKA KELUARGA KRISTEN",
 		"sks": 2,
-		"unit": "DU",
+		"unit": "DMU",
 		"kode": "DU007",
 		"kelas": [
 			{
@@ -1077,7 +1077,7 @@
 	{
 		"nama": "SERVANT LEADER",
 		"sks": 2,
-		"unit": "DU",
+		"unit": "DMU",
 		"kode": "DU008",
 		"kelas": [
 			{
@@ -1134,7 +1134,7 @@
 	{
 		"nama": "INDONESIA CULTURE IN PRATICE 2",
 		"sks": 4,
-		"unit": "DU",
+		"unit": "DMU",
 		"kode": "DU009",
 		"kelas": [
 			{
@@ -1155,7 +1155,7 @@
 	{
 		"nama": "ENGLISH FOR OCCUPATIONAL PURPOSES",
 		"sks": 2,
-		"unit": "DU",
+		"unit": "DMU",
 		"kode": "DU010",
 		"kelas": [
 			{
@@ -1176,7 +1176,7 @@
 	{
 		"nama": "RIGHT AND WRONG",
 		"sks": 2,
-		"unit": "DU",
+		"unit": "DMU",
 		"kode": "DU011",
 		"kelas": [
 			{
@@ -1197,7 +1197,7 @@
 	{
 		"nama": "DISABILITY STUDIES AND EMPOWERMENT",
 		"sks": 2,
-		"unit": "DU",
+		"unit": "DMU",
 		"kode": "DU012",
 		"kelas": [
 			{
@@ -1218,7 +1218,7 @@
 	{
 		"nama": "FRIENDSHIP COUNSELING",
 		"sks": 2,
-		"unit": "DU",
+		"unit": "DMU",
 		"kode": "DU013",
 		"kelas": [
 			{
@@ -1239,7 +1239,7 @@
 	{
 		"nama": "INNOVATION AND START-UP",
 		"sks": 2,
-		"unit": "DU",
+		"unit": "DMU",
 		"kode": "DU014",
 		"kelas": [
 			{
@@ -1260,7 +1260,7 @@
 	{
 		"nama": "LEADERSHIP",
 		"sks": 3,
-		"unit": "DU",
+		"unit": "DMU",
 		"kode": "DU015",
 		"kelas": [
 			{
@@ -1281,7 +1281,7 @@
 	{
 		"nama": "URBAN COMMUNITY OUTREACH PROGRAM",
 		"sks": 3,
-		"unit": "DU",
+		"unit": "DMU",
 		"kode": "DU016",
 		"kelas": [
 			{

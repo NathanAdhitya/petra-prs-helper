@@ -104,8 +104,8 @@
 		)}
 	>
 		{#if !schedule.planIdx.every((v) => v === -1)}
-			<div class="flex text-xs text-muted-foreground">
-				<ArrowUpNarrowWide class="h-4 w-4 opacity-50" />
+			<div class="flex text-xs text-muted-foreground opacity-75">
+				<ArrowUpNarrowWide class="h-4 w-4" />
 				{schedule.planIdx
 					.map((v) => v + 1)
 					.sort()

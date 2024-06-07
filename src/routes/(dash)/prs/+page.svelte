@@ -62,6 +62,7 @@
 	import { addEventListener, executeCallbacks } from '$lib/internal';
 	import { keyboardStore } from '$lib/kbd';
 	import { titleStore } from '$lib/stores';
+	import { toast } from 'svelte-sonner';
 
 	onMount(() => ($titleStore = 'PRS'));
 
@@ -117,7 +118,10 @@
 
 	const onSelectMatkul = (matkul: (typeof matkulOptions)[number], ids: { trigger: string }) => {
 		if (!$prsSubmitted) {
-			ChosenMatkulUtils.toggle(matkul.reference);
+			const result = ChosenMatkulUtils.toggle(matkul.reference);
+			if (!result) {
+				toast.error('Mata kuliah tidak dapat ditambahkan karena melebihi batas SKS');
+			}
 		}
 
 		if (!holdingShift) {

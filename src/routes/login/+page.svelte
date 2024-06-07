@@ -7,6 +7,10 @@
 	import BgTopRight from './bg-top-right.svelte';
 
 	import pcuLogoWhite from './pcu-white-logo.png';
+	import { onMount } from 'svelte';
+	import { titleStore } from '$lib/stores';
+
+	onMount(() => ($titleStore = 'Login'));
 </script>
 
 <div class="flex min-h-screen w-full flex-row items-center justify-center bg-blue-950 p-4">

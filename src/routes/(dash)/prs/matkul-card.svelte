@@ -1,7 +1,7 @@
 <script lang="ts">
 	import { Button } from '$lib/components/ui/button';
 	import * as Card from '$lib/components/ui/card';
-	import { CircleMinus, Plus, Trash } from 'lucide-svelte';
+	import { ArrowUpNarrowWide, CircleMinus, Plus, Trash } from 'lucide-svelte';
 
 	import { addEventListener, executeCallbacks } from '$lib/internal';
 	import {
@@ -18,6 +18,7 @@
 	import MatkulClassSelector from './matkul-class-selector.svelte';
 	import { keyboardStore } from '$lib/kbd';
 	import { get } from 'svelte/store';
+	import * as Tooltip from '$lib/components/ui/tooltip';
 
 	export let matkul: MataKuliahWithColor;
 	$: coloredClasses = matkul.colorClasses;
@@ -141,9 +142,24 @@
 		{/each}
 		{#if planCount < maximumPlanCount}
 			<div transition:slide={{ easing: quartOut }} class="flex w-full flex-col">
-				<Button variant="outline" size="icon" class="w-full" on:click={attemptAddPlan}>
-					<Plus class="h-4 w-4" />
-				</Button>
+				<Tooltip.Root openDelay={25}>
+					<Tooltip.Trigger asChild let:builder>
+						<Button
+							variant="outline"
+							size="icon"
+							class="w-full"
+							on:click={attemptAddPlan}
+							builders={[builder]}
+						>
+							<Plus class="h-4 w-4 opacity-75" />
+							<!-- <ArrowUpNarrowWide class="h-4 w-4 opacity-50" /> -->
+						</Button>
+					</Tooltip.Trigger>
+					<Tooltip.Content side="right" class="max-w-sm">
+						Tambah pilihan prioritas mata kuliah. <br /> Setiap mata kuliah dapat memiliki 3 pilihan
+						prioritas kelas berbeda.
+					</Tooltip.Content>
+				</Tooltip.Root>
 			</div>
 		{/if}
 	</Card.Content>
