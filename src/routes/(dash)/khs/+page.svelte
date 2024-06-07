@@ -17,7 +17,6 @@
 	> = {
 		'genap-2024': [
 			{
-				// contains: kode MK, nama MK, sks, nilai
 				kode: 'IF1234',
 				nama: 'Kecerdasan Buatan',
 				sks: 3,
@@ -34,13 +33,129 @@
 				nama: 'Cyber Operations',
 				sks: 2,
 				nilai: 'A'
+			},
+			{
+				kode: 'TF1236',
+				nama: 'Sistem Operasi',
+				sks: 3,
+				nilai: 'B+'
+			},
+			{
+				kode: 'TF1230',
+				nama: 'Metode Numerik',
+				sks: 2,
+				nilai: 'B+'
+			}
+		],
+		'ganjil-2023': [
+			{
+				kode: 'DU4164',
+				nama: 'Pendidikan Kewarganegaraan',
+				sks: 2,
+				nilai: 'A'
+			},
+			{
+				kode: 'FD1234',
+				nama: 'Aljabar Linear',
+				sks: 3,
+				nilai: 'B+'
+			},
+			{
+				kode: 'TF8236',
+				nama: 'Struktur Data',
+				sks: 3,
+				nilai: 'B'
+			},
+			{
+				kode: 'TF4287',
+				nama: 'Pengantar Akutansi',
+				sks: 2,
+				nilai: 'A'
+			},
+			{
+				kode: 'TF4545',
+				nama: 'Teknologi Web',
+				sks: 3,
+				nilai: 'B'
+			},
+			{
+				kode: 'TF9898',
+				nama: 'Arsitektur dan Organisasi Komputer',
+				sks: 3,
+				nilai: 'A'
+			}
+		],
+		'genap-2023': [
+			{
+				// contains: kode MK, nama MK, sks, nilai
+				kode: 'TF4356',
+				nama: 'Jaringan Komputer',
+				sks: 3,
+				nilai: 'B'
+			},
+			{
+				kode: 'DU4561',
+				nama: 'Pancasila',
+				sks: 2,
+				nilai: 'A'
+			},
+			{
+				kode: 'TF4234',
+				nama: 'Basis Data',
+				sks: 3,
+				nilai: 'B'
+			},
+			{
+				kode: 'TF4237',
+				nama: 'Pemrograman Berorientasi Objek',
+				sks: 3,
+				nilai: 'A'
+			},
+			{
+				kode: 'TF4211',
+				nama: 'Matematika Diskrit',
+				sks: 3,
+				nilai: 'B+'
+			}
+		],
+		'ganjil-2022': [
+			{
+				// contains: kode MK, nama MK, sks, nilai
+				kode: 'DU1230',
+				nama: 'Bahasa Indonesia',
+				sks: 2,
+				nilai: 'A'
+			},
+			{
+				kode: 'DU0008',
+				nama: 'Agama dan Hidup Bermakna',
+				sks: 3,
+				nilai: 'B+'
+			},
+			{
+				kode: 'TF4422',
+				nama: 'Dasar Sistem Komputer',
+				sks: 2,
+				nilai: 'B'
+			},
+			{
+				kode: 'TF7777',
+				nama: 'Dasar Pemrograman',
+				sks: 4,
+				nilai: 'A'
+			},
+			{
+				kode: 'TF6753',
+				nama: 'Kalkulus 1',
+				sks: 3,
+				nilai: 'B+'
 			}
 		]
 	};
 
 	let semesterFilter = {
-		label: 'Semua Semester',
-		value: 'all'
+		label: 'Genap 2024',
+		value: 'genap-2024'
 	};
 
 	onMount(() => ($titleStore = 'Berita'));
@@ -52,7 +167,7 @@
 		<Select.Value />
 	</Select.Trigger>
 	<Select.Content>
-		<Select.Item value="all">Semua Semester</Select.Item>
+		<!-- <Select.Item value="all">Semua Semester</Select.Item> -->
 		<Select.Item value="genap-2024">Genap 2024</Select.Item>
 		<Select.Item value="ganjil-2023">Ganjil 2023</Select.Item>
 		<Select.Item value="genap-2023">Genap 2023</Select.Item>

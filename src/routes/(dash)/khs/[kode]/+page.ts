@@ -105,6 +105,76 @@ export const load: PageLoad = async (event) => {
 				}
 			]
 		};
+	} else if (kode === 'TF1236') {
+		return {
+			name: 'Sistem Operasi',
+			kode,
+			sks: 3,
+
+			kelas: 'A',
+			dosen: ['Dr. Dosen X, S.Kom'],
+
+			nilai: [
+				{ nama: 'Ujian Tengah Semester', bobot: 0.3, nilai: 90 },
+				{ nama: 'Ujian Akhir Semester', bobot: 0.5, nilai: 92 }
+			],
+
+			kehadiran: [
+				{
+					pertemuan: 1,
+					tanggal: '2023-04-01',
+					materi: 'Pengenalan Cyber Operations',
+					status: 'Hadir'
+				},
+				{
+					pertemuan: 2,
+					tanggal: '2023-04-08',
+					materi: 'Pengenalan Penetration Testing',
+					status: 'Hadir'
+				},
+				{
+					pertemuan: 3,
+					tanggal: '2023-04-15',
+					materi: 'Pengenalan Incident Response',
+					status: 'Hadir'
+				}
+			]
+		};
+	} else if (kode === 'TF1230') {
+		return {
+			name: 'Metode Numerik',
+			kode,
+			sks: 2,
+
+			kelas: 'A',
+			dosen: ['Dr. Dosen JJ, S.Kom'],
+
+			nilai: [
+				{ nama: 'Ujian Tengah Semester', bobot: 0.3, nilai: 85 },
+				{ nama: 'Ujian Akhir Semester', bobot: 0.5, nilai: 94 }
+			],
+
+			kehadiran: [
+				{
+					pertemuan: 1,
+					tanggal: '2023-04-01',
+					materi: 'Pengenalan Cyber Operations',
+					status: 'Hadir'
+				},
+				{
+					pertemuan: 2,
+					tanggal: '2023-04-08',
+					materi: 'Pengenalan Penetration Testing',
+					status: 'Hadir'
+				},
+				{
+					pertemuan: 3,
+					tanggal: '2023-04-15',
+					materi: 'Pengenalan Incident Response',
+					status: 'Hadir'
+				}
+			]
+		};
 	} else {
 		error(404, 'Not Found');
 	}
