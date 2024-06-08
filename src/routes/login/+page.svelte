@@ -9,6 +9,7 @@
 	import pcuLogoWhite from './pcu-white-logo.png';
 	import { onMount } from 'svelte';
 	import { titleStore } from '$lib/stores';
+	import { base } from '$app/paths';
 
 	onMount(() => ($titleStore = 'Login'));
 </script>
@@ -29,7 +30,7 @@
 					</div>
 					<div class="grid gap-2">
 						<Label for="domain">Domain</Label>
-						<Select.Root>
+						<Select.Root selected={{ value: 'john', label: '@john.petra.ac.id' }}>
 							<Select.Trigger class="w-full" id="domain" value="john">
 								<Select.Value />
 							</Select.Trigger>
@@ -46,7 +47,7 @@
 						</div>
 						<Input id="password" type="password" required />
 					</div>
-					<Button type="submit" class="w-full" href="/berita">Login</Button>
+					<Button type="submit" class="w-full" href="{base}/berita">Login</Button>
 				</div>
 			</div>
 		</div>

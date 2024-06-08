@@ -29,6 +29,7 @@
 	import { ScrollArea } from '$lib/components/ui/scroll-area';
 	import { toast } from 'svelte-sonner';
 	import { namaUser, nrpUser } from '$lib/mock-data';
+	import { base } from '$app/paths';
 
 	const activeClasses = 'bg-slate-800 hover:text-white';
 	let currentlyOpenDropdown: NavDropdown | null = null;
@@ -167,7 +168,7 @@
 			<DropdownMenu.Separator />
 			<DropdownMenu.Item>Biodata</DropdownMenu.Item>
 			<DropdownMenu.Separator />
-			<DropdownMenu.Item href="/login">Logout</DropdownMenu.Item>
+			<DropdownMenu.Item href="{base}/login">Logout</DropdownMenu.Item>
 		</DropdownMenu.Content>
 	</DropdownMenu.Root>
 </header>
