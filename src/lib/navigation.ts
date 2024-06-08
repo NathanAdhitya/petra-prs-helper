@@ -1,10 +1,16 @@
+import { base } from '$app/paths';
+
 export class NavLink {
+	public href: string;
+
 	constructor(
 		public label: string,
-		public href: string,
+		href: string,
 		public isExternal: boolean = false,
 		public isDisabled: boolean = false
-	) {}
+	) {
+		this.href = isExternal ? href : `${base}${href}`;
+	}
 }
 
 export class NavDropdown {

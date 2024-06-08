@@ -6,6 +6,7 @@
 	import { titleStore } from '$lib/stores';
 	import { onMount } from 'svelte';
 	import { semesterFilterState } from './khsState';
+	import { base } from '$app/paths';
 
 	const khsData: Record<
 		string,
@@ -193,7 +194,7 @@
 				<Table.Cell>{matkul.nilai}</Table.Cell>
 				<Table.Cell><span class="text-xs text-muted-foreground">(10/10)</span> 100%</Table.Cell>
 				<Table.Cell>
-					<a class="text-blue-500" href={`/khs/${matkul.kode}`}>Lihat Detail</a>
+					<a class="text-blue-500" href={`${base}/khs/${matkul.kode}`}>Lihat Detail</a>
 				</Table.Cell>
 			</Table.Row>
 		{/each}

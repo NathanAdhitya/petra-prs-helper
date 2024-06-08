@@ -1,4 +1,6 @@
 <script lang="ts">
+	import { base } from '$app/paths';
+
 	export let data;
 
 	import * as Select from '$lib/components/ui/select';
@@ -7,7 +9,7 @@
 </script>
 
 <div class="mb-6">
-	<a href="/khs">
+	<a href="{base}/khs">
 		<ArrowLeft class="float-left h-8 w-8 rounded-full p-1 transition-all hover:bg-slate-200" />
 	</a>
 	<h1 class="text-center text-2xl font-bold">{data.name} ({data.kode})</h1>

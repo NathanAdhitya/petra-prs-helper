@@ -18,6 +18,7 @@ jobs:
       - name: build
         env:
           BASE_PATH: '/${{ github.event.repository.name }}'
+          GH_PAGES: '1'
         run: |
           bun run build
 
