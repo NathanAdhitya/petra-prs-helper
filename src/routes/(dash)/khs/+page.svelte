@@ -5,6 +5,7 @@
 	import * as Table from '$lib/components/ui/table';
 	import { titleStore } from '$lib/stores';
 	import { onMount } from 'svelte';
+	import { semesterFilterState } from './khsState';
 
 	const khsData: Record<
 		string,
@@ -153,25 +154,20 @@
 		]
 	};
 
-	let semesterFilter = {
-		label: 'Genap 2024',
-		value: 'genap-2024'
-	};
-
 	onMount(() => ($titleStore = 'Berita'));
 </script>
 
 <h1 class="pb-2 text-center text-2xl font-bold">Transkrip</h1>
-<Select.Root bind:selected={semesterFilter}>
-	<Select.Trigger class="mx-auto w-[180px]">
+<Select.Root bind:selected={$semesterFilterState}>
+	<Select.Trigger class="mx-auto w-56 text-center">
 		<Select.Value />
 	</Select.Trigger>
 	<Select.Content>
-		<!-- <Select.Item value="all">Semua Semester</Select.Item> -->
-		<Select.Item value="genap-2024">Genap 2024</Select.Item>
-		<Select.Item value="ganjil-2023">Ganjil 2023</Select.Item>
-		<Select.Item value="genap-2023">Genap 2023</Select.Item>
-		<Select.Item value="ganjil-2022">Ganjil 2022</Select.Item>
+		<Select.Item value="all">Semua Semester</Select.Item>
+		<Select.Item value="genap-2024">Semester 4 (Genap 2024)</Select.Item>
+		<Select.Item value="ganjil-2023">Semester 3 (Ganjil 2023)</Select.Item>
+		<Select.Item value="genap-2023">Semester 2 (Genap 2023)</Select.Item>
+		<Select.Item value="ganjil-2022">Semester 1 (Ganjil 2022)</Select.Item>
 	</Select.Content>
 </Select.Root>
 
@@ -188,7 +184,7 @@
 		</Table.Row>
 	</Table.Header>
 	<Table.Body>
-		{#each semesterFilter.value === 'all' ? Object.values(khsData).flat() : khsData[semesterFilter.value] ?? [] as matkul, i (i)}
+		{#each $semesterFilterState.value === 'all' ? Object.values(khsData).flat() : khsData[$semesterFilterState.value] ?? [] as matkul, i (i)}
 			<Table.Row>
 				<Table.Cell class="font-medium">{i + 1}</Table.Cell>
 				<Table.Cell>{matkul.kode}</Table.Cell>
@@ -201,7 +197,7 @@
 				</Table.Cell>
 			</Table.Row>
 		{/each}
-		{#if (semesterFilter.value === 'all' ? Object.values(khsData).flat() : khsData[semesterFilter.value] ?? []).length === 0}
+		{#if ($semesterFilterState.value === 'all' ? Object.values(khsData).flat() : khsData[$semesterFilterState.value] ?? []).length === 0}
 			<Table.Row>
 				<Table.Cell class="text-center" colspan={7}>Data tidak ditemukan.</Table.Cell>
 			</Table.Row>

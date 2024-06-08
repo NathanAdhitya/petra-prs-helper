@@ -1,43 +1,6 @@
 <script lang="ts">
 	import * as Card from '$lib/components/ui/card';
 	import { namaUser, nrpUser } from '$lib/mock-data';
-
-	const khsData: Record<
-		string,
-		{
-			kode: string;
-			nama: string;
-			sks: number;
-			nilai: string;
-		}[]
-	> = {
-		'genap-2024': [
-			{
-				// contains: kode MK, nama MK, sks, nilai
-				kode: 'IF1234',
-				nama: 'Kecerdasan Buatan',
-				sks: 3,
-				nilai: 'A'
-			},
-			{
-				kode: 'IF1235',
-				nama: 'Grafik Komputer',
-				sks: 3,
-				nilai: 'A'
-			},
-			{
-				kode: 'IF1236',
-				nama: 'Cyber Operations',
-				sks: 2,
-				nilai: 'A'
-			}
-		]
-	};
-
-	let semesterFilter = {
-		label: 'Semua Semester',
-		value: 'all'
-	};
 </script>
 
 <div class="flex h-full w-full flex-col items-center">
