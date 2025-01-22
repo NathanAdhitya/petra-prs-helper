@@ -1,8 +1,12 @@
-# proto-imk-1
+# petra-prs-helper
+
+> [!NOTE]  
+> Schedule data is scraped data, therefore the data may not be up to date. Kode MK is also unavailable due to the nature of the data source. Is the data innacurate/out of date? Open an issue or contact me directly!
 
 A simple project attempting to redesign Petra Christian University's course registration system. This project is made for the purpose of fulfilling the requirements of the Human Computer Interaction course at Petra Christian University.
 
-DISCLAIMER: Any dummy/mock data present in this app are a mix of fictional (randomly generated) and real data. Use with caution. The author is not responsible for the accuracy of any data used to supplement this app.
+## I want to scrape my own schedule data
+To obtain your own `jadwal.json` file, please view the scraping guide at [private-petra-api](https://github.com/NathanAdhitya/private-petra-api).
 
 ## Screenshots
 ![image](https://github.com/NathanAdhitya/proto-imk-1/assets/13374903/7a1346ad-2560-490e-ab3d-e716ba6ac127)

@@ -12,7 +12,6 @@
 	} from '$lib/navigation';
 	import clsx from 'clsx';
 	import { ChevronRight, ExternalLink } from 'lucide-svelte';
-	import pcuBlueLogo from './pcu-blue-logo.png';
 	import { toast } from 'svelte-sonner';
 
 	const activeClasses = 'bg-slate-800 hover:text-white';
@@ -23,8 +22,8 @@
 <div class="hidden bg-slate-50 2xl:block">
 	<div class="flex h-full min-h-screen flex-col">
 		<div class="flex h-16 items-center border-b-4 border-b-[#a9a9a9] px-4 lg:h-[60px] lg:px-6">
-			<a href="/berita" class="flex h-full w-full items-center py-2 pt-3">
-				<img src={pcuBlueLogo} alt="PCU Logo" class="max-w-auto h-auto max-h-full w-auto" />
+			<a href="/" class="flex h-full w-full items-center py-2 pt-3 font-extrabold text-lg">
+				prs.natha.my.id
 			</a>
 		</div>
 		<ScrollArea class="flex-1 bg-slate-700 pt-4 text-white">

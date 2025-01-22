@@ -36,7 +36,10 @@ export function shortenMatkulName(str: string, force = false) {
 	 */
 
 	// Split the string into words
-	const words = str.split(' ');
+	const originalWords = str.split(' ');
+
+	// Remove any parentheses
+	const words = originalWords.map((word) => word.replace(/\(.*\)/, ''));
 
 	// If the last word is a roman numeral, preserve as-is
 	const postfix = isRomanNumeral(words[words.length - 1]) ? ` ${words.pop()}` : '';

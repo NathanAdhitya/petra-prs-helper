@@ -16,6 +16,35 @@ export const chosenClasses: ChosenClassesStore = writable({});
 export const prsSubmitted = writable(false);
 export const chosenJurusanFilters = writable<string[]>(['Informatika', 'DMU']);
 
+try {
+	chosenMatkul.set(JSON.parse(localStorage.getItem('chosenMatkul') || '[]'));
+} catch (e) {
+	console.error(e);
+}
+
+try {
+	chosenClasses.set(JSON.parse(localStorage.getItem('chosenClasses') || '{}'));
+} catch (e) {
+	console.error(e);
+}
+
+try {
+	chosenJurusanFilters.set(JSON.parse(localStorage.getItem('chosenJurusanFilters') || '[]'));
+} catch (e) {
+	console.error(e);
+}
+
+// Back the writable by localStorage
+chosenMatkul.subscribe((value) => {
+	localStorage.setItem('chosenMatkul', JSON.stringify(value));
+});
+chosenClasses.subscribe((value) => {
+	localStorage.setItem('chosenClasses', JSON.stringify(value));
+});
+chosenJurusanFilters.subscribe((value) => {
+	localStorage.setItem('chosenJurusanFilters', JSON.stringify(value));
+});
+
 export class ChosenMatkulUtils {
 	static sksLimit = 24;
 	static matkulLimit = 12;

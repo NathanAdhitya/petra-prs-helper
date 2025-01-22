@@ -3,7 +3,6 @@ export interface MataKuliah {
 	sks: number;
 	unit: string;
 	kode: string;
-	recommended: boolean;
 
 	kelas: KelasMataKuliah[];
 }
@@ -24,5 +23,19 @@ export interface JadwalMataKuliah {
 	ruang: string;
 }
 
+import { writable, type Writable } from 'svelte/store';
 import data from './jadwal.json';
-export const jadwalKuliah: MataKuliah[] = data;
+export const jadwalKuliah: Writable<MataKuliah[]> = writable(data);
+
+// If useCustomJadwal is true, then attempt to load the customJadwalJson
+if (localStorage.getItem('useCustomJadwal') === 'true') {
+	const data = localStorage.getItem('customJadwal');
+	try {
+		if (data) {
+			jadwalKuliah.set(JSON.parse(data));
+			console.log('Using custom data');
+		}
+	} catch (e) {
+		console.error(e);
+	}
+}

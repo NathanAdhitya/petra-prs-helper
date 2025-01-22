@@ -1,5 +1,5 @@
 <script lang="ts" context="module">
-	import type { MataKuliah } from '$lib/mata-kuliah';
+	import { jadwalKuliah, type MataKuliah } from '$lib/mata-kuliah';
 
 	export interface ComputedSchedule extends Omit<MataKuliahWithColor, 'kelas'> {
 		dayOfWeek: number;
@@ -16,7 +16,6 @@
 		label: string;
 		value: string;
 		kode: string;
-		recommended: boolean;
 		reference: MataKuliah;
 	}
 </script>
@@ -28,11 +27,7 @@
 	import {
 		Check,
 		ChevronDown,
-		CircleCheck,
-		TriangleAlert,
-		CircleX,
 		Info,
-		LoaderCircle,
 		ArrowUpNarrowWide
 	} from 'lucide-svelte';
 
@@ -59,24 +54,21 @@
 	import MatkulCard from './matkul-card.svelte';
 	import MatkulScheduleCard from './matkul-schedule-card.svelte';
 	import Schedule from './schedule.svelte';
-	import { addEventListener, executeCallbacks } from '$lib/internal';
 	import { keyboardStore } from '$lib/kbd';
 	import { titleStore } from '$lib/stores';
 	import { toast } from 'svelte-sonner';
+	import * as Tooltip from '$lib/components/ui/tooltip';
 
 	onMount(() => ($titleStore = 'PRS'));
 
-	export let data;
-
-	$: matkulOptions = data.pilihanMataKuliah.map((item) => ({
+	$: matkulOptions = $jadwalKuliah.map((item) => ({
 		label: properCase(item.nama).trim(),
 		value: item.kode + ' - ' + properCase(item.nama).trim(),
 		kode: item.kode,
-		recommended: item.recommended,
 		reference: item
 	})) satisfies MatkulOption[];
 
-	let listJurusan = Array.from(new Set(data.pilihanMataKuliah.map((m) => m.unit)));
+	let listJurusan = Array.from(new Set($jadwalKuliah.map((m) => m.unit)));
 	$: holdingShift = $keyboardStore.shift;
 
 	const chosenSksCount = derived(chosenMatkul, ($chosenMatkul) =>
@@ -221,7 +213,35 @@
 	// $: console.log(matkulOptions.length);
 </script>
 
-<h1 class="text-4xl font-bold">Pendaftaran Rencana Studi</h1>
+<div class="flex items-center justify-between gap-8">
+	<h1 class="text-4xl font-bold">Penyusun Rencana Studi</h1>
+	<div class="flex flex-col items-end">
+		<Tooltip.Root openDelay={0}>
+			<Tooltip.Trigger>
+				<div class="flex items-center gap-2 text-sm">
+					Tentang akurasi data <Info class="h-4 w-4 opacity-50" />
+				</div>
+			</Tooltip.Trigger>
+			<Tooltip.Content side="left" class="max-w-sm">
+				Sumber data adalah hasil scraping. Data mungkin tidak akurat / sudah ketinggalan. Kode MK
+				juga tidak tersedia pada sumber data. Jika menurut Anda data ini terlalu jauh dari realita,
+				silahkan buka isu di GitHub atau hubungi maintainer.
+			</Tooltip.Content>
+		</Tooltip.Root>
+		<Tooltip.Root openDelay={0}>
+			<Tooltip.Trigger>
+				<div class="flex items-center gap-2 text-sm">
+					Tentang kemampuan alat <Info class="h-4 w-4 opacity-50" />
+				</div>
+			</Tooltip.Trigger>
+			<Tooltip.Content side="left" class="max-w-sm">
+				Alat ini tidak terhubung dengan sistem PRS. Alat ini adalah alat bantuan terpisah dari
+				sistem Petra. Gunakanlah dengan bijak. Pembuat alat ini tidak bertanggungjawab atas segala
+				akibat dari penggunaan alat ini.
+			</Tooltip.Content>
+		</Tooltip.Root>
+	</div>
+</div>
 <div class="flex h-full w-full gap-4">
 	<Resizable.PaneGroup direction="horizontal" class="gap-2">
 		{#if !$prsSubmitted}
@@ -336,17 +356,13 @@
 		<Resizable.Pane minSize={60} defaultSize={70}>
 			<div class="flex h-full w-full flex-1 flex-col gap-4">
 				<div class="flex items-center gap-4 rounded-lg border-2 bg-slate-50 p-2 px-4">
-					<div>
-						<span class="font-medium">Status:</span>
-						{$prsSubmitted ? 'Menunggu hasil' : 'Menunggu dikirim'}
-					</div>
-					<div class="ml-auto text-sm">
+					<div class="text-sm">
 						<span class="font-medium">Total SKS:</span>
 						{$chosenMatkul.reduce((acc, matkul) => acc + matkul.sks, 0)} / {ChosenMatkulUtils.sksLimit}
 					</div>
 					<Dialog.Root>
 						<Dialog.Trigger asChild let:builder>
-							<Button variant="secondary" builders={[builder]}>Reset</Button>
+							<Button class="ml-auto" variant="secondary" builders={[builder]}>Reset</Button>
 						</Dialog.Trigger>
 						<Dialog.Content>
 							<Dialog.Header>
@@ -383,18 +399,16 @@
 							</Dialog.Footer>
 						</Dialog.Content>
 					</Dialog.Root>
-					<Dialog.Root bind:open={validationDialogOpen}>
+					<!-- <Dialog.Root bind:open={validationDialogOpen}>
 						<Dialog.Trigger asChild let:builder>
-							<Button disabled={$prsSubmitted} builders={[builder]}>
-								{$prsSubmitted ? 'Terkirim' : 'Kirim'}
-							</Button>
+							<Button builders={[builder]}>Cek</Button>
 						</Dialog.Trigger>
 						{#key $chosenClasses}
 							{#key $chosenMatkul}
 								{#await ChosenClassesUtils.validate()}
 									<Dialog.Content>
 										<Dialog.Header>
-											<Dialog.Title>Kirim untuk validasi</Dialog.Title>
+											<Dialog.Title>Cek PRS</Dialog.Title>
 										</Dialog.Header>
 										<Dialog.Description>
 											<div class="flex items-center gap-2">
@@ -476,7 +490,7 @@
 								{/await}
 							{/key}
 						{/key}
-					</Dialog.Root>
+					</Dialog.Root> -->
 				</div>
 				<div class="h-full w-full overflow-auto rounded-lg border-2">
 					<Schedule

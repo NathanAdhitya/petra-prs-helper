@@ -13,8 +13,6 @@
 		Search,
 		ShoppingCart
 	} from 'lucide-svelte';
-
-	import pcuBlueLogo from './pcu-blue-logo.png';
 	import * as Collapsible from '$lib/components/ui/collapsible';
 	import {
 		navigationEntries,
@@ -49,14 +47,7 @@
 		<Sheet.Content side="left" class="flex max-w-[100vw] flex-col bg-slate-700 p-0 text-white">
 			<ScrollArea class="flex-1 p-4">
 				<nav class="grid gap-2 text-lg font-medium">
-					<a href="/berita" class="flex items-center gap-2 text-lg font-semibold">
-						<img
-							src={pcuBlueLogo}
-							alt="PCU Logo"
-							class="max-w-auto mb-2 h-24 max-h-full w-auto rounded-lg bg-slate-50 p-4 pb-3"
-						/>
-						<span class="sr-only">SIM Petra</span>
-					</a>
+					<a href="/" class="flex items-center gap-2 text-lg font-extrabold"> prs.natha.my.id </a>
 					{#each navigationEntries as n}
 						{#if n instanceof NavigationSeparator}
 							<Separator class="my-2 h-[2px] rounded-sm bg-white/50" />
@@ -125,14 +116,9 @@
 			</ScrollArea>
 		</Sheet.Content>
 	</Sheet.Root>
-	<a href="/berita" class="block h-full 2xl:hidden">
-		<img
-			src={pcuBlueLogo}
-			alt="PCU Logo"
-			class="max-w-auto mb-2 h-auto max-h-full w-auto rounded-lg bg-slate-50 pt-1"
-		/>
-		<span class="sr-only">SIM Petra</span>
-	</a>
+	<div class="flex h-full 2xl:hidden align-middle">
+		<a href="/" class="text-lg font-extrabold leading-10">prs.natha.my.id</a>
+	</div>
 	<div class="w-full flex-1">
 		<!-- <form>
 			<div class="relative">
@@ -145,30 +131,4 @@
 			</div>
 		</form> -->
 	</div>
-	<DropdownMenu.Root>
-		<DropdownMenu.Trigger asChild let:builder>
-			<Button
-				builders={[builder]}
-				variant="secondary"
-				class="h-full rounded-xl bg-neutral-200/80 hover:bg-neutral-300"
-			>
-				<div class="flex items-center gap-2 align-middle">
-					<div class="text-right leading-3">
-						<p>{namaUser}</p>
-						<p class="text-xs text-muted-foreground">{nrpUser}</p>
-					</div>
-					<CircleUser class="h-8 w-8" />
-				</div>
-				<span class="sr-only">Toggle user menu</span>
-			</Button>
-		</DropdownMenu.Trigger>
-		<DropdownMenu.Content align="end">
-			<DropdownMenu.Label class="pb-0">{namaUser}</DropdownMenu.Label>
-			<DropdownMenu.Label class="pt-0 text-xs text-muted-foreground">{nrpUser}</DropdownMenu.Label>
-			<DropdownMenu.Separator />
-			<DropdownMenu.Item>Biodata</DropdownMenu.Item>
-			<DropdownMenu.Separator />
-			<DropdownMenu.Item href="{base}/login">Logout</DropdownMenu.Item>
-		</DropdownMenu.Content>
-	</DropdownMenu.Root>
 </header>
