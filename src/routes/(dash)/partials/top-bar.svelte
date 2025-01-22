@@ -131,4 +131,8 @@
 			</div>
 		</form> -->
 	</div>
+	<!-- svelte-ignore missing-declaration -->
+	<div>
+		Version: {BUILD_TS}
+	</div>
 </header>

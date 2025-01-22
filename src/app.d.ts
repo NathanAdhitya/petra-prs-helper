@@ -16,6 +16,8 @@ declare global {
 		/** Used for certain behaviours to advance to the next section automatically */
 		'selection-made': CustomEvent;
 	}
+
+	declare const BUILD_TS: Date;
 }
 import 'unplugin-icons/types/svelte';
 export {};

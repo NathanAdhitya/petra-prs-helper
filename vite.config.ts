@@ -11,5 +11,8 @@ export default defineConfig({
 		Icons({
 			compiler: 'svelte'
 		})
-	]
+	],
+	define: {
+		"BUILD_TS": new Date()
+	}
 });
