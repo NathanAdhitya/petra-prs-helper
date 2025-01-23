@@ -188,7 +188,7 @@
     ]
   },
   {
-    "nama": "DIGITAL  LEADERSHIP",
+    "nama": "DIGITAL LEADERSHIP",
     "sks": 2,
     "unit": "D.M.U",
     "kode": "D.002",
@@ -1117,7 +1117,7 @@
             "startHour": 10,
             "startMinute": 30,
             "durasi": 180,
-            "ruang": "C.305/"
+            "ruang": "E.01.06/"
           }
         ]
       }
@@ -1137,7 +1137,7 @@
             "startHour": 10,
             "startMinute": 30,
             "durasi": 180,
-            "ruang": "E.01.06/"
+            "ruang": "C.305/"
           }
         ]
       }
@@ -2311,7 +2311,20 @@
     "sks": 3,
     "unit": "Arsitektur",
     "kode": "AR007",
-    "kelas": []
+    "kelas": [
+      {
+        "kelas": "A",
+        "jadwal": [
+          {
+            "dayOfWeek": 2,
+            "startHour": 7,
+            "startMinute": 30,
+            "durasi": 180,
+            "ruang": "P.625/IBE/"
+          }
+        ]
+      }
+    ]
   },
   {
     "nama": "ARSITEKTUR PERILAKU",
@@ -2358,7 +2371,20 @@
     "sks": 3,
     "unit": "Arsitektur",
     "kode": "AR010",
-    "kelas": []
+    "kelas": [
+      {
+        "kelas": "A",
+        "jadwal": [
+          {
+            "dayOfWeek": 2,
+            "startHour": 7,
+            "startMinute": 30,
+            "durasi": 180,
+            "ruang": "P.624/IBE/"
+          }
+        ]
+      }
+    ]
   },
   {
     "nama": "PERENCANAAN TAPAK PERUMAHAN",
@@ -2596,7 +2622,7 @@
             "startHour": 14,
             "startMinute": 0,
             "durasi": 180,
-            "ruang": "P.707/"
+            "ruang": "P.625/IBE/"
           }
         ]
       }
@@ -2616,7 +2642,7 @@
             "startHour": 14,
             "startMinute": 0,
             "durasi": 180,
-            "ruang": "P.709/"
+            "ruang": "P.623/IBE/"
           }
         ]
       }
@@ -2703,7 +2729,7 @@
     ]
   },
   {
-    "nama": "BUDAYA BERHUNI  NUSANTARA",
+    "nama": "BUDAYA BERHUNI NUSANTARA",
     "sks": 2,
     "unit": "Arsitektur",
     "kode": "AR021",
@@ -4105,7 +4131,7 @@
     ]
   },
   {
-    "nama": "DIGITAL  LEADERSHIP",
+    "nama": "DIGITAL LEADERSHIP",
     "sks": 2,
     "unit": "International Business Management",
     "kode": "IB008",
@@ -6557,7 +6583,7 @@
     ]
   },
   {
-    "nama": "ANALISA DATA DALAM PAJAK DAN  BISNIS",
+    "nama": "ANALISA DATA DALAM PAJAK DAN BISNIS",
     "sks": 3,
     "unit": "Tax Accounting",
     "kode": "TA004",
@@ -6857,10 +6883,17 @@
     ]
   },
   {
-    "nama": "STRATEGIC BUSINESS LEADER 1",
+    "nama": "MANAGEMENT ACCOUNTING",
     "sks": 3,
     "unit": "International Business Accounting",
     "kode": "IN011",
+    "kelas": []
+  },
+  {
+    "nama": "STRATEGIC BUSINESS LEADER 1",
+    "sks": 3,
+    "unit": "International Business Accounting",
+    "kode": "IN012",
     "kelas": [
       {
         "kelas": "A",
@@ -6880,7 +6913,7 @@
     "nama": "MANAGEMENT ACCOUNTING 2",
     "sks": 3,
     "unit": "International Business Accounting",
-    "kode": "IN012",
+    "kode": "IN013",
     "kelas": [
       {
         "kelas": "A",
@@ -6900,7 +6933,7 @@
     "nama": "STRATEGIC BUSINESS LEADER 2",
     "sks": 3,
     "unit": "International Business Accounting",
-    "kode": "IN013",
+    "kode": "IN014",
     "kelas": [
       {
         "kelas": "A",
@@ -6920,7 +6953,7 @@
     "nama": "AUDIT AND ASSURANCE 2 (F8)*ACCA",
     "sks": 3,
     "unit": "International Business Accounting",
-    "kode": "IN014",
+    "kode": "IN015",
     "kelas": [
       {
         "kelas": "A",
@@ -6940,7 +6973,7 @@
     "nama": "ADVANCED ACCOUNTING 2",
     "sks": 3,
     "unit": "International Business Accounting",
-    "kode": "IN015",
+    "kode": "IN016",
     "kelas": [
       {
         "kelas": "A",
@@ -7294,7 +7327,20 @@
     "sks": 3,
     "unit": "Teknik Elektro",
     "kode": "TE002",
-    "kelas": []
+    "kelas": [
+      {
+        "kelas": "A",
+        "jadwal": [
+          {
+            "dayOfWeek": 1,
+            "startHour": 7,
+            "startMinute": 30,
+            "durasi": 180,
+            "ruang": "P.709/"
+          }
+        ]
+      }
+    ]
   },
   {
     "nama": "POWER QUALITY",
@@ -7644,7 +7690,7 @@
     ]
   },
   {
-    "nama": "ARTIFICIAL INTELLIGENCE  IN ROBOTICS AND AUTOMATION",
+    "nama": "ARTIFICIAL INTELLIGENCE IN ROBOTICS AND AUTOMATION",
     "sks": 2,
     "unit": "Teknik Elektro",
     "kode": "TE020",
@@ -8989,7 +9035,7 @@
     "nama": "E-PRENEURSHIP",
     "sks": 2,
     "unit": "International Business Engineering",
-    "kode": "IN016",
+    "kode": "IN017",
     "kelas": [
       {
         "kelas": "A",
@@ -9009,7 +9055,7 @@
     "nama": "ORGANIZATIONAL DESIGN",
     "sks": 3,
     "unit": "International Business Engineering",
-    "kode": "IN017",
+    "kode": "IN018",
     "kelas": [
       {
         "kelas": "A",
@@ -9029,7 +9075,7 @@
     "nama": "WORK SYSTEM ENGINEERING",
     "sks": 2,
     "unit": "International Business Engineering",
-    "kode": "IN018",
+    "kode": "IN019",
     "kelas": [
       {
         "kelas": "A",
@@ -9049,7 +9095,7 @@
     "nama": "RESEARCH METHODOLOGY",
     "sks": 2,
     "unit": "International Business Engineering",
-    "kode": "IN019",
+    "kode": "IN020",
     "kelas": [
       {
         "kelas": "A",
@@ -9069,7 +9115,7 @@
     "nama": "OPERATIONS RESEARCH II",
     "sks": 3,
     "unit": "International Business Engineering",
-    "kode": "IN020",
+    "kode": "IN021",
     "kelas": [
       {
         "kelas": "A",
@@ -9089,7 +9135,7 @@
     "nama": "FACILITY LAYOUT AND DESIGN",
     "sks": 3,
     "unit": "International Business Engineering",
-    "kode": "IN021",
+    "kode": "IN022",
     "kelas": [
       {
         "kelas": "A",
@@ -9109,7 +9155,7 @@
     "nama": "ARTIFICIAL INTELLIGENCE FOR BUSINESS",
     "sks": 2,
     "unit": "International Business Engineering",
-    "kode": "IN022",
+    "kode": "IN023",
     "kelas": [
       {
         "kelas": "A",
@@ -9129,7 +9175,7 @@
     "nama": "SOFTWARE ENGINEERING",
     "sks": 3,
     "unit": "International Business Engineering",
-    "kode": "IN023",
+    "kode": "IN024",
     "kelas": [
       {
         "kelas": "A",
@@ -9149,7 +9195,7 @@
     "nama": "OCCUPATIONAL HEALTH AND SAFETY",
     "sks": 2,
     "unit": "International Business Engineering",
-    "kode": "IN024",
+    "kode": "IN025",
     "kelas": [
       {
         "kelas": "A",
@@ -9169,7 +9215,7 @@
     "nama": "INDUSTRIAL SYSTEM SIMULATION",
     "sks": 3,
     "unit": "International Business Engineering",
-    "kode": "IN025",
+    "kode": "IN026",
     "kelas": [
       {
         "kelas": "A",
@@ -9189,7 +9235,7 @@
     "nama": "DATA MINING",
     "sks": 2,
     "unit": "International Business Engineering",
-    "kode": "IN026",
+    "kode": "IN027",
     "kelas": [
       {
         "kelas": "A",
@@ -9209,7 +9255,7 @@
     "nama": "HUMAN FACTORS ENGINEERING",
     "sks": 2,
     "unit": "International Business Engineering",
-    "kode": "IN027",
+    "kode": "IN028",
     "kelas": [
       {
         "kelas": "A",
@@ -9229,7 +9275,7 @@
     "nama": "INTEGRATED PRACTICUM",
     "sks": 2,
     "unit": "International Business Engineering",
-    "kode": "IN028",
+    "kode": "IN029",
     "kelas": [
       {
         "kelas": "A",
@@ -9249,7 +9295,7 @@
     "nama": "BUSINESS ANALYTICS",
     "sks": 3,
     "unit": "International Business Engineering",
-    "kode": "IN029",
+    "kode": "IN030",
     "kelas": [
       {
         "kelas": "A",
@@ -9269,7 +9315,7 @@
     "nama": "JARINGAN KOMPUTER",
     "sks": 3,
     "unit": "Informatika",
-    "kode": "IN030",
+    "kode": "IN031",
     "kelas": [
       {
         "kelas": "A",
@@ -9325,7 +9371,7 @@
     "nama": "TEKNOLOGI WEB",
     "sks": 3,
     "unit": "Informatika",
-    "kode": "IN031",
+    "kode": "IN032",
     "kelas": [
       {
         "kelas": "A",
@@ -9345,7 +9391,7 @@
     "nama": "BASIS DATA",
     "sks": 3,
     "unit": "Informatika",
-    "kode": "IN032",
+    "kode": "IN033",
     "kelas": [
       {
         "kelas": "A",
@@ -9429,7 +9475,7 @@
     "nama": "ALGORITMA DAN PEMROGRAMAN",
     "sks": 3,
     "unit": "Informatika",
-    "kode": "IN033",
+    "kode": "IN034",
     "kelas": [
       {
         "kelas": "A",
@@ -9470,7 +9516,7 @@
     "nama": "MATEMATIKA DISKRIT",
     "sks": 3,
     "unit": "Informatika",
-    "kode": "IN034",
+    "kode": "IN035",
     "kelas": [
       {
         "kelas": "C",
@@ -9511,10 +9557,10 @@
     ]
   },
   {
-    "nama": "PEMROGRAMAN  BERORIENTASI OBYEK",
+    "nama": "PEMROGRAMAN BERORIENTASI OBYEK",
     "sks": 3,
     "unit": "Informatika",
-    "kode": "IN035",
+    "kode": "IN036",
     "kelas": [
       {
         "kelas": "A",
@@ -9598,7 +9644,7 @@
     "nama": "KOMUNIKASI INTERPERSONAL",
     "sks": 3,
     "unit": "Informatika",
-    "kode": "IN036",
+    "kode": "IN037",
     "kelas": [
       {
         "kelas": "A",
@@ -9654,7 +9700,7 @@
     "nama": "STATISTIKA DASAR",
     "sks": 3,
     "unit": "Informatika",
-    "kode": "IN037",
+    "kode": "IN038",
     "kelas": [
       {
         "kelas": "A",
@@ -9719,7 +9765,7 @@
     "nama": "SISTEM OPERASI",
     "sks": 3,
     "unit": "Informatika",
-    "kode": "IN038",
+    "kode": "IN039",
     "kelas": [
       {
         "kelas": "A",
@@ -9784,7 +9830,7 @@
     "nama": "ARTIFICIAL INTELLIGENCE AND MACHINE LEARNING (AIML)",
     "sks": 3,
     "unit": "Informatika",
-    "kode": "IN039",
+    "kode": "IN040",
     "kelas": [
       {
         "kelas": "A",
@@ -9828,7 +9874,7 @@
     "nama": "CYBER OPERATIONS",
     "sks": 3,
     "unit": "Informatika",
-    "kode": "IN040",
+    "kode": "IN041",
     "kelas": [
       {
         "kelas": "A",
@@ -9872,7 +9918,7 @@
     "nama": "REKAYASA PERANGKAT LUNAK",
     "sks": 3,
     "unit": "Informatika",
-    "kode": "IN041",
+    "kode": "IN042",
     "kelas": [
       {
         "kelas": "A",
@@ -9916,7 +9962,7 @@
     "nama": "MANAJEMEN PROYEK TEKNOLOGI INFORMASI",
     "sks": 3,
     "unit": "Informatika",
-    "kode": "IN042",
+    "kode": "IN043",
     "kelas": [
       {
         "kelas": "A",
@@ -9936,7 +9982,7 @@
     "nama": "WEB FRAMEWORKS AND DEPLOYMENT",
     "sks": 3,
     "unit": "Informatika",
-    "kode": "IN043",
+    "kode": "IN044",
     "kelas": [
       {
         "kelas": "A",
@@ -9992,7 +10038,7 @@
     "nama": "METODOLOGI PENELITIAN",
     "sks": 3,
     "unit": "Informatika",
-    "kode": "IN044",
+    "kode": "IN045",
     "kelas": [
       {
         "kelas": "A",
@@ -10012,7 +10058,7 @@
     "nama": "ARSITEKTUR DAN ORGANISASI KOMPUTER",
     "sks": 2,
     "unit": "Informatika",
-    "kode": "IN045",
+    "kode": "IN046",
     "kelas": [
       {
         "kelas": "A",
@@ -10032,7 +10078,7 @@
     "nama": "NETWORK DEFENSE",
     "sks": 3,
     "unit": "Informatika",
-    "kode": "IN046",
+    "kode": "IN047",
     "kelas": [
       {
         "kelas": "A",
@@ -10052,7 +10098,7 @@
     "nama": "STRUKTUR DATA",
     "sks": 3,
     "unit": "Informatika",
-    "kode": "IN047",
+    "kode": "IN048",
     "kelas": [
       {
         "kelas": "A",
@@ -10079,7 +10125,7 @@
     "nama": "APLIKASI MOBILE BERBASIS WEB",
     "sks": 3,
     "unit": "Informatika",
-    "kode": "IN048",
+    "kode": "IN049",
     "kelas": [
       {
         "kelas": "A",
@@ -10099,7 +10145,7 @@
     "nama": "ARSITEKTUR BERORIENTASI LAYANAN",
     "sks": 3,
     "unit": "Informatika",
-    "kode": "IN049",
+    "kode": "IN050",
     "kelas": [
       {
         "kelas": "A",
@@ -10119,7 +10165,7 @@
     "nama": "DESAIN DAN ANALISIS ALGORITMA",
     "sks": 2,
     "unit": "Informatika",
-    "kode": "IN050",
+    "kode": "IN051",
     "kelas": [
       {
         "kelas": "A",
@@ -10146,7 +10192,7 @@
     "nama": "SENI KONSEP DAN PEMODELAN UNTUK GAME",
     "sks": 3,
     "unit": "Informatika",
-    "kode": "IN051",
+    "kode": "IN052",
     "kelas": [
       {
         "kelas": "A",
@@ -10166,7 +10212,7 @@
     "nama": "DEEP LEARNING",
     "sks": 3,
     "unit": "Informatika",
-    "kode": "IN052",
+    "kode": "IN053",
     "kelas": [
       {
         "kelas": "A",
@@ -10186,7 +10232,7 @@
     "nama": "PENGEMBANGAN APLIKASI BERBASIS iOS",
     "sks": 3,
     "unit": "Informatika",
-    "kode": "IN053",
+    "kode": "IN054",
     "kelas": [
       {
         "kelas": "A",
@@ -10206,7 +10252,7 @@
     "nama": "ROUTING AND SWITCHING",
     "sks": 3,
     "unit": "Informatika",
-    "kode": "IN054",
+    "kode": "IN055",
     "kelas": [
       {
         "kelas": "A",
@@ -10226,7 +10272,7 @@
     "nama": "APPLIED ARTIFICIAL INTELLIGENCE",
     "sks": 3,
     "unit": "Informatika",
-    "kode": "IN055",
+    "kode": "IN056",
     "kelas": [
       {
         "kelas": "A",
@@ -10246,7 +10292,7 @@
     "nama": "INTERNET OF THINGS",
     "sks": 3,
     "unit": "Informatika",
-    "kode": "IN056",
+    "kode": "IN057",
     "kelas": [
       {
         "kelas": "A",
@@ -10266,7 +10312,7 @@
     "nama": "ETHICAL HACKING",
     "sks": 3,
     "unit": "Informatika",
-    "kode": "IN057",
+    "kode": "IN058",
     "kelas": [
       {
         "kelas": "A",
@@ -10443,7 +10489,7 @@
     ]
   },
   {
-    "nama": "KESELAMATAN, KESEHATAN, KEAMANAN KERJA  DAN LINGKUNGAN",
+    "nama": "KESELAMATAN, KESEHATAN, KEAMANAN KERJA DAN LINGKUNGAN",
     "sks": 1,
     "unit": "Pendidikan Profesi Insinyur",
     "kode": "PP001",
@@ -14561,21 +14607,60 @@
     "sks": 2,
     "unit": "International Program in Digital Media",
     "kode": "IP009",
-    "kelas": []
+    "kelas": [
+      {
+        "kelas": "ZB",
+        "jadwal": [
+          {
+            "dayOfWeek": 2,
+            "startHour": 11,
+            "startMinute": 30,
+            "durasi": 120,
+            "ruang": "Q.04.08a/"
+          }
+        ]
+      }
+    ]
   },
   {
     "nama": "INTERACTIVE MEDIA PRODUCTION",
     "sks": 3,
     "unit": "International Program in Digital Media",
     "kode": "IP010",
-    "kelas": []
+    "kelas": [
+      {
+        "kelas": "A",
+        "jadwal": [
+          {
+            "dayOfWeek": 2,
+            "startHour": 13,
+            "startMinute": 30,
+            "durasi": 180,
+            "ruang": "Q.07.05/"
+          }
+        ]
+      }
+    ]
   },
   {
     "nama": "KEWARGANEGARAAN",
     "sks": 2,
     "unit": "International Program in Digital Media",
     "kode": "IP011",
-    "kelas": []
+    "kelas": [
+      {
+        "kelas": "ZB",
+        "jadwal": [
+          {
+            "dayOfWeek": 2,
+            "startHour": 13,
+            "startMinute": 30,
+            "durasi": 120,
+            "ruang": "Q.04.04/"
+          }
+        ]
+      }
+    ]
   },
   {
     "nama": "BASIC ILLUSTRATION",
