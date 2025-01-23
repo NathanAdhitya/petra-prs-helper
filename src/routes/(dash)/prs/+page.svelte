@@ -277,7 +277,7 @@
 													onSelect={() => onSelectMatkul(matkul, ids)}
 												>
 													<span class="absolute text-muted-foreground">{matkul.kode} </span>
-													<span class="ml-[6ch]">
+													<span class="ml-[8ch]">
 														{matkul.label}
 														<span class="text-xs text-muted-foreground">
 															{matkul.reference.sks} SKS</span
