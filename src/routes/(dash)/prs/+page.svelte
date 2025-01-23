@@ -269,7 +269,7 @@
 									</div>
 
 									<Command.List>
-										<Command.Empty>Mata kuliah tidak ditemukan...</Command.Empty>
+										<Command.Empty>Mata kuliah tidak ditemukan.<br/>Pastikan filter sudah sesuai 😉</Command.Empty>
 										<Command.Group class="!overflow-auto">
 											{#each filteredMakul as matkul (matkul.kode)}
 												<Command.Item

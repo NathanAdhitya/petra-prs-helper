@@ -184,7 +184,7 @@
 										{/if}
 
 										{kelas}
-										<span class="ml-auto pl-2 text-muted-foreground">0/75</span>
+										<!-- <span class="ml-auto pl-2 text-muted-foreground">0/75</span> -->
 									</Command.Item>
 								{/each}
 							</Command.Group>

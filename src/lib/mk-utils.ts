@@ -9,6 +9,10 @@ export function properCase(str: string) {
 	return str.replace(/\w\S*/g, function (txt) {
 		if (txt.toLowerCase() === 'dan') return txt.toLowerCase();
 		if (isRomanNumeral(txt)) return txt.toUpperCase();
+
+		// If it ends with a ), then don't change it
+		if (txt[txt.length - 1] === ')') return txt;
+
 		return txt.charAt(0).toUpperCase() + txt.substring(1).toLowerCase();
 	});
 }

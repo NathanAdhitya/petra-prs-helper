@@ -11,14 +11,17 @@
 	import { Badge } from '$lib/components/ui/badge/index.js';
 	import * as Command from '$lib/components/ui/command/index.js';
 	import { Separator } from '$lib/components/ui/separator';
-	import { chosenJurusanFilters } from '$lib/mk-state';
+	import { chosenJurusanFilters, semesterFilters } from '$lib/mk-state';
 	import { cn } from '$lib/utils';
 	import { tick } from 'svelte';
+	import { Slider } from '$lib/components/ui/slider';
+
+	import { Checkbox } from '$lib/components/ui/checkbox';
+	import { Label } from '$lib/components/ui/label';
 
 	export let listJurusan: string[];
 	export let disabled: boolean;
 	export let filterFunction: FilterFunction;
-
 
 	let displayTooltips = false;
 	let open = false;
@@ -34,7 +37,18 @@
 		}
 	}
 
-	$: filterFunction = (m) => $chosenJurusanFilters.includes(m.reference.unit);
+	$: filterFunction = (m) =>
+		$chosenJurusanFilters.includes(m.reference.unit) &&
+		// If m.reference.semester === null and $semesterFilters["null"] is true, accept
+		// @ts-expect-error
+		($semesterFilters[m.reference.semester] === true ||
+			// If null, accept any outside 1-8
+			($semesterFilters['null'] === true &&
+				m.reference.semester !== null &&
+				(m.reference.semester < 1 || m.reference.semester > 8)));
+
+	const semesterKeys = ['null', '1', '2', '3', '4', '5', '6', '7', '8'];
+	const semesterLabels = ['unknown/misc', '1', '2', '3', '4', '5', '6', '7', '8 / konsentrasi'];
 </script>
 
 <div class="absolute right-0 top-0 m-0.5">
@@ -49,7 +63,7 @@
 				<SlidersHorizontal class="h-5 w-5" />
 			</Button>
 		</Popover.Trigger>
-		<Popover.Content strategy="fixed" side="right-start" sideOffset={4}>
+		<Popover.Content strategy="fixed" side="right-start" sideOffset={4} class="w-auto max-w-xs">
 			<h2 class="text-lg font-semibold">Filter mata kuliah</h2>
 			<Separator class="mb-2" />
 			<div>
@@ -68,10 +82,10 @@
 				{/each}
 			</div>
 
-			<Command.Root>
-				<Command.Input placeholder="Tambah jurusan" />
+			<Command.Root class="mb-4">
+				<Command.Input placeholder="Tambah jurusan / fakultas / prodi" />
 				<Command.Empty>Jurusan tidak ditemukan...</Command.Empty>
-				<div class="max-h-32 overflow-y-auto">
+				<div class="max-h-48 overflow-y-auto">
 					{#each listJurusan.sort() as jurusan}
 						<Command.Item
 							value={jurusan}
@@ -101,6 +115,31 @@
 					{/each}
 				</div>
 			</Command.Root>
+			<div>
+				<h3 class="mb-1 font-semibold">Semester</h3>
+				<ul class="mb-2 columns-2">
+					{#each semesterKeys as sf, idx}
+						<li class="mb-2 flex items-center space-x-2">
+							<Checkbox
+								id="filter-semester-{idx}"
+								bind:checked={$semesterFilters[sf]}
+								aria-labelledby="filter-semester-label-{idx}"
+							/>
+							<Label
+								id="filter-semester-label-{idx}"
+								for="filter-semester-{idx}"
+								class="text-sm font-medium leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70"
+							>
+								{semesterLabels[idx]}
+							</Label>
+						</li>
+					{/each}
+				</ul>
+				<div class="text-xs">
+					<span class="text-red-500">*</span> data pada filter semester belum tentu akurat, referensikan
+					terhadap pedoman prodi Anda.
+				</div>
+			</div>
 		</Popover.Content>
 	</Popover.Root>
 </div>

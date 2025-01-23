@@ -14,22 +14,43 @@ export type ChosenClassesStore = Writable<Record<MataKuliah['kode'], string[]>>;
 export const chosenMatkul: ChosenMatkulStore = writable([]);
 export const chosenClasses: ChosenClassesStore = writable({});
 export const prsSubmitted = writable(false);
-export const chosenJurusanFilters = writable<string[]>(['Informatika', 'DMU']);
+export const chosenJurusanFilters = writable<string[]>(['Informatika', 'D.M.U']);
+export const semesterFilters = writable<Record<string, boolean>>();
 
 try {
-	chosenMatkul.set(JSON.parse(localStorage.getItem('chosenMatkul') || '[]'));
+	chosenMatkul.set(JSON.parse(localStorage.getItem('chosenMatkul') || 'null') ?? []);
 } catch (e) {
 	console.error(e);
 }
 
 try {
-	chosenClasses.set(JSON.parse(localStorage.getItem('chosenClasses') || '{}'));
+	chosenClasses.set(JSON.parse(localStorage.getItem('chosenClasses') || 'null') ?? {});
 } catch (e) {
 	console.error(e);
 }
 
 try {
-	chosenJurusanFilters.set(JSON.parse(localStorage.getItem('chosenJurusanFilters') || '[]'));
+	chosenJurusanFilters.set(
+		JSON.parse(localStorage.getItem('chosenJurusanFilters') || 'null') ?? ['D.M.U']
+	);
+} catch (e) {
+	console.error(e);
+}
+
+try {
+	semesterFilters.set(
+		JSON.parse(localStorage.getItem('semesterFilters') || 'null') ?? {
+			null: true,
+			1: true,
+			2: true,
+			3: true,
+			4: true,
+			5: true,
+			6: true,
+			7: true,
+			8: true
+		}
+	);
 } catch (e) {
 	console.error(e);
 }
@@ -43,6 +64,9 @@ chosenClasses.subscribe((value) => {
 });
 chosenJurusanFilters.subscribe((value) => {
 	localStorage.setItem('chosenJurusanFilters', JSON.stringify(value));
+});
+semesterFilters.subscribe((value) => {
+	localStorage.setItem('semesterFilters', JSON.stringify(value));
 });
 
 export class ChosenMatkulUtils {

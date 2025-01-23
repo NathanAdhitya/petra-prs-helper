@@ -1,6 +1,7 @@
 [
   {
     "nama": "2D CHARACTER ANIMATION",
+    "semester": 4,
     "sks": 3,
     "unit": "International Program in Digital Media",
     "kode": "DM4373",
@@ -21,6 +22,7 @@
   },
   {
     "nama": "2D GAME DESIGN",
+    "semester": 4,
     "sks": 3,
     "unit": "International Program in Digital Media",
     "kode": "DM4381",
@@ -41,6 +43,7 @@
   },
   {
     "nama": "2D GAME PROGRAMMING",
+    "semester": 4,
     "sks": 3,
     "unit": "International Program in Digital Media",
     "kode": "DM4382",
@@ -61,6 +64,7 @@
   },
   {
     "nama": "3D MODELLING",
+    "semester": 4,
     "sks": 3,
     "unit": "Desain Komunikasi Visual",
     "kode": "DV4651",
@@ -93,26 +97,7 @@
   },
   {
     "nama": "ACCOUNTING INFORMATION SYSTEM",
-    "sks": 3,
-    "unit": "International Business Accounting",
-    "kode": "IA4126",
-    "kelas": [
-      {
-        "kelas": "A",
-        "jadwal": [
-          {
-            "dayOfWeek": 1,
-            "startHour": 7,
-            "startMinute": 30,
-            "durasi": 180,
-            "ruang": "T.418/IBAc/"
-          }
-        ]
-      }
-    ]
-  },
-  {
-    "nama": "ACCOUNTING INFORMATION SYSTEM",
+    "semester": 2,
     "sks": 3,
     "unit": "Akuntansi",
     "kode": "EA4101",
@@ -168,7 +153,29 @@
     ]
   },
   {
+    "nama": "ACCOUNTING INFORMATION SYSTEM",
+    "semester": 2,
+    "sks": 3,
+    "unit": "International Business Accounting",
+    "kode": "IA4126",
+    "kelas": [
+      {
+        "kelas": "A",
+        "jadwal": [
+          {
+            "dayOfWeek": 1,
+            "startHour": 7,
+            "startMinute": 30,
+            "durasi": 180,
+            "ruang": "T.418/IBAc/"
+          }
+        ]
+      }
+    ]
+  },
+  {
     "nama": "ACCOUNTING THEORY",
+    "semester": 5,
     "sks": 3,
     "unit": "International Business Accounting",
     "kode": "IA4140",
@@ -189,6 +196,7 @@
   },
   {
     "nama": "ACOUSTIC",
+    "semester": 5,
     "sks": 3,
     "unit": "Desain Interior",
     "kode": "DI4312",
@@ -196,6 +204,7 @@
   },
   {
     "nama": "ADVANCE DESIGN",
+    "semester": 6,
     "sks": 5,
     "unit": "Desain Komunikasi Visual",
     "kode": "DV4344",
@@ -282,6 +291,7 @@
   },
   {
     "nama": "ADVANCED ACCOUNTING",
+    "semester": 3,
     "sks": 3,
     "unit": "International Business Accounting",
     "kode": "IA4258",
@@ -302,6 +312,7 @@
   },
   {
     "nama": "ADVANCED ACCOUNTING 2",
+    "semester": 4,
     "sks": 3,
     "unit": "International Business Accounting",
     "kode": "IA4185",
@@ -322,33 +333,7 @@
   },
   {
     "nama": "ADVANCED DESIGN",
-    "sks": 5,
-    "unit": "International Program in Digital Media",
-    "kode": "DM4456",
-    "kelas": [
-      {
-        "kelas": "A",
-        "jadwal": [
-          {
-            "dayOfWeek": 1,
-            "startHour": 8,
-            "startMinute": 30,
-            "durasi": 120,
-            "ruang": "Q.08.03A/"
-          },
-          {
-            "dayOfWeek": 3,
-            "startHour": 8,
-            "startMinute": 30,
-            "durasi": 180,
-            "ruang": "Q.08.03A/"
-          }
-        ]
-      }
-    ]
-  },
-  {
-    "nama": "ADVANCED DESIGN",
+    "semester": 6,
     "sks": 5,
     "unit": "Textile and Fashion Design",
     "kode": "DF4322",
@@ -375,7 +360,36 @@
     ]
   },
   {
+    "nama": "ADVANCED DESIGN",
+    "semester": 6,
+    "sks": 5,
+    "unit": "International Program in Digital Media",
+    "kode": "DM4456",
+    "kelas": [
+      {
+        "kelas": "A",
+        "jadwal": [
+          {
+            "dayOfWeek": 1,
+            "startHour": 8,
+            "startMinute": 30,
+            "durasi": 120,
+            "ruang": "Q.08.03A/"
+          },
+          {
+            "dayOfWeek": 3,
+            "startHour": 8,
+            "startMinute": 30,
+            "durasi": 180,
+            "ruang": "Q.08.03A/"
+          }
+        ]
+      }
+    ]
+  },
+  {
     "nama": "ADVANCED ENGLISH FOR COMMUNICATION",
+    "semester": null,
     "sks": 1,
     "unit": "Ilmu Komunikasi",
     "kode": "IK008",
@@ -408,6 +422,7 @@
   },
   {
     "nama": "ADVERTISING",
+    "semester": 7,
     "sks": 4,
     "unit": "Desain Komunikasi Visual",
     "kode": "DV4309",
@@ -415,6 +430,7 @@
   },
   {
     "nama": "ADVERTISING AND PROMOTION",
+    "semester": null,
     "sks": 2,
     "unit": "Ilmu Komunikasi",
     "kode": "IK010",
@@ -435,6 +451,7 @@
   },
   {
     "nama": "AI DAN JURNALISME MULTIMEDIA",
+    "semester": 4,
     "sks": 3,
     "unit": "Creative Media Communication",
     "kode": "IK4344",
@@ -462,6 +479,7 @@
   },
   {
     "nama": "AKUNTANSI KEUANGAN LANJUTAN",
+    "semester": 3,
     "sks": 3,
     "unit": "Akuntansi",
     "kode": "EA4403",
@@ -506,6 +524,7 @@
   },
   {
     "nama": "AKUNTANSI KEUANGAN MENENGAH",
+    "semester": 2,
     "sks": 3,
     "unit": "Akuntansi",
     "kode": "EA4335",
@@ -550,6 +569,7 @@
   },
   {
     "nama": "AKUNTANSI KEUANGAN MENENGAH II",
+    "semester": 4,
     "sks": 3,
     "unit": "Akuntansi",
     "kode": "EA4334",
@@ -570,6 +590,7 @@
   },
   {
     "nama": "AKUNTANSI MANAJEMEN",
+    "semester": 2,
     "sks": 3,
     "unit": "Akuntansi",
     "kode": "EA4409",
@@ -614,6 +635,7 @@
   },
   {
     "nama": "AKUNTANSI MANAJEMEN BERBASIS PASAR",
+    "semester": 4,
     "sks": 3,
     "unit": "Business Accounting",
     "kode": "EA4113",
@@ -646,6 +668,7 @@
   },
   {
     "nama": "AKUNTANSI PAJAK",
+    "semester": 6,
     "sks": 3,
     "unit": "Tax Accounting",
     "kode": "EA4353",
@@ -678,6 +701,7 @@
   },
   {
     "nama": "AKUNTANSI RANTAI PASOK",
+    "semester": 4,
     "sks": 3,
     "unit": "Business Accounting",
     "kode": "EA4115",
@@ -710,6 +734,7 @@
   },
   {
     "nama": "AKUNTANSI SUMBER DAYA MANUSIA",
+    "semester": 4,
     "sks": 3,
     "unit": "Business Accounting",
     "kode": "EA4114",
@@ -742,6 +767,7 @@
   },
   {
     "nama": "ALGORITMA DAN PEMROGRAMAN",
+    "semester": 1,
     "sks": 5,
     "unit": "Informatika",
     "kode": "TF4204",
@@ -783,6 +809,7 @@
   },
   {
     "nama": "ALJABAR LINIER",
+    "semester": 3,
     "sks": 3,
     "unit": "Teknologi Industri",
     "kode": "FD4507",
@@ -839,6 +866,7 @@
   },
   {
     "nama": "ANALISA DATA DALAM PAJAK DAN BISNIS",
+    "semester": 4,
     "sks": 3,
     "unit": "Tax Accounting",
     "kode": "EA4575",
@@ -859,6 +887,7 @@
   },
   {
     "nama": "ANALISA PORTOFOLIO DAN INVESTASI",
+    "semester": 6,
     "sks": 3,
     "unit": "Finance and Investment",
     "kode": "EU4343",
@@ -879,6 +908,7 @@
   },
   {
     "nama": "ANALISIS PROSES BISNIS",
+    "semester": 4,
     "sks": 3,
     "unit": "Business Information System",
     "kode": "TF4408",
@@ -899,6 +929,7 @@
   },
   {
     "nama": "ANALISIS STRUKTUR I",
+    "semester": 3,
     "sks": 3,
     "unit": "Teknik Sipil",
     "kode": "TS4218",
@@ -919,6 +950,7 @@
   },
   {
     "nama": "ANALISIS STRUKTUR II",
+    "semester": 4,
     "sks": 3,
     "unit": "Teknik Sipil",
     "kode": "TS4219",
@@ -939,6 +971,7 @@
   },
   {
     "nama": "ANIMATION",
+    "semester": 7,
     "sks": 4,
     "unit": "Desain Komunikasi Visual",
     "kode": "DV4709",
@@ -959,6 +992,7 @@
   },
   {
     "nama": "ANIMATION PRODUCTION",
+    "semester": 6,
     "sks": 3,
     "unit": "International Program in Digital Media",
     "kode": "DM4394",
@@ -979,9 +1013,10 @@
   },
   {
     "nama": "APLIKASI MOBILE BERBASIS WEB",
+    "semester": null,
     "sks": 3,
     "unit": "Informatika",
-    "kode": "IN051",
+    "kode": "IN019",
     "kelas": [
       {
         "kelas": "A",
@@ -999,6 +1034,7 @@
   },
   {
     "nama": "APOLOGETIKA ANAK TRANSFORMATIF",
+    "semester": 4,
     "sks": 4,
     "unit": "Pendidikan Guru - Sekolah Dasar",
     "kode": "GF4122",
@@ -1019,6 +1055,7 @@
   },
   {
     "nama": "APOLOGETIKA ANAK TRANSFORMATIF",
+    "semester": 4,
     "sks": 4,
     "unit": "Keguruan dan Ilmu Pendidikan",
     "kode": "GF4122",
@@ -1039,9 +1076,10 @@
   },
   {
     "nama": "APPLIED ARTIFICIAL INTELLIGENCE",
+    "semester": null,
     "sks": 3,
     "unit": "Informatika",
-    "kode": "IN058",
+    "kode": "IN026",
     "kelas": [
       {
         "kelas": "A",
@@ -1059,6 +1097,7 @@
   },
   {
     "nama": "APPLIED COMMUNICATION RESEARCH",
+    "semester": null,
     "sks": 1,
     "unit": "Ilmu Komunikasi",
     "kode": "IK012",
@@ -1066,6 +1105,7 @@
   },
   {
     "nama": "ARSITEKTUR BAMBU",
+    "semester": 6,
     "sks": 4,
     "unit": "Arsitektur",
     "kode": "AR4238",
@@ -1086,6 +1126,7 @@
   },
   {
     "nama": "ARSITEKTUR BARAT",
+    "semester": 4,
     "sks": 3,
     "unit": "Arsitektur",
     "kode": "AR4122",
@@ -1118,9 +1159,10 @@
   },
   {
     "nama": "ARSITEKTUR BERORIENTASI LAYANAN",
+    "semester": null,
     "sks": 3,
     "unit": "Informatika",
-    "kode": "IN052",
+    "kode": "IN020",
     "kelas": [
       {
         "kelas": "A",
@@ -1138,6 +1180,7 @@
   },
   {
     "nama": "ARSITEKTUR DAN ERGONOMI",
+    "semester": 6,
     "sks": 3,
     "unit": "Arsitektur",
     "kode": "AR4284",
@@ -1158,6 +1201,7 @@
   },
   {
     "nama": "ARSITEKTUR DAN FILM",
+    "semester": 6,
     "sks": 3,
     "unit": "Arsitektur",
     "kode": "AR4258",
@@ -1178,6 +1222,7 @@
   },
   {
     "nama": "ARSITEKTUR DAN ORGANISASI KOMPUTER",
+    "semester": 3,
     "sks": 3,
     "unit": "Informatika",
     "kode": "TF4372",
@@ -1198,6 +1243,7 @@
   },
   {
     "nama": "ARSITEKTUR DAN SISTIM LISTRIK BANGUNAN",
+    "semester": 6,
     "sks": 3,
     "unit": "Arsitektur",
     "kode": "AR4282",
@@ -1218,6 +1264,7 @@
   },
   {
     "nama": "ARSITEKTUR DAN SISTIM TRANSPORTASI VERTIKAL",
+    "semester": 6,
     "sks": 3,
     "unit": "Arsitektur",
     "kode": "AR4283",
@@ -1238,6 +1285,7 @@
   },
   {
     "nama": "ARSITEKTUR DIGITAL",
+    "semester": 2,
     "sks": 3,
     "unit": "Arsitektur",
     "kode": "AR4302",
@@ -1298,6 +1346,7 @@
   },
   {
     "nama": "ARSITEKTUR LANSEKAP",
+    "semester": 6,
     "sks": 4,
     "unit": "Arsitektur",
     "kode": "AR4243",
@@ -1318,6 +1367,7 @@
   },
   {
     "nama": "ARSITEKTUR PERILAKU",
+    "semester": 6,
     "sks": 4,
     "unit": "Arsitektur",
     "kode": "AR4233",
@@ -1338,6 +1388,7 @@
   },
   {
     "nama": "ARSITEKTUR TIONGHOA",
+    "semester": 6,
     "sks": 4,
     "unit": "Arsitektur",
     "kode": "AR4230",
@@ -1358,6 +1409,7 @@
   },
   {
     "nama": "ARTIFICIAL INTELLIGENCE AND MACHINE LEARNING (AIML)",
+    "semester": 4,
     "sks": 3,
     "unit": "Informatika",
     "kode": "TF4578",
@@ -1402,6 +1454,7 @@
   },
   {
     "nama": "ARTIFICIAL INTELLIGENCE FOR BUSINESS",
+    "semester": 6,
     "sks": 2,
     "unit": "International Business Engineering",
     "kode": "BE4187",
@@ -1422,6 +1475,7 @@
   },
   {
     "nama": "ARTIFICIAL INTELLIGENCE IN ROBOTICS AND AUTOMATION",
+    "semester": 8,
     "sks": 2,
     "unit": "Teknik Elektro",
     "kode": "TE4711",
@@ -1442,6 +1496,7 @@
   },
   {
     "nama": "AUDIT AND ASSURANCE 1 (F8)*ACCA",
+    "semester": 6,
     "sks": 3,
     "unit": "International Business Accounting",
     "kode": "IA4158",
@@ -1462,6 +1517,7 @@
   },
   {
     "nama": "AUDIT AND ASSURANCE 2 (F8)*ACCA",
+    "semester": 6,
     "sks": 3,
     "unit": "International Business Accounting",
     "kode": "IA4159",
@@ -1482,6 +1538,7 @@
   },
   {
     "nama": "AUDIT DAN ASSURANS",
+    "semester": 3,
     "sks": 3,
     "unit": "Akuntansi",
     "kode": "EA4338",
@@ -1502,6 +1559,7 @@
   },
   {
     "nama": "BAHASA INDONESIA",
+    "semester": 3,
     "sks": 2,
     "unit": "D.M.U",
     "kode": "DU4122",
@@ -1690,6 +1748,7 @@
   },
   {
     "nama": "BAHASA INGGRIS PARIWISATA",
+    "semester": 2,
     "sks": 3,
     "unit": "Creative Tourism",
     "kode": "EW4203",
@@ -1710,6 +1769,7 @@
   },
   {
     "nama": "BAHASA INGGRIS UNTUK PROFESSIONAL",
+    "semester": 6,
     "sks": 2,
     "unit": "Hotel Management",
     "kode": "EP4246",
@@ -1742,6 +1802,7 @@
   },
   {
     "nama": "BAHASA MANDARIN DASAR II",
+    "semester": 2,
     "sks": 4,
     "unit": "Bahasa Mandarin",
     "kode": "ST4502",
@@ -1769,6 +1830,7 @@
   },
   {
     "nama": "BAHASA MANDARIN MAHIR II",
+    "semester": 6,
     "sks": 3,
     "unit": "Bahasa Mandarin",
     "kode": "ST4506",
@@ -1796,6 +1858,7 @@
   },
   {
     "nama": "BAHASA MANDARIN MENENGAH II",
+    "semester": 4,
     "sks": 4,
     "unit": "Bahasa Mandarin",
     "kode": "ST4504",
@@ -1823,6 +1886,7 @@
   },
   {
     "nama": "BAHASA MANDARIN TULIS II",
+    "semester": 6,
     "sks": 2,
     "unit": "Bahasa Mandarin",
     "kode": "ST4564",
@@ -1843,6 +1907,7 @@
   },
   {
     "nama": "BAKING AND CHOCOLATE WORK",
+    "semester": 4,
     "sks": 3,
     "unit": "Culinary Business Management",
     "kode": "EH4206",
@@ -1911,6 +1976,7 @@
   },
   {
     "nama": "BANGUNAN PADA KEPADATAN TINGGI",
+    "semester": 6,
     "sks": 4,
     "unit": "Arsitektur",
     "kode": "AR4161",
@@ -1931,33 +1997,7 @@
   },
   {
     "nama": "BASIC DESIGN",
-    "sks": 5,
-    "unit": "International Program in Digital Media",
-    "kode": "DM4445",
-    "kelas": [
-      {
-        "kelas": "A",
-        "jadwal": [
-          {
-            "dayOfWeek": 2,
-            "startHour": 11,
-            "startMinute": 30,
-            "durasi": 120,
-            "ruang": "Q.08.03C/"
-          },
-          {
-            "dayOfWeek": 3,
-            "startHour": 8,
-            "startMinute": 30,
-            "durasi": 240,
-            "ruang": "Q.08.03C/"
-          }
-        ]
-      }
-    ]
-  },
-  {
-    "nama": "BASIC DESIGN",
+    "semester": 2,
     "sks": 5,
     "unit": "Textile and Fashion Design",
     "kode": "DF4300",
@@ -1985,6 +2025,7 @@
   },
   {
     "nama": "BASIC DESIGN",
+    "semester": 2,
     "sks": 5,
     "unit": "Desain Komunikasi Visual",
     "kode": "DV4337",
@@ -2049,7 +2090,36 @@
     ]
   },
   {
+    "nama": "BASIC DESIGN",
+    "semester": 2,
+    "sks": 5,
+    "unit": "International Program in Digital Media",
+    "kode": "DM4445",
+    "kelas": [
+      {
+        "kelas": "A",
+        "jadwal": [
+          {
+            "dayOfWeek": 2,
+            "startHour": 11,
+            "startMinute": 30,
+            "durasi": 120,
+            "ruang": "Q.08.03C/"
+          },
+          {
+            "dayOfWeek": 3,
+            "startHour": 8,
+            "startMinute": 30,
+            "durasi": 240,
+            "ruang": "Q.08.03C/"
+          }
+        ]
+      }
+    ]
+  },
+  {
     "nama": "BASIC ILLUSTRATION",
+    "semester": 2,
     "sks": 3,
     "unit": "International Program in Digital Media",
     "kode": "DM4344",
@@ -2070,6 +2140,7 @@
   },
   {
     "nama": "BASIC PHOTO",
+    "semester": 4,
     "sks": 3,
     "unit": "International Program in Digital Media",
     "kode": "DM4452",
@@ -2090,6 +2161,7 @@
   },
   {
     "nama": "BASIS DATA",
+    "semester": 2,
     "sks": 3,
     "unit": "Informatika",
     "kode": "TF4229",
@@ -2174,6 +2246,7 @@
   },
   {
     "nama": "BENTUK,STRUKTUR DAN MATERIAL",
+    "semester": 2,
     "sks": 3,
     "unit": "Arsitektur",
     "kode": "AR4115",
@@ -2220,6 +2293,7 @@
   },
   {
     "nama": "BERBICARA DI DEPAN PUBLIK",
+    "semester": 8,
     "sks": 2,
     "unit": "Bahasa Mandarin",
     "kode": "ST4520",
@@ -2240,6 +2314,7 @@
   },
   {
     "nama": "BISNIS DAN MANAJEMEN",
+    "semester": 1,
     "sks": 3,
     "unit": "School of Business and Management",
     "kode": "EK4303",
@@ -2260,6 +2335,7 @@
   },
   {
     "nama": "BISNIS ELEKTRONIS",
+    "semester": 6,
     "sks": 3,
     "unit": "Business Management",
     "kode": "EM4360",
@@ -2316,6 +2392,7 @@
   },
   {
     "nama": "BRAIN, LANGUAGE, AND BEHAVIOR",
+    "semester": 6,
     "sks": 3,
     "unit": "Keguruan dan Ilmu Pendidikan",
     "kode": "GF4129",
@@ -2336,6 +2413,7 @@
   },
   {
     "nama": "BRAND ACTIVATION",
+    "semester": 7,
     "sks": 4,
     "unit": "Desain Komunikasi Visual",
     "kode": "DV4649",
@@ -2363,6 +2441,7 @@
   },
   {
     "nama": "BRANDING",
+    "semester": 6,
     "sks": 4,
     "unit": "Desain Komunikasi Visual",
     "kode": "DV4701",
@@ -2370,6 +2449,7 @@
   },
   {
     "nama": "BUDAYA BERHUNI NUSANTARA",
+    "semester": 6,
     "sks": 3,
     "unit": "Arsitektur",
     "kode": "AR4286",
@@ -2390,26 +2470,7 @@
   },
   {
     "nama": "BUSINESS ANALYTICS",
-    "sks": 3,
-    "unit": "International Business Management",
-    "kode": "EB4389",
-    "kelas": [
-      {
-        "kelas": "A",
-        "jadwal": [
-          {
-            "dayOfWeek": 1,
-            "startHour": 7,
-            "startMinute": 30,
-            "durasi": 180,
-            "ruang": "T.505/"
-          }
-        ]
-      }
-    ]
-  },
-  {
-    "nama": "BUSINESS ANALYTICS",
+    "semester": 5,
     "sks": 3,
     "unit": "International Business Engineering",
     "kode": "BE4131",
@@ -2429,7 +2490,29 @@
     ]
   },
   {
+    "nama": "BUSINESS ANALYTICS",
+    "semester": 4,
+    "sks": 3,
+    "unit": "International Business Management",
+    "kode": "EB4389",
+    "kelas": [
+      {
+        "kelas": "A",
+        "jadwal": [
+          {
+            "dayOfWeek": 1,
+            "startHour": 7,
+            "startMinute": 30,
+            "durasi": 180,
+            "ruang": "T.505/"
+          }
+        ]
+      }
+    ]
+  },
+  {
     "nama": "BUSINESS AND PERSONAL DEVELOPMENT",
+    "semester": 2,
     "sks": 3,
     "unit": "Business Accounting",
     "kode": "EA4329",
@@ -2462,6 +2545,7 @@
   },
   {
     "nama": "BUSINESS COMMUNICATION PROJECT",
+    "semester": 6,
     "sks": 3,
     "unit": "English for Business",
     "kode": "SI4771",
@@ -2482,6 +2566,7 @@
   },
   {
     "nama": "BUSINESS ENGLISH II",
+    "semester": 2,
     "sks": 3,
     "unit": "Global Entrepreneurship and Innovation",
     "kode": "EI4115",
@@ -2489,6 +2574,7 @@
   },
   {
     "nama": "BUSINESS ENGLISH: MARKETING COMMUNICATION",
+    "semester": 6,
     "sks": 3,
     "unit": "English for Business",
     "kode": "SI4726",
@@ -2509,6 +2595,7 @@
   },
   {
     "nama": "BUSINESS STUDIES",
+    "semester": 2,
     "sks": 2,
     "unit": "English for Business",
     "kode": "SI4767",
@@ -2529,6 +2616,7 @@
   },
   {
     "nama": "BUSINESS TRANSLATION",
+    "semester": 6,
     "sks": 3,
     "unit": "English for Business",
     "kode": "SI4735",
@@ -2549,6 +2637,7 @@
   },
   {
     "nama": "BUSINESS WRITING",
+    "semester": 6,
     "sks": 3,
     "unit": "English for Business",
     "kode": "SI4373",
@@ -2569,6 +2658,7 @@
   },
   {
     "nama": "CERTIFIED ASSOCIATE IN PROJECT MANAGEMENT 1",
+    "semester": 8,
     "sks": 3,
     "unit": "International Business Management",
     "kode": "EB4424",
@@ -2589,6 +2679,7 @@
   },
   {
     "nama": "CERTIFIED ASSOCIATE IN PROJECT MANAGEMENT 2",
+    "semester": 8,
     "sks": 3,
     "unit": "International Business Management",
     "kode": "EB4425",
@@ -2609,6 +2700,7 @@
   },
   {
     "nama": "CHINESE BUSINESS MANAGEMENT",
+    "semester": 5,
     "sks": 2,
     "unit": "Bahasa Mandarin",
     "kode": "ST4566",
@@ -2629,6 +2721,7 @@
   },
   {
     "nama": "CHINESE BUSINESS NORMS AND REGULATIONS",
+    "semester": 6,
     "sks": 2,
     "unit": "Bahasa Mandarin",
     "kode": "ST4565",
@@ -2649,6 +2742,7 @@
   },
   {
     "nama": "CHINESE CALLIGRAPHY",
+    "semester": 3,
     "sks": 2,
     "unit": "Bahasa Mandarin",
     "kode": "ST4576",
@@ -2669,6 +2763,7 @@
   },
   {
     "nama": "CHINESE FOR TOURISM AND TRAVEL PLANNING",
+    "semester": 6,
     "sks": 2,
     "unit": "Bahasa Mandarin",
     "kode": "ST4573",
@@ -2689,6 +2784,7 @@
   },
   {
     "nama": "CHINESE INTERIOR",
+    "semester": 5,
     "sks": 3,
     "unit": "Desain Interior",
     "kode": "DI4316",
@@ -2696,6 +2792,7 @@
   },
   {
     "nama": "CHINESE TRADING AND DIGITAL MARKETING",
+    "semester": 6,
     "sks": 2,
     "unit": "Bahasa Mandarin",
     "kode": "ST4567",
@@ -2716,6 +2813,7 @@
   },
   {
     "nama": "COMMUNICATION IN SERVICE INDUSTRY",
+    "semester": 8,
     "sks": 3,
     "unit": "English for Business",
     "kode": "SI4824",
@@ -2736,6 +2834,7 @@
   },
   {
     "nama": "COMMUNITY DEVELOPMENT",
+    "semester": 6,
     "sks": 3,
     "unit": "Branding and Digital Marketing",
     "kode": "EG4729",
@@ -2756,6 +2855,7 @@
   },
   {
     "nama": "COMPUTER AIDED DESIGN ( CAD )",
+    "semester": 8,
     "sks": 2,
     "unit": "Teknik Elektro",
     "kode": "TE4668",
@@ -2776,6 +2876,7 @@
   },
   {
     "nama": "COMPUTER AIDED ENGINEERING",
+    "semester": 6,
     "sks": 3,
     "unit": "Sustainable Mechanical Engineering and Design",
     "kode": "TM4668",
@@ -2796,6 +2897,7 @@
   },
   {
     "nama": "CONCEPTUAL PHOTO",
+    "semester": 4,
     "sks": 3,
     "unit": "Desain Komunikasi Visual",
     "kode": "DV4341",
@@ -2830,6 +2932,7 @@
   },
   {
     "nama": "CONTEMPORARY AND POPULAR LITERATURE",
+    "semester": 6,
     "sks": 3,
     "unit": "English for Creative Industry",
     "kode": "SI4711",
@@ -2837,6 +2940,7 @@
   },
   {
     "nama": "CORPORATE COPYWRITING",
+    "semester": 6,
     "sks": 3,
     "unit": "English for Business",
     "kode": "SI4745",
@@ -2869,6 +2973,7 @@
   },
   {
     "nama": "CORPORATE FINANCE",
+    "semester": 2,
     "sks": 3,
     "unit": "Global Entrepreneurship and Innovation",
     "kode": "EI4114",
@@ -2876,6 +2981,7 @@
   },
   {
     "nama": "COUNTRY COMPETITIVENESS",
+    "semester": 4,
     "sks": 3,
     "unit": "International Business Management",
     "kode": "EB4392",
@@ -2896,6 +3002,7 @@
   },
   {
     "nama": "COUTURE INNOVATION",
+    "semester": 4,
     "sks": 3,
     "unit": "Textile and Fashion Design",
     "kode": "DF4318",
@@ -2923,6 +3030,7 @@
   },
   {
     "nama": "CRAFT AND FURNISHING",
+    "semester": 5,
     "sks": 3,
     "unit": "Desain Interior",
     "kode": "DI4315",
@@ -2930,6 +3038,7 @@
   },
   {
     "nama": "CRAFT OF ACTING",
+    "semester": 2,
     "sks": 2,
     "unit": "English for Creative Industry",
     "kode": "SI4828",
@@ -2937,6 +3046,7 @@
   },
   {
     "nama": "CRAFT OF PLAYWRITING",
+    "semester": 2,
     "sks": 2,
     "unit": "English for Creative Industry",
     "kode": "SI4827",
@@ -2957,6 +3067,7 @@
   },
   {
     "nama": "CREATIVE INDUSTRY MANAGEMENT",
+    "semester": 6,
     "sks": 3,
     "unit": "International Program in Digital Media",
     "kode": "DM4356",
@@ -2977,6 +3088,7 @@
   },
   {
     "nama": "CREATIVE INTELLIGENCE CONTENT PRODUCTION",
+    "semester": 6,
     "sks": 4,
     "unit": "Creative Media Communication",
     "kode": "IK4507",
@@ -3004,6 +3116,7 @@
   },
   {
     "nama": "CREATIVE NONFICTION",
+    "semester": 8,
     "sks": 3,
     "unit": "English for Creative Industry",
     "kode": "SI4781",
@@ -3031,6 +3144,7 @@
   },
   {
     "nama": "CREATIVE WRITING",
+    "semester": 4,
     "sks": 3,
     "unit": "Desain Komunikasi Visual",
     "kode": "DV4315",
@@ -3089,6 +3203,7 @@
   },
   {
     "nama": "CREATIVEPRENEURSHIP",
+    "semester": 4,
     "sks": 2,
     "unit": "Humaniora dan Industri Kreatif",
     "kode": "FI4102",
@@ -3193,6 +3308,7 @@
   },
   {
     "nama": "CREATIVEPRENEURSHIP",
+    "semester": 7,
     "sks": 4,
     "unit": "Desain Komunikasi Visual",
     "kode": "DV4706",
@@ -3200,6 +3316,7 @@
   },
   {
     "nama": "CROSS CULTURAL COMMUNICATION",
+    "semester": 3,
     "sks": 3,
     "unit": "International Business Management",
     "kode": "EB4255",
@@ -3220,6 +3337,7 @@
   },
   {
     "nama": "CYBER OPERATIONS",
+    "semester": 4,
     "sks": 3,
     "unit": "Informatika",
     "kode": "TF4544",
@@ -3264,6 +3382,7 @@
   },
   {
     "nama": "DASAR JURNALISTIK",
+    "semester": null,
     "sks": 2,
     "unit": "Ilmu Komunikasi",
     "kode": "IK009",
@@ -3310,6 +3429,7 @@
   },
   {
     "nama": "DASAR SISTEM KONTROL",
+    "semester": 5,
     "sks": 3,
     "unit": "Teknik Elektro",
     "kode": "TE4391",
@@ -3330,6 +3450,7 @@
   },
   {
     "nama": "DATA ANALYTICS",
+    "semester": 4,
     "sks": 3,
     "unit": "Teknik Industri",
     "kode": "TI4658",
@@ -3350,6 +3471,7 @@
   },
   {
     "nama": "DATA MINING",
+    "semester": 4,
     "sks": 2,
     "unit": "International Business Engineering",
     "kode": "BE4124",
@@ -3370,6 +3492,7 @@
   },
   {
     "nama": "DATA MINING",
+    "semester": 3,
     "sks": 3,
     "unit": "Data Science and Analytics",
     "kode": "TF4333",
@@ -3390,9 +3513,10 @@
   },
   {
     "nama": "DEEP LEARNING",
+    "semester": null,
     "sks": 3,
     "unit": "Informatika",
-    "kode": "IN055",
+    "kode": "IN023",
     "kelas": [
       {
         "kelas": "A",
@@ -3410,9 +3534,10 @@
   },
   {
     "nama": "DESAIN DAN ANALISIS ALGORITMA",
+    "semester": null,
     "sks": 2,
     "unit": "Informatika",
-    "kode": "IN053",
+    "kode": "IN021",
     "kelas": [
       {
         "kelas": "A",
@@ -3437,6 +3562,7 @@
   },
   {
     "nama": "DESAIN DAN KEWIRAUSAHAAN",
+    "semester": 6,
     "sks": 3,
     "unit": "Arsitektur",
     "kode": "AR4285",
@@ -3457,6 +3583,7 @@
   },
   {
     "nama": "DESAIN STRUKTUR BAJA I",
+    "semester": 3,
     "sks": 3,
     "unit": "Teknik Sipil",
     "kode": "TS4241",
@@ -3477,6 +3604,7 @@
   },
   {
     "nama": "DESAIN STRUKTUR BAJA II",
+    "semester": 5,
     "sks": 3,
     "unit": "Teknik Sipil",
     "kode": "TS4242",
@@ -3497,6 +3625,7 @@
   },
   {
     "nama": "DESAIN STRUKTUR BETON I",
+    "semester": 4,
     "sks": 3,
     "unit": "Teknik Sipil",
     "kode": "TS4235",
@@ -3517,6 +3646,7 @@
   },
   {
     "nama": "DESAIN STRUKTUR BETON II",
+    "semester": 5,
     "sks": 3,
     "unit": "Teknik Sipil",
     "kode": "TS4236",
@@ -3537,6 +3667,7 @@
   },
   {
     "nama": "DESAIN STRUKTUR BETON PRATEGANG",
+    "semester": 7,
     "sks": 3,
     "unit": "Teknik Sipil",
     "kode": "TS4239",
@@ -3557,6 +3688,7 @@
   },
   {
     "nama": "DESAIN UI/UX",
+    "semester": 8,
     "sks": 2,
     "unit": "Teknik Elektro",
     "kode": "TE4718",
@@ -3577,6 +3709,7 @@
   },
   {
     "nama": "DESIGN AND RESEARCH METHODOLOGY",
+    "semester": 2,
     "sks": 3,
     "unit": "Textile and Fashion Design",
     "kode": "DF4306",
@@ -3597,6 +3730,7 @@
   },
   {
     "nama": "DESIGN AND RESEARCH METHODOLOGY",
+    "semester": 2,
     "sks": 3,
     "unit": "Desain Komunikasi Visual",
     "kode": "DV4336",
@@ -3641,6 +3775,7 @@
   },
   {
     "nama": "DESIGN APPRECIATION",
+    "semester": 6,
     "sks": 2,
     "unit": "Textile and Fashion Design",
     "kode": "DF4323",
@@ -3661,6 +3796,7 @@
   },
   {
     "nama": "DESIGN CULTURE",
+    "semester": 6,
     "sks": 3,
     "unit": "Desain Komunikasi Visual",
     "kode": "DV4740",
@@ -3705,6 +3841,7 @@
   },
   {
     "nama": "DESIGN IN ENGLISH FOR BUSINESS",
+    "semester": 6,
     "sks": 3,
     "unit": "English for Business",
     "kode": "SI4783",
@@ -3725,6 +3862,7 @@
   },
   {
     "nama": "DESIGN IN ENGLISH FOR CREATIVE INDUSTRY",
+    "semester": 6,
     "sks": 3,
     "unit": "English for Creative Industry",
     "kode": "SI4784",
@@ -3745,6 +3883,7 @@
   },
   {
     "nama": "DIGITAL BUSINESS PLATFORMS",
+    "semester": 2,
     "sks": 3,
     "unit": "Digital Business Transformation",
     "kode": "ED4202",
@@ -3777,6 +3916,7 @@
   },
   {
     "nama": "DIGITAL IMAGING",
+    "semester": 7,
     "sks": 4,
     "unit": "Desain Komunikasi Visual",
     "kode": "DV4319",
@@ -3804,6 +3944,7 @@
   },
   {
     "nama": "DIGITAL LEADERSHIP",
+    "semester": 2,
     "sks": 2,
     "unit": "D.M.U",
     "kode": "DU4198",
@@ -3920,6 +4061,7 @@
   },
   {
     "nama": "DIGITAL LEADERSHIP",
+    "semester": 2,
     "sks": 2,
     "unit": "International Business Management",
     "kode": "DU4198",
@@ -3952,6 +4094,7 @@
   },
   {
     "nama": "DIGITAL MARKETING MASTERY",
+    "semester": 4,
     "sks": 3,
     "unit": "Branding and Digital Marketing",
     "kode": "EG4289",
@@ -3972,6 +4115,7 @@
   },
   {
     "nama": "DIGITAL SCULPTING AND MODELLING",
+    "semester": 4,
     "sks": 3,
     "unit": "International Program in Digital Media",
     "kode": "DM4374",
@@ -3992,6 +4136,7 @@
   },
   {
     "nama": "DIGITAL TYPOGRAPHY",
+    "semester": 2,
     "sks": 3,
     "unit": "Desain Komunikasi Visual",
     "kode": "DV4727",
@@ -4057,6 +4202,7 @@
   },
   {
     "nama": "DIGITALISASI PEMBELAJARAN",
+    "semester": 2,
     "sks": 3,
     "unit": "Pendidikan Guru - Sekolah Dasar",
     "kode": "GD4293",
@@ -4084,6 +4230,7 @@
   },
   {
     "nama": "DISABILITY STUDIES AND EMPOWERMENT",
+    "semester": 3,
     "sks": 3,
     "unit": "D.M.U",
     "kode": "DU4209",
@@ -4104,6 +4251,7 @@
   },
   {
     "nama": "DYNAMIC POSE",
+    "semester": 2,
     "sks": 2,
     "unit": "International Program in Digital Media",
     "kode": "DM4346",
@@ -4124,6 +4272,7 @@
   },
   {
     "nama": "E-PRENEURSHIP",
+    "semester": 8,
     "sks": 2,
     "unit": "International Business Engineering",
     "kode": "BE4185",
@@ -4144,6 +4293,7 @@
   },
   {
     "nama": "EKO DESAIN",
+    "semester": 4,
     "sks": 3,
     "unit": "Desain Interior",
     "kode": "DI4427",
@@ -4164,6 +4314,7 @@
   },
   {
     "nama": "EKONOMI TEKNIK",
+    "semester": 5,
     "sks": 3,
     "unit": "Teknik Sipil",
     "kode": "TS4430",
@@ -4184,6 +4335,7 @@
   },
   {
     "nama": "EKONOMIKA",
+    "semester": 1,
     "sks": 4,
     "unit": "School of Business and Management",
     "kode": "EK4304",
@@ -4211,6 +4363,7 @@
   },
   {
     "nama": "EKONOMIKA DAN EKONOMI TEKNIK",
+    "semester": 5,
     "sks": 3,
     "unit": "Teknik Industri",
     "kode": "TI4639",
@@ -4231,6 +4384,7 @@
   },
   {
     "nama": "EKSPOSISI KEHIDUPAN KRISTUS",
+    "semester": 6,
     "sks": 3,
     "unit": "Keguruan dan Ilmu Pendidikan",
     "kode": "GF4112",
@@ -4251,6 +4405,7 @@
   },
   {
     "nama": "ELECTIVE : BRIDAL AND EVENING GOWN",
+    "semester": 6,
     "sks": 4,
     "unit": "Textile and Fashion Design",
     "kode": "DF4326",
@@ -4278,6 +4433,7 @@
   },
   {
     "nama": "ELEKTRONIKA DAYA",
+    "semester": 4,
     "sks": 2,
     "unit": "Teknik Elektro",
     "kode": "TE4455",
@@ -4298,6 +4454,7 @@
   },
   {
     "nama": "ELEMEN MESIN",
+    "semester": 4,
     "sks": 4,
     "unit": "Teknik Mesin",
     "kode": "TM4400",
@@ -4325,6 +4482,7 @@
   },
   {
     "nama": "EMBEDDED SYSTEM",
+    "semester": 5,
     "sks": 3,
     "unit": "Teknik Elektro",
     "kode": "TE4707",
@@ -4345,6 +4503,7 @@
   },
   {
     "nama": "ENGINE MANAGEMENT SYSTEMS",
+    "semester": 6,
     "sks": 2,
     "unit": "Automotive",
     "kode": "TM4606",
@@ -4365,6 +4524,7 @@
   },
   {
     "nama": "ENGLISH FOR OCCUPATIONAL PURPOSES",
+    "semester": 4,
     "sks": 3,
     "unit": "D.M.U",
     "kode": "DU4176",
@@ -4385,6 +4545,7 @@
   },
   {
     "nama": "ENGLISH PROFICIENCY TEST PREPARATION",
+    "semester": 4,
     "sks": 2,
     "unit": "English for Business",
     "kode": "SI4630",
@@ -4429,6 +4590,7 @@
   },
   {
     "nama": "ENTREPRENEURIAL MINDSET",
+    "semester": 4,
     "sks": 2,
     "unit": "School of Business and Management",
     "kode": "EK4317",
@@ -4449,6 +4611,7 @@
   },
   {
     "nama": "ENVIRONMENTAL, SOCIAL, AND CORPORATE GOVERNANCE",
+    "semester": 6,
     "sks": 4,
     "unit": "Strategic Communication",
     "kode": "IK4601",
@@ -4495,9 +4658,10 @@
   },
   {
     "nama": "ETHICAL HACKING",
+    "semester": null,
     "sks": 3,
     "unit": "Informatika",
-    "kode": "IN060",
+    "kode": "IN028",
     "kelas": [
       {
         "kelas": "A",
@@ -4515,6 +4679,7 @@
   },
   {
     "nama": "ETIKA BISNIS",
+    "semester": 8,
     "sks": 3,
     "unit": "Business Management",
     "kode": "EM4666",
@@ -4535,6 +4700,7 @@
   },
   {
     "nama": "ETIKA PROFESI",
+    "semester": 4,
     "sks": 2,
     "unit": "D.M.U",
     "kode": "DU4163",
@@ -4879,26 +5045,7 @@
   },
   {
     "nama": "ETIKA PROFESI",
-    "sks": 2,
-    "unit": "International Program in Digital Media",
-    "kode": "DU4163",
-    "kelas": [
-      {
-        "kelas": "ZB",
-        "jadwal": [
-          {
-            "dayOfWeek": 2,
-            "startHour": 11,
-            "startMinute": 30,
-            "durasi": 120,
-            "ruang": "Q.04.08a/"
-          }
-        ]
-      }
-    ]
-  },
-  {
-    "nama": "ETIKA PROFESI",
+    "semester": 4,
     "sks": 2,
     "unit": "International Business Management",
     "kode": "DU4163",
@@ -4918,7 +5065,29 @@
     ]
   },
   {
+    "nama": "ETIKA PROFESI",
+    "semester": 4,
+    "sks": 2,
+    "unit": "International Program in Digital Media",
+    "kode": "DU4163",
+    "kelas": [
+      {
+        "kelas": "ZB",
+        "jadwal": [
+          {
+            "dayOfWeek": 2,
+            "startHour": 11,
+            "startMinute": 30,
+            "durasi": 120,
+            "ruang": "Q.04.08a/"
+          }
+        ]
+      }
+    ]
+  },
+  {
     "nama": "EVALUASI OTENTIK",
+    "semester": 4,
     "sks": 3,
     "unit": "Pendidikan Guru - Sekolah Dasar",
     "kode": "GD4338",
@@ -4926,6 +5095,7 @@
   },
   {
     "nama": "FACILITY LAYOUT AND DESIGN",
+    "semester": 6,
     "sks": 3,
     "unit": "International Business Engineering",
     "kode": "BE4177",
@@ -4946,6 +5116,7 @@
   },
   {
     "nama": "FASHION BRANDING AND MANAGEMENT",
+    "semester": 4,
     "sks": 3,
     "unit": "Textile and Fashion Design",
     "kode": "DF4317",
@@ -4973,6 +5144,7 @@
   },
   {
     "nama": "FASHION DESIGN AND TECHNOLOGY",
+    "semester": 4,
     "sks": 3,
     "unit": "Textile and Fashion Design",
     "kode": "DF4244",
@@ -5000,6 +5172,7 @@
   },
   {
     "nama": "FASHION EVENT MANAGEMENT",
+    "semester": 6,
     "sks": 3,
     "unit": "Textile and Fashion Design",
     "kode": "DF4325",
@@ -5020,6 +5193,7 @@
   },
   {
     "nama": "FASHION FLAT DRAWING",
+    "semester": 2,
     "sks": 3,
     "unit": "Textile and Fashion Design",
     "kode": "DF4310",
@@ -5040,6 +5214,7 @@
   },
   {
     "nama": "FASHION FOR A CAUSE",
+    "semester": 6,
     "sks": 3,
     "unit": "Textile and Fashion Design",
     "kode": "DF4330",
@@ -5074,6 +5249,7 @@
   },
   {
     "nama": "FASHION GRAPHIC",
+    "semester": 2,
     "sks": 3,
     "unit": "Textile and Fashion Design",
     "kode": "DF4308",
@@ -5101,6 +5277,7 @@
   },
   {
     "nama": "FILM PRODUCTION",
+    "semester": 6,
     "sks": 3,
     "unit": "English for Creative Industry",
     "kode": "SI4602",
@@ -5121,6 +5298,7 @@
   },
   {
     "nama": "FILM PRODUCTION DESIGN",
+    "semester": 4,
     "sks": 3,
     "unit": "English for Creative Industry",
     "kode": "SI4829",
@@ -5141,6 +5319,7 @@
   },
   {
     "nama": "FINANCIAL MANAGEMENT",
+    "semester": 2,
     "sks": 3,
     "unit": "International Business Management",
     "kode": "EB4233",
@@ -5161,6 +5340,7 @@
   },
   {
     "nama": "FINANCIAL MANAGEMENT 1",
+    "semester": 3,
     "sks": 3,
     "unit": "International Business Accounting",
     "kode": "IA4186",
@@ -5181,6 +5361,7 @@
   },
   {
     "nama": "FINANCIAL MANAGEMENT 2",
+    "semester": 3,
     "sks": 3,
     "unit": "International Business Accounting",
     "kode": "IA4187",
@@ -5201,6 +5382,7 @@
   },
   {
     "nama": "FISIKA I",
+    "semester": 1,
     "sks": 4,
     "unit": "Teknologi Industri",
     "kode": "FD4503",
@@ -5228,6 +5410,7 @@
   },
   {
     "nama": "FISIKA II",
+    "semester": 2,
     "sks": 3,
     "unit": "Teknologi Industri",
     "kode": "FD4504",
@@ -5293,6 +5476,7 @@
   },
   {
     "nama": "FOREIGN LANGUAGES",
+    "semester": 8,
     "sks": 2,
     "unit": "English for Business",
     "kode": "SI4385",
@@ -5313,6 +5497,7 @@
   },
   {
     "nama": "FRIENDSHIP COUNSELING",
+    "semester": 3,
     "sks": 3,
     "unit": "D.M.U",
     "kode": "DU4196",
@@ -5333,6 +5518,7 @@
   },
   {
     "nama": "FUNDAMENTAL KEUANGAN DAN INVESTASI",
+    "semester": 2,
     "sks": 3,
     "unit": "Finance and Investment",
     "kode": "EU4210",
@@ -5353,6 +5539,7 @@
   },
   {
     "nama": "FUNDAMENTAL KULINER",
+    "semester": 2,
     "sks": 3,
     "unit": "Culinary Business Management",
     "kode": "EH4201",
@@ -5409,6 +5596,7 @@
   },
   {
     "nama": "FURNITURE DESIGN FOR PUBLIC SPACE",
+    "semester": 4,
     "sks": 4,
     "unit": "Desain Interior",
     "kode": "DI4553",
@@ -5436,6 +5624,7 @@
   },
   {
     "nama": "GAME DESIGN",
+    "semester": 7,
     "sks": 4,
     "unit": "Desain Komunikasi Visual",
     "kode": "DV4712",
@@ -5443,6 +5632,7 @@
   },
   {
     "nama": "GAME PRODUCTION",
+    "semester": 6,
     "sks": 3,
     "unit": "International Program in Digital Media",
     "kode": "DM4395",
@@ -5463,6 +5653,7 @@
   },
   {
     "nama": "GLOBAL CAREER ESSENTIALS",
+    "semester": 4,
     "sks": 3,
     "unit": "International Business Management",
     "kode": "EB4254",
@@ -5483,6 +5674,7 @@
   },
   {
     "nama": "GRAMMAR 2",
+    "semester": 2,
     "sks": 2,
     "unit": "English for Business",
     "kode": "SI4632",
@@ -5515,6 +5707,7 @@
   },
   {
     "nama": "GRAPHIC DESIGN",
+    "semester": 2,
     "sks": 3,
     "unit": "Desain Komunikasi Visual",
     "kode": "DV4335",
@@ -5542,6 +5735,7 @@
   },
   {
     "nama": "GUEST EXPERIENCE MANAGEMENT",
+    "semester": 4,
     "sks": 3,
     "unit": "Hotel Management",
     "kode": "EP4265",
@@ -5598,6 +5792,7 @@
   },
   {
     "nama": "HIDROLIKA",
+    "semester": 5,
     "sks": 3,
     "unit": "Teknik Sipil",
     "kode": "TS4249",
@@ -5618,6 +5813,7 @@
   },
   {
     "nama": "HUKUM BISNIS DAN KORPORASI",
+    "semester": 1,
     "sks": 3,
     "unit": "School of Business and Management",
     "kode": "EK4311",
@@ -5650,6 +5846,7 @@
   },
   {
     "nama": "HUKUM KELUARGA DAN TENAGA KERJA",
+    "semester": 5,
     "sks": 3,
     "unit": "Business Management",
     "kode": "EM4607",
@@ -5670,6 +5867,7 @@
   },
   {
     "nama": "HUKUM PAJAK",
+    "semester": 2,
     "sks": 3,
     "unit": "Tax Accounting",
     "kode": "EA4419",
@@ -5690,6 +5888,7 @@
   },
   {
     "nama": "HUKUM PRIVATE",
+    "semester": 4,
     "sks": 3,
     "unit": "Tax Accounting",
     "kode": "EA4116",
@@ -5710,6 +5909,28 @@
   },
   {
     "nama": "HUMAN CAPITAL MANAGEMENT",
+    "semester": 2,
+    "sks": 3,
+    "unit": "Manajemen",
+    "kode": "EC4228",
+    "kelas": [
+      {
+        "kelas": "A1",
+        "jadwal": [
+          {
+            "dayOfWeek": 4,
+            "startHour": 10,
+            "startMinute": 30,
+            "durasi": 180,
+            "ruang": "T.212/"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "nama": "HUMAN CAPITAL MANAGEMENT",
+    "semester": 2,
     "sks": 3,
     "unit": "International Business Management",
     "kode": "EB4431",
@@ -5736,27 +5957,8 @@
     ]
   },
   {
-    "nama": "HUMAN CAPITAL MANAGEMENT",
-    "sks": 3,
-    "unit": "Manajemen",
-    "kode": "EC4228",
-    "kelas": [
-      {
-        "kelas": "A1",
-        "jadwal": [
-          {
-            "dayOfWeek": 4,
-            "startHour": 10,
-            "startMinute": 30,
-            "durasi": 180,
-            "ruang": "T.212/"
-          }
-        ]
-      }
-    ]
-  },
-  {
     "nama": "HUMAN FACTORS ENGINEERING",
+    "semester": 4,
     "sks": 2,
     "unit": "International Business Engineering",
     "kode": "BE4123",
@@ -5777,6 +5979,7 @@
   },
   {
     "nama": "ILLUSTRATION",
+    "semester": 2,
     "sks": 4,
     "unit": "Desain Komunikasi Visual",
     "kode": "DV4334",
@@ -5821,6 +6024,7 @@
   },
   {
     "nama": "INCLUSION AND CURICULUM DESIGN",
+    "semester": 6,
     "sks": 3,
     "unit": "Keguruan dan Ilmu Pendidikan",
     "kode": "GF4127",
@@ -5841,6 +6045,7 @@
   },
   {
     "nama": "INDUSTRIAL IoT",
+    "semester": 6,
     "sks": 2,
     "unit": "Internet of Things",
     "kode": "TE4712",
@@ -5861,6 +6066,7 @@
   },
   {
     "nama": "INDUSTRIAL MANAGEMENT",
+    "semester": 6,
     "sks": 2,
     "unit": "Sustainable Mechanical Engineering and Design",
     "kode": "TM4669",
@@ -5881,6 +6087,7 @@
   },
   {
     "nama": "INDUSTRIAL SYSTEM SIMULATION",
+    "semester": 6,
     "sks": 3,
     "unit": "International Business Engineering",
     "kode": "BE4176",
@@ -5901,6 +6108,7 @@
   },
   {
     "nama": "INFORMATIKA INDUSTRI",
+    "semester": 6,
     "sks": 2,
     "unit": "Teknik Elektro",
     "kode": "TE4540",
@@ -5921,6 +6129,7 @@
   },
   {
     "nama": "INNOVATION AND START-UP",
+    "semester": 4,
     "sks": 3,
     "unit": "D.M.U",
     "kode": "DU4204",
@@ -5941,6 +6150,7 @@
   },
   {
     "nama": "INNOVATION IN HOSPITALITY INDUSTRY",
+    "semester": 6,
     "sks": 3,
     "unit": "Hotel Management",
     "kode": "EP4259",
@@ -5961,6 +6171,7 @@
   },
   {
     "nama": "INOVASI DIGITAL",
+    "semester": 6,
     "sks": 2,
     "unit": "Desain Interior",
     "kode": "DI4526",
@@ -5981,6 +6192,7 @@
   },
   {
     "nama": "INOVASI MODEL BISNIS",
+    "semester": 2,
     "sks": 3,
     "unit": "Digital Business Transformation",
     "kode": "ED4201",
@@ -6001,6 +6213,7 @@
   },
   {
     "nama": "INOVASI TEKNOLOGI PEMBAYARAN",
+    "semester": 2,
     "sks": 3,
     "unit": "International Trade and Finance",
     "kode": "EA4106",
@@ -6021,6 +6234,7 @@
   },
   {
     "nama": "INSTALASI TENAGA LISTRIK",
+    "semester": 6,
     "sks": 3,
     "unit": "Teknik Elektro",
     "kode": "TE4547",
@@ -6041,6 +6255,7 @@
   },
   {
     "nama": "INTEGRATED PRACTICUM",
+    "semester": 6,
     "sks": 2,
     "unit": "International Business Engineering",
     "kode": "BE4175",
@@ -6061,6 +6276,7 @@
   },
   {
     "nama": "INTERACTIVE MEDIA PRODUCTION",
+    "semester": 6,
     "sks": 3,
     "unit": "International Program in Digital Media",
     "kode": "DM4397",
@@ -6081,6 +6297,7 @@
   },
   {
     "nama": "INTERCULTURAL COMMUNICATION",
+    "semester": 3,
     "sks": 2,
     "unit": "English for Business",
     "kode": "SI4658",
@@ -6101,6 +6318,7 @@
   },
   {
     "nama": "INTERIOR DESIGN AND STYLING FOR CULTURAL SPACE",
+    "semester": 6,
     "sks": 7,
     "unit": "Desain Interior",
     "kode": "DI4524",
@@ -6175,6 +6393,7 @@
   },
   {
     "nama": "INTERIOR DESIGN FOR WORKSPACE",
+    "semester": 4,
     "sks": 7,
     "unit": "Desain Interior",
     "kode": "DI4556",
@@ -6209,6 +6428,7 @@
   },
   {
     "nama": "INTERIOR PRODUCT DESIGN BASED ON CONSUMER CULTURAL INNOVATION",
+    "semester": 6,
     "sks": 7,
     "unit": "Desain Interior",
     "kode": "DI4558",
@@ -6243,6 +6463,15 @@
   },
   {
     "nama": "INTERMEDIATE ACCOUNTING",
+    "semester": 2,
+    "sks": 3,
+    "unit": "Global Entrepreneurship and Innovation",
+    "kode": "EI4113",
+    "kelas": []
+  },
+  {
+    "nama": "INTERMEDIATE ACCOUNTING",
+    "semester": 2,
     "sks": 3,
     "unit": "International Business Accounting",
     "kode": "IA4251",
@@ -6262,14 +6491,8 @@
     ]
   },
   {
-    "nama": "INTERMEDIATE ACCOUNTING",
-    "sks": 3,
-    "unit": "Global Entrepreneurship and Innovation",
-    "kode": "EI4113",
-    "kelas": []
-  },
-  {
     "nama": "INTERMEDIATE BUSINESS CHINESE",
+    "semester": 4,
     "sks": 2,
     "unit": "Bahasa Mandarin",
     "kode": "ST4343",
@@ -6290,33 +6513,7 @@
   },
   {
     "nama": "INTERMEDIATE DESIGN",
-    "sks": 5,
-    "unit": "International Program in Digital Media",
-    "kode": "DM4449",
-    "kelas": [
-      {
-        "kelas": "A",
-        "jadwal": [
-          {
-            "dayOfWeek": 2,
-            "startHour": 8,
-            "startMinute": 30,
-            "durasi": 120,
-            "ruang": "Q.08.03b/"
-          },
-          {
-            "dayOfWeek": 5,
-            "startHour": 14,
-            "startMinute": 30,
-            "durasi": 180,
-            "ruang": "Q.08.03b/"
-          }
-        ]
-      }
-    ]
-  },
-  {
-    "nama": "INTERMEDIATE DESIGN",
+    "semester": 4,
     "sks": 5,
     "unit": "Textile and Fashion Design",
     "kode": "DF4312",
@@ -6351,6 +6548,7 @@
   },
   {
     "nama": "INTERMEDIATE DESIGN",
+    "semester": 4,
     "sks": 5,
     "unit": "Desain Komunikasi Visual",
     "kode": "DV4340",
@@ -6436,7 +6634,36 @@
     ]
   },
   {
+    "nama": "INTERMEDIATE DESIGN",
+    "semester": 4,
+    "sks": 5,
+    "unit": "International Program in Digital Media",
+    "kode": "DM4449",
+    "kelas": [
+      {
+        "kelas": "A",
+        "jadwal": [
+          {
+            "dayOfWeek": 2,
+            "startHour": 8,
+            "startMinute": 30,
+            "durasi": 120,
+            "ruang": "Q.08.03b/"
+          },
+          {
+            "dayOfWeek": 5,
+            "startHour": 14,
+            "startMinute": 30,
+            "durasi": 180,
+            "ruang": "Q.08.03b/"
+          }
+        ]
+      }
+    ]
+  },
+  {
     "nama": "INTERNATIONAL BUSINESS MANAGEMENT",
+    "semester": 2,
     "sks": 3,
     "unit": "International Business Management",
     "kode": "EB4241",
@@ -6457,6 +6684,7 @@
   },
   {
     "nama": "INTERNATIONAL COMMUNITY OUTREACH PROGRAM (COP)",
+    "semester": 4,
     "sks": 3,
     "unit": "D.M.U",
     "kode": "DU4215",
@@ -6477,6 +6705,7 @@
   },
   {
     "nama": "INTERNATIONAL ECONOMICS",
+    "semester": 2,
     "sks": 3,
     "unit": "International Business Management",
     "kode": "EB4249",
@@ -6509,9 +6738,10 @@
   },
   {
     "nama": "INTERNET OF THINGS",
+    "semester": null,
     "sks": 3,
     "unit": "Informatika",
-    "kode": "IN059",
+    "kode": "IN027",
     "kelas": [
       {
         "kelas": "A",
@@ -6529,6 +6759,7 @@
   },
   {
     "nama": "INTERPRETING",
+    "semester": 5,
     "sks": 3,
     "unit": "English for Business",
     "kode": "SI4736",
@@ -6549,6 +6780,7 @@
   },
   {
     "nama": "INTRO TO ALGORITHM AND OBJECT ORIENTED PROGRAMMING (OOP)",
+    "semester": 2,
     "sks": 2,
     "unit": "International Program in Digital Media",
     "kode": "DM4208",
@@ -6569,6 +6801,7 @@
   },
   {
     "nama": "INTRODUCTION TO ABA",
+    "semester": 6,
     "sks": 3,
     "unit": "Keguruan dan Ilmu Pendidikan",
     "kode": "GF 4128",
@@ -6589,6 +6822,7 @@
   },
   {
     "nama": "INVESTASI ASET RIIL",
+    "semester": 4,
     "sks": 3,
     "unit": "Finance and Investment",
     "kode": "EU4324",
@@ -6609,6 +6843,7 @@
   },
   {
     "nama": "IRIGASI DAN BANGUNAN AIR",
+    "semester": 7,
     "sks": 3,
     "unit": "Teknik Sipil",
     "kode": "TS4474",
@@ -6629,6 +6864,7 @@
   },
   {
     "nama": "JAPANESE FOR COMMUNICATION PURPOSES",
+    "semester": null,
     "sks": 1,
     "unit": "Ilmu Komunikasi",
     "kode": "IK001",
@@ -6649,6 +6885,7 @@
   },
   {
     "nama": "JARINGAN KOMPUTER",
+    "semester": 6,
     "sks": 3,
     "unit": "Teknik Elektro",
     "kode": "TE4484",
@@ -6669,6 +6906,7 @@
   },
   {
     "nama": "JARINGAN KOMPUTER",
+    "semester": 2,
     "sks": 3,
     "unit": "Informatika",
     "kode": "TF4253",
@@ -6725,6 +6963,7 @@
   },
   {
     "nama": "KALKULUS I",
+    "semester": 1,
     "sks": 3,
     "unit": "Teknologi Industri",
     "kode": "FD4505",
@@ -6745,6 +6984,7 @@
   },
   {
     "nama": "KALKULUS II",
+    "semester": 2,
     "sks": 3,
     "unit": "Teknologi Industri",
     "kode": "FD4506",
@@ -6791,6 +7031,7 @@
   },
   {
     "nama": "KAMPANYE STRATEGIS",
+    "semester": 4,
     "sks": 4,
     "unit": "Strategic Communication",
     "kode": "IK4595",
@@ -6818,6 +7059,7 @@
   },
   {
     "nama": "KEAMANAN JARINGAN",
+    "semester": 8,
     "sks": 2,
     "unit": "Teknik Elektro",
     "kode": "TE4599",
@@ -6838,6 +7080,7 @@
   },
   {
     "nama": "KEAMANAN KESEHATAN KESELAMATAN KERJA DAN LINGKUNGAN (K4L)",
+    "semester": 6,
     "sks": 3,
     "unit": "Teknik Sipil",
     "kode": "TS4575",
@@ -6858,6 +7101,7 @@
   },
   {
     "nama": "KEBERLANJUTAN BISNIS KELUARGA",
+    "semester": 3,
     "sks": 3,
     "unit": "Business Management",
     "kode": "EM4613",
@@ -6902,6 +7146,7 @@
   },
   {
     "nama": "KEBIJAKAN PERDAGANGAN DAN CUKAI INDONESIA",
+    "semester": 2,
     "sks": 3,
     "unit": "International Trade and Finance",
     "kode": "EA4107",
@@ -6922,6 +7167,7 @@
   },
   {
     "nama": "KECERDASAN BUATAN",
+    "semester": 4,
     "sks": 3,
     "unit": "Teknik Elektro",
     "kode": "TE4359",
@@ -6942,6 +7188,7 @@
   },
   {
     "nama": "KECERDASAN BUATAN DALAM MANAJEMEN DAN KEWIRAUSAHAAN",
+    "semester": 4,
     "sks": 3,
     "unit": "Business Management",
     "kode": "EM4243",
@@ -6986,6 +7233,7 @@
   },
   {
     "nama": "KECERDASAN BUATAN GENERATIF",
+    "semester": 6,
     "sks": 3,
     "unit": "Internet of Things",
     "kode": "TE4696",
@@ -7006,9 +7254,10 @@
   },
   {
     "nama": "KEJAHATAN DAN ETIKA DALAM BISNIS",
+    "semester": null,
     "sks": 2,
     "unit": "Business Accounting",
-    "kode": "BA008",
+    "kode": "BU029",
     "kelas": [
       {
         "kelas": "A1",
@@ -7038,6 +7287,7 @@
   },
   {
     "nama": "KEPEMIMPINAN BISNIS",
+    "semester": 4,
     "sks": 3,
     "unit": "Business Management",
     "kode": "EM4590",
@@ -7070,6 +7320,7 @@
   },
   {
     "nama": "KEPEMIMPINAN BISNIS ALKITABIAH",
+    "semester": 8,
     "sks": 3,
     "unit": "Business Management",
     "kode": "EM4589",
@@ -7090,6 +7341,7 @@
   },
   {
     "nama": "KEPEMIMPINAN DALAM INDUSTRI PERHOTELAN",
+    "semester": 6,
     "sks": 3,
     "unit": "Hotel Management",
     "kode": "EP4543",
@@ -7110,6 +7362,7 @@
   },
   {
     "nama": "KEPEMIMPINAN GURU KRISTEN",
+    "semester": 2,
     "sks": 3,
     "unit": "Keguruan dan Ilmu Pendidikan",
     "kode": "GF4108",
@@ -7130,6 +7383,7 @@
   },
   {
     "nama": "KEPROFESIAN ARSITEK",
+    "semester": 6,
     "sks": 3,
     "unit": "Arsitektur",
     "kode": "AR4308",
@@ -7162,6 +7416,7 @@
   },
   {
     "nama": "KERUSAKAN BANGUNAN DAN METODE PERBAIKANNYA",
+    "semester": 7,
     "sks": 3,
     "unit": "Teknik Sipil",
     "kode": "TS4532",
@@ -7182,6 +7437,7 @@
   },
   {
     "nama": "KESELAMATAN DAN KESEHATAN KERJA",
+    "semester": 5,
     "sks": 2,
     "unit": "Teknik Industri",
     "kode": "TI4548",
@@ -7202,6 +7458,7 @@
   },
   {
     "nama": "KESELAMATAN, KESEHATAN, KEAMANAN KERJA DAN LINGKUNGAN",
+    "semester": 1,
     "sks": 2,
     "unit": "Pendidikan Profesi Insinyur",
     "kode": "PPI001",
@@ -7209,6 +7466,7 @@
   },
   {
     "nama": "KETERAMPILAN BERBICARA DASAR II",
+    "semester": 2,
     "sks": 3,
     "unit": "Bahasa Mandarin",
     "kode": "ST4516",
@@ -7236,6 +7494,7 @@
   },
   {
     "nama": "KETERAMPILAN BERBICARA MENENGAH II",
+    "semester": 4,
     "sks": 3,
     "unit": "Bahasa Mandarin",
     "kode": "ST4518",
@@ -7263,6 +7522,7 @@
   },
   {
     "nama": "KETERAMPILAN MEMBACA DASAR",
+    "semester": null,
     "sks": 2,
     "unit": "Bahasa Mandarin",
     "kode": "BM029",
@@ -7270,6 +7530,7 @@
   },
   {
     "nama": "KETERAMPILAN MEMBACA MAHIR II",
+    "semester": 6,
     "sks": 3,
     "unit": "Bahasa Mandarin",
     "kode": "ST4562",
@@ -7297,6 +7558,7 @@
   },
   {
     "nama": "KETERAMPILAN MEMBACA MENENGAH II",
+    "semester": 4,
     "sks": 2,
     "unit": "Bahasa Mandarin",
     "kode": "ST4557",
@@ -7317,6 +7579,7 @@
   },
   {
     "nama": "KETERAMPILAN MENYIMAK DASAR II",
+    "semester": 2,
     "sks": 3,
     "unit": "Bahasa Mandarin",
     "kode": "ST4512",
@@ -7344,6 +7607,7 @@
   },
   {
     "nama": "KETERAMPILAN MENYIMAK MENENGAH II",
+    "semester": 4,
     "sks": 3,
     "unit": "Bahasa Mandarin",
     "kode": "ST4514",
@@ -7371,6 +7635,7 @@
   },
   {
     "nama": "KEUANGAN KEWIRAUSAHAAN",
+    "semester": null,
     "sks": 3,
     "unit": "Finance and Investment",
     "kode": "FA006",
@@ -7391,6 +7656,7 @@
   },
   {
     "nama": "KEUANGAN PERSONAL",
+    "semester": 2,
     "sks": 3,
     "unit": "Finance and Investment",
     "kode": "EU4325",
@@ -7411,6 +7677,7 @@
   },
   {
     "nama": "KEWARGANEGARAAN",
+    "semester": 3,
     "sks": 2,
     "unit": "D.M.U",
     "kode": "DU4210",
@@ -7431,26 +7698,7 @@
   },
   {
     "nama": "KEWARGANEGARAAN",
-    "sks": 2,
-    "unit": "International Program in Digital Media",
-    "kode": "DU4210",
-    "kelas": [
-      {
-        "kelas": "ZB",
-        "jadwal": [
-          {
-            "dayOfWeek": 2,
-            "startHour": 13,
-            "startMinute": 30,
-            "durasi": 120,
-            "ruang": "Q.04.04/"
-          }
-        ]
-      }
-    ]
-  },
-  {
-    "nama": "KEWARGANEGARAAN",
+    "semester": 4,
     "sks": 2,
     "unit": "International Business Management",
     "kode": "DU4210",
@@ -7470,7 +7718,29 @@
     ]
   },
   {
+    "nama": "KEWARGANEGARAAN",
+    "semester": 4,
+    "sks": 2,
+    "unit": "International Program in Digital Media",
+    "kode": "DU4210",
+    "kelas": [
+      {
+        "kelas": "ZB",
+        "jadwal": [
+          {
+            "dayOfWeek": 2,
+            "startHour": 13,
+            "startMinute": 30,
+            "durasi": 120,
+            "ruang": "Q.04.04/"
+          }
+        ]
+      }
+    ]
+  },
+  {
     "nama": "KIMIA",
+    "semester": 1,
     "sks": 3,
     "unit": "Teknologi Industri",
     "kode": "FD4511",
@@ -7498,6 +7768,7 @@
   },
   {
     "nama": "KNOWLEDGE MANAGEMENT",
+    "semester": 8,
     "sks": 3,
     "unit": "Business Information System",
     "kode": "TF4526",
@@ -7518,6 +7789,7 @@
   },
   {
     "nama": "KODE ETIK",
+    "semester": 1,
     "sks": 2,
     "unit": "Pendidikan Profesi Insinyur",
     "kode": "PPI002",
@@ -7525,6 +7797,7 @@
   },
   {
     "nama": "KOMPOSISI MENENGAH",
+    "semester": 4,
     "sks": 4,
     "unit": "Bahasa Mandarin",
     "kode": "ST4522",
@@ -7552,6 +7825,7 @@
   },
   {
     "nama": "KOMPUTASI DINAMIKA FLUIDA",
+    "semester": 8,
     "sks": 3,
     "unit": "Sustainable Mechanical Engineering and Design",
     "kode": "TM4645",
@@ -7572,6 +7846,7 @@
   },
   {
     "nama": "KOMUNIKASI BISNIS",
+    "semester": 5,
     "sks": 3,
     "unit": "School of Business and Management",
     "kode": "EK4309",
@@ -7592,6 +7867,7 @@
   },
   {
     "nama": "KOMUNIKASI DATA",
+    "semester": 4,
     "sks": 2,
     "unit": "Teknik Elektro",
     "kode": "TE4472",
@@ -7612,6 +7888,7 @@
   },
   {
     "nama": "KOMUNIKASI FASHION",
+    "semester": null,
     "sks": 0,
     "unit": "Ilmu Komunikasi",
     "kode": "IK015",
@@ -7632,6 +7909,7 @@
   },
   {
     "nama": "KOMUNIKASI INTERPERSONAL",
+    "semester": 2,
     "sks": 3,
     "unit": "Informatika",
     "kode": "TF4267",
@@ -7688,6 +7966,7 @@
   },
   {
     "nama": "KOMUNIKASI KEPEMIMPINAN",
+    "semester": null,
     "sks": 1,
     "unit": "Ilmu Komunikasi",
     "kode": "IK011",
@@ -7708,6 +7987,7 @@
   },
   {
     "nama": "KOMUNIKASI KRISIS",
+    "semester": 4,
     "sks": 3,
     "unit": "Strategic Communication",
     "kode": "IK4513",
@@ -7728,6 +8008,7 @@
   },
   {
     "nama": "KOMUNIKASI MASSA",
+    "semester": null,
     "sks": 2,
     "unit": "Ilmu Komunikasi",
     "kode": "IK002",
@@ -7774,6 +8055,7 @@
   },
   {
     "nama": "KOMUNIKASI MEREK",
+    "semester": 6,
     "sks": 3,
     "unit": "Strategic Communication",
     "kode": "IK4602",
@@ -7801,6 +8083,7 @@
   },
   {
     "nama": "KOMUNIKASI MEREK TERPADU",
+    "semester": 4,
     "sks": 3,
     "unit": "Branding and Digital Marketing",
     "kode": "EG4731",
@@ -7833,6 +8116,7 @@
   },
   {
     "nama": "KOMUNIKASI POLITIK",
+    "semester": null,
     "sks": 2,
     "unit": "Ilmu Komunikasi",
     "kode": "IK006",
@@ -7865,6 +8149,7 @@
   },
   {
     "nama": "KOMUNIKASI PROFESI",
+    "semester": 6,
     "sks": 2,
     "unit": "Desain Interior",
     "kode": "DI4409",
@@ -7897,6 +8182,7 @@
   },
   {
     "nama": "KONSEP DAN METODE PEMBELAJARAN MATEMATIKA",
+    "semester": 4,
     "sks": 4,
     "unit": "Pendidikan Guru - Sekolah Dasar",
     "kode": "GD4339",
@@ -7917,6 +8203,7 @@
   },
   {
     "nama": "KULIAH KERJA PELAYANAN-DESAIN INKLUSI",
+    "semester": 5,
     "sks": 3,
     "unit": "Arsitektur",
     "kode": "AR4289",
@@ -7937,6 +8224,7 @@
   },
   {
     "nama": "KULIAH KERJA PELAYANAN: DESAIN FASILITAS WISATA",
+    "semester": 5,
     "sks": 3,
     "unit": "Arsitektur",
     "kode": "AR4154",
@@ -7957,6 +8245,7 @@
   },
   {
     "nama": "LANGUAGE TEACHING AND LEARNING",
+    "semester": 2,
     "sks": 2,
     "unit": "English for Business",
     "kode": "SI4605",
@@ -7977,6 +8266,7 @@
   },
   {
     "nama": "LANGUAGE, BRANDING, AND CONTEMPORARY MARKETING",
+    "semester": 4,
     "sks": 2,
     "unit": "English for Business",
     "kode": "SI4746",
@@ -7997,6 +8287,7 @@
   },
   {
     "nama": "LEADERSHIP AND CHANGE",
+    "semester": 2,
     "sks": 4,
     "unit": "Doktor Ilmu Manajemen",
     "kode": "PM6005",
@@ -8004,6 +8295,7 @@
   },
   {
     "nama": "LEADERSHIP AND ORGANIZATION DEVELOPMENT",
+    "semester": 2,
     "sks": 4,
     "unit": "Doktor Ilmu Manajemen",
     "kode": "PM6006",
@@ -8011,6 +8303,7 @@
   },
   {
     "nama": "LEAP PREPARATION",
+    "semester": 6,
     "sks": 3,
     "unit": "Textile and Fashion Design",
     "kode": "DF4356",
@@ -8038,6 +8331,7 @@
   },
   {
     "nama": "LEAP PREPARATION",
+    "semester": 6,
     "sks": 3,
     "unit": "Desain Komunikasi Visual",
     "kode": "DV4346",
@@ -8098,6 +8392,7 @@
   },
   {
     "nama": "LEISURE MANAGEMENT",
+    "semester": 4,
     "sks": 3,
     "unit": "Creative Tourism",
     "kode": "EW4321",
@@ -8118,6 +8413,7 @@
   },
   {
     "nama": "LIGHTING",
+    "semester": 5,
     "sks": 3,
     "unit": "Desain Interior",
     "kode": "DI4311",
@@ -8125,6 +8421,7 @@
   },
   {
     "nama": "LINEAR ALGEBRA",
+    "semester": 2,
     "sks": 2,
     "unit": "International Program in Digital Media",
     "kode": "DM4209",
@@ -8145,6 +8442,7 @@
   },
   {
     "nama": "LINGUISTIK UMUM BAHASA MANDARIN",
+    "semester": 2,
     "sks": 4,
     "unit": "Bahasa Mandarin",
     "kode": "ST4526",
@@ -8172,6 +8470,7 @@
   },
   {
     "nama": "LITERARY GENRE",
+    "semester": 2,
     "sks": 3,
     "unit": "English for Business",
     "kode": "SI4619",
@@ -8192,6 +8491,7 @@
   },
   {
     "nama": "LITERARY TRANSLATION",
+    "semester": 6,
     "sks": 3,
     "unit": "English for Creative Industry",
     "kode": "SI4779",
@@ -8212,6 +8512,7 @@
   },
   {
     "nama": "LOKAKARYA KOMUNIKASI MERK",
+    "semester": 6,
     "sks": 3,
     "unit": "Branding and Digital Marketing",
     "kode": "EG4266",
@@ -8232,6 +8533,7 @@
   },
   {
     "nama": "LOKAKARYA PENJUALAN",
+    "semester": 6,
     "sks": 3,
     "unit": "Branding and Digital Marketing",
     "kode": "EG4265",
@@ -8252,6 +8554,7 @@
   },
   {
     "nama": "MACHINE LEARNING",
+    "semester": 6,
     "sks": 3,
     "unit": "Internet of Things",
     "kode": "TE4727",
@@ -8272,6 +8575,7 @@
   },
   {
     "nama": "MAJOR THOUGHTS IN PHILOSOPHY",
+    "semester": 4,
     "sks": 2,
     "unit": "English for Business",
     "kode": "SI4721",
@@ -8279,6 +8583,7 @@
   },
   {
     "nama": "MANAGEMENT",
+    "semester": 2,
     "sks": 3,
     "unit": "Global Entrepreneurship and Innovation",
     "kode": "EI4111",
@@ -8286,26 +8591,7 @@
   },
   {
     "nama": "MANAGEMENT ACCOUNTING",
-    "sks": 3,
-    "unit": "International Business Accounting",
-    "kode": "IA4121",
-    "kelas": [
-      {
-        "kelas": "A",
-        "jadwal": [
-          {
-            "dayOfWeek": 4,
-            "startHour": 9,
-            "startMinute": 0,
-            "durasi": 180,
-            "ruang": "T.430/IBAC/"
-          }
-        ]
-      }
-    ]
-  },
-  {
-    "nama": "MANAGEMENT ACCOUNTING",
+    "semester": 4,
     "sks": 3,
     "unit": "International Business Management",
     "kode": "EB4303",
@@ -8332,7 +8618,29 @@
     ]
   },
   {
+    "nama": "MANAGEMENT ACCOUNTING",
+    "semester": 2,
+    "sks": 3,
+    "unit": "International Business Accounting",
+    "kode": "IA4121",
+    "kelas": [
+      {
+        "kelas": "A",
+        "jadwal": [
+          {
+            "dayOfWeek": 4,
+            "startHour": 9,
+            "startMinute": 0,
+            "durasi": 180,
+            "ruang": "T.430/IBAC/"
+          }
+        ]
+      }
+    ]
+  },
+  {
     "nama": "MANAGEMENT ACCOUNTING 2",
+    "semester": 2,
     "sks": 3,
     "unit": "International Business Accounting",
     "kode": "IA4282",
@@ -8353,6 +8661,7 @@
   },
   {
     "nama": "MANAGEMENT INFORMATION SYSTEM",
+    "semester": 2,
     "sks": 3,
     "unit": "Global Entrepreneurship and Innovation",
     "kode": "EI4117",
@@ -8360,6 +8669,7 @@
   },
   {
     "nama": "MANAJEMEN BISNIS HOTEL",
+    "semester": 6,
     "sks": 3,
     "unit": "Hotel Management",
     "kode": "EP4546",
@@ -8380,6 +8690,7 @@
   },
   {
     "nama": "MANAJEMEN BISNIS KELUARGA",
+    "semester": 2,
     "sks": 3,
     "unit": "Business Management",
     "kode": "EM4362",
@@ -8412,6 +8723,7 @@
   },
   {
     "nama": "MANAJEMEN DESTINASI PARIWISATA BERKELANJUTAN",
+    "semester": 6,
     "sks": 3,
     "unit": "Creative Tourism",
     "kode": "EW4284",
@@ -8432,6 +8744,7 @@
   },
   {
     "nama": "MANAJEMEN EKSPOR DAN IMPOR",
+    "semester": 8,
     "sks": 2,
     "unit": "Tax Accounting",
     "kode": "EA4367",
@@ -8452,6 +8765,7 @@
   },
   {
     "nama": "MANAJEMEN EVEN",
+    "semester": 6,
     "sks": 3,
     "unit": "Hotel Management",
     "kode": "EP4525",
@@ -8472,6 +8786,7 @@
   },
   {
     "nama": "MANAJEMEN KEKAYAAN BISNIS KELUARGA",
+    "semester": 3,
     "sks": 3,
     "unit": "Business Management",
     "kode": "EM4615",
@@ -8492,6 +8807,7 @@
   },
   {
     "nama": "MANAJEMEN KERAGAMAN",
+    "semester": 8,
     "sks": 3,
     "unit": "Business Management",
     "kode": "EM4429",
@@ -8512,6 +8828,7 @@
   },
   {
     "nama": "MANAJEMEN KEUANGAN",
+    "semester": 2,
     "sks": 3,
     "unit": "Manajemen",
     "kode": "EC4207",
@@ -8592,6 +8909,7 @@
   },
   {
     "nama": "MANAJEMEN KEUANGAN INTERNASIONAL",
+    "semester": 6,
     "sks": 3,
     "unit": "Finance and Investment",
     "kode": "EU4336",
@@ -8612,6 +8930,7 @@
   },
   {
     "nama": "MANAJEMEN MAL DAN RITEL",
+    "semester": 2,
     "sks": 3,
     "unit": "Retail Business Management",
     "kode": "ER4201",
@@ -8632,6 +8951,7 @@
   },
   {
     "nama": "MANAJEMEN MANUSIA BERSUMBERDAYA",
+    "semester": 6,
     "sks": 3,
     "unit": "Business Management",
     "kode": "EM4624",
@@ -8676,6 +8996,7 @@
   },
   {
     "nama": "MANAJEMEN OPERASIONAL DAN PRODUKSI",
+    "semester": 2,
     "sks": 3,
     "unit": "Manajemen",
     "kode": "EC4209",
@@ -8756,9 +9077,10 @@
   },
   {
     "nama": "MANAJEMEN PAJAK",
+    "semester": null,
     "sks": 3,
     "unit": "Tax Accounting",
-    "kode": "TA008",
+    "kode": "TA024",
     "kelas": [
       {
         "kelas": "A",
@@ -8776,6 +9098,7 @@
   },
   {
     "nama": "MANAJEMEN PENDIDIKAN BAHASA MANDARIN",
+    "semester": 6,
     "sks": 2,
     "unit": "Bahasa Mandarin",
     "kode": "ST4533",
@@ -8796,6 +9119,7 @@
   },
   {
     "nama": "MANAJEMEN PERBANKAN",
+    "semester": 8,
     "sks": 3,
     "unit": "Finance and Investment",
     "kode": "EU4321",
@@ -8816,6 +9140,7 @@
   },
   {
     "nama": "MANAJEMEN PERUBAHAN",
+    "semester": 8,
     "sks": 3,
     "unit": "Business Management",
     "kode": "EM4489",
@@ -8836,6 +9161,7 @@
   },
   {
     "nama": "MANAJEMEN PROYEK KONSTRUKSI",
+    "semester": 4,
     "sks": 3,
     "unit": "Teknik Sipil",
     "kode": "TS4511",
@@ -8856,6 +9182,7 @@
   },
   {
     "nama": "MANAJEMEN PROYEK TEKNOLOGI INFORMASI",
+    "semester": 7,
     "sks": 3,
     "unit": "Informatika",
     "kode": "TF4317",
@@ -8876,6 +9203,7 @@
   },
   {
     "nama": "MANAJEMEN REPUTASI",
+    "semester": 4,
     "sks": 3,
     "unit": "Strategic Communication",
     "kode": "IK4299",
@@ -8908,6 +9236,7 @@
   },
   {
     "nama": "MANAJEMEN RESTORAN DAN KEWIRAUSAHAAN",
+    "semester": 6,
     "sks": 3,
     "unit": "Hotel Management",
     "kode": "EP4545",
@@ -8928,6 +9257,7 @@
   },
   {
     "nama": "MANAJEMEN SISTEM ENERGI",
+    "semester": 6,
     "sks": 3,
     "unit": "Teknik Elektro",
     "kode": "TE4567",
@@ -8948,6 +9278,7 @@
   },
   {
     "nama": "MANAJEMEN STRATEGI BISNIS BERKELANJUTAN",
+    "semester": 6,
     "sks": 3,
     "unit": "Akuntansi",
     "kode": "EA4505",
@@ -8980,6 +9311,7 @@
   },
   {
     "nama": "MANAJEMEN STRATEGIK",
+    "semester": 4,
     "sks": 3,
     "unit": "Manajemen",
     "kode": "EC4203",
@@ -9096,6 +9428,7 @@
   },
   {
     "nama": "MANAJEMEN STRATEGIK BISNIS KELUARGA",
+    "semester": 8,
     "sks": 3,
     "unit": "Business Management",
     "kode": "EM4614",
@@ -9116,6 +9449,7 @@
   },
   {
     "nama": "MANAJEMEN SUMBER DAYA MANUSIA",
+    "semester": 2,
     "sks": 3,
     "unit": "Manajemen",
     "kode": "EC4208",
@@ -9184,6 +9518,7 @@
   },
   {
     "nama": "MATEMATIKA 1",
+    "semester": 4,
     "sks": 4,
     "unit": "Teknik Mesin",
     "kode": "TM4212",
@@ -9211,6 +9546,7 @@
   },
   {
     "nama": "MATEMATIKA DISKRIT",
+    "semester": 2,
     "sks": 3,
     "unit": "Informatika",
     "kode": "TF4245",
@@ -9255,6 +9591,7 @@
   },
   {
     "nama": "MATEMATIKA II",
+    "semester": 2,
     "sks": 4,
     "unit": "Teknik Sipil",
     "kode": "TS4352",
@@ -9282,6 +9619,7 @@
   },
   {
     "nama": "MATEMATIKA III",
+    "semester": 3,
     "sks": 3,
     "unit": "Teknik Sipil",
     "kode": "TS4353",
@@ -9302,6 +9640,7 @@
   },
   {
     "nama": "MATEMATIKA IV",
+    "semester": 4,
     "sks": 3,
     "unit": "Teknik Sipil",
     "kode": "TS4354",
@@ -9322,6 +9661,7 @@
   },
   {
     "nama": "MATEMATIKA TEKNIK",
+    "semester": 4,
     "sks": 3,
     "unit": "Teknik Elektro",
     "kode": "TE4226",
@@ -9342,6 +9682,7 @@
   },
   {
     "nama": "MATERIAL EXPERIMENT",
+    "semester": 5,
     "sks": 3,
     "unit": "Desain Interior",
     "kode": "DI4313",
@@ -9349,6 +9690,7 @@
   },
   {
     "nama": "MATERIAL TEKNIK",
+    "semester": 2,
     "sks": 2,
     "unit": "Teknik Industri",
     "kode": "TI4225",
@@ -9369,6 +9711,7 @@
   },
   {
     "nama": "MEDAN ELEKTROMAGNETIK",
+    "semester": 6,
     "sks": 2,
     "unit": "Teknik Elektro",
     "kode": "TE4315",
@@ -9389,6 +9732,7 @@
   },
   {
     "nama": "MEDIA BARU",
+    "semester": null,
     "sks": 1,
     "unit": "Ilmu Komunikasi",
     "kode": "IK004",
@@ -9435,6 +9779,7 @@
   },
   {
     "nama": "MEDIA DAN BUDAYA POPULER",
+    "semester": 4,
     "sks": 3,
     "unit": "Creative Media Communication",
     "kode": "IK4526",
@@ -9455,6 +9800,7 @@
   },
   {
     "nama": "MEDIA DISCOURSE",
+    "semester": 6,
     "sks": 3,
     "unit": "English for Creative Industry",
     "kode": "SI4653",
@@ -9475,6 +9821,7 @@
   },
   {
     "nama": "MEDIA ENTERPRENEURSHIP",
+    "semester": 6,
     "sks": 3,
     "unit": "Creative Media Communication",
     "kode": "IK4310",
@@ -9502,6 +9849,7 @@
   },
   {
     "nama": "MEDIA PEMBELAJARAN, TIK, APE",
+    "semester": 2,
     "sks": 3,
     "unit": "Pendidikan Guru Pendidikan Anak Usia Dini",
     "kode": "GP4300",
@@ -9529,6 +9877,7 @@
   },
   {
     "nama": "MEDIA PRESENTER",
+    "semester": 4,
     "sks": 3,
     "unit": "Creative Media Communication",
     "kode": "IK4532",
@@ -9556,6 +9905,7 @@
   },
   {
     "nama": "MEKANIKA BAHAN",
+    "semester": 2,
     "sks": 3,
     "unit": "Teknik Sipil",
     "kode": "TS4217",
@@ -9576,6 +9926,7 @@
   },
   {
     "nama": "MEKANIKA DAN KEKUATAN BAHAN",
+    "semester": 2,
     "sks": 4,
     "unit": "Teknik Mesin",
     "kode": "TM4680",
@@ -9603,6 +9954,7 @@
   },
   {
     "nama": "MEKANIKA FLUIDA",
+    "semester": 4,
     "sks": 4,
     "unit": "Teknik Mesin",
     "kode": "TM4335",
@@ -9630,6 +9982,7 @@
   },
   {
     "nama": "MEKANIKA TANAH",
+    "semester": 2,
     "sks": 3,
     "unit": "Teknik Sipil",
     "kode": "TS4550",
@@ -9650,6 +10003,7 @@
   },
   {
     "nama": "MEKANIKA TEKNIK",
+    "semester": 4,
     "sks": 2,
     "unit": "Teknik Industri",
     "kode": "TI4318",
@@ -9670,6 +10024,7 @@
   },
   {
     "nama": "MEKATRONIKA",
+    "semester": 5,
     "sks": 2,
     "unit": "Teknik Mesin",
     "kode": "TM4535",
@@ -9690,6 +10045,7 @@
   },
   {
     "nama": "MENGGAMBAR KONSTRUKSI DIGITAL",
+    "semester": 2,
     "sks": 3,
     "unit": "Teknik Sipil",
     "kode": "TS4569",
@@ -9710,6 +10066,7 @@
   },
   {
     "nama": "MENGGAMBAR TEKNIK",
+    "semester": 2,
     "sks": 3,
     "unit": "Teknik Industri",
     "kode": "TI4320",
@@ -9730,6 +10087,7 @@
   },
   {
     "nama": "MERANCANG 2",
+    "semester": 2,
     "sks": 8,
     "unit": "Arsitektur",
     "kode": "AR4102",
@@ -9804,6 +10162,7 @@
   },
   {
     "nama": "MERANCANG 4",
+    "semester": 4,
     "sks": 8,
     "unit": "Arsitektur",
     "kode": "AR4104",
@@ -9878,6 +10237,7 @@
   },
   {
     "nama": "MERANCANG 6",
+    "semester": 6,
     "sks": 8,
     "unit": "Arsitektur",
     "kode": "AR4106",
@@ -9952,6 +10312,7 @@
   },
   {
     "nama": "MERGER DAN AKUISISI",
+    "semester": 6,
     "sks": 3,
     "unit": "Finance and Investment",
     "kode": "EU4320",
@@ -9972,6 +10333,7 @@
   },
   {
     "nama": "MESIN COMPUTER NUMERICAL CONTROL",
+    "semester": 2,
     "sks": 2,
     "unit": "Teknik Mesin",
     "kode": "TM4681",
@@ -9992,6 +10354,7 @@
   },
   {
     "nama": "MESIN-MESIN LISTRIK",
+    "semester": 6,
     "sks": 3,
     "unit": "Teknik Elektro",
     "kode": "TE4413",
@@ -10012,6 +10375,7 @@
   },
   {
     "nama": "METODE ELEMEN HINGGA",
+    "semester": 7,
     "sks": 3,
     "unit": "Teknik Sipil",
     "kode": "TS4466",
@@ -10032,6 +10396,7 @@
   },
   {
     "nama": "METODE PELAKSANAAN PONDASI",
+    "semester": 7,
     "sks": 3,
     "unit": "Teknik Sipil",
     "kode": "TS4367",
@@ -10052,6 +10417,7 @@
   },
   {
     "nama": "METODE PENELITIAN AKUNTANSI",
+    "semester": 6,
     "sks": 3,
     "unit": "Akuntansi",
     "kode": "EA4330",
@@ -10084,6 +10450,7 @@
   },
   {
     "nama": "METODE PENELITIAN BISNIS KUALITATIF",
+    "semester": 6,
     "sks": 3,
     "unit": "Business Management",
     "kode": "EM4619",
@@ -10104,6 +10471,7 @@
   },
   {
     "nama": "METODE PENELITIAN BISNIS KUANTITATIF",
+    "semester": 6,
     "sks": 3,
     "unit": "Business Management",
     "kode": "EM4618",
@@ -10148,6 +10516,7 @@
   },
   {
     "nama": "METODE PENELITIAN KEUANGAN",
+    "semester": 6,
     "sks": 3,
     "unit": "Finance and Investment",
     "kode": "EU4338",
@@ -10192,6 +10561,7 @@
   },
   {
     "nama": "METODE PENELITIAN PENDIDIKAN",
+    "semester": 4,
     "sks": 4,
     "unit": "Keguruan dan Ilmu Pendidikan",
     "kode": "GF4110",
@@ -10212,6 +10582,7 @@
   },
   {
     "nama": "METODOLOGI DESAIN",
+    "semester": 2,
     "sks": 2,
     "unit": "Desain Interior",
     "kode": "DI4233",
@@ -10219,26 +10590,7 @@
   },
   {
     "nama": "METODOLOGI PENELITIAN",
-    "sks": 2,
-    "unit": "Teknik Industri",
-    "kode": "TI4461",
-    "kelas": [
-      {
-        "kelas": "A",
-        "jadwal": [
-          {
-            "dayOfWeek": 4,
-            "startHour": 8,
-            "startMinute": 30,
-            "durasi": 120,
-            "ruang": "P.505/"
-          }
-        ]
-      }
-    ]
-  },
-  {
-    "nama": "METODOLOGI PENELITIAN",
+    "semester": 7,
     "sks": 3,
     "unit": "Informatika",
     "kode": "TF4259",
@@ -10258,7 +10610,29 @@
     ]
   },
   {
+    "nama": "METODOLOGI PENELITIAN",
+    "semester": 6,
+    "sks": 2,
+    "unit": "Teknik Industri",
+    "kode": "TI4461",
+    "kelas": [
+      {
+        "kelas": "A",
+        "jadwal": [
+          {
+            "dayOfWeek": 4,
+            "startHour": 8,
+            "startMinute": 30,
+            "durasi": 120,
+            "ruang": "P.505/"
+          }
+        ]
+      }
+    ]
+  },
+  {
     "nama": "METODOLOGI PENELITIAN MANAJEMEN",
+    "semester": 5,
     "sks": 3,
     "unit": "Manajemen",
     "kode": "EC4204",
@@ -10279,6 +10653,7 @@
   },
   {
     "nama": "MICROSOFT OFFICE SPECIALIST",
+    "semester": 5,
     "sks": 3,
     "unit": "International Business Management",
     "kode": "EB4464",
@@ -10299,6 +10674,7 @@
   },
   {
     "nama": "MOTION GRAPHICS",
+    "semester": 3,
     "sks": 3,
     "unit": "Desain Komunikasi Visual",
     "kode": "DV4698",
@@ -10326,6 +10702,7 @@
   },
   {
     "nama": "MULTI CRITERIA DESICION MAKING",
+    "semester": 8,
     "sks": 3,
     "unit": "Business Information System",
     "kode": "TF4547",
@@ -10346,6 +10723,7 @@
   },
   {
     "nama": "MULTIMEDIA",
+    "semester": 6,
     "sks": 2,
     "unit": "Teknik Elektro",
     "kode": "TE4577",
@@ -10366,6 +10744,7 @@
   },
   {
     "nama": "MUSIC DIRECTING",
+    "semester": null,
     "sks": 1,
     "unit": "Ilmu Komunikasi",
     "kode": "IK017",
@@ -10386,6 +10765,7 @@
   },
   {
     "nama": "MY LOVE JOURNEY",
+    "semester": 4,
     "sks": 3,
     "unit": "D.M.U",
     "kode": "DU4219",
@@ -10406,6 +10786,7 @@
   },
   {
     "nama": "NETWORK DEFENSE",
+    "semester": 7,
     "sks": 3,
     "unit": "Informatika",
     "kode": "TF4569",
@@ -10426,6 +10807,7 @@
   },
   {
     "nama": "NEURODIVERSITY AND LEARNING",
+    "semester": 6,
     "sks": 3,
     "unit": "Keguruan dan Ilmu Pendidikan",
     "kode": "GF4125",
@@ -10446,6 +10828,7 @@
   },
   {
     "nama": "NUTRISI DAN HIGIENITAS MAKANAN",
+    "semester": 2,
     "sks": 3,
     "unit": "Culinary Business Management",
     "kode": "EH4202",
@@ -10466,6 +10849,7 @@
   },
   {
     "nama": "OCCUPATIONAL HEALTH AND SAFETY",
+    "semester": 5,
     "sks": 2,
     "unit": "International Business Engineering",
     "kode": "BE4168",
@@ -10486,6 +10870,7 @@
   },
   {
     "nama": "OPERASIONAL DIVISI KAMAR",
+    "semester": 4,
     "sks": 3,
     "unit": "Hotel Management",
     "kode": "EP4266",
@@ -10542,6 +10927,7 @@
   },
   {
     "nama": "OPERASIONAL KULINER",
+    "semester": 2,
     "sks": 3,
     "unit": "Hotel Management",
     "kode": "EP4261",
@@ -10574,6 +10960,7 @@
   },
   {
     "nama": "OPERASIONAL TATA HIDANG",
+    "semester": 2,
     "sks": 3,
     "unit": "Hotel Management",
     "kode": "EP4262",
@@ -10606,6 +10993,7 @@
   },
   {
     "nama": "OPERATION MANAGEMENT",
+    "semester": 2,
     "sks": 3,
     "unit": "Global Entrepreneurship and Innovation",
     "kode": "EI4112",
@@ -10613,6 +11001,7 @@
   },
   {
     "nama": "OPERATIONS RESEARCH II",
+    "semester": 4,
     "sks": 3,
     "unit": "International Business Engineering",
     "kode": "BE4109",
@@ -10633,6 +11022,7 @@
   },
   {
     "nama": "ORGANISASI DAN SUMBER DAYA MANUSIA",
+    "semester": 7,
     "sks": 3,
     "unit": "Teknik Sipil",
     "kode": "TS4450",
@@ -10653,6 +11043,7 @@
   },
   {
     "nama": "ORGANIZATIONAL DESIGN",
+    "semester": 8,
     "sks": 3,
     "unit": "International Business Engineering",
     "kode": "BE4126",
@@ -10673,6 +11064,7 @@
   },
   {
     "nama": "PACKAGING",
+    "semester": 7,
     "sks": 4,
     "unit": "Desain Komunikasi Visual",
     "kode": "DV4702",
@@ -10700,9 +11092,10 @@
   },
   {
     "nama": "PAJ.PENG.ORANG PRIBADI amp WITHHOLDING TAX",
+    "semester": null,
     "sks": 3,
     "unit": "Tax Accounting",
-    "kode": "TA007",
+    "kode": "TA023",
     "kelas": [
       {
         "kelas": "A",
@@ -10720,9 +11113,10 @@
   },
   {
     "nama": "PAJAK ATAS BISNIS INTERNASIONAL",
+    "semester": null,
     "sks": 3,
     "unit": "Tax Accounting",
-    "kode": "TA003",
+    "kode": "TA019",
     "kelas": [
       {
         "kelas": "A1",
@@ -10752,6 +11146,7 @@
   },
   {
     "nama": "PANCASILA",
+    "semester": 2,
     "sks": 2,
     "unit": "D.M.U",
     "kode": "DU4101",
@@ -11048,6 +11443,7 @@
   },
   {
     "nama": "PANCASILA",
+    "semester": 2,
     "sks": 2,
     "unit": "International Business Accounting",
     "kode": "DU4101",
@@ -11068,6 +11464,7 @@
   },
   {
     "nama": "PARADIGMA DAN FONDASI PENDIDIKAN KRISTEN",
+    "semester": 2,
     "sks": 4,
     "unit": "Keguruan dan Ilmu Pendidikan",
     "kode": "GF4118",
@@ -11088,6 +11485,7 @@
   },
   {
     "nama": "PEDAGOGI BAHASA MANDARIN",
+    "semester": null,
     "sks": 2,
     "unit": "Bahasa Mandarin",
     "kode": "BM017",
@@ -11108,6 +11506,7 @@
   },
   {
     "nama": "PEMAHAMAN LINTAS BUDAYA",
+    "semester": 6,
     "sks": 2,
     "unit": "Hotel Management",
     "kode": "EP4252",
@@ -11128,6 +11527,7 @@
   },
   {
     "nama": "PEMBANGKIT ENERGI LISTRIK I",
+    "semester": 5,
     "sks": 2,
     "unit": "Teknik Elektro",
     "kode": "TE4448",
@@ -11148,6 +11548,7 @@
   },
   {
     "nama": "PEMBELAJARAN BAHASA INGGRIS DAN APLIKASINYA",
+    "semester": 4,
     "sks": 4,
     "unit": "Pendidikan Guru Pendidikan Anak Usia Dini",
     "kode": "GP4306",
@@ -11168,6 +11569,7 @@
   },
   {
     "nama": "PEMBELAJARAN MIKRO",
+    "semester": 4,
     "sks": 4,
     "unit": "Pendidikan Guru Pendidikan Anak Usia Dini",
     "kode": "GP4305",
@@ -11188,6 +11590,7 @@
   },
   {
     "nama": "PEMBELAJARAN MUSIK DAN SENI",
+    "semester": 4,
     "sks": 3,
     "unit": "Pendidikan Guru - Sekolah Dasar",
     "kode": "GD4337",
@@ -11208,9 +11611,10 @@
   },
   {
     "nama": "PEMERIKSAAN AKUNTANSI ATAS SISTEM INFORMASI",
+    "semester": null,
     "sks": 3,
     "unit": "Business Accounting",
-    "kode": "BA002",
+    "kode": "BU023",
     "kelas": [
       {
         "kelas": "A",
@@ -11228,6 +11632,7 @@
   },
   {
     "nama": "PEMERIKSAAN AKUNTANSI INTERNAL",
+    "semester": 8,
     "sks": 3,
     "unit": "Business Accounting",
     "kode": "EA4498",
@@ -11260,6 +11665,7 @@
   },
   {
     "nama": "PEMERIKSAAN ATAS LAPORAN KEUANGAN",
+    "semester": 6,
     "sks": 2,
     "unit": "Akuntansi",
     "kode": "EA4553",
@@ -11280,6 +11686,7 @@
   },
   {
     "nama": "PEMODELAN BISNIS",
+    "semester": 4,
     "sks": 3,
     "unit": "Business Management",
     "kode": "EM4328",
@@ -11348,6 +11755,7 @@
   },
   {
     "nama": "PEMODELAN DATA UNTUK DATA SCIENCE",
+    "semester": 8,
     "sks": 3,
     "unit": "Data Science and Analytics",
     "kode": "TF4549",
@@ -11368,6 +11776,7 @@
   },
   {
     "nama": "PEMODELAN SISTEM",
+    "semester": 5,
     "sks": 2,
     "unit": "Teknik Industri",
     "kode": "TI4422",
@@ -11388,6 +11797,7 @@
   },
   {
     "nama": "PEMROGRAMAN BERORIENTASI OBYEK",
+    "semester": 2,
     "sks": 3,
     "unit": "Informatika",
     "kode": "TF4235",
@@ -11472,6 +11882,7 @@
   },
   {
     "nama": "PEMROGRAMAN IoT",
+    "semester": 5,
     "sks": 3,
     "unit": "Teknik Elektro",
     "kode": "TE4710",
@@ -11492,6 +11903,7 @@
   },
   {
     "nama": "PENAFSIRAN ALKITAB DAN FORMASI SPIRITUAL",
+    "semester": 2,
     "sks": 3,
     "unit": "Keguruan dan Ilmu Pendidikan",
     "kode": "GF4119",
@@ -11512,6 +11924,7 @@
   },
   {
     "nama": "PENELITIAN OPERASIONAL II",
+    "semester": 4,
     "sks": 3,
     "unit": "Teknik Industri",
     "kode": "TI4304",
@@ -11532,6 +11945,7 @@
   },
   {
     "nama": "PENERJEMAHAN I",
+    "semester": 6,
     "sks": 2,
     "unit": "Bahasa Mandarin",
     "kode": "ST4401",
@@ -11552,6 +11966,7 @@
   },
   {
     "nama": "PENERJEMAHAN II",
+    "semester": null,
     "sks": 2,
     "unit": "Bahasa Mandarin",
     "kode": "BM012",
@@ -11572,6 +11987,7 @@
   },
   {
     "nama": "PENGAMBILAN KEPUTUSAN DAN PERENCANAAN",
+    "semester": 7,
     "sks": 3,
     "unit": "Teknik Sipil",
     "kode": "TS4469",
@@ -11592,6 +12008,7 @@
   },
   {
     "nama": "PENGANTAR BISNIS PARIWISATA",
+    "semester": 2,
     "sks": 3,
     "unit": "Creative Tourism",
     "kode": "EW4485",
@@ -11612,6 +12029,7 @@
   },
   {
     "nama": "PENGANTAR MANAJEMEN",
+    "semester": 6,
     "sks": 2,
     "unit": "Teknik Elektro",
     "kode": "TE4730",
@@ -11632,6 +12050,7 @@
   },
   {
     "nama": "PENGANTAR PENDIDIKAN LUAR BIASA",
+    "semester": 6,
     "sks": 3,
     "unit": "Pendidikan Guru - Sekolah Dasar",
     "kode": "GD4271",
@@ -11652,6 +12071,7 @@
   },
   {
     "nama": "PENGANTAR PENELITIAN KOMUNIKASI",
+    "semester": null,
     "sks": 1,
     "unit": "Ilmu Komunikasi",
     "kode": "IK014",
@@ -11684,6 +12104,7 @@
   },
   {
     "nama": "PENGANTAR SISTEM TRANSPORTASI",
+    "semester": 7,
     "sks": 3,
     "unit": "Teknik Sipil",
     "kode": "TS4562",
@@ -11704,6 +12125,7 @@
   },
   {
     "nama": "PENGANTAR TEKNOLOGI DIGITAL",
+    "semester": 2,
     "sks": 3,
     "unit": "Desain Interior",
     "kode": "DI4509",
@@ -11731,9 +12153,10 @@
   },
   {
     "nama": "PENGEMBANGAN APLIKASI BERBASIS iOS",
+    "semester": null,
     "sks": 3,
     "unit": "Informatika",
-    "kode": "IN056",
+    "kode": "IN024",
     "kelas": [
       {
         "kelas": "A",
@@ -11751,6 +12174,7 @@
   },
   {
     "nama": "PENGEMBANGAN APLIKASI TELEMATIKA",
+    "semester": 8,
     "sks": 3,
     "unit": "Teknik Elektro",
     "kode": "TE4663",
@@ -11771,6 +12195,7 @@
   },
   {
     "nama": "PENGEMBANGAN FISIK MOTORIK AUD",
+    "semester": 4,
     "sks": 4,
     "unit": "Pendidikan Guru Pendidikan Anak Usia Dini",
     "kode": "GP4307",
@@ -11791,6 +12216,7 @@
   },
   {
     "nama": "PENGEMBANGAN KEORGANISASIAN",
+    "semester": 8,
     "sks": 3,
     "unit": "Business Management",
     "kode": "EM4601",
@@ -11811,6 +12237,7 @@
   },
   {
     "nama": "PENGENDALIAN DAN PENJAMINAN MUTU",
+    "semester": 4,
     "sks": 3,
     "unit": "Teknik Industri",
     "kode": "TI4404",
@@ -11831,6 +12258,7 @@
   },
   {
     "nama": "PENGETAHUAN LINGKUNGAN",
+    "semester": 8,
     "sks": 2,
     "unit": "Teknik Elektro",
     "kode": "TE4521",
@@ -11851,6 +12279,7 @@
   },
   {
     "nama": "PENGUKURAN BESARAN LISTRIK",
+    "semester": 2,
     "sks": 2,
     "unit": "Teknik Elektro",
     "kode": "TE4301",
@@ -11871,6 +12300,7 @@
   },
   {
     "nama": "PENGUKURAN DAN PERANCANGAN SISTEM KERJA",
+    "semester": 4,
     "sks": 2,
     "unit": "Teknik Industri",
     "kode": "TI4643",
@@ -11891,6 +12321,7 @@
   },
   {
     "nama": "PENILAIAN ASET",
+    "semester": 8,
     "sks": 3,
     "unit": "Finance and Investment",
     "kode": "EU4335",
@@ -11911,6 +12342,7 @@
   },
   {
     "nama": "PENILAIAN BANGUNAN HIJAU",
+    "semester": 6,
     "sks": 4,
     "unit": "Arsitektur",
     "kode": "AR4151",
@@ -11931,6 +12363,7 @@
   },
   {
     "nama": "PENULISAN MEDIA KREATIF",
+    "semester": 4,
     "sks": 3,
     "unit": "Creative Media Communication",
     "kode": "IK4502",
@@ -11938,6 +12371,7 @@
   },
   {
     "nama": "PENULISAN RELASI PUBLIK",
+    "semester": 4,
     "sks": 4,
     "unit": "Strategic Communication",
     "kode": "IK4384",
@@ -11958,6 +12392,7 @@
   },
   {
     "nama": "PERANCANGAN FASILITAS",
+    "semester": 6,
     "sks": 3,
     "unit": "Teknik Industri",
     "kode": "TI4647",
@@ -11978,6 +12413,7 @@
   },
   {
     "nama": "PERANCANGAN PAKET WISATA",
+    "semester": 4,
     "sks": 3,
     "unit": "Creative Tourism",
     "kode": "EW4427",
@@ -11998,6 +12434,7 @@
   },
   {
     "nama": "PERANCANGAN SISTEM INDUSTRI",
+    "semester": 6,
     "sks": 3,
     "unit": "Teknik Industri",
     "kode": "TI4469",
@@ -12018,6 +12455,7 @@
   },
   {
     "nama": "PERENCANAAN PEMBELAJARAN",
+    "semester": 2,
     "sks": 3,
     "unit": "Pendidikan Guru Pendidikan Anak Usia Dini",
     "kode": "GP4299",
@@ -12038,6 +12476,7 @@
   },
   {
     "nama": "PERENCANAAN PRODUKSI DAN PENGENDALIAN PERSEDIAAN",
+    "semester": 5,
     "sks": 3,
     "unit": "Teknik Industri",
     "kode": "TI4644",
@@ -12058,6 +12497,7 @@
   },
   {
     "nama": "PERENCANAAN PROYEK KONSTRUKSI",
+    "semester": 5,
     "sks": 3,
     "unit": "Teknik Sipil",
     "kode": "TS4571",
@@ -12078,6 +12518,7 @@
   },
   {
     "nama": "PERENCANAAN TAPAK PERUMAHAN",
+    "semester": 6,
     "sks": 4,
     "unit": "Arsitektur",
     "kode": "AR4242",
@@ -12098,6 +12539,7 @@
   },
   {
     "nama": "PERFORMA MESIN INDUSTRI",
+    "semester": 6,
     "sks": 3,
     "unit": "Sustainable Mechanical Engineering and Design",
     "kode": "TM4667",
@@ -12118,6 +12560,7 @@
   },
   {
     "nama": "PERILAKU KEORGANISASIAN",
+    "semester": 3,
     "sks": 3,
     "unit": "Business Management",
     "kode": "EM4242",
@@ -12138,6 +12581,7 @@
   },
   {
     "nama": "PERILAKU ORGANISASI",
+    "semester": 4,
     "sks": 2,
     "unit": "Teknik Industri",
     "kode": "TI4641",
@@ -12158,6 +12602,7 @@
   },
   {
     "nama": "PERILAKU PELANGGAN",
+    "semester": 2,
     "sks": 3,
     "unit": "Branding and Digital Marketing",
     "kode": "EG4215",
@@ -12190,6 +12635,7 @@
   },
   {
     "nama": "PERMAINAN ANAK MODERN DAN TRADISIONAL",
+    "semester": 6,
     "sks": 3,
     "unit": "Pendidikan Guru - Sekolah Dasar",
     "kode": "GD4343",
@@ -12210,6 +12656,28 @@
   },
   {
     "nama": "PERPAJAKAN",
+    "semester": 1,
+    "sks": 3,
+    "unit": "Akuntansi",
+    "kode": "EA4341",
+    "kelas": [
+      {
+        "kelas": "A1",
+        "jadwal": [
+          {
+            "dayOfWeek": 5,
+            "startHour": 7,
+            "startMinute": 0,
+            "durasi": 180,
+            "ruang": "T.313/"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "nama": "PERPAJAKAN",
+    "semester": 3,
     "sks": 3,
     "unit": "School of Business and Management",
     "kode": "EK4232",
@@ -12241,27 +12709,8 @@
     ]
   },
   {
-    "nama": "PERPAJAKAN",
-    "sks": 3,
-    "unit": "Akuntansi",
-    "kode": "EA4341",
-    "kelas": [
-      {
-        "kelas": "A1",
-        "jadwal": [
-          {
-            "dayOfWeek": 5,
-            "startHour": 7,
-            "startMinute": 0,
-            "durasi": 180,
-            "ruang": "T.313/"
-          }
-        ]
-      }
-    ]
-  },
-  {
     "nama": "PERSIAPAN HSK 5",
+    "semester": 6,
     "sks": 2,
     "unit": "Bahasa Mandarin",
     "kode": "ST4479",
@@ -12282,6 +12731,7 @@
   },
   {
     "nama": "PERSONAL SPACE",
+    "semester": 2,
     "sks": 5,
     "unit": "Desain Interior",
     "kode": "DI4510",
@@ -12316,6 +12766,7 @@
   },
   {
     "nama": "PHYSICAL DISABILITIES AND INTERVENTION",
+    "semester": 6,
     "sks": 3,
     "unit": "Keguruan dan Ilmu Pendidikan",
     "kode": "GF4126",
@@ -12336,6 +12787,7 @@
   },
   {
     "nama": "PLAYWRITING",
+    "semester": 4,
     "sks": 3,
     "unit": "English for Creative Industry",
     "kode": "SI4645",
@@ -12356,6 +12808,7 @@
   },
   {
     "nama": "POLA PIKIR KEWIRAUSAHAAN",
+    "semester": 4,
     "sks": 2,
     "unit": "School of Business and Management",
     "kode": "EK4306",
@@ -12484,6 +12937,7 @@
   },
   {
     "nama": "POP CULTURE",
+    "semester": 5,
     "sks": 2,
     "unit": "English for Business",
     "kode": "SI4549",
@@ -12504,6 +12958,7 @@
   },
   {
     "nama": "POWER QUALITY",
+    "semester": 5,
     "sks": 2,
     "unit": "Teknik Elektro",
     "kode": "TE4609",
@@ -12524,6 +12979,7 @@
   },
   {
     "nama": "PRAKTIK MENGAJAR BAHASA MANDARIN",
+    "semester": 6,
     "sks": 2,
     "unit": "Bahasa Mandarin",
     "kode": "ST4534",
@@ -12531,6 +12987,7 @@
   },
   {
     "nama": "PRAKTIKUM PLB",
+    "semester": 6,
     "sks": 2,
     "unit": "Keguruan dan Ilmu Pendidikan",
     "kode": "GF4130",
@@ -12551,6 +13008,7 @@
   },
   {
     "nama": "PRESENTASI VISUAL",
+    "semester": 2,
     "sks": 4,
     "unit": "Desain Interior",
     "kode": "DI4511",
@@ -12578,6 +13036,7 @@
   },
   {
     "nama": "PRINSIP-PRINSIP KOMUNIKASI STRATEGIS",
+    "semester": 2,
     "sks": 3,
     "unit": "Strategic Communication",
     "kode": "IK4593",
@@ -12598,6 +13057,7 @@
   },
   {
     "nama": "PROBLEM SOLVING AND CRITICAL THINKING",
+    "semester": 2,
     "sks": 3,
     "unit": "International Business Management",
     "kode": "EB4469",
@@ -12618,6 +13078,7 @@
   },
   {
     "nama": "PROBLEMATIKA BELAJAR MURID",
+    "semester": 6,
     "sks": 3,
     "unit": "Pendidikan Guru - Sekolah Dasar",
     "kode": "GD4344",
@@ -12638,6 +13099,7 @@
   },
   {
     "nama": "PROCUREMENT",
+    "semester": 7,
     "sks": 3,
     "unit": "Teknik Industri",
     "kode": "TI4364",
@@ -12658,6 +13120,7 @@
   },
   {
     "nama": "PRODUKSI VARIETY SHOW/TALKSHOW",
+    "semester": 6,
     "sks": 4,
     "unit": "Creative Media Communication",
     "kode": "IK4540",
@@ -12678,6 +13141,7 @@
   },
   {
     "nama": "PROFESIONALISME KEINSINYURAN",
+    "semester": 1,
     "sks": 2,
     "unit": "Pendidikan Profesi Insinyur",
     "kode": "PPI003",
@@ -12685,6 +13149,7 @@
   },
   {
     "nama": "PROFESIONALITAS PENDIDIK KRISTEN",
+    "semester": 6,
     "sks": 2,
     "unit": "Keguruan dan Ilmu Pendidikan",
     "kode": "GF4124",
@@ -12705,6 +13170,7 @@
   },
   {
     "nama": "PROGRAMMING FOR INTERACTIVITY",
+    "semester": 4,
     "sks": 3,
     "unit": "International Program in Digital Media",
     "kode": "DM4380",
@@ -12725,6 +13191,7 @@
   },
   {
     "nama": "PROSES MANUFAKTUR II",
+    "semester": 4,
     "sks": 2,
     "unit": "Teknik Mesin",
     "kode": "TM4308",
@@ -12745,6 +13212,7 @@
   },
   {
     "nama": "PROYEK DESAIN TEKNIK SIPIL",
+    "semester": 6,
     "sks": 5,
     "unit": "Teknik Sipil",
     "kode": "TS4594",
@@ -12779,6 +13247,7 @@
   },
   {
     "nama": "PSIKOLOGI PENDIDIKAN BAHASA MANDARIN",
+    "semester": 5,
     "sks": 2,
     "unit": "Bahasa Mandarin",
     "kode": "ST4532",
@@ -12799,6 +13268,7 @@
   },
   {
     "nama": "PUBLIC RELATIONS FOR SOCIAL ORGANIZATION",
+    "semester": null,
     "sks": 1,
     "unit": "Ilmu Komunikasi",
     "kode": "IK016",
@@ -12819,6 +13289,7 @@
   },
   {
     "nama": "RANGKAIAN DAN PENGUKURAN LISTRIK",
+    "semester": 2,
     "sks": 5,
     "unit": "Teknik Elektro",
     "kode": "TE4676",
@@ -12846,6 +13317,7 @@
   },
   {
     "nama": "RANGKAIAN LISTRIK",
+    "semester": 2,
     "sks": 3,
     "unit": "Teknik Elektro",
     "kode": "TE4303",
@@ -12866,6 +13338,7 @@
   },
   {
     "nama": "READING 2 : CRITICAL READING",
+    "semester": 2,
     "sks": 3,
     "unit": "English for Business",
     "kode": "SI4807",
@@ -12898,6 +13371,7 @@
   },
   {
     "nama": "READING FOR COMMUNICATION PURPOSES",
+    "semester": null,
     "sks": 1,
     "unit": "Ilmu Komunikasi",
     "kode": "IK007",
@@ -12918,6 +13392,7 @@
   },
   {
     "nama": "REGULASI MEDIA",
+    "semester": 2,
     "sks": 3,
     "unit": "Creative Media Communication",
     "kode": "IK4252",
@@ -12938,6 +13413,7 @@
   },
   {
     "nama": "REKAYASA FONDASI II",
+    "semester": 4,
     "sks": 3,
     "unit": "Teknik Sipil",
     "kode": "TS4264",
@@ -12958,6 +13434,7 @@
   },
   {
     "nama": "REKAYASA HIDROLOGI",
+    "semester": 6,
     "sks": 3,
     "unit": "Teknik Sipil",
     "kode": "TS4335",
@@ -12978,6 +13455,7 @@
   },
   {
     "nama": "REKAYASA PERANGKAT LUNAK",
+    "semester": 4,
     "sks": 3,
     "unit": "Informatika",
     "kode": "TF4255",
@@ -13022,6 +13500,7 @@
   },
   {
     "nama": "REKAYASA PERKERASAN JALAN",
+    "semester": 5,
     "sks": 3,
     "unit": "Teknik Sipil",
     "kode": "TS4457",
@@ -13042,6 +13521,7 @@
   },
   {
     "nama": "REKAYASA PERKERASAN JALAN LANJUTAN",
+    "semester": 7,
     "sks": 3,
     "unit": "Teknik Sipil",
     "kode": "TS4553",
@@ -13062,6 +13542,7 @@
   },
   {
     "nama": "RELASI PUBLIK DAN KEWIRAUSAHAAN",
+    "semester": 6,
     "sks": 4,
     "unit": "Strategic Communication",
     "kode": "IK4515",
@@ -13089,26 +13570,7 @@
   },
   {
     "nama": "RESEARCH METHODOLOGY",
-    "sks": 3,
-    "unit": "International Business Management",
-    "kode": "EB4343",
-    "kelas": [
-      {
-        "kelas": "A",
-        "jadwal": [
-          {
-            "dayOfWeek": 1,
-            "startHour": 7,
-            "startMinute": 30,
-            "durasi": 180,
-            "ruang": "T.506/"
-          }
-        ]
-      }
-    ]
-  },
-  {
-    "nama": "RESEARCH METHODOLOGY",
+    "semester": 6,
     "sks": 2,
     "unit": "International Business Engineering",
     "kode": "BE4184",
@@ -13128,7 +13590,29 @@
     ]
   },
   {
+    "nama": "RESEARCH METHODOLOGY",
+    "semester": 5,
+    "sks": 3,
+    "unit": "International Business Management",
+    "kode": "EB4343",
+    "kelas": [
+      {
+        "kelas": "A",
+        "jadwal": [
+          {
+            "dayOfWeek": 1,
+            "startHour": 7,
+            "startMinute": 30,
+            "durasi": 180,
+            "ruang": "T.506/"
+          }
+        ]
+      }
+    ]
+  },
+  {
     "nama": "RESEARCH METHODOLOGY OF ACCOUNTING",
+    "semester": 6,
     "sks": 3,
     "unit": "International Business Accounting",
     "kode": "IA4156",
@@ -13149,6 +13633,7 @@
   },
   {
     "nama": "RESEARCH PAPER WRITING",
+    "semester": 4,
     "sks": 3,
     "unit": "English for Business",
     "kode": "SI4831",
@@ -13156,6 +13641,7 @@
   },
   {
     "nama": "RESEARCH TECHNIQUES",
+    "semester": 2,
     "sks": 4,
     "unit": "Doktor Ilmu Manajemen",
     "kode": "PM6004",
@@ -13163,6 +13649,7 @@
   },
   {
     "nama": "RINGKASAN UMUM NEGARA TIONGKOK",
+    "semester": 6,
     "sks": 2,
     "unit": "Bahasa Mandarin",
     "kode": "ST4397",
@@ -13183,6 +13670,7 @@
   },
   {
     "nama": "RISET OPERASIONAL",
+    "semester": 7,
     "sks": 3,
     "unit": "Teknik Sipil",
     "kode": "TS4431",
@@ -13203,6 +13691,7 @@
   },
   {
     "nama": "RISET PEMASARAN",
+    "semester": 2,
     "sks": 3,
     "unit": "Branding and Digital Marketing",
     "kode": "EG4221",
@@ -13235,6 +13724,7 @@
   },
   {
     "nama": "ROBOTICS PROJECT",
+    "semester": 6,
     "sks": 3,
     "unit": "Teknik Elektro",
     "kode": "TE4708",
@@ -13255,9 +13745,10 @@
   },
   {
     "nama": "ROUTING AND SWITCHING",
+    "semester": null,
     "sks": 3,
     "unit": "Informatika",
-    "kode": "IN057",
+    "kode": "IN025",
     "kelas": [
       {
         "kelas": "A",
@@ -13275,6 +13766,7 @@
   },
   {
     "nama": "SAINS MATERIAL TERAPAN",
+    "semester": 2,
     "sks": 4,
     "unit": "Desain Interior",
     "kode": "DI4512",
@@ -13302,6 +13794,7 @@
   },
   {
     "nama": "SEJARAH DAN TEORI DESAIN",
+    "semester": 4,
     "sks": 3,
     "unit": "Desain Interior",
     "kode": "DI4521",
@@ -13322,26 +13815,7 @@
   },
   {
     "nama": "SEMINAR",
-    "sks": 4,
-    "unit": "International Program in Digital Media",
-    "kode": "DM4357",
-    "kelas": [
-      {
-        "kelas": "A",
-        "jadwal": [
-          {
-            "dayOfWeek": 4,
-            "startHour": 11,
-            "startMinute": 30,
-            "durasi": 240,
-            "ruang": "Q.08.03A/"
-          }
-        ]
-      }
-    ]
-  },
-  {
-    "nama": "SEMINAR",
+    "semester": 6,
     "sks": 3,
     "unit": "Desain Interior",
     "kode": "DI4501",
@@ -13361,7 +13835,29 @@
     ]
   },
   {
+    "nama": "SEMINAR",
+    "semester": 6,
+    "sks": 4,
+    "unit": "International Program in Digital Media",
+    "kode": "DM4357",
+    "kelas": [
+      {
+        "kelas": "A",
+        "jadwal": [
+          {
+            "dayOfWeek": 4,
+            "startHour": 11,
+            "startMinute": 30,
+            "durasi": 240,
+            "ruang": "Q.08.03A/"
+          }
+        ]
+      }
+    ]
+  },
+  {
     "nama": "SEMINAR IN ENGLISH FOR BUSINESS",
+    "semester": 6,
     "sks": 3,
     "unit": "English for Business",
     "kode": "SI4739",
@@ -13382,6 +13878,7 @@
   },
   {
     "nama": "SEMINAR IN ENGLISH FOR CREATIVE INDUSTRY",
+    "semester": 6,
     "sks": 3,
     "unit": "English for Creative Industry",
     "kode": "SI4738",
@@ -13402,6 +13899,7 @@
   },
   {
     "nama": "SEMINAR PRA TUGAS AKHIR",
+    "semester": 6,
     "sks": 2,
     "unit": "Bahasa Mandarin",
     "kode": "ST4574",
@@ -13422,6 +13920,7 @@
   },
   {
     "nama": "SEMINAR PROPOSAL",
+    "semester": 6,
     "sks": 2,
     "unit": "Pendidikan Guru - Sekolah Dasar",
     "kode": "GD4342",
@@ -13442,6 +13941,7 @@
   },
   {
     "nama": "SEMINAR PROPOSAL",
+    "semester": 6,
     "sks": 2,
     "unit": "Pendidikan Guru Pendidikan Anak Usia Dini",
     "kode": "GP4324",
@@ -13462,6 +13962,7 @@
   },
   {
     "nama": "SEMIOTICS",
+    "semester": 4,
     "sks": 2,
     "unit": "English for Business",
     "kode": "SI4458",
@@ -13482,9 +13983,10 @@
   },
   {
     "nama": "SENI KONSEP DAN PEMODELAN UNTUK GAME",
+    "semester": null,
     "sks": 3,
     "unit": "Informatika",
-    "kode": "IN054",
+    "kode": "IN022",
     "kelas": [
       {
         "kelas": "A",
@@ -13502,6 +14004,7 @@
   },
   {
     "nama": "SENSOR DAN AKTUATOR",
+    "semester": 4,
     "sks": 3,
     "unit": "Teknik Elektro",
     "kode": "TE4662",
@@ -13522,6 +14025,7 @@
   },
   {
     "nama": "SERVANT LEADER",
+    "semester": 2,
     "sks": 2,
     "unit": "D.M.U",
     "kode": "DU4191",
@@ -13566,6 +14070,7 @@
   },
   {
     "nama": "SEWING AND PATTERN MAKING 2",
+    "semester": 2,
     "sks": 3,
     "unit": "Textile and Fashion Design",
     "kode": "DF4305",
@@ -13593,6 +14098,7 @@
   },
   {
     "nama": "SIMULASI SISTEM INDUSTRI",
+    "semester": 6,
     "sks": 3,
     "unit": "Teknik Industri",
     "kode": "TI4433",
@@ -13613,6 +14119,7 @@
   },
   {
     "nama": "SISTEM AUDIO-VIDEO",
+    "semester": 8,
     "sks": 3,
     "unit": "Automotive",
     "kode": "TM4536",
@@ -13633,6 +14140,7 @@
   },
   {
     "nama": "SISTEM DRAINASE",
+    "semester": 7,
     "sks": 3,
     "unit": "Teknik Sipil",
     "kode": "TS4578",
@@ -13653,6 +14161,7 @@
   },
   {
     "nama": "SISTEM INFORMASI AKUNTANSI",
+    "semester": 8,
     "sks": 3,
     "unit": "Business Information System",
     "kode": "TF4321",
@@ -13673,6 +14182,7 @@
   },
   {
     "nama": "SISTEM INFORMASI DAN KECERDASAN BUATAN UNTUK BISNIS",
+    "semester": 3,
     "sks": 3,
     "unit": "Manajemen",
     "kode": "EC4229",
@@ -13693,6 +14203,7 @@
   },
   {
     "nama": "SISTEM INFORMASI MANUFAKTUR",
+    "semester": 8,
     "sks": 3,
     "unit": "Business Information System",
     "kode": "TF4324",
@@ -13713,6 +14224,7 @@
   },
   {
     "nama": "SISTEM KONVERSI ENERGI",
+    "semester": 6,
     "sks": 3,
     "unit": "Teknik Mesin",
     "kode": "TM4439",
@@ -13733,6 +14245,7 @@
   },
   {
     "nama": "SISTEM LINIER",
+    "semester": 4,
     "sks": 2,
     "unit": "Teknik Elektro",
     "kode": "TE4389",
@@ -13753,6 +14266,7 @@
   },
   {
     "nama": "SISTEM MANAJEMEN HOTEL",
+    "semester": 4,
     "sks": 3,
     "unit": "Hotel Management",
     "kode": "EP4264",
@@ -13785,6 +14299,7 @@
   },
   {
     "nama": "SISTEM MIKROPROSESOR",
+    "semester": 4,
     "sks": 3,
     "unit": "Teknik Elektro",
     "kode": "TE4441",
@@ -13805,6 +14320,7 @@
   },
   {
     "nama": "SISTEM OPERASI",
+    "semester": 4,
     "sks": 3,
     "unit": "Informatika",
     "kode": "TF4243",
@@ -13870,6 +14386,7 @@
   },
   {
     "nama": "SISTEM PROTEKSI",
+    "semester": 6,
     "sks": 2,
     "unit": "Teknik Elektro",
     "kode": "TE4454",
@@ -13890,6 +14407,7 @@
   },
   {
     "nama": "SISTEM RANTAI PASOK",
+    "semester": 6,
     "sks": 2,
     "unit": "Teknik Industri",
     "kode": "TI4574",
@@ -13910,6 +14428,7 @@
   },
   {
     "nama": "SISTEM REM DAN PEMINDAHAN DAYA",
+    "semester": 6,
     "sks": 3,
     "unit": "Automotive",
     "kode": "TM4672",
@@ -13930,6 +14449,7 @@
   },
   {
     "nama": "SISTEM SUSPENSI DAN KEMUDI",
+    "semester": 6,
     "sks": 3,
     "unit": "Automotive",
     "kode": "TM4673",
@@ -13950,6 +14470,7 @@
   },
   {
     "nama": "SISTEM TATA CAHAYA",
+    "semester": 2,
     "sks": 3,
     "unit": "Arsitektur",
     "kode": "AR4113",
@@ -13996,6 +14517,7 @@
   },
   {
     "nama": "SISTEM TATA UDARA DAN AKUSTIK",
+    "semester": 4,
     "sks": 3,
     "unit": "Arsitektur",
     "kode": "AR4114",
@@ -14042,6 +14564,7 @@
   },
   {
     "nama": "SISTEM UTILITAS DI BANGUNAN",
+    "semester": 6,
     "sks": 2,
     "unit": "Teknik Elektro",
     "kode": "TE4565",
@@ -14062,6 +14585,7 @@
   },
   {
     "nama": "SMART INDUSTRY",
+    "semester": 6,
     "sks": 3,
     "unit": "Sustainable Mechanical Engineering and Design",
     "kode": "TM4666",
@@ -14082,6 +14606,7 @@
   },
   {
     "nama": "SMART WELDING",
+    "semester": 8,
     "sks": 3,
     "unit": "Sustainable Mechanical Engineering and Design",
     "kode": "TM4683",
@@ -14109,6 +14634,7 @@
   },
   {
     "nama": "SOCIOLINGUISTICS AND PRAGMATICS IN BUSINESS",
+    "semester": 4,
     "sks": 4,
     "unit": "English for Business",
     "kode": "SI4819",
@@ -14141,6 +14667,7 @@
   },
   {
     "nama": "SOFTWARE ENGINEERING",
+    "semester": 8,
     "sks": 3,
     "unit": "International Business Engineering",
     "kode": "BE4223",
@@ -14161,6 +14688,7 @@
   },
   {
     "nama": "SPECIAL TOPIC A",
+    "semester": 8,
     "sks": 2,
     "unit": "Teknik Elektro",
     "kode": "TE4671",
@@ -14181,6 +14709,7 @@
   },
   {
     "nama": "SPECIAL TOPIC D",
+    "semester": 8,
     "sks": 2,
     "unit": "Teknik Elektro",
     "kode": "TE4674",
@@ -14201,6 +14730,7 @@
   },
   {
     "nama": "SPECIAL TOPICS IN BUSINESS COMMUNICATION",
+    "semester": 6,
     "sks": 3,
     "unit": "English for Business",
     "kode": "SI4734",
@@ -14221,6 +14751,7 @@
   },
   {
     "nama": "SPECIAL TOPICS IN TRANSLATION",
+    "semester": 8,
     "sks": 3,
     "unit": "English for Business",
     "kode": "SI4416",
@@ -14241,6 +14772,7 @@
   },
   {
     "nama": "SPOKEN 2 : PUBLIC SPEAKING",
+    "semester": 2,
     "sks": 3,
     "unit": "English for Business",
     "kode": "SI4802",
@@ -14273,6 +14805,7 @@
   },
   {
     "nama": "STANDARISASI INTERNASIONAL DAN SIX SIGMA",
+    "semester": 7,
     "sks": 3,
     "unit": "Teknik Industri",
     "kode": "TI4358",
@@ -14293,6 +14826,7 @@
   },
   {
     "nama": "STATISTICAL ANALYSIS FOR BUSINESS",
+    "semester": 2,
     "sks": 3,
     "unit": "International Business Management",
     "kode": "EB4284",
@@ -14313,26 +14847,7 @@
   },
   {
     "nama": "STATISTIKA",
-    "sks": 3,
-    "unit": "Teknik Industri",
-    "kode": "TI4495",
-    "kelas": [
-      {
-        "kelas": "A",
-        "jadwal": [
-          {
-            "dayOfWeek": 2,
-            "startHour": 7,
-            "startMinute": 30,
-            "durasi": 180,
-            "ruang": "P.612/"
-          }
-        ]
-      }
-    ]
-  },
-  {
-    "nama": "STATISTIKA",
+    "semester": 6,
     "sks": 3,
     "unit": "Teknik Sipil",
     "kode": "TS4573",
@@ -14352,7 +14867,29 @@
     ]
   },
   {
+    "nama": "STATISTIKA",
+    "semester": 3,
+    "sks": 3,
+    "unit": "Teknik Industri",
+    "kode": "TI4495",
+    "kelas": [
+      {
+        "kelas": "A",
+        "jadwal": [
+          {
+            "dayOfWeek": 2,
+            "startHour": 7,
+            "startMinute": 30,
+            "durasi": 180,
+            "ruang": "P.612/"
+          }
+        ]
+      }
+    ]
+  },
+  {
     "nama": "STATISTIKA BISNIS",
+    "semester": 3,
     "sks": 3,
     "unit": "Manajemen",
     "kode": "EC4212",
@@ -14373,6 +14910,7 @@
   },
   {
     "nama": "STATISTIKA DASAR",
+    "semester": 2,
     "sks": 3,
     "unit": "Informatika",
     "kode": "TF4227",
@@ -14438,6 +14976,7 @@
   },
   {
     "nama": "STORYTELLING",
+    "semester": 4,
     "sks": 3,
     "unit": "International Program in Digital Media",
     "kode": "DM4371",
@@ -14458,6 +14997,7 @@
   },
   {
     "nama": "STRATEGI BELAJAR MENGAJAR",
+    "semester": 2,
     "sks": 3,
     "unit": "Pendidikan Guru - Sekolah Dasar",
     "kode": "GD4333",
@@ -14478,6 +15018,7 @@
   },
   {
     "nama": "STRATEGI BISNIS",
+    "semester": 2,
     "sks": 3,
     "unit": "Business Accounting",
     "kode": "EA4104",
@@ -14498,6 +15039,7 @@
   },
   {
     "nama": "STRATEGI DAN KREASI KONTEN",
+    "semester": 4,
     "sks": 3,
     "unit": "Branding and Digital Marketing",
     "kode": "EG4290",
@@ -14518,6 +15060,7 @@
   },
   {
     "nama": "STRATEGIC BUSINESS LEADER 1",
+    "semester": 5,
     "sks": 3,
     "unit": "International Business Accounting",
     "kode": "IA4190",
@@ -14538,6 +15081,7 @@
   },
   {
     "nama": "STRATEGIC BUSINESS LEADER 2",
+    "semester": 5,
     "sks": 3,
     "unit": "International Business Accounting",
     "kode": "IA4191",
@@ -14558,6 +15102,7 @@
   },
   {
     "nama": "STRATEGIC SOCIAL MEDIA FOR PUBLIC RELATIONS",
+    "semester": null,
     "sks": 2,
     "unit": "Ilmu Komunikasi",
     "kode": "IK003",
@@ -14578,6 +15123,7 @@
   },
   {
     "nama": "STRUKTUR BANGUNAN BERTINGKAT MENENGAH",
+    "semester": 4,
     "sks": 4,
     "unit": "Arsitektur",
     "kode": "AR4117",
@@ -14624,6 +15170,7 @@
   },
   {
     "nama": "STRUKTUR DATA",
+    "semester": 3,
     "sks": 3,
     "unit": "Informatika",
     "kode": "TF4219",
@@ -14651,6 +15198,7 @@
   },
   {
     "nama": "STUDI INDEPENDEN",
+    "semester": 2,
     "sks": 4,
     "unit": "Doktor Teknik Sipil",
     "kode": "PT6012",
@@ -14671,6 +15219,7 @@
   },
   {
     "nama": "STUDI KELAYAKAN BISNIS",
+    "semester": 5,
     "sks": 3,
     "unit": "Manajemen",
     "kode": "EC4202",
@@ -14691,6 +15240,7 @@
   },
   {
     "nama": "STUDI PENGEMBANGAN BISNIS",
+    "semester": 6,
     "sks": 3,
     "unit": "Business Management",
     "kode": "EM4330",
@@ -14747,6 +15297,7 @@
   },
   {
     "nama": "SURVEI PERJANJIAN BARU",
+    "semester": 2,
     "sks": 3,
     "unit": "Keguruan dan Ilmu Pendidikan",
     "kode": "GF4120",
@@ -14767,6 +15318,7 @@
   },
   {
     "nama": "TATA KELOLA BISNIS KELUARGA",
+    "semester": 2,
     "sks": 3,
     "unit": "Business Management",
     "kode": "EM4241",
@@ -14799,6 +15351,7 @@
   },
   {
     "nama": "TATA KELOLA KORPORASI",
+    "semester": 6,
     "sks": 3,
     "unit": "Business Management",
     "kode": "EM4358",
@@ -14819,6 +15372,7 @@
   },
   {
     "nama": "TAXATION",
+    "semester": 2,
     "sks": 3,
     "unit": "International Business Accounting",
     "kode": "IA4117",
@@ -14839,6 +15393,7 @@
   },
   {
     "nama": "TECHNICAL ERP",
+    "semester": 8,
     "sks": 3,
     "unit": "Business Information System",
     "kode": "TF4572",
@@ -14859,6 +15414,7 @@
   },
   {
     "nama": "TECHNOPRENEURSHIP",
+    "semester": 4,
     "sks": 3,
     "unit": "Teknologi Industri",
     "kode": "FD4508",
@@ -14891,6 +15447,7 @@
   },
   {
     "nama": "TEKNIK DAN ANALISA DATA KEUANGAN",
+    "semester": null,
     "sks": 3,
     "unit": "Finance and Investment",
     "kode": "FA004",
@@ -14923,6 +15480,7 @@
   },
   {
     "nama": "TEKNIK JALAN RAYA",
+    "semester": 6,
     "sks": 3,
     "unit": "Teknik Sipil",
     "kode": "TS4574",
@@ -14943,6 +15501,7 @@
   },
   {
     "nama": "TEKNIK PANTAI DAN PELABUHAN",
+    "semester": 7,
     "sks": 3,
     "unit": "Teknik Sipil",
     "kode": "TS4587",
@@ -14963,6 +15522,7 @@
   },
   {
     "nama": "TEKNIK PEMBEBANAN",
+    "semester": 4,
     "sks": 3,
     "unit": "Teknik Sipil",
     "kode": "TS4570",
@@ -14983,6 +15543,7 @@
   },
   {
     "nama": "TEKNIK PENYIARAN RADIO",
+    "semester": null,
     "sks": 1,
     "unit": "Ilmu Komunikasi",
     "kode": "IK018",
@@ -15003,6 +15564,7 @@
   },
   {
     "nama": "TEKNIK PERALATAN KONSTRUKSI",
+    "semester": 7,
     "sks": 3,
     "unit": "Teknik Sipil",
     "kode": "TS4603",
@@ -15023,6 +15585,7 @@
   },
   {
     "nama": "TEKNIK ROBOT",
+    "semester": 6,
     "sks": 3,
     "unit": "Teknik Elektro",
     "kode": "TE4343",
@@ -15043,6 +15606,7 @@
   },
   {
     "nama": "TEKNIK SURVEI DAN PELAKSANAAN",
+    "semester": 6,
     "sks": 3,
     "unit": "Teknik Sipil",
     "kode": "TS4595",
@@ -15063,6 +15627,7 @@
   },
   {
     "nama": "TEKNIK TENAGA LISTRIK",
+    "semester": 4,
     "sks": 2,
     "unit": "Teknik Mesin",
     "kode": "TM4273",
@@ -15083,6 +15648,7 @@
   },
   {
     "nama": "TEKNIK WIRELESS",
+    "semester": 6,
     "sks": 2,
     "unit": "Teknik Elektro",
     "kode": "TE4551",
@@ -15103,6 +15669,7 @@
   },
   {
     "nama": "TEKNOLOGI BLOCKCHAIN",
+    "semester": 6,
     "sks": 3,
     "unit": "Internet of Things",
     "kode": "TE4695",
@@ -15123,6 +15690,7 @@
   },
   {
     "nama": "TEKNOLOGI PEMBELAJARAN BAHASA MANDARIN",
+    "semester": 6,
     "sks": 2,
     "unit": "Bahasa Mandarin",
     "kode": "ST4568",
@@ -15130,6 +15698,7 @@
   },
   {
     "nama": "TEKNOLOGI WEB",
+    "semester": 3,
     "sks": 3,
     "unit": "Informatika",
     "kode": "TF4343",
@@ -15150,6 +15719,7 @@
   },
   {
     "nama": "TEORI DAN FILSAFAT KOMUNIKASI",
+    "semester": null,
     "sks": 2,
     "unit": "Ilmu Komunikasi",
     "kode": "IK013",
@@ -15170,6 +15740,28 @@
   },
   {
     "nama": "TEORI PROBABILITAS",
+    "semester": 4,
+    "sks": 2,
+    "unit": "Teknik Elektro",
+    "kode": "TE4225",
+    "kelas": [
+      {
+        "kelas": "A",
+        "jadwal": [
+          {
+            "dayOfWeek": 1,
+            "startHour": 13,
+            "startMinute": 30,
+            "durasi": 120,
+            "ruang": "P.501/"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "nama": "TEORI PROBABILITAS",
+    "semester": 2,
     "sks": 4,
     "unit": "Teknik Industri",
     "kode": "TI4235",
@@ -15196,27 +15788,8 @@
     ]
   },
   {
-    "nama": "TEORI PROBABILITAS",
-    "sks": 2,
-    "unit": "Teknik Elektro",
-    "kode": "TE4225",
-    "kelas": [
-      {
-        "kelas": "A",
-        "jadwal": [
-          {
-            "dayOfWeek": 1,
-            "startHour": 13,
-            "startMinute": 30,
-            "durasi": 120,
-            "ruang": "P.501/"
-          }
-        ]
-      }
-    ]
-  },
-  {
     "nama": "TERAPAN CREATIVEPRENEURSHIP",
+    "semester": 6,
     "sks": 4,
     "unit": "Desain Interior",
     "kode": "DI4554",
@@ -15244,6 +15817,7 @@
   },
   {
     "nama": "TEXTILE SURFACE DESIGN",
+    "semester": 2,
     "sks": 3,
     "unit": "Textile and Fashion Design",
     "kode": "DF4309",
@@ -15271,6 +15845,7 @@
   },
   {
     "nama": "THE ART OF CREATIVITY AND INNOVATION IN MUSIC",
+    "semester": 3,
     "sks": 3,
     "unit": "D.M.U",
     "kode": "DU4213",
@@ -15291,6 +15866,7 @@
   },
   {
     "nama": "TREN INDUSTRI RITEL",
+    "semester": 2,
     "sks": 3,
     "unit": "Retail Business Management",
     "kode": "ER4202",
@@ -15311,6 +15887,7 @@
   },
   {
     "nama": "TREN KULINER DAN GASTRONOMI",
+    "semester": 6,
     "sks": 3,
     "unit": "Hotel Management",
     "kode": "EP4544",
@@ -15331,6 +15908,7 @@
   },
   {
     "nama": "UI/UX DESIGN",
+    "semester": 4,
     "sks": 3,
     "unit": "International Program in Digital Media",
     "kode": "DM4383",
@@ -15351,6 +15929,7 @@
   },
   {
     "nama": "URBAN COMMUNITY OUTREACH PROGRAM (COP)",
+    "semester": 4,
     "sks": 3,
     "unit": "D.M.U",
     "kode": "DU4208",
@@ -15371,6 +15950,7 @@
   },
   {
     "nama": "VEHICLE DYNAMICS",
+    "semester": 8,
     "sks": 3,
     "unit": "Automotive",
     "kode": "TM4568",
@@ -15391,6 +15971,7 @@
   },
   {
     "nama": "VIDEO JOURNALISM",
+    "semester": null,
     "sks": 2,
     "unit": "Ilmu Komunikasi",
     "kode": "IK005",
@@ -15418,6 +15999,7 @@
   },
   {
     "nama": "VIDEO PRODUCTION",
+    "semester": 4,
     "sks": 3,
     "unit": "International Program in Digital Media",
     "kode": "DM4377",
@@ -15438,26 +16020,7 @@
   },
   {
     "nama": "VISUAL STUDIES",
-    "sks": 3,
-    "unit": "International Program in Digital Media",
-    "kode": "DM4446",
-    "kelas": [
-      {
-        "kelas": "A",
-        "jadwal": [
-          {
-            "dayOfWeek": 4,
-            "startHour": 8,
-            "startMinute": 30,
-            "durasi": 180,
-            "ruang": "Q.08.03C/"
-          }
-        ]
-      }
-    ]
-  },
-  {
-    "nama": "VISUAL STUDIES",
+    "semester": 4,
     "sks": 3,
     "unit": "Desain Komunikasi Visual",
     "kode": "DV4687",
@@ -15501,7 +16064,29 @@
     ]
   },
   {
+    "nama": "VISUAL STUDIES",
+    "semester": 2,
+    "sks": 3,
+    "unit": "International Program in Digital Media",
+    "kode": "DM4446",
+    "kelas": [
+      {
+        "kelas": "A",
+        "jadwal": [
+          {
+            "dayOfWeek": 4,
+            "startHour": 8,
+            "startMinute": 30,
+            "durasi": 180,
+            "ruang": "Q.08.03C/"
+          }
+        ]
+      }
+    ]
+  },
+  {
     "nama": "WAREHOUSE",
+    "semester": 7,
     "sks": 3,
     "unit": "Teknik Industri",
     "kode": "TI4363",
@@ -15522,6 +16107,7 @@
   },
   {
     "nama": "WEB DESIGN",
+    "semester": 7,
     "sks": 4,
     "unit": "Desain Komunikasi Visual",
     "kode": "DV4710",
@@ -15529,6 +16115,7 @@
   },
   {
     "nama": "WEB FRAMEWORKS AND DEPLOYMENT",
+    "semester": 4,
     "sks": 3,
     "unit": "Informatika",
     "kode": "TF4579",
@@ -15585,6 +16172,7 @@
   },
   {
     "nama": "WEB PROGRAMMING",
+    "semester": 8,
     "sks": 2,
     "unit": "Teknik Elektro",
     "kode": "TE4563",
@@ -15605,6 +16193,7 @@
   },
   {
     "nama": "WESTERN CUISINE",
+    "semester": 4,
     "sks": 3,
     "unit": "Culinary Business Management",
     "kode": "EH4205",
@@ -15661,6 +16250,7 @@
   },
   {
     "nama": "WHEN GOD MEETS DARWIN",
+    "semester": 3,
     "sks": 3,
     "unit": "D.M.U",
     "kode": "DU4201",
@@ -15681,6 +16271,7 @@
   },
   {
     "nama": "WORK SYSTEM ENGINEERING",
+    "semester": 3,
     "sks": 2,
     "unit": "International Business Engineering",
     "kode": "BE4164",
@@ -15701,6 +16292,7 @@
   },
   {
     "nama": "WRITING 2 : EXPOSITORY ESSAY",
+    "semester": 2,
     "sks": 3,
     "unit": "English for Business",
     "kode": "SI4804",
@@ -15708,6 +16300,7 @@
   },
   {
     "nama": "WRITING CHILDREN`S LITERATURE",
+    "semester": 4,
     "sks": 3,
     "unit": "English for Creative Industry",
     "kode": "SI4642",
@@ -15728,6 +16321,7 @@
   },
   {
     "nama": "WRITING VISUAL STORY",
+    "semester": 6,
     "sks": 3,
     "unit": "English for Creative Industry",
     "kode": "SI4640",
