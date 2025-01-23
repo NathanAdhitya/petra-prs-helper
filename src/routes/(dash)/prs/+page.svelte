@@ -236,7 +236,7 @@
 			</Tooltip.Trigger>
 			<Tooltip.Content side="left" class="max-w-sm">
 				Alat ini tidak terhubung dengan sistem PRS. Alat ini adalah alat bantuan terpisah dari
-				sistem Petra. Gunakanlah dengan bijak. Pembuat alat ini tidak bertanggungjawab atas segala
+				sistem Petra. Gunakanlah dengan bijak. Pembuat alat ini tidak bertanggung jawab atas segala
 				akibat dari penggunaan alat ini.
 			</Tooltip.Content>
 		</Tooltip.Root>

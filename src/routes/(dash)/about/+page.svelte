@@ -14,7 +14,7 @@
 			<span class="text-lg font-semibold">About the Project</span>
 		</Card.Header>
 		<Card.Content class="flex flex-col gap-4">
-			<div class="flex flex-col gap-4 rounded-full bg-slate-50">
+			<div class="flex flex-col gap-4">
 				This project was made as a part of the Human Computer Interaction (IMK) course in PCU. Due
 				to the need of an easy-to-use method to plan for courses to take, this project has then been
 				further developed into a separate website.
