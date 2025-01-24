@@ -99,63 +99,6 @@
     "nama": "ACCOUNTING INFORMATION SYSTEM",
     "semester": 2,
     "sks": 3,
-    "unit": "Akuntansi",
-    "kode": "EA4101",
-    "kelas": [
-      {
-        "kelas": "B1",
-        "jadwal": [
-          {
-            "dayOfWeek": 3,
-            "startHour": 16,
-            "startMinute": 0,
-            "durasi": 180,
-            "ruang": "T.317/"
-          }
-        ]
-      },
-      {
-        "kelas": "A1",
-        "jadwal": [
-          {
-            "dayOfWeek": 3,
-            "startHour": 16,
-            "startMinute": 30,
-            "durasi": 180,
-            "ruang": "T.324/"
-          }
-        ]
-      },
-      {
-        "kelas": "A2",
-        "jadwal": [
-          {
-            "dayOfWeek": 3,
-            "startHour": 16,
-            "startMinute": 30,
-            "durasi": 180,
-            "ruang": "T.325/"
-          }
-        ]
-      },
-      {
-        "kelas": "C1",
-        "jadwal": [
-          {
-            "dayOfWeek": 3,
-            "startHour": 16,
-            "startMinute": 30,
-            "durasi": 180,
-            "ruang": "T.318/"
-          }
-        ]
-      }
-    ]
-  },
-  {
-    "nama": "ACCOUNTING INFORMATION SYSTEM",
-    "semester": 2,
-    "sks": 3,
     "unit": "International Business Accounting",
     "kode": "IA4126",
     "kelas": [
@@ -168,6 +111,27 @@
             "startMinute": 30,
             "durasi": 180,
             "ruang": "T.418/IBAc/"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "nama": "ACCOUNTING INFORMATION SYSTEM",
+    "semester": 2,
+    "sks": 3,
+    "unit": "Akuntansi",
+    "kode": "EA4101",
+    "kelas": [
+      {
+        "kelas": "A1",
+        "jadwal": [
+          {
+            "dayOfWeek": 3,
+            "startHour": 16,
+            "startMinute": 0,
+            "durasi": 180,
+            "ruang": "PBS.5/"
           }
         ]
       }
@@ -479,7 +443,7 @@
   },
   {
     "nama": "AKUNTANSI KEUANGAN LANJUTAN",
-    "semester": 3,
+    "semester": 5,
     "sks": 3,
     "unit": "Akuntansi",
     "kode": "EA4403",
@@ -516,7 +480,7 @@
             "startHour": 15,
             "startMinute": 30,
             "durasi": 240,
-            "ruang": "T.324/"
+            "ruang": "PBS.4/"
           }
         ]
       }
@@ -582,7 +546,7 @@
             "startHour": 13,
             "startMinute": 0,
             "durasi": 180,
-            "ruang": "A.402/"
+            "ruang": "PBS.4/"
           }
         ]
       }
@@ -651,18 +615,6 @@
             "ruang": "T.326/"
           }
         ]
-      },
-      {
-        "kelas": "A2",
-        "jadwal": [
-          {
-            "dayOfWeek": 3,
-            "startHour": 10,
-            "startMinute": 30,
-            "durasi": 180,
-            "ruang": "T.429/Lab/"
-          }
-        ]
       }
     ]
   },
@@ -717,18 +669,6 @@
             "ruang": "T.322/"
           }
         ]
-      },
-      {
-        "kelas": "A2",
-        "jadwal": [
-          {
-            "dayOfWeek": 3,
-            "startHour": 7,
-            "startMinute": 30,
-            "durasi": 180,
-            "ruang": "T.326/"
-          }
-        ]
       }
     ]
   },
@@ -748,18 +688,6 @@
             "startMinute": 30,
             "durasi": 180,
             "ruang": "T.314/"
-          }
-        ]
-      },
-      {
-        "kelas": "A2",
-        "jadwal": [
-          {
-            "dayOfWeek": 2,
-            "startHour": 16,
-            "startMinute": 30,
-            "durasi": 180,
-            "ruang": "T.325/"
           }
         ]
       }
@@ -1036,27 +964,6 @@
     "nama": "APOLOGETIKA ANAK TRANSFORMATIF",
     "semester": 4,
     "sks": 4,
-    "unit": "Pendidikan Guru - Sekolah Dasar",
-    "kode": "GF4122",
-    "kelas": [
-      {
-        "kelas": "B",
-        "jadwal": [
-          {
-            "dayOfWeek": 4,
-            "startHour": 8,
-            "startMinute": 30,
-            "durasi": 240,
-            "ruang": "Q.04.08b/"
-          }
-        ]
-      }
-    ]
-  },
-  {
-    "nama": "APOLOGETIKA ANAK TRANSFORMATIF",
-    "semester": 4,
-    "sks": 4,
     "unit": "Keguruan dan Ilmu Pendidikan",
     "kode": "GF4122",
     "kelas": [
@@ -1069,6 +976,27 @@
             "startMinute": 30,
             "durasi": 240,
             "ruang": "Q.04.06b/"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "nama": "APOLOGETIKA ANAK TRANSFORMATIF",
+    "semester": 4,
+    "sks": 4,
+    "unit": "Pendidikan Guru - Sekolah Dasar",
+    "kode": "GF4122",
+    "kelas": [
+      {
+        "kelas": "B",
+        "jadwal": [
+          {
+            "dayOfWeek": 4,
+            "startHour": 8,
+            "startMinute": 30,
+            "durasi": 240,
+            "ruang": "Q.04.08b/"
           }
         ]
       }
@@ -1098,7 +1026,7 @@
   {
     "nama": "APPLIED COMMUNICATION RESEARCH",
     "semester": null,
-    "sks": 1,
+    "sks": 2,
     "unit": "Ilmu Komunikasi",
     "kode": "IK012",
     "kelas": []
@@ -1959,18 +1887,6 @@
             "ruang": "Lab Bakeri/"
           }
         ]
-      },
-      {
-        "kelas": "E",
-        "jadwal": [
-          {
-            "dayOfWeek": 6,
-            "startHour": 8,
-            "startMinute": 30,
-            "durasi": 300,
-            "ruang": "Lab Bakeri/"
-          }
-        ]
       }
     ]
   },
@@ -2470,27 +2386,6 @@
   },
   {
     "nama": "BUSINESS ANALYTICS",
-    "semester": 5,
-    "sks": 3,
-    "unit": "International Business Engineering",
-    "kode": "BE4131",
-    "kelas": [
-      {
-        "kelas": "A",
-        "jadwal": [
-          {
-            "dayOfWeek": 6,
-            "startHour": 7,
-            "startMinute": 30,
-            "durasi": 180,
-            "ruang": "P.623/IBE/"
-          }
-        ]
-      }
-    ]
-  },
-  {
-    "nama": "BUSINESS ANALYTICS",
     "semester": 4,
     "sks": 3,
     "unit": "International Business Management",
@@ -2505,6 +2400,27 @@
             "startMinute": 30,
             "durasi": 180,
             "ruang": "T.505/"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "nama": "BUSINESS ANALYTICS",
+    "semester": 5,
+    "sks": 3,
+    "unit": "International Business Engineering",
+    "kode": "BE4131",
+    "kelas": [
+      {
+        "kelas": "A",
+        "jadwal": [
+          {
+            "dayOfWeek": 6,
+            "startHour": 7,
+            "startMinute": 30,
+            "durasi": 180,
+            "ruang": "P.623/IBE/"
           }
         ]
       }
@@ -3092,27 +3008,7 @@
     "sks": 4,
     "unit": "Creative Media Communication",
     "kode": "IK4507",
-    "kelas": [
-      {
-        "kelas": "A",
-        "jadwal": [
-          {
-            "dayOfWeek": 4,
-            "startHour": 12,
-            "startMinute": 0,
-            "durasi": 100,
-            "ruang": "Q.04.09/"
-          },
-          {
-            "dayOfWeek": 4,
-            "startHour": 13,
-            "startMinute": 40,
-            "durasi": 110,
-            "ruang": "Q.04.12/"
-          }
-        ]
-      }
-    ]
+    "kelas": []
   },
   {
     "nama": "CREATIVE NONFICTION",
@@ -3200,6 +3096,14 @@
         ]
       }
     ]
+  },
+  {
+    "nama": "CREATIVEPRENEURSHIP",
+    "semester": 7,
+    "sks": 4,
+    "unit": "Desain Komunikasi Visual",
+    "kode": "DV4706",
+    "kelas": []
   },
   {
     "nama": "CREATIVEPRENEURSHIP",
@@ -3305,14 +3209,6 @@
         ]
       }
     ]
-  },
-  {
-    "nama": "CREATIVEPRENEURSHIP",
-    "semester": 7,
-    "sks": 4,
-    "unit": "Desain Komunikasi Visual",
-    "kode": "DV4706",
-    "kelas": []
   },
   {
     "nama": "CROSS CULTURAL COMMUNICATION",
@@ -3471,27 +3367,6 @@
   },
   {
     "nama": "DATA MINING",
-    "semester": 4,
-    "sks": 2,
-    "unit": "International Business Engineering",
-    "kode": "BE4124",
-    "kelas": [
-      {
-        "kelas": "A",
-        "jadwal": [
-          {
-            "dayOfWeek": 4,
-            "startHour": 13,
-            "startMinute": 30,
-            "durasi": 120,
-            "ruang": "P.624/IBE/"
-          }
-        ]
-      }
-    ]
-  },
-  {
-    "nama": "DATA MINING",
     "semester": 3,
     "sks": 3,
     "unit": "Data Science and Analytics",
@@ -3506,6 +3381,27 @@
             "startMinute": 30,
             "durasi": 180,
             "ruang": "P.202/"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "nama": "DATA MINING",
+    "semester": 4,
+    "sks": 2,
+    "unit": "International Business Engineering",
+    "kode": "BE4124",
+    "kelas": [
+      {
+        "kelas": "A",
+        "jadwal": [
+          {
+            "dayOfWeek": 4,
+            "startHour": 13,
+            "startMinute": 30,
+            "durasi": 120,
+            "ruang": "P.624/IBE/"
           }
         ]
       }
@@ -3946,6 +3842,39 @@
     "nama": "DIGITAL LEADERSHIP",
     "semester": 2,
     "sks": 2,
+    "unit": "International Business Management",
+    "kode": "DU4198",
+    "kelas": [
+      {
+        "kelas": "ZB",
+        "jadwal": [
+          {
+            "dayOfWeek": 2,
+            "startHour": 13,
+            "startMinute": 0,
+            "durasi": 120,
+            "ruang": "T.505/"
+          }
+        ]
+      },
+      {
+        "kelas": "ZA",
+        "jadwal": [
+          {
+            "dayOfWeek": 3,
+            "startHour": 13,
+            "startMinute": 0,
+            "durasi": 120,
+            "ruang": "T.505/"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "nama": "DIGITAL LEADERSHIP",
+    "semester": 2,
+    "sks": 2,
     "unit": "D.M.U",
     "kode": "DU4198",
     "kelas": [
@@ -4054,39 +3983,6 @@
             "startMinute": 30,
             "durasi": 120,
             "ruang": "E.01.06/"
-          }
-        ]
-      }
-    ]
-  },
-  {
-    "nama": "DIGITAL LEADERSHIP",
-    "semester": 2,
-    "sks": 2,
-    "unit": "International Business Management",
-    "kode": "DU4198",
-    "kelas": [
-      {
-        "kelas": "ZB",
-        "jadwal": [
-          {
-            "dayOfWeek": 2,
-            "startHour": 13,
-            "startMinute": 0,
-            "durasi": 120,
-            "ruang": "T.505/"
-          }
-        ]
-      },
-      {
-        "kelas": "ZA",
-        "jadwal": [
-          {
-            "dayOfWeek": 3,
-            "startHour": 13,
-            "startMinute": 0,
-            "durasi": 120,
-            "ruang": "T.505/"
           }
         ]
       }
@@ -4702,6 +4598,27 @@
     "nama": "ETIKA PROFESI",
     "semester": 4,
     "sks": 2,
+    "unit": "International Business Management",
+    "kode": "DU4163",
+    "kelas": [
+      {
+        "kelas": "ZA",
+        "jadwal": [
+          {
+            "dayOfWeek": 1,
+            "startHour": 13,
+            "startMinute": 0,
+            "durasi": 120,
+            "ruang": "T.506/"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "nama": "ETIKA PROFESI",
+    "semester": 4,
+    "sks": 2,
     "unit": "D.M.U",
     "kode": "DU4163",
     "kelas": [
@@ -5038,27 +4955,6 @@
             "startMinute": 30,
             "durasi": 120,
             "ruang": "C.304/"
-          }
-        ]
-      }
-    ]
-  },
-  {
-    "nama": "ETIKA PROFESI",
-    "semester": 4,
-    "sks": 2,
-    "unit": "International Business Management",
-    "kode": "DU4163",
-    "kelas": [
-      {
-        "kelas": "ZA",
-        "jadwal": [
-          {
-            "dayOfWeek": 1,
-            "startHour": 13,
-            "startMinute": 0,
-            "durasi": 120,
-            "ruang": "T.506/"
           }
         ]
       }
@@ -5911,27 +5807,6 @@
     "nama": "HUMAN CAPITAL MANAGEMENT",
     "semester": 2,
     "sks": 3,
-    "unit": "Manajemen",
-    "kode": "EC4228",
-    "kelas": [
-      {
-        "kelas": "A1",
-        "jadwal": [
-          {
-            "dayOfWeek": 4,
-            "startHour": 10,
-            "startMinute": 30,
-            "durasi": 180,
-            "ruang": "T.212/"
-          }
-        ]
-      }
-    ]
-  },
-  {
-    "nama": "HUMAN CAPITAL MANAGEMENT",
-    "semester": 2,
-    "sks": 3,
     "unit": "International Business Management",
     "kode": "EB4431",
     "kelas": [
@@ -5951,6 +5826,27 @@
             "startMinute": 0,
             "durasi": 180,
             "ruang": "T.506/"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "nama": "HUMAN CAPITAL MANAGEMENT",
+    "semester": 2,
+    "sks": 3,
+    "unit": "Manajemen",
+    "kode": "EC4228",
+    "kelas": [
+      {
+        "kelas": "A1",
+        "jadwal": [
+          {
+            "dayOfWeek": 4,
+            "startHour": 10,
+            "startMinute": 30,
+            "durasi": 180,
+            "ruang": "T.212/"
           }
         ]
       }
@@ -7117,30 +7013,6 @@
             "ruang": "T.317/"
           }
         ]
-      },
-      {
-        "kelas": "A2",
-        "jadwal": [
-          {
-            "dayOfWeek": 2,
-            "startHour": 7,
-            "startMinute": 30,
-            "durasi": 180,
-            "ruang": "T.318/"
-          }
-        ]
-      },
-      {
-        "kelas": "A3",
-        "jadwal": [
-          {
-            "dayOfWeek": 2,
-            "startHour": 7,
-            "startMinute": 30,
-            "durasi": 180,
-            "ruang": "T.321/"
-          }
-        ]
       }
     ]
   },
@@ -7159,7 +7031,7 @@
             "startHour": 12,
             "startMinute": 30,
             "durasi": 180,
-            "ruang": "T.213/"
+            "ruang": "PBS.6/"
           }
         ]
       }
@@ -7254,10 +7126,10 @@
   },
   {
     "nama": "KEJAHATAN DAN ETIKA DALAM BISNIS",
-    "semester": null,
+    "semester": 6,
     "sks": 2,
     "unit": "Business Accounting",
-    "kode": "BU029",
+    "kode": "EA4328",
     "kelas": [
       {
         "kelas": "A1",
@@ -7268,18 +7140,6 @@
             "startMinute": 30,
             "durasi": 120,
             "ruang": "T.324/"
-          }
-        ]
-      },
-      {
-        "kelas": "A2",
-        "jadwal": [
-          {
-            "dayOfWeek": 6,
-            "startHour": 8,
-            "startMinute": 30,
-            "durasi": 120,
-            "ruang": "T.325/"
           }
         ]
       }
@@ -7525,7 +7385,7 @@
     "semester": null,
     "sks": 2,
     "unit": "Bahasa Mandarin",
-    "kode": "BM029",
+    "kode": "BA029",
     "kelas": []
   },
   {
@@ -7677,27 +7537,6 @@
   },
   {
     "nama": "KEWARGANEGARAAN",
-    "semester": 3,
-    "sks": 2,
-    "unit": "D.M.U",
-    "kode": "DU4210",
-    "kelas": [
-      {
-        "kelas": "A1",
-        "jadwal": [
-          {
-            "dayOfWeek": 2,
-            "startHour": 10,
-            "startMinute": 30,
-            "durasi": 120,
-            "ruang": "E.01.06/"
-          }
-        ]
-      }
-    ]
-  },
-  {
-    "nama": "KEWARGANEGARAAN",
     "semester": 4,
     "sks": 2,
     "unit": "International Business Management",
@@ -7712,6 +7551,27 @@
             "startMinute": 30,
             "durasi": 120,
             "ruang": "T.505/"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "nama": "KEWARGANEGARAAN",
+    "semester": 3,
+    "sks": 2,
+    "unit": "D.M.U",
+    "kode": "DU4210",
+    "kelas": [
+      {
+        "kelas": "A1",
+        "jadwal": [
+          {
+            "dayOfWeek": 2,
+            "startHour": 10,
+            "startMinute": 30,
+            "durasi": 120,
+            "ruang": "E.01.06/"
           }
         ]
       }
@@ -8661,7 +8521,7 @@
   },
   {
     "nama": "MANAGEMENT INFORMATION SYSTEM",
-    "semester": 2,
+    "semester": 3,
     "sks": 3,
     "unit": "Global Entrepreneurship and Innovation",
     "kode": "EI4117",
@@ -9303,7 +9163,7 @@
             "startHour": 15,
             "startMinute": 30,
             "durasi": 180,
-            "ruang": "T.325/"
+            "ruang": "PBS.6/"
           }
         ]
       }
@@ -9515,6 +9375,14 @@
         ]
       }
     ]
+  },
+  {
+    "nama": "MANAJEMEN SUPPLY CHAIN HIJAU",
+    "semester": 4,
+    "sks": 3,
+    "unit": "International Trade and Finance",
+    "kode": "EA4119",
+    "kelas": []
   },
   {
     "nama": "MATEMATIKA 1",
@@ -10745,7 +10613,7 @@
   {
     "nama": "MUSIC DIRECTING",
     "semester": null,
-    "sks": 1,
+    "sks": 0,
     "unit": "Ilmu Komunikasi",
     "kode": "IK017",
     "kelas": [
@@ -10756,8 +10624,15 @@
             "dayOfWeek": 6,
             "startHour": 9,
             "startMinute": 0,
-            "durasi": 100,
+            "durasi": 50,
             "ruang": "Q.04.04/"
+          },
+          {
+            "dayOfWeek": 6,
+            "startHour": 9,
+            "startMinute": 50,
+            "durasi": 50,
+            "ruang": "LAB.RADIO/"
           }
         ]
       }
@@ -11113,10 +10988,10 @@
   },
   {
     "nama": "PAJAK ATAS BISNIS INTERNASIONAL",
-    "semester": null,
+    "semester": 5,
     "sks": 3,
     "unit": "Tax Accounting",
-    "kode": "TA019",
+    "kode": "EA4373",
     "kelas": [
       {
         "kelas": "A1",
@@ -11129,16 +11004,25 @@
             "ruang": "T.321/"
           }
         ]
-      },
+      }
+    ]
+  },
+  {
+    "nama": "PANCASILA",
+    "semester": 2,
+    "sks": 2,
+    "unit": "International Business Accounting",
+    "kode": "DU4101",
+    "kelas": [
       {
-        "kelas": "A2",
+        "kelas": "ZA",
         "jadwal": [
           {
             "dayOfWeek": 1,
-            "startHour": 13,
-            "startMinute": 30,
-            "durasi": 180,
-            "ruang": "T.324/"
+            "startHour": 15,
+            "startMinute": 0,
+            "durasi": 120,
+            "ruang": "T.430/IBAC/"
           }
         ]
       }
@@ -11442,27 +11326,6 @@
     ]
   },
   {
-    "nama": "PANCASILA",
-    "semester": 2,
-    "sks": 2,
-    "unit": "International Business Accounting",
-    "kode": "DU4101",
-    "kelas": [
-      {
-        "kelas": "ZA",
-        "jadwal": [
-          {
-            "dayOfWeek": 1,
-            "startHour": 15,
-            "startMinute": 0,
-            "durasi": 120,
-            "ruang": "T.430/IBAC/"
-          }
-        ]
-      }
-    ]
-  },
-  {
     "nama": "PARADIGMA DAN FONDASI PENDIDIKAN KRISTEN",
     "semester": 2,
     "sks": 4,
@@ -11488,7 +11351,7 @@
     "semester": null,
     "sks": 2,
     "unit": "Bahasa Mandarin",
-    "kode": "BM017",
+    "kode": "BA017",
     "kelas": [
       {
         "kelas": "A",
@@ -11614,7 +11477,7 @@
     "semester": null,
     "sks": 3,
     "unit": "Business Accounting",
-    "kode": "BU023",
+    "kode": "BU002",
     "kelas": [
       {
         "kelas": "A",
@@ -11646,18 +11509,6 @@
             "startMinute": 30,
             "durasi": 180,
             "ruang": "T.322/"
-          }
-        ]
-      },
-      {
-        "kelas": "A2",
-        "jadwal": [
-          {
-            "dayOfWeek": 5,
-            "startHour": 16,
-            "startMinute": 30,
-            "durasi": 180,
-            "ruang": "T.326/"
           }
         ]
       }
@@ -11712,18 +11563,6 @@
             "startMinute": 30,
             "durasi": 180,
             "ruang": "T.318/"
-          }
-        ]
-      },
-      {
-        "kelas": "A3",
-        "jadwal": [
-          {
-            "dayOfWeek": 2,
-            "startHour": 10,
-            "startMinute": 30,
-            "durasi": 180,
-            "ruang": "T.321/"
           }
         ]
       },
@@ -11969,7 +11808,7 @@
     "semester": null,
     "sks": 2,
     "unit": "Bahasa Mandarin",
-    "kode": "BM012",
+    "kode": "BA012",
     "kelas": [
       {
         "kelas": "A",
@@ -12072,7 +11911,7 @@
   {
     "nama": "PENGANTAR PENELITIAN KOMUNIKASI",
     "semester": null,
-    "sks": 1,
+    "sks": 0,
     "unit": "Ilmu Komunikasi",
     "kode": "IK014",
     "kelas": [
@@ -12083,7 +11922,14 @@
             "dayOfWeek": 4,
             "startHour": 11,
             "startMinute": 0,
-            "durasi": 100,
+            "durasi": 50,
+            "ruang": "Q.04.02b/"
+          },
+          {
+            "dayOfWeek": 4,
+            "startHour": 11,
+            "startMinute": 50,
+            "durasi": 50,
             "ruang": "Q.04.02b/"
           }
         ]
@@ -12656,27 +12502,6 @@
   },
   {
     "nama": "PERPAJAKAN",
-    "semester": 1,
-    "sks": 3,
-    "unit": "Akuntansi",
-    "kode": "EA4341",
-    "kelas": [
-      {
-        "kelas": "A1",
-        "jadwal": [
-          {
-            "dayOfWeek": 5,
-            "startHour": 7,
-            "startMinute": 0,
-            "durasi": 180,
-            "ruang": "T.313/"
-          }
-        ]
-      }
-    ]
-  },
-  {
-    "nama": "PERPAJAKAN",
     "semester": 3,
     "sks": 3,
     "unit": "School of Business and Management",
@@ -12703,6 +12528,27 @@
             "startMinute": 30,
             "durasi": 180,
             "ruang": "T.325/"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "nama": "PERPAJAKAN",
+    "semester": 1,
+    "sks": 3,
+    "unit": "Akuntansi",
+    "kode": "EA4341",
+    "kelas": [
+      {
+        "kelas": "A1",
+        "jadwal": [
+          {
+            "dayOfWeek": 5,
+            "startHour": 7,
+            "startMinute": 30,
+            "durasi": 180,
+            "ruang": "T.313/"
           }
         ]
       }
@@ -13190,6 +13036,14 @@
     ]
   },
   {
+    "nama": "PROSES MANUFAKTUR",
+    "semester": 2,
+    "sks": 4,
+    "unit": "Teknik Mesin",
+    "kode": "TM4267",
+    "kelas": []
+  },
+  {
     "nama": "PROSES MANUFAKTUR II",
     "semester": 4,
     "sks": 2,
@@ -13570,27 +13424,6 @@
   },
   {
     "nama": "RESEARCH METHODOLOGY",
-    "semester": 6,
-    "sks": 2,
-    "unit": "International Business Engineering",
-    "kode": "BE4184",
-    "kelas": [
-      {
-        "kelas": "A",
-        "jadwal": [
-          {
-            "dayOfWeek": 2,
-            "startHour": 12,
-            "startMinute": 0,
-            "durasi": 120,
-            "ruang": "P.624/IBE/"
-          }
-        ]
-      }
-    ]
-  },
-  {
-    "nama": "RESEARCH METHODOLOGY",
     "semester": 5,
     "sks": 3,
     "unit": "International Business Management",
@@ -13605,6 +13438,27 @@
             "startMinute": 30,
             "durasi": 180,
             "ruang": "T.506/"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "nama": "RESEARCH METHODOLOGY",
+    "semester": 6,
+    "sks": 2,
+    "unit": "International Business Engineering",
+    "kode": "BE4184",
+    "kelas": [
+      {
+        "kelas": "A",
+        "jadwal": [
+          {
+            "dayOfWeek": 2,
+            "startHour": 12,
+            "startMinute": 0,
+            "durasi": 120,
+            "ruang": "P.624/IBE/"
           }
         ]
       }
@@ -13922,27 +13776,6 @@
     "nama": "SEMINAR PROPOSAL",
     "semester": 6,
     "sks": 2,
-    "unit": "Pendidikan Guru - Sekolah Dasar",
-    "kode": "GD4342",
-    "kelas": [
-      {
-        "kelas": "A",
-        "jadwal": [
-          {
-            "dayOfWeek": 5,
-            "startHour": 8,
-            "startMinute": 30,
-            "durasi": 120,
-            "ruang": "Q.04.06a/"
-          }
-        ]
-      }
-    ]
-  },
-  {
-    "nama": "SEMINAR PROPOSAL",
-    "semester": 6,
-    "sks": 2,
     "unit": "Pendidikan Guru Pendidikan Anak Usia Dini",
     "kode": "GP4324",
     "kelas": [
@@ -13955,6 +13788,27 @@
             "startMinute": 30,
             "durasi": 120,
             "ruang": "Q.04.03b/"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "nama": "SEMINAR PROPOSAL",
+    "semester": 6,
+    "sks": 2,
+    "unit": "Pendidikan Guru - Sekolah Dasar",
+    "kode": "GD4342",
+    "kelas": [
+      {
+        "kelas": "A",
+        "jadwal": [
+          {
+            "dayOfWeek": 5,
+            "startHour": 8,
+            "startMinute": 30,
+            "durasi": 120,
+            "ruang": "Q.04.06a/"
           }
         ]
       }
@@ -14154,6 +14008,39 @@
             "startMinute": 30,
             "durasi": 180,
             "ruang": "P.611/"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "nama": "SISTEM INFORMASI AKUNTANSI",
+    "semester": 2,
+    "sks": 3,
+    "unit": "Akuntansi",
+    "kode": "EA4431",
+    "kelas": [
+      {
+        "kelas": "A",
+        "jadwal": [
+          {
+            "dayOfWeek": 3,
+            "startHour": 16,
+            "startMinute": 0,
+            "durasi": 180,
+            "ruang": "PBS.6/"
+          }
+        ]
+      },
+      {
+        "kelas": "A1",
+        "jadwal": [
+          {
+            "dayOfWeek": 3,
+            "startHour": 16,
+            "startMinute": 0,
+            "durasi": 180,
+            "ruang": "PBS.6/"
           }
         ]
       }
@@ -14610,27 +14497,7 @@
     "sks": 3,
     "unit": "Sustainable Mechanical Engineering and Design",
     "kode": "TM4683",
-    "kelas": [
-      {
-        "kelas": "A",
-        "jadwal": [
-          {
-            "dayOfWeek": 4,
-            "startHour": 9,
-            "startMinute": 30,
-            "durasi": 120,
-            "ruang": "P.626/"
-          },
-          {
-            "dayOfWeek": 4,
-            "startHour": 15,
-            "startMinute": 30,
-            "durasi": 60,
-            "ruang": "P.626/"
-          }
-        ]
-      }
-    ]
+    "kelas": []
   },
   {
     "nama": "SOCIOLINGUISTICS AND PRAGMATICS IN BUSINESS",
@@ -15351,7 +15218,7 @@
   },
   {
     "nama": "TATA KELOLA KORPORASI",
-    "semester": 6,
+    "semester": 5,
     "sks": 3,
     "unit": "Business Management",
     "kode": "EM4358",
@@ -15544,7 +15411,7 @@
   {
     "nama": "TEKNIK PENYIARAN RADIO",
     "semester": null,
-    "sks": 1,
+    "sks": 0,
     "unit": "Ilmu Komunikasi",
     "kode": "IK018",
     "kelas": [
@@ -15555,8 +15422,15 @@
             "dayOfWeek": 6,
             "startHour": 11,
             "startMinute": 30,
-            "durasi": 100,
+            "durasi": 50,
             "ruang": "Q.04.05/"
+          },
+          {
+            "dayOfWeek": 6,
+            "startHour": 12,
+            "startMinute": 20,
+            "durasi": 50,
+            "ruang": "LAB.RADIO/"
           }
         ]
       }

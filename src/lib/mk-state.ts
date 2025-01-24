@@ -1,5 +1,5 @@
 import { get, writable, type Writable } from 'svelte/store';
-import type { MataKuliah } from './mata-kuliah';
+import { jadwalKuliah, type MataKuliah } from './mata-kuliah';
 import { properCase } from './mk-utils';
 import { notEmpty } from './utils';
 import { sleep } from './internal/helpers/sleep';
@@ -16,6 +16,7 @@ export const chosenClasses: ChosenClassesStore = writable({});
 export const prsSubmitted = writable(false);
 export const chosenJurusanFilters = writable<string[]>(['Informatika', 'D.M.U']);
 export const semesterFilters = writable<Record<string, boolean>>();
+export const jadwalDiffs = writable<(false | null | MataKuliahWithColor)[]>([]);
 
 try {
 	chosenMatkul.set(JSON.parse(localStorage.getItem('chosenMatkul') || 'null') ?? []);
@@ -111,6 +112,96 @@ export class ChosenMatkulUtils {
 		}
 	}
 
+	static recalculateAvailableColors() {
+		const $chosenMatkul = get(chosenMatkul);
+		this.availableColors = new Set(this.matkulColorClasses);
+
+		$chosenMatkul.forEach((matkul) => {
+			this.availableColors.delete(matkul.colorClasses);
+		});
+	}
+
+	// This should yield as often as possible as it's a heavy operation
+	static async diffAgainstOriginal() {
+		const { default: deepEql } = await import('deep-eql');
+		const $chosenMatkul = get(chosenMatkul);
+		const $jadwalKuliah = get(jadwalKuliah);
+
+		/**
+		 * resulting diff contains an array of:
+		 * 1. false if jadwal kuliah does not contain matkul
+		 * 2. null if no difference
+		 * 3. new matkul object if difference exists
+		 */
+		const diff: (false | null | MataKuliahWithColor)[] = [];
+
+		// Find each chosenMatkul based on kode or nama.
+		for (const matkul of $chosenMatkul) {
+			const matchedMatkul = $jadwalKuliah.find(
+				(mk) => mk.kode === matkul.kode || mk.nama === matkul.nama
+			);
+
+			if (!matchedMatkul) {
+				diff.push(false);
+				continue;
+			}
+
+			// Create copy of matkul object without colorClasses
+			const matkulCopy: MataKuliah = { ...matkul };
+
+			// @ts-expect-error colorClasses is not in MataKuliah
+			delete (matkulCopy).colorClasses;
+
+			// Check deep equality of matkul object
+			const isEqual = deepEql(matkulCopy, matchedMatkul);
+			if (!isEqual) {
+				diff.push({...matchedMatkul, colorClasses: matkul.colorClasses});
+			} else {
+				diff.push(null);
+			}
+
+			await sleep(1);
+		}
+
+		console.log("Finished background migration check: ", diff)
+		jadwalDiffs.update(() => diff);
+	}
+
+	// Migrate to new schedule
+	static migrate() {
+		const diffs = get(jadwalDiffs);
+
+		diffs.forEach((diff, idx) => {
+			if (diff === false) {
+				// Do nothing
+			} else if (diff === null) {
+				// Do nothing
+			} else {
+				// Get the old kode and new kode
+				const oldKode = get(chosenMatkul)[idx].kode;
+				const newKode = diff.kode;
+
+				// Remove the old matkul and then readd it
+				chosenMatkul.update((matkul) => {
+					matkul.splice(idx, 1);
+					matkul.push(diff);
+					return matkul;
+				});
+
+				// Migrate the class selections key
+				chosenClasses.update((classes) => {
+					if (newKode === oldKode) return classes;
+					
+					classes[newKode] = classes[oldKode];
+					delete classes[oldKode];
+					return classes;
+				});
+			}
+		});
+
+		ChosenMatkulUtils.diffAgainstOriginal();
+	}
+
 	static add(matkul: MataKuliah) {
 		const $chosenMatkul = get(chosenMatkul);
 		if (
@@ -137,7 +228,7 @@ export class ChosenMatkulUtils {
 	/**
 	 * Remove a matkul
 	 */
-	static remove(matkul: MataKuliah | MataKuliahWithColor | string) {
+	static remove(matkul: MataKuliah | MataKuliahWithColor | string, updateDiff = false) {
 		chosenMatkul.update(($chosenMatkul) => {
 			const kode = typeof matkul === 'string' ? matkul : matkul.kode;
 			const removed = $chosenMatkul.find((m) => m.kode === kode);
@@ -147,6 +238,10 @@ export class ChosenMatkulUtils {
 
 			return $chosenMatkul.filter((m) => m.kode !== kode);
 		});
+
+		if (updateDiff) {
+			this.diffAgainstOriginal();
+		}
 
 		return true;
 	}

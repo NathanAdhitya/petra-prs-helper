@@ -24,12 +24,7 @@
 	import { Button } from '$lib/components/ui/button';
 	import * as Card from '$lib/components/ui/card';
 	import * as Popover from '$lib/components/ui/popover';
-	import {
-		Check,
-		ChevronDown,
-		Info,
-		ArrowUpNarrowWide
-	} from 'lucide-svelte';
+	import { Check, ChevronDown, Info, ArrowUpNarrowWide } from 'lucide-svelte';
 
 	import * as Command from '$lib/components/ui/command/index.js';
 	import { cn, focusTriggerNextTick, notEmpty } from '$lib/utils.js';
@@ -42,6 +37,7 @@
 		ChosenMatkulUtils,
 		chosenClasses,
 		chosenMatkul,
+		jadwalDiffs,
 		prsSubmitted,
 		type MataKuliahWithColor
 	} from '$lib/mk-state';
@@ -58,6 +54,8 @@
 	import { titleStore } from '$lib/stores';
 	import { toast } from 'svelte-sonner';
 	import * as Tooltip from '$lib/components/ui/tooltip';
+	import PrsExport from './prs-export.svelte';
+	import PrsMigrate from './prs-migrate.svelte';
 
 	onMount(() => ($titleStore = 'PRS'));
 
@@ -213,7 +211,7 @@
 	// $: console.log(matkulOptions.length);
 </script>
 
-<div class="flex items-center justify-between gap-8">
+<div class="flex min-w-96 items-center justify-between gap-8">
 	<h1 class="text-4xl font-bold">Penyusun Rencana Studi</h1>
 	<div class="flex flex-col items-end">
 		<Tooltip.Root openDelay={0}>
@@ -223,9 +221,9 @@
 				</div>
 			</Tooltip.Trigger>
 			<Tooltip.Content side="left" class="max-w-sm">
-				Sumber data adalah hasil scraping. Data mungkin tidak akurat / sudah ketinggalan. Kode MK
-				juga tidak tersedia pada sumber data. Jika menurut Anda data ini terlalu jauh dari realita,
-				silahkan buka isu di GitHub atau hubungi maintainer.
+				Sumber data adalah hasil scraping. Data mungkin tidak akurat / sudah ketinggalan. Jika
+				menurut Anda data ini terlalu jauh dari realita, silahkan buka isu di GitHub atau hubungi
+				maintainer.
 			</Tooltip.Content>
 		</Tooltip.Root>
 		<Tooltip.Root openDelay={0}>
@@ -269,7 +267,9 @@
 									</div>
 
 									<Command.List>
-										<Command.Empty>Mata kuliah tidak ditemukan.<br/>Pastikan filter sudah sesuai 😉</Command.Empty>
+										<Command.Empty
+											>Mata kuliah tidak ditemukan.<br />Pastikan filter sudah sesuai 😉</Command.Empty
+										>
 										<Command.Group class="!overflow-auto">
 											{#each filteredMakul as matkul (matkul.kode)}
 												<Command.Item
@@ -339,6 +339,7 @@
 										}}
 									>
 										<MatkulCard
+											isMissing={$jadwalDiffs[i] === false}
 											{pilihanIndexes}
 											{matkul}
 											onOpenChanged={onOpenChanged(matkul.kode)}
@@ -355,50 +356,54 @@
 		{/if}
 		<Resizable.Pane minSize={60} defaultSize={70}>
 			<div class="flex h-full w-full flex-1 flex-col gap-4">
-				<div class="flex items-center gap-4 rounded-lg border-2 bg-slate-50 p-2 px-4">
-					<div class="text-sm">
+				<div class="flex flex-wrap items-center gap-4 rounded-lg border-2 bg-slate-50 p-2 px-4">
+					<div class="flex-1 text-sm">
 						<span class="font-medium">Total SKS:</span>
 						{$chosenMatkul.reduce((acc, matkul) => acc + matkul.sks, 0)} / {ChosenMatkulUtils.sksLimit}
 					</div>
-					<Dialog.Root>
-						<Dialog.Trigger asChild let:builder>
-							<Button class="ml-auto" variant="secondary" builders={[builder]}>Reset</Button>
-						</Dialog.Trigger>
-						<Dialog.Content>
-							<Dialog.Header>
-								<Dialog.Title>Reset</Dialog.Title>
-							</Dialog.Header>
-							<Dialog.Description>
-								Isi PRS akan dihapus. Apakah Anda yakin? Aksi ini tidak dapat dibatalkan.
-							</Dialog.Description>
-							<Dialog.Footer>
-								<Dialog.Close asChild let:builder>
-									<Button
-										variant="secondary"
-										builders={[builder]}
-										on:click={() => {
-											validationDialogOpen = false;
-										}}
-									>
-										Batal
-									</Button>
-								</Dialog.Close>
-								<Dialog.Close asChild let:builder>
-									<Button
-										builders={[builder]}
-										on:click={() => {
-											ChosenMatkulUtils.reset();
-											ChosenClassesUtils.reset();
-											$prsSubmitted = false;
-										}}
-										variant="destructive"
-									>
-										Reset
-									</Button>
-								</Dialog.Close>
-							</Dialog.Footer>
-						</Dialog.Content>
-					</Dialog.Root>
+					<PrsMigrate />
+					<div class="flex flex-wrap justify-end gap-4">
+						<PrsExport />
+						<Dialog.Root>
+							<Dialog.Trigger asChild let:builder>
+								<Button variant="destructive" builders={[builder]}>Reset</Button>
+							</Dialog.Trigger>
+							<Dialog.Content>
+								<Dialog.Header>
+									<Dialog.Title>Reset</Dialog.Title>
+								</Dialog.Header>
+								<Dialog.Description>
+									Isi PRS akan dihapus. Apakah Anda yakin? Aksi ini tidak dapat dibatalkan.
+								</Dialog.Description>
+								<Dialog.Footer>
+									<Dialog.Close asChild let:builder>
+										<Button
+											variant="secondary"
+											builders={[builder]}
+											on:click={() => {
+												validationDialogOpen = false;
+											}}
+										>
+											Batal
+										</Button>
+									</Dialog.Close>
+									<Dialog.Close asChild let:builder>
+										<Button
+											builders={[builder]}
+											on:click={() => {
+												ChosenMatkulUtils.reset();
+												ChosenClassesUtils.reset();
+												$prsSubmitted = false;
+											}}
+											variant="destructive"
+										>
+											Reset
+										</Button>
+									</Dialog.Close>
+								</Dialog.Footer>
+							</Dialog.Content>
+						</Dialog.Root>
+					</div>
 					<!-- <Dialog.Root bind:open={validationDialogOpen}>
 						<Dialog.Trigger asChild let:builder>
 							<Button builders={[builder]}>Cek</Button>

@@ -1,7 +1,7 @@
 <script lang="ts">
 	import { Button } from '$lib/components/ui/button';
 	import * as Card from '$lib/components/ui/card';
-	import { ArrowUpNarrowWide, CircleMinus, Plus, Trash } from 'lucide-svelte';
+	import { ArrowUpNarrowWide, CircleAlert, CircleMinus, Plus, Trash } from 'lucide-svelte';
 
 	import { addEventListener, executeCallbacks } from '$lib/internal';
 	import {
@@ -22,6 +22,7 @@
 
 	export let matkul: MataKuliahWithColor;
 	export let pilihanIndexes: number[];
+	export let isMissing = false;
 	$: coloredClasses = matkul.colorClasses;
 
 	export let onOpenChanged: (open: boolean, planIdx: number) => void = () => {};
@@ -95,18 +96,31 @@
 
 <Card.Root class={clsx(coloredClasses, 'transition-all contain-content')}>
 	<Card.Header class="pb-2">
-		<div class="flex items-start justify-center gap-4 max-lg:px-4">
+		<div class="flex items-start justify-between gap-4 max-lg:px-4">
 			<Card.Title class="max-w-full text-wrap break-words">
 				{properCase(matkul.nama)} ({lazyShortenMatkulName(properCase(matkul.nama), true)})
 			</Card.Title>
-			<button
-				class="ml-auto size-5 shrink-0 text-slate-500 transition-colors hover:text-slate-700"
-				on:click={() => {
-					ChosenMatkulUtils.remove(matkul);
-				}}
-			>
-				<CircleMinus class="h-full w-full transition-colors" />
-			</button>
+			<div class="flex flex-col gap-1">
+				<button
+					class="ml-auto size-5 shrink-0 text-slate-500 transition-colors hover:text-slate-700"
+					on:click={() => {
+						ChosenMatkulUtils.remove(matkul, isMissing);
+					}}
+				>
+					<CircleMinus class="h-full w-full transition-colors" />
+				</button>
+
+				{#if isMissing}
+					<Tooltip.Root openDelay={0} disableHoverableContent>
+						<Tooltip.Trigger>
+							<CircleAlert class="h-full w-full text-red-500 transition-colors" />
+						</Tooltip.Trigger>
+						<Tooltip.Content>
+							Mata kuliah ini tidak dapat ditemukan pada data jadwal.
+						</Tooltip.Content>
+					</Tooltip.Root>
+				{/if}
+			</div>
 		</div>
 
 		<Card.Description>{matkul.kode} - {matkul.sks} SKS</Card.Description>

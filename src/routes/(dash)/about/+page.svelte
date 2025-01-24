@@ -23,7 +23,7 @@
 					Thank you to all of the people who contributed in the development of the project, notably:
 					<ul class="list-disc pl-8">
 						<li>Adi Wibowo (Lecturer of the IMK course)</li>
-						<li>Nathan Adhitya (Team member)</li>
+						<li>Nathan Adhitya (Maintainer, Team member)</li>
 						<li>Aubrey Ruizhi (Team member)</li>
 						<li>Defnie Wendie (Team member)</li>
 						<li>Kevin Alexander (Team member)</li>

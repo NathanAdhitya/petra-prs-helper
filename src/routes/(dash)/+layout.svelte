@@ -1,21 +1,6 @@
 <script lang="ts">
-	import type { SvelteComponent } from 'svelte';
 	import MdSidebar from './partials/md-sidebar.svelte';
 	import TopBar from './partials/top-bar.svelte';
-
-	import { Newspaper } from 'lucide-svelte';
-
-	interface NavigationMenu {
-		icon: typeof Newspaper;
-		label: string;
-		href: string;
-	}
-
-	interface NavigationSeparator {
-		aterSeparator?: string;
-	}
-
-	type NavigationComponent = NavigationMenu | NavigationSeparator | NavigationComponent[];
 </script>
 
 <div class="grid min-h-screen w-full 2xl:grid-cols-[280px_1fr]">

@@ -83,6 +83,15 @@
 						</Collapsible.Root>
 					{/if}
 				{/each}
+
+				<Separator class="my-2 h-[2px] rounded-sm bg-white/50" />
+				<div class="text-gray-300 text-xs px-4">
+					<!-- svelte-ignore missing-declaration -->
+					Last Updated: {new Date(BUILD_TS).toLocaleString('en-GB', {
+						timeZoneName: "short",
+						timeZone: 'Asia/Jakarta'
+					})}
+				</div>
 			</nav>
 		</ScrollArea>
 	</div>

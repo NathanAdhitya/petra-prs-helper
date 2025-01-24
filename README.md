@@ -1,7 +1,7 @@
 # petra-prs-helper
 
 > [!NOTE]  
-> Schedule data is scraped data, therefore the data may not be up to date. Kode MK is also unavailable due to the nature of the data source. Is the data innacurate/out of date? Open an issue or contact me directly!
+> Schedule data is scraped data, therefore the data may not be up to date. Is the data innacurate/out of date? Open an issue or contact me directly!
 
 A simple project attempting to redesign Petra Christian University's course registration system. This project is made for the purpose of fulfilling the requirements of the Human Computer Interaction course at Petra Christian University.
 

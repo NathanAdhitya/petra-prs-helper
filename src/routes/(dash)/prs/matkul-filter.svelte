@@ -14,7 +14,6 @@
 	import { chosenJurusanFilters, semesterFilters } from '$lib/mk-state';
 	import { cn } from '$lib/utils';
 	import { tick } from 'svelte';
-	import { Slider } from '$lib/components/ui/slider';
 
 	import { Checkbox } from '$lib/components/ui/checkbox';
 	import { Label } from '$lib/components/ui/label';

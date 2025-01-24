@@ -34,7 +34,7 @@
 </script>
 
 <header
-	class="flex h-16 items-center gap-4 border-b-4 border-b-[#a9a9a9] bg-slate-50 px-4 py-2 lg:h-[60px] lg:px-6"
+	class="flex h-16 items-center gap-4 border-b-4 border-b-[#a9a9a9] bg-slate-50 px-4 py-2 lg:h-[60px] lg:px-6 2xl:hidden"
 >
 	<Sheet.Root>
 		<Sheet.Trigger asChild let:builder>
@@ -112,11 +112,22 @@
 					<Home class="h-5 w-5" />
 					Dashboard
 				</a> -->
+					<div class="px-2 text-xs text-gray-300">
+						<!-- svelte-ignore missing-declaration -->
+						Last Updated: {new Date(BUILD_TS).toLocaleString('en-GB', {
+							timeZoneName: 'short',
+							timeZone: 'Asia/Jakarta'
+						})}
+					</div>
+					<div class="px-2 text-xs">
+						This app is optimized for desktops and tablets. Please view in a desktop or a tablet for a better
+						experience.
+					</div>
 				</nav>
 			</ScrollArea>
 		</Sheet.Content>
 	</Sheet.Root>
-	<div class="flex h-full 2xl:hidden align-middle">
+	<div class="flex h-full align-middle 2xl:hidden">
 		<a href="/" class="text-lg font-extrabold leading-10">prs.natha.my.id</a>
 	</div>
 	<div class="w-full flex-1">
@@ -132,7 +143,10 @@
 		</form> -->
 	</div>
 	<!-- svelte-ignore missing-declaration -->
-	<div>
-		Version: {BUILD_TS}
-	</div>
+	<!-- <div class="text-gray-500">
+		Last Updated: {new Date(BUILD_TS).toLocaleString('en-GB', {
+			timeZoneName: "short",
+			timeZone: 'Asia/Jakarta'
+		})}
+	</div> -->
 </header>

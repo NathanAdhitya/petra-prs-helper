@@ -35,6 +35,7 @@ export const navigationEntries = [
 	new NavLink('Penyusun PRS', '/prs'),
 	new NavLink('Edit Data', '/edit-data'),
 	new NavLink('About', '/about'),
-	new NavigationSeparator(),
-	new NavLink('GitHub', 'https://github.com/NathanAdhitya/petra-prs-helper', true)
+	new NavigationSeparator('Contribute to the project'),
+	new NavLink('GitHub', 'https://github.com/NathanAdhitya/petra-prs-helper', true),
+	new NavLink('Send a Feedback', 'https://forms.gle/ZWfgFMc3GWtRAb2VA', true)
 ] as const as NavigationEntry[];

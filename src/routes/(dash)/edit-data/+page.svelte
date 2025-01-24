@@ -9,7 +9,7 @@
 	import Checkbox from '$lib/components/ui/checkbox/checkbox.svelte';
 	import Button from '$lib/components/ui/button/button.svelte';
 	import { derived } from 'svelte/store';
-	import { chosenClasses, chosenMatkul } from '$lib/mk-state';
+	import { chosenClasses, chosenMatkul, ChosenMatkulUtils } from '$lib/mk-state';
 	import { toast } from 'svelte-sonner';
 	import { jadwalKuliah } from '$lib/mata-kuliah';
 
@@ -73,6 +73,8 @@
 	function applyPilihanMatkul() {
 		try {
 			$chosenMatkul = JSON.parse(dataPilihanMatkulJson);
+			ChosenMatkulUtils.recalculateAvailableColors();
+			
 			pilihanMatkulError = null;
 
 			toast.success('Berhasil menerapkan data pilihan matkul');
