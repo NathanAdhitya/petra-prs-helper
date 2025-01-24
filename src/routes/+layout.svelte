@@ -6,6 +6,7 @@
 	import { Toaster } from '$lib/components/ui/sonner';
 	import { ModeWatcher } from 'mode-watcher';
 	import { titleStore } from '$lib/stores';
+	import { onMount } from 'svelte';
 
 	const tricklingProgress = createTrickling({
 		showSpinner: false
@@ -18,6 +19,10 @@
 			tricklingProgress.done();
 		}
 	}
+
+	onMount(() => {
+		document.getElementById('static-load')?.remove();
+	});
 </script>
 
 <svelte:head>
