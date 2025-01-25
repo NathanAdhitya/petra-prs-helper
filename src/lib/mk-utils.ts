@@ -101,10 +101,15 @@ export function guessMatkulSks(durationMinutes: number[]) {
 }
 
 export function stringifyKelas(kelas: KelasMataKuliah) {
-	const jadwal = kelas.jadwal[0];
+	if (!kelas.jadwal || kelas.jadwal.length === 0) return `${kelas.kelas} (Jadwal tidak tersedia)`;
 
-	return `${kelas.kelas} (${dowMap[jadwal.dayOfWeek]}, ${timeToString(
-		jadwal.startHour,
-		jadwal.startMinute
-	)} - ${timeToString(jadwal.startHour, jadwal.startMinute + jadwal.durasi)})`;
+	const mappedJadwal = kelas.jadwal.map(
+		(jadwal) =>
+			`${dowMap[jadwal.dayOfWeek]}, ${timeToString(
+				jadwal.startHour,
+				jadwal.startMinute
+			)} - ${timeToString(jadwal.startHour, jadwal.startMinute + jadwal.durasi)}`
+	);
+
+	return `${kelas.kelas} (${mappedJadwal.join('; ')})`;
 }

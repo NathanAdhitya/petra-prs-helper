@@ -28,7 +28,7 @@
 
 	// $: forceShortenMatkulName = contentRect ? contentRect.width < 50 : false;
 	const forceShortenMatkulName = true;
-	$: showTime = contentRect ? contentRect.width > 70 : false;
+	$: isWide = contentRect ? contentRect.width > 70 : false;
 </script>
 
 <!-- svelte-ignore a11y-no-static-element-interactions -->
@@ -86,7 +86,7 @@
 		{lazyShortenMatkulName(properCase(schedule.nama), forceShortenMatkulName)}
 		<span class="text-xs"> ({schedule.kelas.join(', ')})</span>
 	</div>
-	{#if showTime}
+	{#if isWide}
 		<div class="text-xs leading-3 text-muted-foreground max-xl:hidden">
 			{timeToString(schedule.startHour, schedule.startMinute)} - {timeToString(
 				schedule.startHour,
@@ -152,6 +152,7 @@
 										}}
 										value={kelas}
 										data-priority-click-prevent-default={false}
+										class="flex-wrap"
 									>
 										{#if $chosenClasses[schedule.kode] && $chosenClasses[schedule.kode].includes(kelas) && $chosenClasses[schedule.kode][openMatkulPlanIdx ?? 0] !== kelas}
 											<Tooltip.Root openDelay={0}>
@@ -184,7 +185,24 @@
 										{/if}
 
 										{kelas}
-										<!-- <span class="ml-auto pl-2 text-muted-foreground">0/75</span> -->
+
+										{#if isWide}
+											{@const kelasObj = schedule.kelasObj[openMatkulPlanIdx ?? 0]}
+											{#if kelasObj}
+												{#if 'accepted' in kelasObj && 'capacity' in kelasObj}
+													<span class="ml-auto pl-2 text-muted-foreground">
+														{kelasObj.accepted}/{kelasObj.capacity}
+													</span>
+												{/if}
+
+												{#if 'keterangan' in kelasObj}
+													<div class="h-0 basis-full"></div>
+													<div class="pl-6 text-xs text-muted-foreground">
+														{kelasObj.keterangan}
+													</div>
+												{/if}
+											{/if}
+										{/if}
 									</Command.Item>
 								{/each}
 							</Command.Group>

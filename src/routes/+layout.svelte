@@ -1,4 +1,6 @@
 <script>
+	import '@fontsource-variable/open-sans/wdth.css';
+
 	import '../app.css';
 	import 'trickling/lib/style.css';
 	import { createTrickling } from 'trickling';

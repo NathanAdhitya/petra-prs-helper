@@ -176,7 +176,7 @@
 			{/each}
 		</tr>
 	</thead>
-	<tbody>
+	<tbody class="h-full">
 		{#each Array.from({ length: (endingTimeHour - startingTimeHour) * 2 }, (_, i) => i) as stepTime}
 			<tr>
 				<td class="h-5 w-0 bg-slate-100 px-4 py-0.5 pr-2 text-xs text-muted-foreground">

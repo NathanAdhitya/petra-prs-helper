@@ -8,6 +8,7 @@
 		lengthMinutes: number;
 		priority: number;
 		kelas: string[];
+		kelasObj: MataKuliah['kelas'];
 		currentlySelected: boolean;
 		planIdx: number[];
 	}
@@ -135,6 +136,7 @@
 		// If the schedule already exists, then turn kelas into a string array, and planIdx into a number array
 		if (existing) {
 			existing.kelas = [...existing.kelas, ...val.kelas];
+			existing.kelasObj = [...existing.kelasObj, ...val.kelasObj];
 			existing.planIdx = [...existing.planIdx, ...val.planIdx];
 			existing.currentlySelected ||= val.currentlySelected;
 			existing.priority = Math.max(existing.priority, val.priority);
@@ -155,19 +157,23 @@
 				return (
 					matkul.kelas
 						.map((kelas) =>
-							kelas.jadwal.map((jadwal) => ({
-								dayOfWeek: jadwal.dayOfWeek - 1,
-								startHour: jadwal.startHour,
-								startMinute: jadwal.startMinute,
-								lengthMinutes: jadwal.durasi,
-								...matkul,
-								kelas: [kelas.kelas],
-								priority: 1,
-								currentlySelected: openMatkulFocusedClass === kelas.kelas.toLowerCase(),
-								planIdx: $chosenClasses[matkul.kode]
-									?.map((v, i) => (v === kelas.kelas ? i : null))
-									.filter(notEmpty) ?? [-1]
-							}))
+							kelas.jadwal.map(
+								(jadwal) =>
+									({
+										dayOfWeek: jadwal.dayOfWeek - 1,
+										startHour: jadwal.startHour,
+										startMinute: jadwal.startMinute,
+										lengthMinutes: jadwal.durasi,
+										...matkul,
+										kelas: [kelas.kelas],
+										kelasObj: [kelas],
+										priority: 1,
+										currentlySelected: openMatkulFocusedClass === kelas.kelas.toLowerCase(),
+										planIdx: $chosenClasses[matkul.kode]
+											?.map((v, i) => (v === kelas.kelas ? i : null))
+											.filter(notEmpty) ?? [-1]
+									}) satisfies ComputedSchedule
+							)
 						)
 						.flat(1)
 						// Merge schedules that has the same: dayOfWeek, startHour, startMinute, lengthMinute
@@ -185,17 +191,21 @@
 
 						if (matchedKelas) {
 							return matchedKelas.jadwal
-								.map((jadwal) => ({
-									dayOfWeek: jadwal.dayOfWeek - 1,
-									startHour: jadwal.startHour,
-									startMinute: jadwal.startMinute,
-									lengthMinutes: jadwal.durasi,
-									priority: 0,
-									...matkul,
-									kelas: [matchedKelas.kelas],
-									currentlySelected: true,
-									planIdx: [idx]
-								}))
+								.map(
+									(jadwal) =>
+										({
+											dayOfWeek: jadwal.dayOfWeek - 1,
+											startHour: jadwal.startHour,
+											startMinute: jadwal.startMinute,
+											lengthMinutes: jadwal.durasi,
+											priority: 0,
+											...matkul,
+											kelas: [matchedKelas.kelas],
+											kelasObj: [matchedKelas],
+											currentlySelected: true,
+											planIdx: [idx]
+										}) satisfies ComputedSchedule
+								)
 								.flat(1);
 						}
 
@@ -519,29 +529,111 @@
 									/>
 								{/key}
 							</Popover.Trigger>
-							<Popover.Content side="right-start" class="w-80">
-								<div class="grid gap-4">
-									<div class="space-y-2">
-										<h4 class="font-medium leading-none">
-											{properCase(schedule.nama)} ({lazyShortenMatkulName(
-												properCase(schedule.nama),
-												true
-											)})
-										</h4>
-										<div class="text-sm text-muted-foreground">
-											{schedule.kode} - {schedule.sks} SKS
-										</div>
-										<div class="text-sm text-muted-foreground">
-											Terpilih pada prioritas
-											<div class="inline-flex text-muted-foreground">
-												<ArrowUpNarrowWide class="h-4 w-4 opacity-50" />
-												<p>
-													{schedule.planIdx
-														.map((v) => v + 1)
-														.sort()
-														.join(', ')}
-												</p>
+							<Popover.Content side="right-start" class="w-96 max-w-96">
+								<div class="flex-col gap-2">
+									<h4 class="font-medium leading-none">
+										{properCase(schedule.nama)} ({lazyShortenMatkulName(
+											properCase(schedule.nama),
+											true
+										)})
+									</h4>
+									<div class="mb-2 text-sm text-muted-foreground">
+										{schedule.kode} - {schedule.sks} SKS
+									</div>
+									<div class="text-sm text-muted-foreground">
+										<span class="font-semibold">Unit:</span>
+										{schedule.unit}
+									</div>
+									{#if schedule.kelasObj.length > 0}
+										{@const kelasObj = schedule.kelasObj[0]}
+										{#if 'keterangan' in kelasObj}
+											<div class="text-sm text-muted-foreground">
+												<span class="font-semibold">Keterangan:</span>
+												{kelasObj.keterangan}
 											</div>
+										{/if}
+
+										<div class="text-sm text-muted-foreground">
+											<span class="font-semibold">Diterima/kapasitas:</span>
+											{kelasObj.accepted}/{kelasObj.capacity}
+										</div>
+
+										{#if kelasObj.jadwalUts.length > 0}
+											<div class="text-sm text-muted-foreground">
+												<span class="font-semibold">UTS:</span>
+												{#if kelasObj.jadwalUts.length === 1}
+													{new Date(kelasObj.jadwalUts[0].date).toLocaleString('id-ID', {
+														weekday: 'long',
+														day: 'numeric',
+														month: 'long',
+														year: 'numeric',
+														hour: 'numeric',
+														minute: 'numeric',
+														timeZoneName: 'short'
+													})} ({kelasObj.jadwalUts[0].lengthMinutes} menit)
+												{:else}
+													<ul class="list-disc pl-6">
+														{#each kelasObj.jadwalUts as jadwal}
+															<li>
+																{new Date(jadwal.date).toLocaleString('id-ID', {
+																	weekday: 'long',
+																	day: 'numeric',
+																	month: 'long',
+																	year: 'numeric',
+																	hour: 'numeric',
+																	minute: 'numeric',
+																	timeZoneName: 'short'
+																})} ({jadwal.lengthMinutes} menit)
+															</li>
+														{/each}
+													</ul>
+												{/if}
+											</div>
+										{/if}
+
+										{#if kelasObj.jadwalUas.length > 0}
+											<div class="text-sm text-muted-foreground">
+												<span class="font-semibold">UAS:</span>
+												{#if kelasObj.jadwalUas.length === 1}
+													{new Date(kelasObj.jadwalUas[0].date).toLocaleString('id-ID', {
+														weekday: 'long',
+														day: 'numeric',
+														month: 'long',
+														year: 'numeric',
+														hour: 'numeric',
+														minute: 'numeric',
+														timeZoneName: 'short'
+													})} ({kelasObj.jadwalUas[0].lengthMinutes} menit)
+												{:else}
+													<ul class="list-disc pl-6">
+														{#each kelasObj.jadwalUas as jadwal}
+															<li>
+																{new Date(jadwal.date).toLocaleString('id-ID', {
+																	weekday: 'long',
+																	day: 'numeric',
+																	month: 'long',
+																	year: 'numeric',
+																	hour: 'numeric',
+																	minute: 'numeric',
+																	timeZoneName: 'short'
+																})} ({jadwal.lengthMinutes} menit)
+															</li>
+														{/each}
+													</ul>
+												{/if}
+											</div>
+										{/if}
+									{/if}
+									<div class="mt-2 flex items-center text-sm text-muted-foreground">
+										Terpilih pada prioritas
+										<div class="flex items-center pl-1 text-muted-foreground">
+											<ArrowUpNarrowWide class="h-4 w-4 opacity-50" />
+											<p>
+												{schedule.planIdx
+													.map((v) => v + 1)
+													.sort()
+													.join(', ')}
+											</p>
 										</div>
 									</div>
 								</div>

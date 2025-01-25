@@ -129,6 +129,7 @@
 							if (holdingShift) next();
 						}}
 						value={stringifyKelas(kelas)}
+						class="flex-wrap"
 					>
 						{#if $chosenClasses[matkul.kode] && $chosenClasses[matkul.kode].includes(kelas.kelas) && $chosenClasses[matkul.kode][planIdx] !== kelas.kelas}
 							<Tooltip.Root openDelay={0}>
@@ -160,8 +161,18 @@
 							/>
 						{/if}
 
-						{stringifyKelas(kelas)} 
-						<!-- <span class="ml-auto pl-2 text-muted-foreground">0/75</span> -->
+						{stringifyKelas(kelas)}
+
+						{#if 'accepted' in kelas && 'capacity' in kelas}
+							<span class="ml-auto pl-2 text-muted-foreground">
+								{kelas.accepted}/{kelas.capacity}
+							</span>
+						{/if}
+
+						{#if 'keterangan' in kelas}
+							<div class="basis-full h-0"></div>
+							<div class="pl-6 text-xs text-muted-foreground">{kelas.keterangan}</div>
+						{/if}
 					</Command.Item>
 				{/each}
 			</Command.Group>

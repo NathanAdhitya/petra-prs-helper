@@ -1,27 +1,39 @@
 export interface MataKuliah {
-	nama: string;
-	sks: number;
-	unit: string;
-	kode: string;
-	semester: number | null;
+    prsId: string;
+    nama: string;
+    semester: number | null;
+    sks: number;
+    unit: string;
+    kode: string;
 
-	kelas: KelasMataKuliah[];
+    kelas: KelasMataKuliah[];
 }
 
 export interface KelasMataKuliah {
-	kelas: string;
-	catatan?: string;
+    kelas: string;
+    keterangan?: string;
+    accepted?: number;
+    capacity?: number;
 
-	jadwal: JadwalMataKuliah[];
+    jadwal: JadwalMataKuliah[];
+    jadwalUts: JadwalUjianMataKuliah[];
+    jadwalUas: JadwalUjianMataKuliah[];
+}
+
+export interface JadwalUjianMataKuliah {
+    date: string;
+    lengthMinutes: number | null;
+
+    ruang: string;
 }
 
 export interface JadwalMataKuliah {
-	dayOfWeek: number;
-	startHour: number;
-	startMinute: number;
-	durasi: number;
+    dayOfWeek: number;
+    startHour: number;
+    startMinute: number;
+    durasi: number;
 
-	ruang: string;
+    ruang: string;
 }
 
 import { writable, type Writable } from 'svelte/store';
