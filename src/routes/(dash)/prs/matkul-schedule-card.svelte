@@ -93,6 +93,13 @@
 				schedule.startMinute + schedule.lengthMinutes
 			)}
 		</div>
+		{#if openMatkulSelectionKode === schedule.kode && schedule.kelas.length === 1}
+			{#if 'keterangan' in schedule.kelasObj[0]}
+				<div class="flex text-xs text-muted-foreground opacity-50">
+					{schedule.kelasObj[0].keterangan}
+				</div>
+			{/if}
+		{/if}
 	{/if}
 
 	<div

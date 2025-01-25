@@ -96,7 +96,7 @@
 
 <Card.Root class={clsx(coloredClasses, 'transition-all contain-content')}>
 	<Card.Header class="pb-2">
-		<div class="flex items-start justify-between gap-4 max-lg:px-4">
+		<div class="flex items-start justify-between gap-4">
 			<Card.Title class="max-w-full text-wrap break-words">
 				{properCase(matkul.nama)} ({lazyShortenMatkulName(properCase(matkul.nama), true)})
 			</Card.Title>

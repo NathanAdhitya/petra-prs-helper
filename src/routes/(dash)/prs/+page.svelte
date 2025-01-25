@@ -57,6 +57,7 @@
 	import * as Tooltip from '$lib/components/ui/tooltip';
 	import PrsExport from './prs-export.svelte';
 	import PrsMigrate from './prs-migrate.svelte';
+	import PrsPeriksa from './prs-periksa.svelte';
 
 	onMount(() => ($titleStore = 'PRS'));
 
@@ -253,7 +254,7 @@
 <div class="flex h-full w-full gap-4">
 	<Resizable.PaneGroup direction="horizontal" class="gap-2">
 		{#if !$prsSubmitted}
-			<Resizable.Pane minSize={20} defaultSize={20}>
+			<Resizable.Pane minSize={20} defaultSize={20} class="min-w-72">
 				<Card.Root class="flex h-full flex-col">
 					<Card.Header>
 						<Popover.Root bind:open let:ids>
@@ -413,99 +414,8 @@
 								</Dialog.Footer>
 							</Dialog.Content>
 						</Dialog.Root>
+						<!-- <PrsPeriksa /> -->
 					</div>
-					<!-- <Dialog.Root bind:open={validationDialogOpen}>
-						<Dialog.Trigger asChild let:builder>
-							<Button builders={[builder]}>Cek</Button>
-						</Dialog.Trigger>
-						{#key $chosenClasses}
-							{#key $chosenMatkul}
-								{#await ChosenClassesUtils.validate()}
-									<Dialog.Content>
-										<Dialog.Header>
-											<Dialog.Title>Cek PRS</Dialog.Title>
-										</Dialog.Header>
-										<Dialog.Description>
-											<div class="flex items-center gap-2">
-												<LoaderCircle class="inline h-4 w-4 animate-spin text-blue-800" />
-												<p class="text-blue-800">Memastikan PRS yang akan dikirim valid...</p>
-											</div>
-										</Dialog.Description>
-										<Dialog.Footer>
-											<Dialog.Close asChild let:builder>
-												<Button variant="secondary" builders={[builder]}>Batal</Button>
-											</Dialog.Close>
-										</Dialog.Footer>
-									</Dialog.Content>
-								{:then messages}
-									{@const fatalCount = messages.filter((v) => v.type === 'fatal').length}
-									<Dialog.Content>
-										<Dialog.Header>
-											<Dialog.Title>Kirim untuk validasi</Dialog.Title>
-										</Dialog.Header>
-										<Dialog.Description>
-											<div class="mb-2">
-												{#if messages.length === 0}
-													<p class="flex items-center gap-2 text-green-700">
-														<CircleCheck class="h-4 w-4" /> PRS tidak memiliki masalah.
-													</p>
-												{:else}
-													<p class="font-medium">
-														Ditemukan beberapa masalah dalam pengecekan otomatis:
-													</p>
-													<ul class="list-disc">
-														{#each messages as { type, message }}
-															<li class="ml-6">
-																{#if type === 'fatal'}
-																	<CircleX class="inline-block h-4 w-4 text-red-800" />
-																{:else if type == 'warning'}
-																	<TriangleAlert class="inline-block h-4 w-4 text-yellow-800" />
-																{:else}
-																	<Info class="inline-block h-4 w-4" />
-																{/if}
-
-																{message}
-															</li>
-														{/each}
-													</ul>
-												{/if}
-											</div>
-
-											{#if fatalCount === 0}
-												<p>
-													PRS tidak dapat diubah setelah dikirim. Pastikan Anda telah memilih kelas
-													yang benar. Hubungi dosen wali jika terdapat kesalahan.
-												</p>
-											{:else}
-												<p>
-													PRS butuh perbaikan sebelum dapat dikirim. Perbaiki masalah fatal (<CircleX
-														class="inline-block h-4 w-4 text-red-800"
-													/>) terlebih dahulu sebelum mencoba lagi.
-												</p>
-											{/if}
-										</Dialog.Description>
-										<Dialog.Footer>
-											<Dialog.Close asChild let:builder>
-												<Button variant="secondary" builders={[builder]}>Batal</Button>
-											</Dialog.Close>
-											{#if fatalCount === 0}
-												<Dialog.Close asChild let:builder>
-													<Button
-														builders={[builder]}
-														on:click={() => {
-															$prsSubmitted = true;
-														}}
-													>
-														Kirim
-													</Button>
-												</Dialog.Close>
-											{/if}
-										</Dialog.Footer>
-									</Dialog.Content>
-								{/await}
-							{/key}
-						{/key}
-					</Dialog.Root> -->
 				</div>
 				<div class="h-full w-full overflow-auto rounded-lg border-2">
 					<Schedule
@@ -543,6 +453,10 @@
 									<div class="text-sm text-muted-foreground">
 										<span class="font-semibold">Unit:</span>
 										{schedule.unit}
+									</div>
+									<div class="text-sm text-muted-foreground">
+										<span class="font-semibold">Semester:</span>
+										{schedule.semester ?? '-'}
 									</div>
 									{#if schedule.kelasObj.length > 0}
 										{@const kelasObj = schedule.kelasObj[0]}
@@ -628,7 +542,7 @@
 										Terpilih pada prioritas
 										<div class="flex items-center pl-1 text-muted-foreground">
 											<ArrowUpNarrowWide class="h-4 w-4 opacity-50" />
-											<p>
+											<p class="opacity-75">
 												{schedule.planIdx
 													.map((v) => v + 1)
 													.sort()

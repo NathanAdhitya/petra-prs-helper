@@ -41,7 +41,7 @@
 					</p>
 
 					{#if existingDiffs.length > 0}
-						<p class="font-bold mb-4">Perubahan terdeteksi untuk mata kuliah:</p>
+						<p class="font-bold">Perubahan terdeteksi untuk mata kuliah:</p>
 						<ul class="list-disc pl-4">
 							{#each existingDiffs as diff, idx}
 								<li>

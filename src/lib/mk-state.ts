@@ -1,5 +1,5 @@
 import { get, writable, type Writable } from 'svelte/store';
-import { jadwalKuliah, type MataKuliah } from './mata-kuliah';
+import { jadwalKuliah, type JadwalMataKuliah, type MataKuliah } from './mata-kuliah';
 import { properCase } from './mk-utils';
 import { notEmpty } from './utils';
 import { sleep } from './internal/helpers/sleep';
@@ -150,12 +150,12 @@ export class ChosenMatkulUtils {
 			const matkulCopy: MataKuliah = { ...matkul };
 
 			// @ts-expect-error colorClasses is not in MataKuliah
-			delete (matkulCopy).colorClasses;
+			delete matkulCopy.colorClasses;
 
 			// Check deep equality of matkul object
 			const isEqual = deepEql(matkulCopy, matchedMatkul);
 			if (!isEqual) {
-				diff.push({...matchedMatkul, colorClasses: matkul.colorClasses});
+				diff.push({ ...matchedMatkul, colorClasses: matkul.colorClasses });
 			} else {
 				diff.push(null);
 			}
@@ -163,7 +163,7 @@ export class ChosenMatkulUtils {
 			await sleep(1);
 		}
 
-		console.log("Finished background migration check: ", diff)
+		console.log('Finished background migration check: ', diff);
 		jadwalDiffs.update(() => diff);
 	}
 
@@ -191,7 +191,7 @@ export class ChosenMatkulUtils {
 				// Migrate the class selections key
 				chosenClasses.update((classes) => {
 					if (newKode === oldKode) return classes;
-					
+
 					classes[newKode] = classes[oldKode];
 					delete classes[oldKode];
 					return classes;
@@ -297,6 +297,18 @@ export class ChosenClassesUtils {
 		});
 	}
 
+	static testCollisionJadwalMataKuliah(j1: JadwalMataKuliah, j2: JadwalMataKuliah) {
+		if (j1.dayOfWeek !== j2.dayOfWeek) return false;
+
+		const start1 = j1.startHour * 60 + j1.startMinute;
+		const end1 = start1 + j1.durasi;
+
+		const start2 = j2.startHour * 60 + j2.startMinute;
+		const end2 = start2 + j2.durasi;
+
+		return start1 < end2 && end1 > start2;
+	}
+
 	/**
 	 * Validate the chosen classes
 	 */
@@ -308,7 +320,7 @@ export class ChosenClassesUtils {
 		 * 3. There should not be a single collision within each plan/priority (warning)
 		 */
 		const messages: {
-			type: 'info' | 'warning' | 'fatal';
+			type: 'info' | 'warning' | 'fatal' | 'success';
 			message: string;
 		}[] = [];
 
@@ -358,7 +370,14 @@ export class ChosenClassesUtils {
 			});
 		}
 
-		await sleep(2000);
+		// Over 24 SKS Error
+		if ($chosenMatkul.reduce((acc, matkul) => acc + matkul.sks, 0) > ChosenMatkulUtils.sksLimit) {
+			messages.push({
+				type: 'fatal',
+				message: 'Total SKS melebihi batas maksimum (24 SKS)'
+			});
+		}
+
 		return messages;
 	}
 }
