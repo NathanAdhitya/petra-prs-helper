@@ -26,8 +26,8 @@
 	let contentRect: DOMRect;
 	let open = false;
 
-	// $: forceShortenMatkulName = contentRect ? contentRect.width < 50 : false;
-	const forceShortenMatkulName = true;
+	// $: forceShortenMatkulName = contentRect ? contentRect.width < 128 : false;
+	const forceShortenMatkulName = false;
 	$: isWide = contentRect ? contentRect.width > 70 : false;
 </script>
 
@@ -38,8 +38,9 @@
 	use:builderActions={{ builders }}
 	{...getAttrs(builders)}
 	class={clsx(
-		'z-10 flex h-full w-full flex-col overflow-hidden break-words rounded-sm p-1 transition-all',
+		'z-10 flex h-full w-full flex-col overflow-hidden break-words rounded-sm p-1 transition-all cursor-pointer',
 		schedule.currentlySelected ? coloredClasses : 'bg-slate-200',
+		emphasizeMatkulKode && emphasizeMatkulKode !== schedule.kode && 'opacity-50 brightness-75',
 		emphasizeMatkulKode === schedule.kode && 'shadow-2xl',
 		schedule.currentlySelected && openMatkulSelectionKode === schedule.kode && 'shadow-2xl',
 		openMatkulSelectionKode === schedule.kode && 'border-2 border-slate-300',
@@ -82,8 +83,14 @@
 	}}
 	data-priority-click
 >
-	<div class="text-sm font-medium leading-5 max-xl:text-xs">
-		{lazyShortenMatkulName(properCase(schedule.nama), forceShortenMatkulName)}
+	<div class="mb-1 text-sm font-medium leading-4 max-xl:text-xs flex gap-x-1 flex-wrap">
+		<div class="text-ellipsis text-nowrap overflow-hidden block">
+			{#if forceShortenMatkulName}
+				{lazyShortenMatkulName(properCase(schedule.nama), true)}
+			{:else}
+				{properCase(schedule.nama)}
+			{/if}
+		</div>
 		<span class="text-xs"> ({schedule.kelas.join(', ')})</span>
 	</div>
 	{#if isWide}

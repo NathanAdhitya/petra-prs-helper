@@ -225,7 +225,7 @@
 <div class="flex min-w-96 items-center justify-between gap-8">
 	<h1 class="text-4xl font-bold">Penyusun Rencana Studi</h1>
 	<div class="flex flex-col items-end">
-		<Tooltip.Root openDelay={0}>
+		<Tooltip.Root openDelay={0} closeOnPointerDown={false}>
 			<Tooltip.Trigger>
 				<div class="flex items-center gap-2 text-sm">
 					Tentang akurasi data <Info class="h-4 w-4 opacity-50" />
@@ -237,7 +237,7 @@
 				maintainer.
 			</Tooltip.Content>
 		</Tooltip.Root>
-		<Tooltip.Root openDelay={0}>
+		<Tooltip.Root openDelay={0} closeOnPointerDown={false}>
 			<Tooltip.Trigger>
 				<div class="flex items-center gap-2 text-sm">
 					Tentang kemampuan alat <Info class="h-4 w-4 opacity-50" />
@@ -425,8 +425,8 @@
 						let:schedule
 					>
 						{@const busy = openMatkulSelectionKode !== null}
-						<Popover.Root>
-							<Popover.Trigger asChild let:builder>
+						<Tooltip.Root openDelay={100} disableHoverableContent closeOnPointerDown={false}>
+							<Tooltip.Trigger asChild let:builder>
 								{#key busy}
 									<MatkulScheduleCard
 										builders={busy ? [] : [builder]}
@@ -438,8 +438,8 @@
 										{emphasizePilihan}
 									/>
 								{/key}
-							</Popover.Trigger>
-							<Popover.Content side="right-start" class="w-96 max-w-96">
+							</Tooltip.Trigger>
+							<Tooltip.Content side="right" class="w-96 max-w-96 p-4">
 								<div class="flex-col gap-2">
 									<h4 class="font-medium leading-none">
 										{properCase(schedule.nama)} ({lazyShortenMatkulName(
@@ -553,7 +553,7 @@
 											</div>
 										{/if}
 									{/if}
-									<div class="mt-2 flex items-center text-sm text-muted-foreground">
+									<div class="mt-2 flex items-center justify-end text-sm text-muted-foreground">
 										Terpilih pada prioritas
 										<div class="flex items-center pl-1 text-muted-foreground">
 											<ArrowUpNarrowWide class="h-4 w-4 opacity-50" />
@@ -566,8 +566,8 @@
 										</div>
 									</div>
 								</div>
-							</Popover.Content>
-						</Popover.Root>
+							</Tooltip.Content>
+						</Tooltip.Root>
 					</Schedule>
 				</div>
 			</div>
