@@ -73,7 +73,7 @@
 	function applyPilihanMatkul() {
 		try {
 			$chosenMatkul = JSON.parse(dataPilihanMatkulJson);
-			ChosenMatkulUtils.recalculateAvailableColors();
+			ChosenMatkulUtils.recalculateAndFixAvailableColors();
 			
 			pilihanMatkulError = null;
 

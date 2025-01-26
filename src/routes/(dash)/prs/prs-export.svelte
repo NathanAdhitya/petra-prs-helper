@@ -24,7 +24,7 @@
 
 			chosenMatkul.set(obj.chosenMatkul);
 			chosenClasses.set(obj.chosenClasses);
-            ChosenMatkulUtils.recalculateAvailableColors();
+            ChosenMatkulUtils.recalculateAndFixAvailableColors();
             
             toast.success('Imported successfully');
 		} catch (e) {

@@ -450,6 +450,12 @@
 									<div class="mb-2 text-sm text-muted-foreground">
 										{schedule.kode} - {schedule.sks} SKS
 									</div>
+
+									{#if schedule.kode.startsWith('~')}
+										<div class="text-xs text-yellow-600">
+											<span class="font-semibold">~</span> = mata kuliah ini ada di jadwal tetapi tidak pada data PRS
+										</div>
+									{/if}
 									<div class="text-sm text-muted-foreground">
 										<span class="font-semibold">Unit:</span>
 										{schedule.unit}
@@ -469,7 +475,7 @@
 
 										<div class="text-sm text-muted-foreground">
 											<span class="font-semibold">Diterima/kapasitas:</span>
-											{kelasObj.accepted}/{kelasObj.capacity}
+											{kelasObj.accepted ?? '?'}/{kelasObj.capacity ?? '?'}
 										</div>
 
 										<div class="text-sm text-muted-foreground">

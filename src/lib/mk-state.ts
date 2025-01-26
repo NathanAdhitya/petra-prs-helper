@@ -23,58 +23,6 @@ export const chosenJurusanFilters = writable<string[]>(['Informatika', 'D.M.U'])
 export const semesterFilters = writable<Record<string, boolean>>();
 export const jadwalDiffs = writable<(false | null | MataKuliahWithColor)[]>([]);
 
-try {
-	chosenMatkul.set(JSON.parse(localStorage.getItem('chosenMatkul') || 'null') ?? []);
-} catch (e) {
-	console.error(e);
-}
-
-try {
-	chosenClasses.set(JSON.parse(localStorage.getItem('chosenClasses') || 'null') ?? {});
-} catch (e) {
-	console.error(e);
-}
-
-try {
-	chosenJurusanFilters.set(
-		JSON.parse(localStorage.getItem('chosenJurusanFilters') || 'null') ?? []
-	);
-} catch (e) {
-	console.error(e);
-}
-
-try {
-	semesterFilters.set(
-		JSON.parse(localStorage.getItem('semesterFilters') || 'null') ?? {
-			null: true,
-			1: true,
-			2: true,
-			3: true,
-			4: true,
-			5: true,
-			6: true,
-			7: true,
-			8: true
-		}
-	);
-} catch (e) {
-	console.error(e);
-}
-
-// Back the writable by localStorage
-chosenMatkul.subscribe((value) => {
-	localStorage.setItem('chosenMatkul', JSON.stringify(value));
-});
-chosenClasses.subscribe((value) => {
-	localStorage.setItem('chosenClasses', JSON.stringify(value));
-});
-chosenJurusanFilters.subscribe((value) => {
-	localStorage.setItem('chosenJurusanFilters', JSON.stringify(value));
-});
-semesterFilters.subscribe((value) => {
-	localStorage.setItem('semesterFilters', JSON.stringify(value));
-});
-
 export class ChosenMatkulUtils {
 	static sksLimit = 24;
 	static matkulLimit = 12;
@@ -117,12 +65,28 @@ export class ChosenMatkulUtils {
 		}
 	}
 
-	static recalculateAvailableColors() {
-		const $chosenMatkul = get(chosenMatkul);
+	static recalculateAndFixAvailableColors() {
 		this.availableColors = new Set(this.matkulColorClasses);
 
-		$chosenMatkul.forEach((matkul) => {
-			this.availableColors.delete(matkul.colorClasses);
+		chosenMatkul.update(($chosenMatkul) => {
+			const updateCandidates: typeof $chosenMatkul = [];
+			$chosenMatkul.forEach((matkul) => {
+				const deleteSuccess = this.availableColors.delete(matkul.colorClasses);
+
+				// If delete failed, assign it to be updated soon
+				if (!deleteSuccess) updateCandidates.push(matkul);
+			});
+
+			// Assign new colors to the update candidates
+			updateCandidates.forEach((matkul) => {
+				const color = this.availableColors.values().next().value;
+				if (!color) return;
+
+				this.availableColors.delete(color);
+				matkul.colorClasses = color;
+			});
+
+			return $chosenMatkul;
 		});
 	}
 
@@ -142,9 +106,13 @@ export class ChosenMatkulUtils {
 
 		// Find each chosenMatkul based on kode or nama.
 		for (const matkul of $chosenMatkul) {
-			const matchedMatkul = $jadwalKuliah.find(
-				(mk) => mk.kode === matkul.kode || mk.nama === matkul.nama
+			let matchedMatkul = $jadwalKuliah.find(
+				(mk) => mk.unit === matkul.unit && mk.nama === matkul.nama
 			);
+
+			if (!matchedMatkul) {
+				matchedMatkul = $jadwalKuliah.find((mk) => mk.kode === matkul.kode);
+			}
 
 			if (!matchedMatkul) {
 				diff.push(false);
@@ -569,7 +537,7 @@ export class ChosenClassesUtils {
 							jadwal2.forEach((j2) => {
 								// Test if the same object, if it is then skip
 								if (j1 === j2) return;
-								
+
 								// Deduplicate the pair
 								if (!ujianPairTestedDeduplicate.has(j1))
 									ujianPairTestedDeduplicate.set(j1, new Set());
@@ -619,3 +587,57 @@ export class ChosenClassesUtils {
 		return messages;
 	}
 }
+
+// Persist and defaults
+try {
+	chosenMatkul.set(JSON.parse(localStorage.getItem('chosenMatkul') || 'null') ?? []);
+	ChosenMatkulUtils.recalculateAndFixAvailableColors();
+} catch (e) {
+	console.error(e);
+}
+
+try {
+	chosenClasses.set(JSON.parse(localStorage.getItem('chosenClasses') || 'null') ?? {});
+} catch (e) {
+	console.error(e);
+}
+
+try {
+	chosenJurusanFilters.set(
+		JSON.parse(localStorage.getItem('chosenJurusanFilters') || 'null') ?? []
+	);
+} catch (e) {
+	console.error(e);
+}
+
+try {
+	semesterFilters.set(
+		JSON.parse(localStorage.getItem('semesterFilters') || 'null') ?? {
+			null: true,
+			1: true,
+			2: true,
+			3: true,
+			4: true,
+			5: true,
+			6: true,
+			7: true,
+			8: true
+		}
+	);
+} catch (e) {
+	console.error(e);
+}
+
+// Back the writable by localStorage
+chosenMatkul.subscribe((value) => {
+	localStorage.setItem('chosenMatkul', JSON.stringify(value));
+});
+chosenClasses.subscribe((value) => {
+	localStorage.setItem('chosenClasses', JSON.stringify(value));
+});
+chosenJurusanFilters.subscribe((value) => {
+	localStorage.setItem('chosenJurusanFilters', JSON.stringify(value));
+});
+semesterFilters.subscribe((value) => {
+	localStorage.setItem('semesterFilters', JSON.stringify(value));
+});
