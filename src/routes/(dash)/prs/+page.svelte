@@ -414,7 +414,7 @@
 								</Dialog.Footer>
 							</Dialog.Content>
 						</Dialog.Root>
-						<!-- <PrsPeriksa /> -->
+						<PrsPeriksa />
 					</div>
 				</div>
 				<div class="h-full w-full overflow-auto rounded-lg border-2">
@@ -470,6 +470,21 @@
 										<div class="text-sm text-muted-foreground">
 											<span class="font-semibold">Diterima/kapasitas:</span>
 											{kelasObj.accepted}/{kelasObj.capacity}
+										</div>
+
+										<div class="text-sm text-muted-foreground">
+											<span class="font-semibold">Ruang:</span>
+											{kelasObj.jadwal
+												.filter((v) => {
+													return (
+														v.dayOfWeek === schedule.dayOfWeek + 1 &&
+														v.startHour === schedule.startHour &&
+														v.startMinute === schedule.startMinute &&
+														v.durasi === schedule.lengthMinutes
+													);
+												})
+												.map((jadwal) => jadwal.ruang)
+												.join(', ')}
 										</div>
 
 										{#if kelasObj.jadwalUts.length > 0}

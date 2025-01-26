@@ -1,5 +1,10 @@
 import { get, writable, type Writable } from 'svelte/store';
-import { jadwalKuliah, type JadwalMataKuliah, type MataKuliah } from './mata-kuliah';
+import {
+	jadwalKuliah,
+	type JadwalMataKuliah,
+	type JadwalUjianMataKuliah,
+	type MataKuliah
+} from './mata-kuliah';
 import { properCase } from './mk-utils';
 import { notEmpty } from './utils';
 import { sleep } from './internal/helpers/sleep';
@@ -309,6 +314,22 @@ export class ChosenClassesUtils {
 		return start1 < end2 && end1 > start2;
 	}
 
+	static testCollisionJadwalUjian(j1: JadwalUjianMataKuliah, j2: JadwalUjianMataKuliah) {
+		if (!j1.lengthMinutes) return false;
+		if (!j2.lengthMinutes) return false;
+
+		const d1 = new Date(j1.date);
+		const d2 = new Date(j2.date);
+
+		const start1 = d1.getTime();
+		const end1 = start1 + j1.lengthMinutes * 60 * 1000;
+
+		const start2 = d2.getTime();
+		const end2 = start2 + j2.lengthMinutes * 60 * 1000;
+
+		return start1 < end2 && end1 > start2;
+	}
+
 	/**
 	 * Validate the chosen classes
 	 */
@@ -375,6 +396,186 @@ export class ChosenClassesUtils {
 			messages.push({
 				type: 'fatal',
 				message: 'Total SKS melebihi batas maksimum (24 SKS)'
+			});
+		}
+
+		// Collision check against the same priority (fatal if collision happens)
+
+		// Prepare the checking array
+		const appliedClasses = $chosenMatkul.map((matkul) => {
+			if ($chosenClasses[matkul.kode] === undefined) {
+				return {
+					...matkul,
+					kelasPriority: [undefined, undefined, undefined]
+				};
+			}
+			return {
+				...matkul,
+				kelasPriority: [
+					matkul.kelas.find((kelas) => kelas.kelas === $chosenClasses[matkul.kode][0]),
+					matkul.kelas.find((kelas) => kelas.kelas === $chosenClasses[matkul.kode][1]),
+					matkul.kelas.find((kelas) => kelas.kelas === $chosenClasses[matkul.kode][2])
+				]
+			};
+		});
+
+		// Check 1: Check for any collisions between the same priority (fatal)
+		let jadwalCollisionCounter = 0;
+		appliedClasses.forEach((m1) => {
+			appliedClasses.forEach((m2) => {
+				// Check individually for each priority
+				for (let i = 0; i < 3; i++) {
+					const k1 = m1.kelasPriority[i];
+					const k2 = m2.kelasPriority[i];
+
+					if (k1 === undefined || k2 === undefined) continue;
+
+					const jadwal1 = k1.jadwal;
+					const jadwal2 = k2.jadwal;
+
+					jadwal1.forEach((j1) => {
+						jadwal2.forEach((j2) => {
+							// Test if the same object, if it is then skip
+							if (j1 === j2) return;
+
+							if (this.testCollisionJadwalMataKuliah(j1, j2)) {
+								jadwalCollisionCounter++;
+								messages.push({
+									type: 'fatal',
+									message: `Terdapat tabrakan jadwal antara ${properCase(
+										m1.nama
+									)} (${k1.kelas}) dan ${properCase(m2.nama)} (${k2.kelas}) pada prioritas ${i + 1}`
+								});
+							}
+						});
+					});
+				}
+			});
+		});
+
+		// Check 2: check across priorities (warning)
+		let acrossPriorityCollisionCounter = 0;
+		appliedClasses.forEach((m1) => {
+			appliedClasses.forEach((m2) => {
+				// Check individually for each priority
+				for (let i1 = 0; i1 < 3; i1++) {
+					for (let i2 = 0; i1 < 3; i1++) {
+						if (i1 === i2) continue;
+						const k1 = m1.kelasPriority[i1];
+						const k2 = m2.kelasPriority[i2];
+
+						if (k1 === undefined || k2 === undefined) continue;
+
+						const jadwal1 = k1.jadwal;
+						const jadwal2 = k2.jadwal;
+
+						jadwal1.forEach((j1) => {
+							jadwal2.forEach((j2) => {
+								// Test if the same object, if it is then skip
+								if (j1 === j2) return;
+
+								if (this.testCollisionJadwalMataKuliah(j1, j2)) {
+									acrossPriorityCollisionCounter++;
+									messages.push({
+										type: 'warning',
+										message: `Terdapat overlap jadwal ${properCase(
+											m1.nama
+										)} (${k1.kelas}) pada prioritas ${i1 + 1} dan ${properCase(m2.nama)} (${k2.kelas}) pada prioritas ${i2 + 1}`
+									});
+								}
+							});
+						});
+					}
+				}
+			});
+		});
+
+		// Check 3: check collision with ujian
+		let ujianCollisionCounter = 0;
+		appliedClasses.forEach((m1) => {
+			appliedClasses.forEach((m2) => {
+				// Supress matches for the same matkul
+				if (m1 === m2) return;
+
+				// Check individually for each priority (UTS)
+				for (let i1 = 0; i1 < 3; i1++) {
+					for (let i2 = 0; i1 < 3; i1++) {
+						const k1 = m1.kelasPriority[i1];
+						const k2 = m2.kelasPriority[i2];
+
+						if (k1 === undefined || k2 === undefined) continue;
+
+						const jadwal1 = k1.jadwalUts;
+						const jadwal2 = k2.jadwalUts;
+
+						jadwal1.forEach((j1) => {
+							jadwal2.forEach((j2) => {
+								// Test if the same object, if it is then skip
+								if (j1 === j2) return;
+
+								if (this.testCollisionJadwalUjian(j1, j2)) {
+									ujianCollisionCounter++;
+									messages.push({
+										type: 'fatal',
+										message: `Terdapat tabrakan jadwal UTS ${properCase(
+											m1.nama
+										)} (${k1.kelas}) pada prioritas ${i1 + 1} dan ${properCase(m2.nama)} (${k2.kelas}) pada prioritas ${i2 + 1}`
+									});
+								}
+							});
+						});
+					}
+				}
+
+				for (let i1 = 0; i1 < 3; i1++) {
+					for (let i2 = 0; i1 < 3; i1++) {
+						const k1 = m1.kelasPriority[i1];
+						const k2 = m2.kelasPriority[i2];
+
+						if (k1 === undefined || k2 === undefined) continue;
+
+						const jadwal1 = k1.jadwalUas;
+						const jadwal2 = k2.jadwalUas;
+
+						jadwal1.forEach((j1) => {
+							jadwal2.forEach((j2) => {
+								// Test if the same object, if it is then skip
+								if (j1 === j2) return;
+
+								if (this.testCollisionJadwalUjian(j1, j2)) {
+									ujianCollisionCounter++;
+									messages.push({
+										type: 'fatal',
+										message: `Terdapat tabrakan jadwal UAS ${properCase(
+											m1.nama
+										)} (${k1.kelas}) pada prioritas ${i1 + 1} dan ${properCase(m2.nama)} (${k2.kelas}) pada prioritas ${i2 + 1}`
+									});
+								}
+							});
+						});
+					}
+				}
+			});
+		});
+
+		if (jadwalCollisionCounter === 0) {
+			messages.push({
+				type: 'success',
+				message: 'Tabrakan jadwal pada prioritas yang sama tidak ditemukan'
+			});
+		}
+
+		if (acrossPriorityCollisionCounter === 0) {
+			messages.push({
+				type: 'success',
+				message: 'Jadwal yang tumpang tindih pada prioritas berbeda tidak ditemukan'
+			});
+		}
+
+		if (ujianCollisionCounter === 0) {
+			messages.push({
+				type: 'success',
+				message: 'Tabrakan jadwal ujian tidak ditemukan'
 			});
 		}
 

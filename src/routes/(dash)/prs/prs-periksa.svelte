@@ -3,6 +3,7 @@
 	import { LoaderCircle, CircleCheck, CircleX, TriangleAlert, Info } from 'lucide-svelte';
 	import { Button } from '$lib/components/ui/button';
 	import * as Dialog from '$lib/components/ui/dialog';
+	import { ScrollArea } from '$lib/components/ui/scroll-area';
 </script>
 
 <Dialog.Root>
@@ -30,17 +31,20 @@
 				</Dialog.Content>
 			{:then messages}
 				{@const fatalCount = messages.filter((v) => v.type === 'fatal').length}
-				<Dialog.Content>
+				<Dialog.Content class="flex max-h-screen flex-col">
 					<Dialog.Header>
 						<Dialog.Title>Cek PRS</Dialog.Title>
 					</Dialog.Header>
-					<Dialog.Description>
+					<Dialog.Description class="overflow-auto">
 						<div class="mb-2">
 							{#if messages.length === 0}
 								<p class="flex items-center gap-2 text-green-700">
 									<CircleCheck class="h-4 w-4" /> PRS tidak memiliki masalah.
 								</p>
 							{:else}
+								<p class="text-xs text-red-500 mb-2">
+									*Ini adalah fitur eksperimental, pastikan Anda cek kembali PRS dengan cermat.
+								</p>
 								<p class="font-medium">Hasil pengecekan otomatis:</p>
 								<ul class="list-disc">
 									{#each messages as { type, message }}
