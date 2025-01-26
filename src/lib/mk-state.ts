@@ -37,7 +37,7 @@ try {
 
 try {
 	chosenJurusanFilters.set(
-		JSON.parse(localStorage.getItem('chosenJurusanFilters') || 'null') ?? ['D.M.U']
+		JSON.parse(localStorage.getItem('chosenJurusanFilters') || 'null') ?? []
 	);
 } catch (e) {
 	console.error(e);

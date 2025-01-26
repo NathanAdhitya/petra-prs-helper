@@ -3,7 +3,7 @@
 	import TopBar from './partials/top-bar.svelte';
 </script>
 
-<div class="grid min-h-screen w-full 2xl:grid-cols-[280px_1fr]">
+<div class="grid min-h-screen w-full 3xl:grid-cols-[240px_1fr]">
 	<MdSidebar />
 	<div class="flex flex-col">
 		<TopBar />

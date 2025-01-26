@@ -34,11 +34,11 @@
 </script>
 
 <header
-	class="flex h-16 items-center gap-4 border-b-4 border-b-[#a9a9a9] bg-slate-50 px-4 py-2 lg:h-[60px] lg:px-6 2xl:hidden"
+	class="flex h-16 items-center gap-4 border-b-4 border-b-[#a9a9a9] bg-slate-50 px-4 py-2 lg:h-[60px] lg:px-6 3xl:hidden"
 >
 	<Sheet.Root>
 		<Sheet.Trigger asChild let:builder>
-			<Button variant="outline" size="icon" class="shrink-0 2xl:hidden" builders={[builder]}>
+			<Button variant="outline" size="icon" class="shrink-0 3xl:hidden" builders={[builder]}>
 				<Menu class="h-5 w-5" />
 				<span class="sr-only">Toggle navigation menu</span>
 			</Button>
