@@ -334,6 +334,8 @@ export class ChosenClassesUtils {
 	 * Validate the chosen classes
 	 */
 	static async validate() {
+		await sleep(1);
+
 		/**
 		 * Things to check:
 		 * 1. The same class within the same matkul must not be chosen in more than one plan (fatal)
@@ -421,6 +423,8 @@ export class ChosenClassesUtils {
 
 		// Check 1: Check for any collisions between the same priority (fatal)
 		let jadwalCollisionCounter = 0;
+		const pairTestedDeduplicate = new Map<JadwalMataKuliah, Set<JadwalMataKuliah>>();
+
 		appliedClasses.forEach((m1) => {
 			appliedClasses.forEach((m2) => {
 				// Check individually for each priority
@@ -437,6 +441,13 @@ export class ChosenClassesUtils {
 						jadwal2.forEach((j2) => {
 							// Test if the same object, if it is then skip
 							if (j1 === j2) return;
+
+							// Deduplicate the pair
+							if (!pairTestedDeduplicate.has(j1)) pairTestedDeduplicate.set(j1, new Set());
+							if (pairTestedDeduplicate.get(j1)!.has(j2)) return;
+							pairTestedDeduplicate.get(j1)!.add(j2);
+							if (!pairTestedDeduplicate.has(j2)) pairTestedDeduplicate.set(j2, new Set());
+							pairTestedDeduplicate.get(j2)!.add(j1);
 
 							if (this.testCollisionJadwalMataKuliah(j1, j2)) {
 								jadwalCollisionCounter++;
@@ -459,7 +470,7 @@ export class ChosenClassesUtils {
 			appliedClasses.forEach((m2) => {
 				// Check individually for each priority
 				for (let i1 = 0; i1 < 3; i1++) {
-					for (let i2 = 0; i1 < 3; i1++) {
+					for (let i2 = 0; i2 < 3; i2++) {
 						if (i1 === i2) continue;
 						const k1 = m1.kelasPriority[i1];
 						const k2 = m2.kelasPriority[i2];
@@ -473,6 +484,13 @@ export class ChosenClassesUtils {
 							jadwal2.forEach((j2) => {
 								// Test if the same object, if it is then skip
 								if (j1 === j2) return;
+
+								// Deduplicate the pair
+								if (!pairTestedDeduplicate.has(j1)) pairTestedDeduplicate.set(j1, new Set());
+								if (pairTestedDeduplicate.get(j1)!.has(j2)) return;
+								pairTestedDeduplicate.get(j1)!.add(j2);
+								if (!pairTestedDeduplicate.has(j2)) pairTestedDeduplicate.set(j2, new Set());
+								pairTestedDeduplicate.get(j2)!.add(j1);
 
 								if (this.testCollisionJadwalMataKuliah(j1, j2)) {
 									acrossPriorityCollisionCounter++;
@@ -491,6 +509,7 @@ export class ChosenClassesUtils {
 		});
 
 		// Check 3: check collision with ujian
+		const ujianPairTestedDeduplicate = new Map<JadwalUjianMataKuliah, Set<JadwalUjianMataKuliah>>();
 		let ujianCollisionCounter = 0;
 		appliedClasses.forEach((m1) => {
 			appliedClasses.forEach((m2) => {
@@ -499,7 +518,7 @@ export class ChosenClassesUtils {
 
 				// Check individually for each priority (UTS)
 				for (let i1 = 0; i1 < 3; i1++) {
-					for (let i2 = 0; i1 < 3; i1++) {
+					for (let i2 = 0; i2 < 3; i2++) {
 						const k1 = m1.kelasPriority[i1];
 						const k2 = m2.kelasPriority[i2];
 
@@ -512,6 +531,15 @@ export class ChosenClassesUtils {
 							jadwal2.forEach((j2) => {
 								// Test if the same object, if it is then skip
 								if (j1 === j2) return;
+
+								// Deduplicate the pair
+								if (!ujianPairTestedDeduplicate.has(j1))
+									ujianPairTestedDeduplicate.set(j1, new Set());
+								if (ujianPairTestedDeduplicate.get(j1)!.has(j2)) return;
+								ujianPairTestedDeduplicate.get(j1)!.add(j2);
+								if (!ujianPairTestedDeduplicate.has(j2))
+									ujianPairTestedDeduplicate.set(j2, new Set());
+								ujianPairTestedDeduplicate.get(j2)!.add(j1);
 
 								if (this.testCollisionJadwalUjian(j1, j2)) {
 									ujianCollisionCounter++;
@@ -528,7 +556,7 @@ export class ChosenClassesUtils {
 				}
 
 				for (let i1 = 0; i1 < 3; i1++) {
-					for (let i2 = 0; i1 < 3; i1++) {
+					for (let i2 = 0; i2 < 3; i2++) {
 						const k1 = m1.kelasPriority[i1];
 						const k2 = m2.kelasPriority[i2];
 
@@ -541,6 +569,15 @@ export class ChosenClassesUtils {
 							jadwal2.forEach((j2) => {
 								// Test if the same object, if it is then skip
 								if (j1 === j2) return;
+								
+								// Deduplicate the pair
+								if (!ujianPairTestedDeduplicate.has(j1))
+									ujianPairTestedDeduplicate.set(j1, new Set());
+								if (ujianPairTestedDeduplicate.get(j1)!.has(j2)) return;
+								ujianPairTestedDeduplicate.get(j1)!.add(j2);
+								if (!ujianPairTestedDeduplicate.has(j2))
+									ujianPairTestedDeduplicate.set(j2, new Set());
+								ujianPairTestedDeduplicate.get(j2)!.add(j1);
 
 								if (this.testCollisionJadwalUjian(j1, j2)) {
 									ujianCollisionCounter++;
