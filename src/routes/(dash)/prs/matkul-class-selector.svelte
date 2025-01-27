@@ -109,8 +109,13 @@
 				!pilihanIndexes.includes(planIdx) && 'brightness-75'
 			)}
 		>
-			{(currentKelas && $chosenClasses[matkul.kode][planIdx] && stringifyKelas(currentKelas)) ||
-				`Pilih kelas prioritas ${planIdx + 1}...`}
+			<span class="text-ellipsis overflow-hidden">
+				{#if currentKelas && $chosenClasses[matkul.kode][planIdx]}
+					{stringifyKelas(currentKelas)}
+				{:else}
+					<span class="italic text-muted-foreground">Pilih kelas prioritas {planIdx + 1}...</span>
+				{/if}
+			</span>
 			<ChevronDown class="ml-2 h-4 w-4 shrink-0 opacity-50" />
 		</Button>
 	</Popover.Trigger>
@@ -170,7 +175,7 @@
 						{/if}
 
 						{#if 'keterangan' in kelas}
-							<div class="basis-full h-0"></div>
+							<div class="h-0 basis-full"></div>
 							<div class="pl-6 text-xs text-muted-foreground">{kelas.keterangan}</div>
 						{/if}
 					</Command.Item>

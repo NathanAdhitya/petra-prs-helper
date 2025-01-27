@@ -20,7 +20,7 @@
 </script>
 
 <div class="hidden bg-slate-50 3xl:block max-w-56">
-	<div class="flex h-full min-h-screen flex-col">
+	<div class="flex h-full flex-col">
 		<div class="flex h-16 items-center border-b-4 border-b-[#a9a9a9] px-4 lg:h-[60px] lg:px-6">
 			<a href="/" class="flex h-full w-full items-center py-2 pt-3 font-extrabold text-lg">
 				prs.natha.my.id

@@ -221,12 +221,14 @@
 
 	// $: console.log(matkulOptions.length);
 
-	let clientWidth: number;
+	let innerWidth: number;
 	let direction: 'vertical' | 'horizontal' = 'horizontal';
-	$: direction = clientWidth < 620 ? 'vertical' : 'horizontal';
+	$: direction = innerWidth < 768 ? 'vertical' : 'horizontal';
 </script>
 
-<div class="flex items-center justify-between gap-2" bind:clientWidth>
+<svelte:window bind:innerWidth />
+
+<div class="flex items-center justify-between gap-2">
 	<h1 class="text-4xl font-bold">Penyusun Rencana Studi</h1>
 	<div class="flex flex-col items-end">
 		<Tooltip.Root openDelay={0} closeOnPointerDown={false} disableHoverableContent>
@@ -369,7 +371,7 @@
 		{#if direction === 'horizontal'}
 			<Resizable.Handle withHandle />
 		{/if}
-		<Resizable.Pane minSize={60} defaultSize={70} class="min-h-screen">
+		<Resizable.Pane minSize={60} defaultSize={70} class="max-md:min-h-screen">
 			<div class="flex h-full w-full flex-1 flex-col gap-4">
 				<div class="flex flex-wrap items-center gap-4 rounded-lg border-2 bg-slate-50 p-2 px-4">
 					<div class="flex-1 text-sm text-nowrap">
