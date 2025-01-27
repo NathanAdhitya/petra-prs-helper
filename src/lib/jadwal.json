@@ -492,15 +492,17 @@
     ]
   },
   {
-    "prsId": "",
+    "prsId": "2024:IK4577:21:1",
     "nama": "ADVANCED ENGLISH FOR COMMUNICATION",
-    "semester": null,
+    "semester": 2,
     "sks": 2,
     "unit": "Ilmu Komunikasi",
-    "kode": "~IK008",
+    "kode": "IK4577",
     "kelas": [
       {
         "kelas": "A",
+        "accepted": 0,
+        "capacity": 40,
         "jadwal": [
           {
             "dayOfWeek": 3,
@@ -526,30 +528,20 @@
         ]
       },
       {
-        "kelas": "B",
+        "kelas": "C",
+        "accepted": 0,
+        "capacity": 40,
         "jadwal": [
           {
-            "dayOfWeek": 3,
-            "startHour": 15,
+            "dayOfWeek": 2,
+            "startHour": 10,
             "startMinute": 0,
             "durasi": 100,
-            "ruang": "Q.04.08b/"
+            "ruang": "/"
           }
         ],
-        "jadwalUts": [
-          {
-            "date": "2025-04-09T06:00:00.000Z",
-            "lengthMinutes": 100,
-            "ruang": ""
-          }
-        ],
-        "jadwalUas": [
-          {
-            "date": "2025-06-18T06:00:00.000Z",
-            "lengthMinutes": 100,
-            "ruang": ""
-          }
-        ]
+        "jadwalUts": [],
+        "jadwalUas": []
       }
     ]
   },
@@ -587,15 +579,17 @@
     ]
   },
   {
-    "prsId": "",
+    "prsId": "2024:IK4558:21:1",
     "nama": "ADVERTISING AND PROMOTION",
-    "semester": null,
+    "semester": 5,
     "sks": 3,
     "unit": "Ilmu Komunikasi",
-    "kode": "~IK010",
+    "kode": "IK4558",
     "kelas": [
       {
         "kelas": "A",
+        "accepted": 0,
+        "capacity": 40,
         "jadwal": [
           {
             "dayOfWeek": 2,
@@ -1509,15 +1503,17 @@
     ]
   },
   {
-    "prsId": "",
+    "prsId": "2024:TF4531:32:1",
     "nama": "APLIKASI MOBILE BERBASIS WEB",
-    "semester": null,
+    "semester": 8,
     "sks": 3,
     "unit": "Informatika",
-    "kode": "~IN001",
+    "kode": "TF4531",
     "kelas": [
       {
         "kelas": "A",
+        "accepted": 0,
+        "capacity": 40,
         "jadwal": [
           {
             "dayOfWeek": 1,
@@ -1621,15 +1617,17 @@
     ]
   },
   {
-    "prsId": "",
+    "prsId": "2024:TF4580:32:1",
     "nama": "APPLIED ARTIFICIAL INTELLIGENCE",
-    "semester": null,
+    "semester": 4,
     "sks": 3,
     "unit": "Informatika",
-    "kode": "~IN008",
+    "kode": "TF4580",
     "kelas": [
       {
         "kelas": "A",
+        "accepted": 0,
+        "capacity": 30,
         "jadwal": [
           {
             "dayOfWeek": 4,
@@ -1657,16 +1655,33 @@
     ]
   },
   {
-    "prsId": "",
+    "prsId": "2024:IK4591:21:1",
     "nama": "APPLIED COMMUNICATION RESEARCH",
-    "semester": null,
-    "sks": 2,
+    "semester": 6,
+    "sks": 4,
     "unit": "Ilmu Komunikasi",
-    "kode": "~IK012",
+    "kode": "IK4591",
     "kelas": [
       {
         "kelas": "A",
-        "jadwal": [],
+        "accepted": 0,
+        "capacity": 40,
+        "jadwal": [
+          {
+            "dayOfWeek": 4,
+            "startHour": 8,
+            "startMinute": 30,
+            "durasi": 150,
+            "ruang": "/"
+          },
+          {
+            "dayOfWeek": 4,
+            "startHour": 11,
+            "startMinute": 0,
+            "durasi": 50,
+            "ruang": "/"
+          }
+        ],
         "jadwalUts": [
           {
             "date": "2025-04-10T01:30:00.000Z",
@@ -1684,7 +1699,24 @@
       },
       {
         "kelas": "B",
-        "jadwal": [],
+        "accepted": 0,
+        "capacity": 40,
+        "jadwal": [
+          {
+            "dayOfWeek": 4,
+            "startHour": 8,
+            "startMinute": 30,
+            "durasi": 150,
+            "ruang": "/"
+          },
+          {
+            "dayOfWeek": 4,
+            "startHour": 11,
+            "startMinute": 0,
+            "durasi": 50,
+            "ruang": "/"
+          }
+        ],
         "jadwalUts": [
           {
             "date": "2025-04-10T01:30:00.000Z",
@@ -1807,15 +1839,17 @@
     ]
   },
   {
-    "prsId": "",
+    "prsId": "2024:TF4452:32:1",
     "nama": "ARSITEKTUR BERORIENTASI LAYANAN",
-    "semester": null,
+    "semester": 8,
     "sks": 3,
     "unit": "Informatika",
-    "kode": "~IN002",
+    "kode": "TF4452",
     "kelas": [
       {
         "kelas": "A",
+        "accepted": 0,
+        "capacity": 30,
         "jadwal": [
           {
             "dayOfWeek": 1,
@@ -4446,6 +4480,24 @@
     ]
   },
   {
+    "prsId": "2024:IK4553:21:1",
+    "nama": "COMMUNITY ASSESSMENT",
+    "semester": 7,
+    "sks": 5,
+    "unit": "Ilmu Komunikasi",
+    "kode": "IK4553",
+    "kelas": [
+      {
+        "kelas": "A",
+        "accepted": 0,
+        "capacity": 100,
+        "jadwal": [],
+        "jadwalUts": [],
+        "jadwalUas": []
+      }
+    ]
+  },
+  {
     "prsId": "2024:EG4729:61:1",
     "nama": "COMMUNITY DEVELOPMENT",
     "semester": 6,
@@ -4520,6 +4572,24 @@
     ]
   },
   {
+    "prsId": "2024:TF4541:32:1",
+    "nama": "COMMUNITY DEVELOPMENT",
+    "semester": 6,
+    "sks": 6,
+    "unit": "Informatika",
+    "kode": "TF4541",
+    "kelas": [
+      {
+        "kelas": "A",
+        "accepted": 0,
+        "capacity": 999,
+        "jadwal": [],
+        "jadwalUts": [],
+        "jadwalUas": []
+      }
+    ]
+  },
+  {
     "prsId": "2024:DI4533:16:1",
     "nama": "COMMUNITY ENGAGEMENT PROJECT IMPLEMENTATION",
     "semester": 7,
@@ -4531,6 +4601,24 @@
         "kelas": "A",
         "accepted": 0,
         "capacity": 30,
+        "jadwal": [],
+        "jadwalUts": [],
+        "jadwalUas": []
+      }
+    ]
+  },
+  {
+    "prsId": "2024:IK4554:21:1",
+    "nama": "COMMUNITY ENGAGEMENT REPORT",
+    "semester": 7,
+    "sks": 4,
+    "unit": "Ilmu Komunikasi",
+    "kode": "IK4554",
+    "kelas": [
+      {
+        "kelas": "A",
+        "accepted": 0,
+        "capacity": 100,
         "jadwal": [],
         "jadwalUts": [],
         "jadwalUas": []
@@ -5425,15 +5513,17 @@
     ]
   },
   {
-    "prsId": "",
+    "prsId": "2024:IK4250:21:1",
     "nama": "DASAR JURNALISTIK",
-    "semester": null,
-    "sks": 1,
+    "semester": 2,
+    "sks": 3,
     "unit": "Ilmu Komunikasi",
-    "kode": "~IK009",
+    "kode": "IK4250",
     "kelas": [
       {
         "kelas": "A",
+        "accepted": 0,
+        "capacity": 30,
         "jadwal": [
           {
             "dayOfWeek": 2,
@@ -5455,6 +5545,8 @@
       },
       {
         "kelas": "B",
+        "accepted": 0,
+        "capacity": 30,
         "jadwal": [
           {
             "dayOfWeek": 2,
@@ -5617,15 +5709,17 @@
     ]
   },
   {
-    "prsId": "",
+    "prsId": "2024:TF4542:32:1",
     "nama": "DEEP LEARNING",
-    "semester": null,
+    "semester": 8,
     "sks": 3,
     "unit": "Informatika",
-    "kode": "~IN005",
+    "kode": "TF4542",
     "kelas": [
       {
         "kelas": "A",
+        "accepted": 0,
+        "capacity": 30,
         "jadwal": [
           {
             "dayOfWeek": 2,
@@ -5653,15 +5747,17 @@
     ]
   },
   {
-    "prsId": "",
+    "prsId": "2024:TF4270:32:1",
     "nama": "DESAIN DAN ANALISIS ALGORITMA",
-    "semester": null,
-    "sks": 2,
+    "semester": 3,
+    "sks": 3,
     "unit": "Informatika",
-    "kode": "~IN003",
+    "kode": "TF4270",
     "kelas": [
       {
         "kelas": "A",
+        "accepted": 0,
+        "capacity": 30,
         "jadwal": [
           {
             "dayOfWeek": 2,
@@ -7521,15 +7617,17 @@
     ]
   },
   {
-    "prsId": "",
+    "prsId": "2024:TF4543:32:1",
     "nama": "ETHICAL HACKING",
-    "semester": null,
+    "semester": 8,
     "sks": 3,
     "unit": "Informatika",
-    "kode": "~IN010",
+    "kode": "TF4543",
     "kelas": [
       {
         "kelas": "A",
+        "accepted": 0,
+        "capacity": 30,
         "jadwal": [
           {
             "dayOfWeek": 6,
@@ -9458,6 +9556,24 @@
     ]
   },
   {
+    "prsId": "2024:IK4550:21:1",
+    "nama": "INDUSTRIAL ASSESSMENT",
+    "semester": 7,
+    "sks": 5,
+    "unit": "Ilmu Komunikasi",
+    "kode": "IK4550",
+    "kelas": [
+      {
+        "kelas": "A",
+        "accepted": 0,
+        "capacity": 100,
+        "jadwal": [],
+        "jadwalUts": [],
+        "jadwalUas": []
+      }
+    ]
+  },
+  {
     "prsId": "2020:IA4207:36:1",
     "nama": "INDUSTRIAL AWARENESS",
     "semester": 7,
@@ -9487,6 +9603,24 @@
         "kelas": "A",
         "accepted": 0,
         "capacity": 40,
+        "jadwal": [],
+        "jadwalUts": [],
+        "jadwalUas": []
+      }
+    ]
+  },
+  {
+    "prsId": "2024:IK4551:21:1",
+    "nama": "INDUSTRIAL EXPERIENCE REPORT",
+    "semester": 7,
+    "sks": 4,
+    "unit": "Ilmu Komunikasi",
+    "kode": "IK4551",
+    "kelas": [
+      {
+        "kelas": "A",
+        "accepted": 0,
+        "capacity": 100,
         "jadwal": [],
         "jadwalUts": [],
         "jadwalUas": []
@@ -9641,6 +9775,24 @@
     "kelas": [
       {
         "kelas": "C",
+        "accepted": 0,
+        "capacity": 999,
+        "jadwal": [],
+        "jadwalUts": [],
+        "jadwalUas": []
+      }
+    ]
+  },
+  {
+    "prsId": "2024:TF4540:32:1",
+    "nama": "INDUSTRIAL TRAINING",
+    "semester": 6,
+    "sks": 6,
+    "unit": "Informatika",
+    "kode": "TF4540",
+    "kelas": [
+      {
+        "kelas": "A",
         "accepted": 0,
         "capacity": 999,
         "jadwal": [],
@@ -10452,15 +10604,89 @@
     ]
   },
   {
-    "prsId": "",
-    "nama": "INTERNET OF THINGS",
-    "semester": null,
+    "prsId": "2024:IK4545:21:1",
+    "nama": "INTERNATIONAL STUDIES FOR COMMUNICATION 1",
+    "semester": 7,
     "sks": 3,
-    "unit": "Informatika",
-    "kode": "~IN009",
+    "unit": "Ilmu Komunikasi",
+    "kode": "IK4545",
     "kelas": [
       {
         "kelas": "A",
+        "accepted": 0,
+        "capacity": 100,
+        "jadwal": [],
+        "jadwalUts": [],
+        "jadwalUas": []
+      }
+    ]
+  },
+  {
+    "prsId": "2024:IK4546:21:1",
+    "nama": "INTERNATIONAL STUDIES FOR COMMUNICATION 2",
+    "semester": 7,
+    "sks": 3,
+    "unit": "Ilmu Komunikasi",
+    "kode": "IK4546",
+    "kelas": [
+      {
+        "kelas": "A",
+        "accepted": 0,
+        "capacity": 100,
+        "jadwal": [],
+        "jadwalUts": [],
+        "jadwalUas": []
+      }
+    ]
+  },
+  {
+    "prsId": "2024:IK4547:21:1",
+    "nama": "INTERNATIONAL STUDIES FOR COMMUNICATION 3",
+    "semester": 7,
+    "sks": 3,
+    "unit": "Ilmu Komunikasi",
+    "kode": "IK4547",
+    "kelas": [
+      {
+        "kelas": "A",
+        "accepted": 0,
+        "capacity": 100,
+        "jadwal": [],
+        "jadwalUts": [],
+        "jadwalUas": []
+      }
+    ]
+  },
+  {
+    "prsId": "2024:IK4548:21:1",
+    "nama": "INTERNATIONAL STUDIES FOR COMMUNICATION 4",
+    "semester": 7,
+    "sks": 3,
+    "unit": "Ilmu Komunikasi",
+    "kode": "IK4548",
+    "kelas": [
+      {
+        "kelas": "A",
+        "accepted": 0,
+        "capacity": 100,
+        "jadwal": [],
+        "jadwalUts": [],
+        "jadwalUas": []
+      }
+    ]
+  },
+  {
+    "prsId": "2024:TF4552:32:1",
+    "nama": "INTERNET OF THINGS",
+    "semester": 8,
+    "sks": 3,
+    "unit": "Informatika",
+    "kode": "TF4552",
+    "kelas": [
+      {
+        "kelas": "A",
+        "accepted": 0,
+        "capacity": 30,
         "jadwal": [
           {
             "dayOfWeek": 4,
@@ -10690,15 +10916,17 @@
     ]
   },
   {
-    "prsId": "",
+    "prsId": "2024:IK4539:21:1",
     "nama": "JAPANESE FOR COMMUNICATION PURPOSES",
-    "semester": null,
+    "semester": 5,
     "sks": 2,
     "unit": "Ilmu Komunikasi",
-    "kode": "~IK001",
+    "kode": "IK4539",
     "kelas": [
       {
         "kelas": "A",
+        "accepted": 0,
+        "capacity": 40,
         "jadwal": [
           {
             "dayOfWeek": 1,
@@ -11555,6 +11783,24 @@
     ]
   },
   {
+    "prsId": "2024:TF4261:32:1",
+    "nama": "KERJA PRAKTEK",
+    "semester": 6,
+    "sks": 2,
+    "unit": "Informatika",
+    "kode": "TF4261",
+    "kelas": [
+      {
+        "kelas": "A",
+        "accepted": 0,
+        "capacity": 999,
+        "jadwal": [],
+        "jadwalUts": [],
+        "jadwalUas": []
+      }
+    ]
+  },
+  {
     "prsId": "2022:TI4632:06:1",
     "nama": "KERJA PRAKTEK",
     "semester": 8,
@@ -12368,16 +12614,25 @@
     ]
   },
   {
-    "prsId": "",
+    "prsId": "2024:IK4529:21:1",
     "nama": "KOMUNIKASI FASHION",
-    "semester": null,
-    "sks": 1,
+    "semester": 5,
+    "sks": 2,
     "unit": "Ilmu Komunikasi",
-    "kode": "~IK015",
+    "kode": "IK4529",
     "kelas": [
       {
         "kelas": "A",
+        "accepted": 0,
+        "capacity": 40,
         "jadwal": [
+          {
+            "dayOfWeek": 4,
+            "startHour": 12,
+            "startMinute": 0,
+            "durasi": 50,
+            "ruang": "/"
+          },
           {
             "dayOfWeek": 4,
             "startHour": 12,
@@ -12526,15 +12781,17 @@
     ]
   },
   {
-    "prsId": "",
+    "prsId": "2024:IK4518:21:1",
     "nama": "KOMUNIKASI KEPEMIMPINAN",
-    "semester": null,
+    "semester": 5,
     "sks": 2,
     "unit": "Ilmu Komunikasi",
-    "kode": "~IK011",
+    "kode": "IK4518",
     "kelas": [
       {
         "kelas": "A",
+        "accepted": 0,
+        "capacity": 40,
         "jadwal": [
           {
             "dayOfWeek": 3,
@@ -12588,15 +12845,17 @@
     ]
   },
   {
-    "prsId": "",
+    "prsId": "2024:IK4263:21:1",
     "nama": "KOMUNIKASI MASSA",
-    "semester": null,
-    "sks": 1,
+    "semester": 2,
+    "sks": 3,
     "unit": "Ilmu Komunikasi",
-    "kode": "~IK002",
+    "kode": "IK4263",
     "kelas": [
       {
         "kelas": "A",
+        "accepted": 0,
+        "capacity": 30,
         "jadwal": [
           {
             "dayOfWeek": 1,
@@ -12630,6 +12889,8 @@
       },
       {
         "kelas": "B",
+        "accepted": 0,
+        "capacity": 30,
         "jadwal": [
           {
             "dayOfWeek": 2,
@@ -12765,15 +13026,17 @@
     ]
   },
   {
-    "prsId": "",
+    "prsId": "2024:IK4583:21:1",
     "nama": "KOMUNIKASI POLITIK",
-    "semester": null,
+    "semester": 4,
     "sks": 3,
     "unit": "Ilmu Komunikasi",
-    "kode": "~IK006",
+    "kode": "IK4583",
     "kelas": [
       {
         "kelas": "A",
+        "accepted": 0,
+        "capacity": 40,
         "jadwal": [
           {
             "dayOfWeek": 2,
@@ -12800,6 +13063,8 @@
       },
       {
         "kelas": "B",
+        "accepted": 0,
+        "capacity": 40,
         "jadwal": [
           {
             "dayOfWeek": 2,
@@ -15408,48 +15673,17 @@
     ]
   },
   {
-    "prsId": "",
+    "prsId": "2024:IK4503:21:1",
     "nama": "MEDIA BARU",
-    "semester": null,
-    "sks": 1,
+    "semester": 2,
+    "sks": 3,
     "unit": "Ilmu Komunikasi",
-    "kode": "~IK004",
+    "kode": "IK4503",
     "kelas": [
       {
-        "kelas": "A",
-        "jadwal": [
-          {
-            "dayOfWeek": 1,
-            "startHour": 13,
-            "startMinute": 0,
-            "durasi": 100,
-            "ruang": "Q.04.10/"
-          },
-          {
-            "dayOfWeek": 1,
-            "startHour": 14,
-            "startMinute": 40,
-            "durasi": 50,
-            "ruang": "Q.07.04/"
-          }
-        ],
-        "jadwalUts": [
-          {
-            "date": "2025-04-14T06:00:00.000Z",
-            "lengthMinutes": 150,
-            "ruang": ""
-          }
-        ],
-        "jadwalUas": [
-          {
-            "date": "2025-06-23T06:00:00.000Z",
-            "lengthMinutes": 150,
-            "ruang": ""
-          }
-        ]
-      },
-      {
         "kelas": "B",
+        "accepted": 0,
+        "capacity": 40,
         "jadwal": [
           {
             "dayOfWeek": 3,
@@ -16746,15 +16980,17 @@
     ]
   },
   {
-    "prsId": "",
+    "prsId": "2024:IK4555:21:1",
     "nama": "MUSIC DIRECTING",
-    "semester": null,
-    "sks": 1,
+    "semester": 5,
+    "sks": 2,
     "unit": "Ilmu Komunikasi",
-    "kode": "~IK017",
+    "kode": "IK4555",
     "kelas": [
       {
         "kelas": "A",
+        "accepted": 0,
+        "capacity": 40,
         "jadwal": [
           {
             "dayOfWeek": 6,
@@ -18734,15 +18970,17 @@
     ]
   },
   {
-    "prsId": "",
+    "prsId": "2024:IK4584:21:1",
     "nama": "PENGANTAR PENELITIAN KOMUNIKASI",
-    "semester": null,
+    "semester": 4,
     "sks": 2,
     "unit": "Ilmu Komunikasi",
-    "kode": "~IK014",
+    "kode": "IK4584",
     "kelas": [
       {
         "kelas": "A",
+        "accepted": 0,
+        "capacity": 40,
         "jadwal": [
           {
             "dayOfWeek": 4,
@@ -18776,6 +19014,8 @@
       },
       {
         "kelas": "B",
+        "accepted": 0,
+        "capacity": 40,
         "jadwal": [
           {
             "dayOfWeek": 4,
@@ -18874,15 +19114,17 @@
     ]
   },
   {
-    "prsId": "",
+    "prsId": "2024:TF4463:32:1",
     "nama": "PENGEMBANGAN APLIKASI BERBASIS iOS",
-    "semester": null,
+    "semester": 8,
     "sks": 3,
     "unit": "Informatika",
-    "kode": "~IN006",
+    "kode": "TF4463",
     "kelas": [
       {
         "kelas": "A",
+        "accepted": 0,
+        "capacity": 30,
         "jadwal": [
           {
             "dayOfWeek": 3,
@@ -20253,6 +20495,60 @@
     ]
   },
   {
+    "prsId": "2024:IK4552:21:1",
+    "nama": "PRE-COMMUNITY ORIENTATION",
+    "semester": 7,
+    "sks": 3,
+    "unit": "Ilmu Komunikasi",
+    "kode": "IK4552",
+    "kelas": [
+      {
+        "kelas": "A",
+        "accepted": 0,
+        "capacity": 100,
+        "jadwal": [],
+        "jadwalUts": [],
+        "jadwalUas": []
+      }
+    ]
+  },
+  {
+    "prsId": "2024:IK4549:21:1",
+    "nama": "PRE-INDUSTRIAL ORIENTATION",
+    "semester": 7,
+    "sks": 3,
+    "unit": "Ilmu Komunikasi",
+    "kode": "IK4549",
+    "kelas": [
+      {
+        "kelas": "A",
+        "accepted": 0,
+        "capacity": 100,
+        "jadwal": [],
+        "jadwalUts": [],
+        "jadwalUas": []
+      }
+    ]
+  },
+  {
+    "prsId": "2024:IK4542:21:1",
+    "nama": "PRE-RESEARCH AND INNOVATION",
+    "semester": 7,
+    "sks": 3,
+    "unit": "Ilmu Komunikasi",
+    "kode": "IK4542",
+    "kelas": [
+      {
+        "kelas": "A",
+        "accepted": 0,
+        "capacity": 100,
+        "jadwal": [],
+        "jadwalUts": [],
+        "jadwalUas": []
+      }
+    ]
+  },
+  {
     "prsId": "2024:DI4511:16:1",
     "nama": "PRESENTASI VISUAL",
     "semester": 2,
@@ -20842,15 +21138,17 @@
     ]
   },
   {
-    "prsId": "",
+    "prsId": "2024:IK4559:21:1",
     "nama": "PUBLIC RELATIONS FOR SOCIAL ORGANIZATION",
-    "semester": null,
+    "semester": 5,
     "sks": 2,
     "unit": "Ilmu Komunikasi",
-    "kode": "~IK016",
+    "kode": "IK4559",
     "kelas": [
       {
         "kelas": "A",
+        "accepted": 0,
+        "capacity": 40,
         "jadwal": [
           {
             "dayOfWeek": 4,
@@ -21003,15 +21301,17 @@
     ]
   },
   {
-    "prsId": "",
+    "prsId": "2024:IK4281:21:1",
     "nama": "READING FOR COMMUNICATION PURPOSES",
-    "semester": null,
+    "semester": 1,
     "sks": 2,
     "unit": "Ilmu Komunikasi",
-    "kode": "~IK007",
+    "kode": "IK4281",
     "kelas": [
       {
         "kelas": "A",
+        "accepted": 0,
+        "capacity": 55,
         "jadwal": [
           {
             "dayOfWeek": 2,
@@ -21368,6 +21668,24 @@
     ]
   },
   {
+    "prsId": "2024:IK4544:21:1",
+    "nama": "RESEARCH AND INNOVATION DISSEMINATION",
+    "semester": 7,
+    "sks": 4,
+    "unit": "Ilmu Komunikasi",
+    "kode": "IK4544",
+    "kelas": [
+      {
+        "kelas": "A",
+        "accepted": 0,
+        "capacity": 100,
+        "jadwal": [],
+        "jadwalUts": [],
+        "jadwalUas": []
+      }
+    ]
+  },
+  {
     "prsId": "2024:TS4601:02:1",
     "nama": "RESEARCH AND INNOVATION: DISEMINASI KARYA TULIS ILMIAH",
     "semester": 8,
@@ -21658,6 +21976,24 @@
     ]
   },
   {
+    "prsId": "2024:TF4538:32:1",
+    "nama": "RESEARCH/STARTUP IMMERSION",
+    "semester": 6,
+    "sks": 6,
+    "unit": "Informatika",
+    "kode": "TF4538",
+    "kelas": [
+      {
+        "kelas": "A",
+        "accepted": 0,
+        "capacity": 999,
+        "jadwal": [],
+        "jadwalUts": [],
+        "jadwalUas": []
+      }
+    ]
+  },
+  {
     "prsId": "2020:TE4722:04:1",
     "nama": "RI",
     "semester": 7,
@@ -21834,15 +22170,17 @@
     ]
   },
   {
-    "prsId": "",
+    "prsId": "2024:TF4533:32:1",
     "nama": "ROUTING AND SWITCHING",
-    "semester": null,
+    "semester": 8,
     "sks": 3,
     "unit": "Informatika",
-    "kode": "~IN007",
+    "kode": "TF4533",
     "kelas": [
       {
         "kelas": "A",
+        "accepted": 0,
+        "capacity": 40,
         "jadwal": [
           {
             "dayOfWeek": 3,
@@ -22287,15 +22625,17 @@
     ]
   },
   {
-    "prsId": "",
+    "prsId": "2024:TF4511:32:1",
     "nama": "SENI KONSEP DAN PEMODELAN UNTUK GAME",
-    "semester": null,
+    "semester": 8,
     "sks": 3,
     "unit": "Informatika",
-    "kode": "~IN004",
+    "kode": "TF4511",
     "kelas": [
       {
         "kelas": "A",
+        "accepted": 0,
+        "capacity": 30,
         "jadwal": [
           {
             "dayOfWeek": 2,
@@ -23340,6 +23680,24 @@
     ]
   },
   {
+    "prsId": "2020:IK4499:21:1",
+    "nama": "SKRIPSI",
+    "semester": 8,
+    "sks": 5,
+    "unit": "Ilmu Komunikasi",
+    "kode": "IK4499",
+    "kelas": [
+      {
+        "kelas": "A",
+        "accepted": 0,
+        "capacity": 72,
+        "jadwal": [],
+        "jadwalUts": [],
+        "jadwalUas": []
+      }
+    ]
+  },
+  {
     "prsId": "2023:EC4699:X7:1",
     "nama": "SKRIPSI",
     "semester": 8,
@@ -24223,15 +24581,17 @@
     ]
   },
   {
-    "prsId": "",
+    "prsId": "2024:IK4562:21:1",
     "nama": "STRATEGIC SOCIAL MEDIA FOR PUBLIC RELATIONS",
-    "semester": null,
+    "semester": 5,
     "sks": 3,
     "unit": "Ilmu Komunikasi",
-    "kode": "~IK003",
+    "kode": "IK4562",
     "kelas": [
       {
         "kelas": "A",
+        "accepted": 0,
+        "capacity": 40,
         "jadwal": [
           {
             "dayOfWeek": 1,
@@ -24902,15 +25262,17 @@
     ]
   },
   {
-    "prsId": "",
+    "prsId": "2024:IK4568:21:1",
     "nama": "TEKNIK PENYIARAN RADIO",
-    "semester": null,
-    "sks": 1,
+    "semester": 4,
+    "sks": 2,
     "unit": "Ilmu Komunikasi",
-    "kode": "~IK018",
+    "kode": "IK4568",
     "kelas": [
       {
         "kelas": "A",
+        "accepted": 0,
+        "capacity": 40,
         "jadwal": [
           {
             "dayOfWeek": 6,
@@ -25201,30 +25563,26 @@
     ]
   },
   {
-    "prsId": "",
+    "prsId": "2024:IK4576:21:1",
     "nama": "TEORI DAN FILSAFAT KOMUNIKASI",
-    "semester": null,
+    "semester": 2,
     "sks": 3,
     "unit": "Ilmu Komunikasi",
-    "kode": "~IK013",
+    "kode": "IK4576",
     "kelas": [
       {
-        "kelas": "B",
+        "kelas": "A",
+        "accepted": 0,
+        "capacity": 30,
         "jadwal": [
           {
             "dayOfWeek": 4,
-            "startHour": 13,
-            "startMinute": 0,
+            "startHour": 10,
+            "startMinute": 30,
             "durasi": 150,
-            "ruang": "Q.04.06b/"
+            "ruang": "/"
           }
         ],
-        "jadwalUts": [],
-        "jadwalUas": []
-      },
-      {
-        "kelas": "A",
-        "jadwal": [],
         "jadwalUts": [
           {
             "date": "2025-04-10T03:30:00.000Z",
@@ -25239,6 +25597,22 @@
             "ruang": ""
           }
         ]
+      },
+      {
+        "kelas": "B",
+        "accepted": 0,
+        "capacity": 30,
+        "jadwal": [
+          {
+            "dayOfWeek": 4,
+            "startHour": 13,
+            "startMinute": 0,
+            "durasi": 150,
+            "ruang": "Q.04.06b/"
+          }
+        ],
+        "jadwalUts": [],
+        "jadwalUas": []
       }
     ]
   },
@@ -25561,6 +25935,24 @@
     ]
   },
   {
+    "prsId": "2024:TF4999:32:1",
+    "nama": "TUGAS AKHIR",
+    "semester": 8,
+    "sks": 6,
+    "unit": "Informatika",
+    "kode": "TF4999",
+    "kelas": [
+      {
+        "kelas": "A",
+        "accepted": 0,
+        "capacity": 999,
+        "jadwal": [],
+        "jadwalUts": [],
+        "jadwalUas": []
+      }
+    ]
+  },
+  {
     "prsId": "2024:GD4320:39:1",
     "nama": "TUGAS AKHIR",
     "semester": 8,
@@ -25778,15 +26170,17 @@
     ]
   },
   {
-    "prsId": "",
+    "prsId": "2024:IK4566:21:1",
     "nama": "VIDEO JOURNALISM",
-    "semester": null,
-    "sks": 1,
+    "semester": 5,
+    "sks": 3,
     "unit": "Ilmu Komunikasi",
-    "kode": "~IK005",
+    "kode": "IK4566",
     "kelas": [
       {
         "kelas": "A",
+        "accepted": 0,
+        "capacity": 40,
         "jadwal": [
           {
             "dayOfWeek": 1,
