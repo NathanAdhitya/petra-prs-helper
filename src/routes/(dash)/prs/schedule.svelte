@@ -121,7 +121,7 @@
 				<div class="flex h-full w-full items-center gap-2">
 					<div class="text-lg">Visualisasi Jadwal</div>
 					<div class="ml-auto flex items-center gap-2 rounded-lg">
-						<div class="text-sm font-medium">Tampilkan Prioritas:</div>
+						<div class="text-sm font-medium text-right">Tampilkan Prioritas:</div>
 						<ToggleGroup.Root
 							size="unstyled"
 							type="single"
@@ -132,6 +132,17 @@
 							{#each ['Semua', 1, 2, 3] as i}
 								<!-- svelte-ignore a11y-no-static-element-interactions -->
 								<div
+									on:touchstart={() => {
+										if (
+											typeof i === 'number' &&
+											(Number.parseInt(pilihanValue ?? '') === i || pilihanValue === 'Semua')
+										)
+											emphasizePilihan = i;
+									}}
+									on:touchend={() => {
+										if (typeof i === 'number')
+											emphasizePilihan = emphasizePilihan === i ? null : emphasizePilihan;
+									}}
 									on:mouseover={() => {
 										if (
 											typeof i === 'number' &&
@@ -172,7 +183,7 @@
 			<th class="sticky top-0 bg-slate-100 px-2 py-1"></th>
 			<th class="sticky top-0 bg-slate-100 px-2 py-1"></th>
 			{#each dayLabels as day}
-				<th class="sticky top-0 border bg-slate-100 p-1 px-2">{day}</th>
+				<th class="sticky top-0 border bg-slate-100 p-1 px-2 z-20">{day}</th>
 			{/each}
 		</tr>
 	</thead>

@@ -6,7 +6,7 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1" />
 		%sveltekit.head%
 	</head>
-	<body data-sveltekit-preload-data="hover">
+	<body data-sveltekit-preload-data="hover" class="bg-slate-300">
 		<div style="display: contents">%sveltekit.body%</div>
 		<style>
 			.loader {
@@ -58,9 +58,11 @@
 			"
 		>
 			<div class="loader"></div>
-			
-			<div style="font-size: 1.5rem; color: #000;">prs.natha.my.id is loading...</div>
-			<div style="font-size: 0.7rem; color: #707070;">Not working? Make sure you have JavaScript enabled!</div>
+
+			<div style="font-size: 1.5rem; color: #000">prs.natha.my.id is loading...</div>
+			<div style="font-size: 0.7rem; color: #707070">
+				Not working? Make sure you have JavaScript enabled!
+			</div>
 		</div>
 	</body>
 </html>

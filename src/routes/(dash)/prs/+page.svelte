@@ -220,18 +220,22 @@
 		.filter(notEmpty);
 
 	// $: console.log(matkulOptions.length);
+
+	let clientWidth: number;
+	let direction: 'vertical' | 'horizontal' = 'horizontal';
+	$: direction = clientWidth < 620 ? 'vertical' : 'horizontal';
 </script>
 
-<div class="flex min-w-96 items-center justify-between gap-8">
+<div class="flex items-center justify-between gap-2" bind:clientWidth>
 	<h1 class="text-4xl font-bold">Penyusun Rencana Studi</h1>
 	<div class="flex flex-col items-end">
-		<Tooltip.Root openDelay={0} closeOnPointerDown={false}>
+		<Tooltip.Root openDelay={0} closeOnPointerDown={false} disableHoverableContent>
 			<Tooltip.Trigger>
-				<div class="flex items-center gap-2 text-sm">
+				<div class="flex items-center gap-2 text-right text-sm">
 					Tentang akurasi data <Info class="h-4 w-4 opacity-50" />
 				</div>
 			</Tooltip.Trigger>
-			<Tooltip.Content side="left" class="max-w-sm">
+			<Tooltip.Content class="max-w-sm">
 				Sumber data adalah hasil scraping. Data mungkin tidak akurat / sudah ketinggalan. Jika
 				menurut Anda data ini terlalu jauh dari realita, silahkan buka isu di GitHub atau hubungi
 				maintainer.
@@ -239,183 +243,181 @@
 		</Tooltip.Root>
 		<Tooltip.Root openDelay={0} closeOnPointerDown={false}>
 			<Tooltip.Trigger>
-				<div class="flex items-center gap-2 text-sm">
+				<div class="flex items-center gap-2 text-right text-sm">
 					Tentang kemampuan alat <Info class="h-4 w-4 opacity-50" />
 				</div>
 			</Tooltip.Trigger>
-			<Tooltip.Content side="left" class="max-w-sm">
-				Alat ini tidak terhubung dengan sistem PRS. Alat ini adalah alat bantuan terpisah dari
-				sistem Petra. Gunakanlah dengan bijak. Pembuat alat ini tidak bertanggung jawab atas segala
-				akibat dari penggunaan alat ini.
+			<Tooltip.Content class="max-w-sm">
+				<b>Alat ini tidak terhubung dengan sistem PRS.</b> Alat ini adalah alat bantuan terpisah dari
+				sistem Petra. Gunakanlah dengan bijak. Pembuat alat ini tidak bertanggung jawab atas segala akibat
+				dari penggunaan alat ini.
 			</Tooltip.Content>
 		</Tooltip.Root>
 	</div>
 </div>
 <div class="flex h-full w-full gap-4">
-	<Resizable.PaneGroup direction="horizontal" class="gap-2">
-		{#if !$prsSubmitted}
-			<Resizable.Pane minSize={20} defaultSize={20} class="min-w-72">
-				<Card.Root class="flex h-full flex-col">
-					<Card.Header>
-						<Popover.Root bind:open let:ids>
-							<Popover.Trigger asChild let:builder>
-								<Button
-									builders={[builder]}
-									variant="outline"
-									role="combobox"
-									aria-expanded={open}
-									class="w-full justify-between"
-								>
-									Cari mata kuliah...
-									<ChevronDown class="ml-2 h-4 w-4 shrink-0 opacity-50" />
-								</Button>
-							</Popover.Trigger>
-							<Popover.Content class="w-full max-w-md p-0" side="bottom-start">
-								<Command.Root class="max-h-72">
-									<div class="relative">
-										<Command.Input class="w-full" placeholder="Cari mata kuliah..." />
-										<MatkulFilter {listJurusan} disabled={$prsSubmitted} bind:filterFunction />
-									</div>
-
-									<Command.List>
-										<Command.Empty
-											>Mata kuliah tidak ditemukan.<br />Pastikan filter sudah sesuai 😉</Command.Empty
-										>
-										<Command.Group class="!overflow-auto">
-											{#each filteredMakul as matkul (matkul.kode)}
-												<Command.Item
-													value={matkul.value}
-													onSelect={() => onSelectMatkul(matkul, ids)}
-												>
-													<span class="absolute text-muted-foreground">{matkul.kode} </span>
-													<span class="ml-[8ch]">
-														{matkul.label}
-														<span class="text-xs text-muted-foreground">
-															{matkul.reference.sks} SKS</span
-														>
-													</span>
-													<Check
-														class={cn(
-															'ml-auto mr-2 h-4 w-4',
-															!$chosenMatkul.some((v) => v.kode === matkul.reference.kode) &&
-																'text-transparent'
-														)}
-													/>
-												</Command.Item>
-											{/each}
-										</Command.Group>
-									</Command.List>
-									<div class="flex items-center justify-center px-4 py-2">
-										<div>
-											<p class="text-sm text-muted-foreground">
-												Tahan
-												<kbd
-													class={clsx(
-														'pointer-events-none inline-flex h-5 select-none items-center gap-1 rounded border bg-muted px-1.5 font-mono text-[10px] font-medium opacity-100 transition-colors',
-														holdingShift
-															? 'bg-primary text-primary-foreground'
-															: 'bg-muted text-muted-foreground'
-													)}
-												>
-													<span class="text-xs">Shift</span>
-												</kbd>
-												untuk memilih massal
-											</p>
-										</div>
-										<div class="ml-auto text-sm text-muted-foreground">
-											{$chosenSksCount} / {ChosenMatkulUtils.sksLimit} SKS dipilih
-										</div>
-									</div>
-								</Command.Root>
-							</Popover.Content>
-						</Popover.Root>
-					</Card.Header>
-					<Card.Content class="relative h-full overflow-hidden">
-						<div class="absolute left-0 top-0 flex h-full w-full flex-col overflow-y-auto p-4 pt-0">
-							{#if $chosenMatkul.length === 0}
-								<div class="px-4 text-center text-muted-foreground">
-									Mata kuliah yang telah dipilih akan muncul di sini. Pilih mata kuliah yang ingin
-									diambil.
+	<Resizable.PaneGroup {direction} class="gap-2">
+		<Resizable.Pane minSize={20} defaultSize={20} class="min-h-[32rem] min-w-80">
+			<Card.Root class="flex h-full flex-col">
+				<Card.Header>
+					<Popover.Root bind:open let:ids>
+						<Popover.Trigger asChild let:builder>
+							<Button
+								builders={[builder]}
+								variant="outline"
+								role="combobox"
+								aria-expanded={open}
+								class="w-full justify-between"
+							>
+								Cari mata kuliah...
+								<ChevronDown class="ml-2 h-4 w-4 shrink-0 opacity-50" />
+							</Button>
+						</Popover.Trigger>
+						<Popover.Content class="w-full max-w-md p-0" side="bottom-start">
+							<Command.Root class="max-h-72">
+								<div class="relative">
+									<Command.Input class="w-full" placeholder="Cari mata kuliah..." />
+									<MatkulFilter {listJurusan} disabled={$prsSubmitted} bind:filterFunction />
 								</div>
-							{:else}
-								{#each $chosenMatkul as matkul, i (matkul.kode)}
-									<!-- svelte-ignore a11y-no-static-element-interactions -->
-									<div
-										class="mb-2"
-										on:mouseenter={() => {
-											emphasizeMatkulKode = matkul.kode;
-										}}
-										on:mouseleave={() => {
-											if (emphasizeMatkulKode === matkul.kode) emphasizeMatkulKode = null;
-										}}
-									>
-										<MatkulCard
-											isMissing={$jadwalDiffs[i] === false}
-											{pilihanIndexes}
-											{matkul}
-											onOpenChanged={onOpenChanged(matkul.kode)}
-											{onFocusedToChanged}
-										/>
+
+								<Command.List>
+									<Command.Empty>
+										Mata kuliah tidak ditemukan.<br />Pastikan filter sudah sesuai 😉
+									</Command.Empty>
+									<Command.Group class="!overflow-auto">
+										{#each filteredMakul as matkul (matkul.kode)}
+											<Command.Item
+												value={matkul.value}
+												onSelect={() => onSelectMatkul(matkul, ids)}
+											>
+												<span class="absolute text-muted-foreground">{matkul.kode} </span>
+												<span class="ml-[8ch]">
+													{matkul.label}
+													<span class="text-xs text-muted-foreground">
+														{matkul.reference.sks} SKS</span
+													>
+												</span>
+												<Check
+													class={cn(
+														'ml-auto mr-2 h-4 w-4',
+														!$chosenMatkul.some((v) => v.kode === matkul.reference.kode) &&
+															'text-transparent'
+													)}
+												/>
+											</Command.Item>
+										{/each}
+									</Command.Group>
+								</Command.List>
+								<div class="flex items-center justify-center px-4 py-2">
+									<div>
+										<p class="text-sm text-muted-foreground">
+											Tahan
+											<kbd
+												class={clsx(
+													'pointer-events-none inline-flex h-5 select-none items-center gap-1 rounded border bg-muted px-1.5 font-mono text-[10px] font-medium opacity-100 transition-colors',
+													holdingShift
+														? 'bg-primary text-primary-foreground'
+														: 'bg-muted text-muted-foreground'
+												)}
+											>
+												<span class="text-xs">Shift</span>
+											</kbd>
+											untuk memilih massal
+										</p>
 									</div>
-								{/each}
-							{/if}
-						</div>
-					</Card.Content>
-				</Card.Root>
-			</Resizable.Pane>
+									<div class="ml-auto text-sm text-muted-foreground">
+										{$chosenSksCount} / {ChosenMatkulUtils.sksLimit} SKS dipilih
+									</div>
+								</div>
+							</Command.Root>
+						</Popover.Content>
+					</Popover.Root>
+				</Card.Header>
+				<Card.Content class="relative h-full overflow-hidden">
+					<div class="absolute left-0 top-0 flex h-full w-full flex-col overflow-y-auto p-4 pt-0">
+						{#if $chosenMatkul.length === 0}
+							<div class="px-4 text-center text-muted-foreground">
+								Mata kuliah yang telah dipilih akan muncul di sini. Pilih mata kuliah yang ingin
+								diambil.
+							</div>
+						{:else}
+							{#each $chosenMatkul as matkul, i (matkul.kode)}
+								<!-- svelte-ignore a11y-no-static-element-interactions -->
+								<div
+									class="mb-2"
+									on:mouseenter={() => {
+										emphasizeMatkulKode = matkul.kode;
+									}}
+									on:mouseleave={() => {
+										if (emphasizeMatkulKode === matkul.kode) emphasizeMatkulKode = null;
+									}}
+								>
+									<MatkulCard
+										isMissing={$jadwalDiffs[i] === false}
+										{pilihanIndexes}
+										{matkul}
+										onOpenChanged={onOpenChanged(matkul.kode)}
+										{onFocusedToChanged}
+									/>
+								</div>
+							{/each}
+						{/if}
+					</div>
+				</Card.Content>
+			</Card.Root>
+		</Resizable.Pane>
+		{#if direction === 'horizontal'}
 			<Resizable.Handle withHandle />
 		{/if}
-		<Resizable.Pane minSize={60} defaultSize={70}>
+		<Resizable.Pane minSize={60} defaultSize={70} class="min-h-screen">
 			<div class="flex h-full w-full flex-1 flex-col gap-4">
 				<div class="flex flex-wrap items-center gap-4 rounded-lg border-2 bg-slate-50 p-2 px-4">
-					<div class="flex-1 text-sm">
+					<div class="flex-1 text-sm text-nowrap">
 						<span class="font-medium">Total SKS:</span>
 						{$chosenMatkul.reduce((acc, matkul) => acc + matkul.sks, 0)} / {ChosenMatkulUtils.sksLimit}
 					</div>
 					<PrsMigrate />
-					<div class="flex flex-wrap justify-end gap-4">
-						<PrsExport />
-						<Dialog.Root>
-							<Dialog.Trigger asChild let:builder>
-								<Button variant="destructive" builders={[builder]}>Reset</Button>
-							</Dialog.Trigger>
-							<Dialog.Content>
-								<Dialog.Header>
-									<Dialog.Title>Reset</Dialog.Title>
-								</Dialog.Header>
-								<Dialog.Description>
-									Isi PRS akan dihapus. Apakah Anda yakin? Aksi ini tidak dapat dibatalkan.
-								</Dialog.Description>
-								<Dialog.Footer>
-									<Dialog.Close asChild let:builder>
-										<Button
-											variant="secondary"
-											builders={[builder]}
-											on:click={() => {
-												validationDialogOpen = false;
-											}}
-										>
-											Batal
-										</Button>
-									</Dialog.Close>
-									<Dialog.Close asChild let:builder>
-										<Button
-											builders={[builder]}
-											on:click={() => {
-												ChosenMatkulUtils.reset();
-												ChosenClassesUtils.reset();
-												$prsSubmitted = false;
-											}}
-											variant="destructive"
-										>
-											Reset
-										</Button>
-									</Dialog.Close>
-								</Dialog.Footer>
-							</Dialog.Content>
-						</Dialog.Root>
-						<PrsPeriksa />
-					</div>
+					<PrsExport />
+					<Dialog.Root>
+						<Dialog.Trigger asChild let:builder>
+							<Button variant="destructive" builders={[builder]}>Reset</Button>
+						</Dialog.Trigger>
+						<Dialog.Content>
+							<Dialog.Header>
+								<Dialog.Title>Reset</Dialog.Title>
+							</Dialog.Header>
+							<Dialog.Description>
+								Isi PRS akan dihapus. Apakah Anda yakin? Aksi ini tidak dapat dibatalkan.
+							</Dialog.Description>
+							<Dialog.Footer>
+								<Dialog.Close asChild let:builder>
+									<Button
+										variant="secondary"
+										builders={[builder]}
+										on:click={() => {
+											validationDialogOpen = false;
+										}}
+									>
+										Batal
+									</Button>
+								</Dialog.Close>
+								<Dialog.Close asChild let:builder>
+									<Button
+										builders={[builder]}
+										on:click={() => {
+											ChosenMatkulUtils.reset();
+											ChosenClassesUtils.reset();
+											$prsSubmitted = false;
+										}}
+										variant="destructive"
+									>
+										Reset
+									</Button>
+								</Dialog.Close>
+							</Dialog.Footer>
+						</Dialog.Content>
+					</Dialog.Root>
+					<PrsPeriksa />
 				</div>
 				<div class="h-full w-full overflow-auto rounded-lg border-2">
 					<Schedule
@@ -425,7 +427,7 @@
 						let:schedule
 					>
 						{@const busy = openMatkulSelectionKode !== null}
-						<Tooltip.Root openDelay={100} disableHoverableContent closeOnPointerDown={false}>
+						<Tooltip.Root openDelay={0} disableHoverableContent closeOnPointerDown={false}>
 							<Tooltip.Trigger asChild let:builder>
 								{#key busy}
 									<MatkulScheduleCard
@@ -439,7 +441,7 @@
 									/>
 								{/key}
 							</Tooltip.Trigger>
-							<Tooltip.Content side="right" class="w-96 max-w-96 p-4">
+							<Tooltip.Content class="w-full max-w-96 p-4">
 								<div class="flex-col gap-2">
 									<h4 class="font-medium leading-none">
 										{properCase(schedule.nama)} ({lazyShortenMatkulName(
@@ -453,7 +455,8 @@
 
 									{#if schedule.kode.startsWith('~')}
 										<div class="text-xs text-yellow-600">
-											<span class="font-semibold">~</span> = mata kuliah ini ada di jadwal tetapi tidak pada data PRS
+											<span class="font-semibold">~</span> = mata kuliah ini ada di jadwal tetapi tidak
+											pada data PRS
 										</div>
 									{/if}
 									<div class="text-sm text-muted-foreground">

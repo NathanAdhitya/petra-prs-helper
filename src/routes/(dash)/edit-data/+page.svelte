@@ -116,7 +116,7 @@
 	Untuk pengguna yang ingin eksperimen secara langsung
 </div>
 
-<div class="grid grid-cols-2 gap-4">
+<div class="grid grid-cols-1 md:grid-cols-2 gap-4">
 	<Card.Card>
 		<Card.Header>
 			<h2 class="text-lg font-semibold">Data Jadwal</h2>

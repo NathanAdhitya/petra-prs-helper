@@ -33,7 +33,7 @@
 
 <!-- svelte-ignore a11y-no-static-element-interactions -->
 <!-- svelte-ignore a11y-click-events-have-key-events -->
-<div
+<button
 	bind:contentRect
 	use:builderActions={{ builders }}
 	{...getAttrs(builders)}
@@ -65,6 +65,7 @@
 			openMatkulFocusedClass = schedule.kelas[0].toLowerCase();
 		}
 	}}
+	on:touchstart
 	on:click={(e) => {
 		if (e.isTrusted) return;
 
@@ -228,4 +229,4 @@
 			{/if}
 		</div>
 	</div>
-</div>
+</button>
