@@ -84,7 +84,7 @@
 	}}
 	data-priority-click
 >
-	<div class="mb-1 text-sm font-medium leading-4 max-xl:text-xs flex gap-x-1 flex-wrap">
+	<div class="mb-1 text-sm font-medium leading-4 max-xl:text-xs flex gap-x-1 flex-wrap max-w-full">
 		<div class="text-ellipsis text-nowrap overflow-hidden block">
 			{#if forceShortenMatkulName}
 				{lazyShortenMatkulName(properCase(schedule.nama), true)}
