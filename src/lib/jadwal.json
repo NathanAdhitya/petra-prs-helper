@@ -3153,39 +3153,6 @@
     ]
   },
   {
-    "prsId": "2024:DM4445:42:1",
-    "nama": "BASIC DESIGN",
-    "semester": 2,
-    "sks": 5,
-    "unit": "International Program in Digital Media",
-    "kode": "DM4445",
-    "kelas": [
-      {
-        "kelas": "A",
-        "accepted": 0,
-        "capacity": 20,
-        "jadwal": [
-          {
-            "dayOfWeek": 2,
-            "startHour": 11,
-            "startMinute": 30,
-            "durasi": 120,
-            "ruang": "Q.08.03C/"
-          },
-          {
-            "dayOfWeek": 3,
-            "startHour": 8,
-            "startMinute": 30,
-            "durasi": 240,
-            "ruang": "Q.08.03C/"
-          }
-        ],
-        "jadwalUts": [],
-        "jadwalUas": []
-      }
-    ]
-  },
-  {
     "prsId": "2024:DV4337:17:1",
     "nama": "BASIC DESIGN",
     "semester": 2,
@@ -3257,6 +3224,39 @@
             "startMinute": 30,
             "durasi": 480,
             "ruang": "Q.10.01/"
+          }
+        ],
+        "jadwalUts": [],
+        "jadwalUas": []
+      }
+    ]
+  },
+  {
+    "prsId": "2024:DM4445:42:1",
+    "nama": "BASIC DESIGN",
+    "semester": 2,
+    "sks": 5,
+    "unit": "International Program in Digital Media",
+    "kode": "DM4445",
+    "kelas": [
+      {
+        "kelas": "A",
+        "accepted": 0,
+        "capacity": 20,
+        "jadwal": [
+          {
+            "dayOfWeek": 2,
+            "startHour": 11,
+            "startMinute": 30,
+            "durasi": 120,
+            "ruang": "Q.08.03C/"
+          },
+          {
+            "dayOfWeek": 3,
+            "startHour": 8,
+            "startMinute": 30,
+            "durasi": 240,
+            "ruang": "Q.08.03C/"
           }
         ],
         "jadwalUts": [],
@@ -3812,32 +3812,6 @@
     ]
   },
   {
-    "prsId": "2023:EB4389:18:1",
-    "nama": "BUSINESS ANALYTICS",
-    "semester": 4,
-    "sks": 3,
-    "unit": "International Business Management",
-    "kode": "EB4389",
-    "kelas": [
-      {
-        "kelas": "A",
-        "accepted": 0,
-        "capacity": 40,
-        "jadwal": [
-          {
-            "dayOfWeek": 1,
-            "startHour": 7,
-            "startMinute": 30,
-            "durasi": 180,
-            "ruang": "T.505/"
-          }
-        ],
-        "jadwalUts": [],
-        "jadwalUas": []
-      }
-    ]
-  },
-  {
     "prsId": "2024:BE4131:43:1",
     "nama": "BUSINESS ANALYTICS",
     "semester": 5,
@@ -3872,6 +3846,32 @@
             "ruang": ""
           }
         ]
+      }
+    ]
+  },
+  {
+    "prsId": "2023:EB4389:18:1",
+    "nama": "BUSINESS ANALYTICS",
+    "semester": 4,
+    "sks": 3,
+    "unit": "International Business Management",
+    "kode": "EB4389",
+    "kelas": [
+      {
+        "kelas": "A",
+        "accepted": 0,
+        "capacity": 40,
+        "jadwal": [
+          {
+            "dayOfWeek": 1,
+            "startHour": 7,
+            "startMinute": 30,
+            "durasi": 180,
+            "ruang": "T.505/"
+          }
+        ],
+        "jadwalUts": [],
+        "jadwalUas": []
       }
     ]
   },
@@ -5541,44 +5541,6 @@
     ]
   },
   {
-    "prsId": "2024:BE4124:43:1",
-    "nama": "DATA MINING",
-    "semester": 4,
-    "sks": 2,
-    "unit": "International Business Engineering",
-    "kode": "BE4124",
-    "kelas": [
-      {
-        "kelas": "A",
-        "accepted": 0,
-        "capacity": 30,
-        "jadwal": [
-          {
-            "dayOfWeek": 4,
-            "startHour": 13,
-            "startMinute": 30,
-            "durasi": 120,
-            "ruang": "P.624/IBE/"
-          }
-        ],
-        "jadwalUts": [
-          {
-            "date": "2025-04-10T03:00:00.000Z",
-            "lengthMinutes": 120,
-            "ruang": ""
-          }
-        ],
-        "jadwalUas": [
-          {
-            "date": "2025-06-19T03:00:00.000Z",
-            "lengthMinutes": 120,
-            "ruang": ""
-          }
-        ]
-      }
-    ]
-  },
-  {
     "prsId": "2024:TF4333:51:1",
     "nama": "DATA MINING",
     "semester": 3,
@@ -5610,6 +5572,44 @@
           {
             "date": "2025-06-25T03:30:00.000Z",
             "lengthMinutes": 180,
+            "ruang": ""
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "prsId": "2024:BE4124:43:1",
+    "nama": "DATA MINING",
+    "semester": 4,
+    "sks": 2,
+    "unit": "International Business Engineering",
+    "kode": "BE4124",
+    "kelas": [
+      {
+        "kelas": "A",
+        "accepted": 0,
+        "capacity": 30,
+        "jadwal": [
+          {
+            "dayOfWeek": 4,
+            "startHour": 13,
+            "startMinute": 30,
+            "durasi": 120,
+            "ruang": "P.624/IBE/"
+          }
+        ],
+        "jadwalUts": [
+          {
+            "date": "2025-04-10T03:00:00.000Z",
+            "lengthMinutes": 120,
+            "ruang": ""
+          }
+        ],
+        "jadwalUas": [
+          {
+            "date": "2025-06-19T03:00:00.000Z",
+            "lengthMinutes": 120,
             "ruang": ""
           }
         ]
@@ -6322,48 +6322,6 @@
     ]
   },
   {
-    "prsId": "2024:DU4198:18:1",
-    "nama": "DIGITAL LEADERSHIP",
-    "semester": 2,
-    "sks": 2,
-    "unit": "International Business Management",
-    "kode": "DU4198",
-    "kelas": [
-      {
-        "kelas": "ZA",
-        "accepted": 0,
-        "capacity": 40,
-        "jadwal": [
-          {
-            "dayOfWeek": 3,
-            "startHour": 13,
-            "startMinute": 0,
-            "durasi": 120,
-            "ruang": "T.505/"
-          }
-        ],
-        "jadwalUts": [],
-        "jadwalUas": []
-      },
-      {
-        "kelas": "ZB",
-        "accepted": 0,
-        "capacity": 40,
-        "jadwal": [
-          {
-            "dayOfWeek": 2,
-            "startHour": 13,
-            "startMinute": 0,
-            "durasi": 120,
-            "ruang": "T.505/"
-          }
-        ],
-        "jadwalUts": [],
-        "jadwalUas": []
-      }
-    ]
-  },
-  {
     "prsId": "2024:DU4198:XXX:1",
     "nama": "DIGITAL LEADERSHIP",
     "semester": 2,
@@ -6631,6 +6589,48 @@
             "ruang": ""
           }
         ]
+      }
+    ]
+  },
+  {
+    "prsId": "2024:DU4198:18:1",
+    "nama": "DIGITAL LEADERSHIP",
+    "semester": 2,
+    "sks": 2,
+    "unit": "International Business Management",
+    "kode": "DU4198",
+    "kelas": [
+      {
+        "kelas": "ZA",
+        "accepted": 0,
+        "capacity": 40,
+        "jadwal": [
+          {
+            "dayOfWeek": 3,
+            "startHour": 13,
+            "startMinute": 0,
+            "durasi": 120,
+            "ruang": "T.505/"
+          }
+        ],
+        "jadwalUts": [],
+        "jadwalUas": []
+      },
+      {
+        "kelas": "ZB",
+        "accepted": 0,
+        "capacity": 40,
+        "jadwal": [
+          {
+            "dayOfWeek": 2,
+            "startHour": 13,
+            "startMinute": 0,
+            "durasi": 120,
+            "ruang": "T.505/"
+          }
+        ],
+        "jadwalUts": [],
+        "jadwalUas": []
       }
     ]
   },
@@ -7583,32 +7583,6 @@
     ]
   },
   {
-    "prsId": "2024:DU4163:42:1",
-    "nama": "ETIKA PROFESI",
-    "semester": 4,
-    "sks": 2,
-    "unit": "International Program in Digital Media",
-    "kode": "DU4163",
-    "kelas": [
-      {
-        "kelas": "ZB",
-        "accepted": 0,
-        "capacity": 20,
-        "jadwal": [
-          {
-            "dayOfWeek": 2,
-            "startHour": 11,
-            "startMinute": 30,
-            "durasi": 120,
-            "ruang": "Q.04.08a/"
-          }
-        ],
-        "jadwalUts": [],
-        "jadwalUas": []
-      }
-    ]
-  },
-  {
     "prsId": "2024:DU4163:XXX:1",
     "nama": "ETIKA PROFESI",
     "semester": 4,
@@ -7993,6 +7967,32 @@
     ]
   },
   {
+    "prsId": "2024:DU4163:42:1",
+    "nama": "ETIKA PROFESI",
+    "semester": 4,
+    "sks": 2,
+    "unit": "International Program in Digital Media",
+    "kode": "DU4163",
+    "kelas": [
+      {
+        "kelas": "ZB",
+        "accepted": 0,
+        "capacity": 20,
+        "jadwal": [
+          {
+            "dayOfWeek": 2,
+            "startHour": 11,
+            "startMinute": 30,
+            "durasi": 120,
+            "ruang": "Q.04.08a/"
+          }
+        ],
+        "jadwalUts": [],
+        "jadwalUas": []
+      }
+    ]
+  },
+  {
     "prsId": "2024:GD4338:39:1",
     "nama": "EVALUASI OTENTIK",
     "semester": 4,
@@ -8252,6 +8252,39 @@
             "startMinute": 0,
             "durasi": 240,
             "ruang": "LAB.CAD/"
+          }
+        ],
+        "jadwalUts": [],
+        "jadwalUas": []
+      }
+    ]
+  },
+  {
+    "prsId": "2024:DV4711:17:1",
+    "nama": "FILM PRODUCTION",
+    "semester": 7,
+    "sks": 4,
+    "unit": "Desain Komunikasi Visual",
+    "kode": "DV4711",
+    "kelas": [
+      {
+        "kelas": "A",
+        "accepted": 0,
+        "capacity": 40,
+        "jadwal": [
+          {
+            "dayOfWeek": 3,
+            "startHour": 7,
+            "startMinute": 30,
+            "durasi": 120,
+            "ruang": "/"
+          },
+          {
+            "dayOfWeek": 3,
+            "startHour": 9,
+            "startMinute": 30,
+            "durasi": 240,
+            "ruang": "/"
           }
         ],
         "jadwalUts": [],
@@ -8969,6 +9002,39 @@
     ]
   },
   {
+    "prsId": "2024:DV4705:17:1",
+    "nama": "GRAPHIC ILLUSTRATION",
+    "semester": 7,
+    "sks": 4,
+    "unit": "Desain Komunikasi Visual",
+    "kode": "DV4705",
+    "kelas": [
+      {
+        "kelas": "A",
+        "accepted": 0,
+        "capacity": 40,
+        "jadwal": [
+          {
+            "dayOfWeek": 3,
+            "startHour": 7,
+            "startMinute": 30,
+            "durasi": 120,
+            "ruang": "/"
+          },
+          {
+            "dayOfWeek": 3,
+            "startHour": 9,
+            "startMinute": 30,
+            "durasi": 240,
+            "ruang": "/"
+          }
+        ],
+        "jadwalUts": [],
+        "jadwalUas": []
+      }
+    ]
+  },
+  {
     "prsId": "2024:EP4265:08:1",
     "nama": "GUEST EXPERIENCE MANAGEMENT",
     "semester": 4,
@@ -9177,33 +9243,6 @@
     ]
   },
   {
-    "prsId": "2024:EC4228:X7:1",
-    "nama": "HUMAN CAPITAL MANAGEMENT",
-    "semester": 2,
-    "sks": 3,
-    "unit": "Manajemen",
-    "kode": "EC4228",
-    "kelas": [
-      {
-        "kelas": "A",
-        "keterangan": "INTER-TRACK",
-        "accepted": 0,
-        "capacity": 50,
-        "jadwal": [
-          {
-            "dayOfWeek": 4,
-            "startHour": 10,
-            "startMinute": 30,
-            "durasi": 180,
-            "ruang": "/"
-          }
-        ],
-        "jadwalUts": [],
-        "jadwalUas": []
-      }
-    ]
-  },
-  {
     "prsId": "2024:EB4431:18:1",
     "nama": "HUMAN CAPITAL MANAGEMENT",
     "semester": 2,
@@ -9229,6 +9268,33 @@
             "startMinute": 0,
             "durasi": 180,
             "ruang": "T.506/"
+          }
+        ],
+        "jadwalUts": [],
+        "jadwalUas": []
+      }
+    ]
+  },
+  {
+    "prsId": "2024:EC4228:X7:1",
+    "nama": "HUMAN CAPITAL MANAGEMENT",
+    "semester": 2,
+    "sks": 3,
+    "unit": "Manajemen",
+    "kode": "EC4228",
+    "kelas": [
+      {
+        "kelas": "A",
+        "keterangan": "INTER-TRACK",
+        "accepted": 0,
+        "capacity": 50,
+        "jadwal": [
+          {
+            "dayOfWeek": 4,
+            "startHour": 10,
+            "startMinute": 30,
+            "durasi": 180,
+            "ruang": "/"
           }
         ],
         "jadwalUts": [],
@@ -9548,24 +9614,6 @@
     ]
   },
   {
-    "prsId": "2024:TF4540:51:1",
-    "nama": "INDUSTRIAL TRAINING",
-    "semester": 6,
-    "sks": 6,
-    "unit": "Data Science and Analytics",
-    "kode": "TF4540",
-    "kelas": [
-      {
-        "kelas": "C",
-        "accepted": 0,
-        "capacity": 999,
-        "jadwal": [],
-        "jadwalUts": [],
-        "jadwalUas": []
-      }
-    ]
-  },
-  {
     "prsId": "2024:TF4540:31:1",
     "nama": "INDUSTRIAL TRAINING",
     "semester": 6,
@@ -9575,6 +9623,24 @@
     "kelas": [
       {
         "kelas": "B",
+        "accepted": 0,
+        "capacity": 999,
+        "jadwal": [],
+        "jadwalUts": [],
+        "jadwalUas": []
+      }
+    ]
+  },
+  {
+    "prsId": "2024:TF4540:51:1",
+    "nama": "INDUSTRIAL TRAINING",
+    "semester": 6,
+    "sks": 6,
+    "unit": "Data Science and Analytics",
+    "kode": "TF4540",
+    "kelas": [
+      {
+        "kelas": "C",
         "accepted": 0,
         "capacity": 999,
         "jadwal": [],
@@ -11453,24 +11519,6 @@
     ]
   },
   {
-    "prsId": "2024:TF4261:51:1",
-    "nama": "KERJA PRAKTEK",
-    "semester": 6,
-    "sks": 2,
-    "unit": "Data Science and Analytics",
-    "kode": "TF4261",
-    "kelas": [
-      {
-        "kelas": "C",
-        "accepted": 0,
-        "capacity": 999,
-        "jadwal": [],
-        "jadwalUts": [],
-        "jadwalUas": []
-      }
-    ]
-  },
-  {
     "prsId": "2020:EW4359:10:1",
     "nama": "KERJA PRAKTEK",
     "semester": 8,
@@ -11489,17 +11537,17 @@
     ]
   },
   {
-    "prsId": "2024:TM4495:05:1",
+    "prsId": "2024:TF4261:51:1",
     "nama": "KERJA PRAKTEK",
-    "semester": 7,
+    "semester": 6,
     "sks": 2,
-    "unit": "Teknik Mesin",
-    "kode": "TM4495",
+    "unit": "Data Science and Analytics",
+    "kode": "TF4261",
     "kelas": [
       {
-        "kelas": "A",
+        "kelas": "C",
         "accepted": 0,
-        "capacity": 50,
+        "capacity": 999,
         "jadwal": [],
         "jadwalUts": [],
         "jadwalUas": []
@@ -11513,6 +11561,24 @@
     "sks": 2,
     "unit": "Teknik Industri",
     "kode": "TI4632",
+    "kelas": [
+      {
+        "kelas": "A",
+        "accepted": 0,
+        "capacity": 50,
+        "jadwal": [],
+        "jadwalUts": [],
+        "jadwalUas": []
+      }
+    ]
+  },
+  {
+    "prsId": "2024:TM4495:05:1",
+    "nama": "KERJA PRAKTEK",
+    "semester": 7,
+    "sks": 2,
+    "unit": "Teknik Mesin",
+    "kode": "TM4495",
     "kelas": [
       {
         "kelas": "A",
@@ -11931,37 +11997,38 @@
     ]
   },
   {
-    "prsId": "2024:DU4210:42:1",
+    "prsId": "2024:DU4210:XXX:1",
     "nama": "KEWARGANEGARAAN",
-    "semester": 4,
+    "semester": 3,
     "sks": 2,
-    "unit": "International Program in Digital Media",
+    "unit": "D.M.U",
     "kode": "DU4210",
     "kelas": [
       {
-        "kelas": "ZB",
+        "kelas": "A",
+        "keterangan": "Umum",
         "accepted": 0,
-        "capacity": 20,
+        "capacity": 40,
         "jadwal": [
           {
             "dayOfWeek": 2,
-            "startHour": 13,
+            "startHour": 10,
             "startMinute": 30,
             "durasi": 120,
-            "ruang": "Q.04.04/"
+            "ruang": "/"
           }
         ],
         "jadwalUts": [
           {
-            "date": "2025-04-08T05:30:00.000Z",
-            "lengthMinutes": 120,
+            "date": "2025-04-07T00:30:00.000Z",
+            "lengthMinutes": 90,
             "ruang": ""
           }
         ],
         "jadwalUas": [
           {
-            "date": "2025-06-17T05:30:00.000Z",
-            "lengthMinutes": 120,
+            "date": "2025-06-16T00:30:00.000Z",
+            "lengthMinutes": 90,
             "ruang": ""
           }
         ]
@@ -11995,38 +12062,37 @@
     ]
   },
   {
-    "prsId": "2024:DU4210:XXX:1",
+    "prsId": "2024:DU4210:42:1",
     "nama": "KEWARGANEGARAAN",
-    "semester": 3,
+    "semester": 4,
     "sks": 2,
-    "unit": "D.M.U",
+    "unit": "International Program in Digital Media",
     "kode": "DU4210",
     "kelas": [
       {
-        "kelas": "A",
-        "keterangan": "Umum",
+        "kelas": "ZB",
         "accepted": 0,
-        "capacity": 40,
+        "capacity": 20,
         "jadwal": [
           {
             "dayOfWeek": 2,
-            "startHour": 10,
+            "startHour": 13,
             "startMinute": 30,
             "durasi": 120,
-            "ruang": "/"
+            "ruang": "Q.04.04/"
           }
         ],
         "jadwalUts": [
           {
-            "date": "2025-04-07T00:30:00.000Z",
-            "lengthMinutes": 90,
+            "date": "2025-04-08T05:30:00.000Z",
+            "lengthMinutes": 120,
             "ruang": ""
           }
         ],
         "jadwalUas": [
           {
-            "date": "2025-06-16T00:30:00.000Z",
-            "lengthMinutes": 90,
+            "date": "2025-06-17T05:30:00.000Z",
+            "lengthMinutes": 120,
             "ruang": ""
           }
         ]
@@ -13141,24 +13207,6 @@
     ]
   },
   {
-    "prsId": "2024:DF4338:45:1",
-    "nama": "LEAP FINAL PROJECT",
-    "semester": 8,
-    "sks": 6,
-    "unit": "Textile and Fashion Design",
-    "kode": "DF4338",
-    "kelas": [
-      {
-        "kelas": "A",
-        "accepted": 0,
-        "capacity": 30,
-        "jadwal": [],
-        "jadwalUts": [],
-        "jadwalUas": []
-      }
-    ]
-  },
-  {
     "prsId": "2024:DV4737:17:1",
     "nama": "LEAP FINAL PROJECT",
     "semester": 8,
@@ -13170,6 +13218,24 @@
         "kelas": "A",
         "accepted": 0,
         "capacity": 230,
+        "jadwal": [],
+        "jadwalUts": [],
+        "jadwalUas": []
+      }
+    ]
+  },
+  {
+    "prsId": "2024:DF4338:45:1",
+    "nama": "LEAP FINAL PROJECT",
+    "semester": 8,
+    "sks": 6,
+    "unit": "Textile and Fashion Design",
+    "kode": "DF4338",
+    "kelas": [
+      {
+        "kelas": "A",
+        "accepted": 0,
+        "capacity": 30,
         "jadwal": [],
         "jadwalUts": [],
         "jadwalUas": []
@@ -13701,24 +13767,6 @@
     ]
   },
   {
-    "prsId": "2020:EU4340:23:1",
-    "nama": "MAGANG",
-    "semester": 7,
-    "sks": 6,
-    "unit": "Finance and Investment",
-    "kode": "EU4340",
-    "kelas": [
-      {
-        "kelas": "A",
-        "accepted": 0,
-        "capacity": 20,
-        "jadwal": [],
-        "jadwalUts": [],
-        "jadwalUas": []
-      }
-    ]
-  },
-  {
     "prsId": "2020:EM4698:07:1",
     "nama": "MAGANG",
     "semester": 7,
@@ -13730,6 +13778,24 @@
         "kelas": "A",
         "accepted": 0,
         "capacity": 50,
+        "jadwal": [],
+        "jadwalUts": [],
+        "jadwalUas": []
+      }
+    ]
+  },
+  {
+    "prsId": "2020:EU4340:23:1",
+    "nama": "MAGANG",
+    "semester": 7,
+    "sks": 6,
+    "unit": "Finance and Investment",
+    "kode": "EU4340",
+    "kelas": [
+      {
+        "kelas": "A",
+        "accepted": 0,
+        "capacity": 20,
         "jadwal": [],
         "jadwalUts": [],
         "jadwalUas": []
@@ -13801,6 +13867,32 @@
     ]
   },
   {
+    "prsId": "2024:IA4121:36:1",
+    "nama": "MANAGEMENT ACCOUNTING",
+    "semester": 2,
+    "sks": 3,
+    "unit": "International Business Accounting",
+    "kode": "IA4121",
+    "kelas": [
+      {
+        "kelas": "A",
+        "accepted": 0,
+        "capacity": 40,
+        "jadwal": [
+          {
+            "dayOfWeek": 4,
+            "startHour": 9,
+            "startMinute": 0,
+            "durasi": 180,
+            "ruang": "T.430/IBAC/"
+          }
+        ],
+        "jadwalUts": [],
+        "jadwalUas": []
+      }
+    ]
+  },
+  {
     "prsId": "2023:EB4303:18:1",
     "nama": "MANAGEMENT ACCOUNTING",
     "semester": 4,
@@ -13826,32 +13918,6 @@
             "startMinute": 0,
             "durasi": 180,
             "ruang": "T.505/"
-          }
-        ],
-        "jadwalUts": [],
-        "jadwalUas": []
-      }
-    ]
-  },
-  {
-    "prsId": "2024:IA4121:36:1",
-    "nama": "MANAGEMENT ACCOUNTING",
-    "semester": 2,
-    "sks": 3,
-    "unit": "International Business Accounting",
-    "kode": "IA4121",
-    "kelas": [
-      {
-        "kelas": "A",
-        "accepted": 0,
-        "capacity": 40,
-        "jadwal": [
-          {
-            "dayOfWeek": 4,
-            "startHour": 9,
-            "startMinute": 0,
-            "durasi": 180,
-            "ruang": "T.430/IBAC/"
           }
         ],
         "jadwalUts": [],
@@ -16593,14 +16659,14 @@
       {
         "kelas": "A",
         "accepted": 0,
-        "capacity": 220,
+        "capacity": 78,
         "jadwal": [
           {
             "dayOfWeek": 4,
             "startHour": 7,
             "startMinute": 30,
             "durasi": 120,
-            "ruang": "Q.10.01/"
+            "ruang": "Q.07.08/"
           },
           {
             "dayOfWeek": 4,
@@ -19717,17 +19783,17 @@
     ]
   },
   {
-    "prsId": "2023:EK4232:XX2:1",
+    "prsId": "2024:EA4341:09:1",
     "nama": "PERPAJAKAN",
-    "semester": 3,
+    "semester": 1,
     "sks": 3,
-    "unit": "School of Business and Management",
-    "kode": "EK4232",
+    "unit": "Akuntansi",
+    "kode": "EA4341",
     "kelas": [
       {
         "kelas": "A",
         "accepted": 0,
-        "capacity": 60,
+        "capacity": 100,
         "jadwal": [
           {
             "dayOfWeek": 5,
@@ -19755,17 +19821,17 @@
     ]
   },
   {
-    "prsId": "2024:EA4341:09:1",
+    "prsId": "2023:EK4232:XX2:1",
     "nama": "PERPAJAKAN",
-    "semester": 1,
+    "semester": 3,
     "sks": 3,
-    "unit": "Akuntansi",
-    "kode": "EA4341",
+    "unit": "School of Business and Management",
+    "kode": "EK4232",
     "kelas": [
       {
         "kelas": "A",
         "accepted": 0,
-        "capacity": 100,
+        "capacity": 60,
         "jadwal": [
           {
             "dayOfWeek": 5,
@@ -21374,32 +21440,6 @@
     ]
   },
   {
-    "prsId": "2024:EB4343:18:1",
-    "nama": "RESEARCH METHODOLOGY",
-    "semester": 5,
-    "sks": 3,
-    "unit": "International Business Management",
-    "kode": "EB4343",
-    "kelas": [
-      {
-        "kelas": "A",
-        "accepted": 0,
-        "capacity": 40,
-        "jadwal": [
-          {
-            "dayOfWeek": 1,
-            "startHour": 7,
-            "startMinute": 30,
-            "durasi": 180,
-            "ruang": "T.506/"
-          }
-        ],
-        "jadwalUts": [],
-        "jadwalUas": []
-      }
-    ]
-  },
-  {
     "prsId": "2024:BE4184:43:1",
     "nama": "RESEARCH METHODOLOGY",
     "semester": 6,
@@ -21434,6 +21474,32 @@
             "ruang": ""
           }
         ]
+      }
+    ]
+  },
+  {
+    "prsId": "2024:EB4343:18:1",
+    "nama": "RESEARCH METHODOLOGY",
+    "semester": 5,
+    "sks": 3,
+    "unit": "International Business Management",
+    "kode": "EB4343",
+    "kelas": [
+      {
+        "kelas": "A",
+        "accepted": 0,
+        "capacity": 40,
+        "jadwal": [
+          {
+            "dayOfWeek": 1,
+            "startHour": 7,
+            "startMinute": 30,
+            "durasi": 180,
+            "ruang": "T.506/"
+          }
+        ],
+        "jadwalUts": [],
+        "jadwalUas": []
       }
     ]
   },
@@ -21556,24 +21622,6 @@
     ]
   },
   {
-    "prsId": "2024:TF4538:51:1",
-    "nama": "RESEARCH/STARTUP IMMERSION",
-    "semester": 6,
-    "sks": 6,
-    "unit": "Data Science and Analytics",
-    "kode": "TF4538",
-    "kelas": [
-      {
-        "kelas": "C",
-        "accepted": 0,
-        "capacity": 999,
-        "jadwal": [],
-        "jadwalUts": [],
-        "jadwalUas": []
-      }
-    ]
-  },
-  {
     "prsId": "2024:TF4538:31:1",
     "nama": "RESEARCH/STARTUP IMMERSION",
     "semester": 6,
@@ -21583,6 +21631,24 @@
     "kelas": [
       {
         "kelas": "B",
+        "accepted": 0,
+        "capacity": 999,
+        "jadwal": [],
+        "jadwalUts": [],
+        "jadwalUas": []
+      }
+    ]
+  },
+  {
+    "prsId": "2024:TF4538:51:1",
+    "nama": "RESEARCH/STARTUP IMMERSION",
+    "semester": 6,
+    "sks": 6,
+    "unit": "Data Science and Analytics",
+    "kode": "TF4538",
+    "kelas": [
+      {
+        "kelas": "C",
         "accepted": 0,
         "capacity": 999,
         "jadwal": [],
@@ -22071,24 +22137,24 @@
     ]
   },
   {
-    "prsId": "2024:GP4324:38:1",
+    "prsId": "2024:GD4342:39:1",
     "nama": "SEMINAR PROPOSAL",
     "semester": 6,
     "sks": 2,
-    "unit": "Pendidikan Guru Pendidikan Anak Usia Dini",
-    "kode": "GP4324",
+    "unit": "Pendidikan Guru - Sekolah Dasar",
+    "kode": "GD4342",
     "kelas": [
       {
         "kelas": "A",
         "accepted": 0,
-        "capacity": 35,
+        "capacity": 40,
         "jadwal": [
           {
             "dayOfWeek": 5,
             "startHour": 8,
             "startMinute": 30,
             "durasi": 120,
-            "ruang": "Q.04.03b/"
+            "ruang": "Q.04.06a/"
           }
         ],
         "jadwalUts": [
@@ -22109,24 +22175,24 @@
     ]
   },
   {
-    "prsId": "2024:GD4342:39:1",
+    "prsId": "2024:GP4324:38:1",
     "nama": "SEMINAR PROPOSAL",
     "semester": 6,
     "sks": 2,
-    "unit": "Pendidikan Guru - Sekolah Dasar",
-    "kode": "GD4342",
+    "unit": "Pendidikan Guru Pendidikan Anak Usia Dini",
+    "kode": "GP4324",
     "kelas": [
       {
         "kelas": "A",
         "accepted": 0,
-        "capacity": 40,
+        "capacity": 35,
         "jadwal": [
           {
             "dayOfWeek": 5,
             "startHour": 8,
             "startMinute": 30,
             "durasi": 120,
-            "ruang": "Q.04.06a/"
+            "ruang": "Q.04.03b/"
           }
         ],
         "jadwalUts": [
@@ -23748,6 +23814,32 @@
     ]
   },
   {
+    "prsId": "2024:TI4495:06:1",
+    "nama": "STATISTIKA",
+    "semester": 3,
+    "sks": 3,
+    "unit": "Teknik Industri",
+    "kode": "TI4495",
+    "kelas": [
+      {
+        "kelas": "A",
+        "accepted": 0,
+        "capacity": 20,
+        "jadwal": [
+          {
+            "dayOfWeek": 2,
+            "startHour": 7,
+            "startMinute": 30,
+            "durasi": 180,
+            "ruang": "P.612/"
+          }
+        ],
+        "jadwalUts": [],
+        "jadwalUas": []
+      }
+    ]
+  },
+  {
     "prsId": "2024:TS4573:02:1",
     "nama": "STATISTIKA",
     "semester": 6,
@@ -23782,32 +23874,6 @@
             "ruang": ""
           }
         ]
-      }
-    ]
-  },
-  {
-    "prsId": "2024:TI4495:06:1",
-    "nama": "STATISTIKA",
-    "semester": 3,
-    "sks": 3,
-    "unit": "Teknik Industri",
-    "kode": "TI4495",
-    "kelas": [
-      {
-        "kelas": "A",
-        "accepted": 0,
-        "capacity": 20,
-        "jadwal": [
-          {
-            "dayOfWeek": 2,
-            "startHour": 7,
-            "startMinute": 30,
-            "durasi": 180,
-            "ruang": "P.612/"
-          }
-        ],
-        "jadwalUts": [],
-        "jadwalUas": []
       }
     ]
   },
@@ -25441,6 +25507,24 @@
     ]
   },
   {
+    "prsId": "2024:ST4575:20:1",
+    "nama": "TUGAS AKHIR",
+    "semester": 8,
+    "sks": 6,
+    "unit": "Bahasa Mandarin",
+    "kode": "ST4575",
+    "kelas": [
+      {
+        "kelas": "A",
+        "accepted": 0,
+        "capacity": 20,
+        "jadwal": [],
+        "jadwalUts": [],
+        "jadwalUas": []
+      }
+    ]
+  },
+  {
     "prsId": "2024:TF4999:31:1",
     "nama": "TUGAS AKHIR",
     "semester": 8,
@@ -25452,24 +25536,6 @@
         "kelas": "B",
         "accepted": 0,
         "capacity": 999,
-        "jadwal": [],
-        "jadwalUts": [],
-        "jadwalUas": []
-      }
-    ]
-  },
-  {
-    "prsId": "2024:TS4698:02:1",
-    "nama": "TUGAS AKHIR",
-    "semester": 8,
-    "sks": 6,
-    "unit": "Teknik Sipil",
-    "kode": "TS4698",
-    "kelas": [
-      {
-        "kelas": "A",
-        "accepted": 0,
-        "capacity": 30,
         "jadwal": [],
         "jadwalUts": [],
         "jadwalUas": []
@@ -25495,17 +25561,17 @@
     ]
   },
   {
-    "prsId": "2024:ST4575:20:1",
+    "prsId": "2024:GD4320:39:1",
     "nama": "TUGAS AKHIR",
     "semester": 8,
-    "sks": 6,
-    "unit": "Bahasa Mandarin",
-    "kode": "ST4575",
+    "sks": 4,
+    "unit": "Pendidikan Guru - Sekolah Dasar",
+    "kode": "GD4320",
     "kelas": [
       {
         "kelas": "A",
         "accepted": 0,
-        "capacity": 20,
+        "capacity": 40,
         "jadwal": [],
         "jadwalUts": [],
         "jadwalUas": []
@@ -25549,17 +25615,17 @@
     ]
   },
   {
-    "prsId": "2024:GD4320:39:1",
+    "prsId": "2022:TI4699:06:1",
     "nama": "TUGAS AKHIR",
     "semester": 8,
-    "sks": 4,
-    "unit": "Pendidikan Guru - Sekolah Dasar",
-    "kode": "GD4320",
+    "sks": 6,
+    "unit": "Teknik Industri",
+    "kode": "TI4699",
     "kelas": [
       {
         "kelas": "A",
         "accepted": 0,
-        "capacity": 40,
+        "capacity": 50,
         "jadwal": [],
         "jadwalUts": [],
         "jadwalUas": []
@@ -25585,17 +25651,17 @@
     ]
   },
   {
-    "prsId": "2022:TI4699:06:1",
+    "prsId": "2024:TS4698:02:1",
     "nama": "TUGAS AKHIR",
     "semester": 8,
     "sks": 6,
-    "unit": "Teknik Industri",
-    "kode": "TI4699",
+    "unit": "Teknik Sipil",
+    "kode": "TS4698",
     "kelas": [
       {
         "kelas": "A",
         "accepted": 0,
-        "capacity": 50,
+        "capacity": 30,
         "jadwal": [],
         "jadwalUts": [],
         "jadwalUas": []
