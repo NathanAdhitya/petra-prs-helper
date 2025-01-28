@@ -157,8 +157,7 @@ export class ChosenMatkulUtils {
 
 				// Remove the old matkul and then readd it
 				chosenMatkul.update((matkul) => {
-					matkul.splice(idx, 1);
-					matkul.push(diff);
+					matkul[idx] = diff;
 					return matkul;
 				});
 
@@ -496,6 +495,8 @@ export class ChosenClassesUtils {
 						const jadwal1 = k1.jadwalUts;
 						const jadwal2 = k2.jadwalUts;
 
+						if (jadwal1 === undefined || jadwal2 === undefined) continue;
+
 						jadwal1.forEach((j1) => {
 							jadwal2.forEach((j2) => {
 								// Test if the same object, if it is then skip
@@ -533,6 +534,8 @@ export class ChosenClassesUtils {
 
 						const jadwal1 = k1.jadwalUas;
 						const jadwal2 = k2.jadwalUas;
+
+						if (jadwal1 === undefined || jadwal2 === undefined) continue;
 
 						jadwal1.forEach((j1) => {
 							jadwal2.forEach((j2) => {

@@ -498,7 +498,7 @@
 												.join(', ')}
 										</div>
 
-										{#if kelasObj.jadwalUts.length > 0}
+										{#if Array.isArray(kelasObj.jadwalUts) && kelasObj.jadwalUts.length > 0}
 											<div class="text-sm text-muted-foreground">
 												<span class="font-semibold">UTS:</span>
 												{#if kelasObj.jadwalUts.length === 1}
@@ -531,7 +531,7 @@
 											</div>
 										{/if}
 
-										{#if kelasObj.jadwalUas.length > 0}
+										{#if Array.isArray(kelasObj.jadwalUas) && kelasObj.jadwalUas.length > 0}
 											<div class="text-sm text-muted-foreground">
 												<span class="font-semibold">UAS:</span>
 												{#if kelasObj.jadwalUas.length === 1}
