@@ -732,6 +732,34 @@
     "kode": "EA4403",
     "kelas": [
       {
+        "kelas": "A",
+        "accepted": 0,
+        "capacity": 60,
+        "jadwal": [
+          {
+            "dayOfWeek": 1,
+            "startHour": 7,
+            "startMinute": 30,
+            "durasi": 180,
+            "ruang": "/"
+          }
+        ],
+        "jadwalUts": [
+          {
+            "date": "2025-04-11T06:30:00.000Z",
+            "lengthMinutes": 180,
+            "ruang": ""
+          }
+        ],
+        "jadwalUas": [
+          {
+            "date": "2025-06-20T06:30:00.000Z",
+            "lengthMinutes": 180,
+            "ruang": ""
+          }
+        ]
+      },
+      {
         "kelas": "B",
         "accepted": 0,
         "capacity": 60,
@@ -989,6 +1017,35 @@
             "startMinute": 30,
             "durasi": 180,
             "ruang": "T.316/"
+          }
+        ],
+        "jadwalUts": [
+          {
+            "date": "2025-04-17T00:30:00.000Z",
+            "lengthMinutes": 180,
+            "ruang": ""
+          }
+        ],
+        "jadwalUas": [
+          {
+            "date": "2025-06-26T00:30:00.000Z",
+            "lengthMinutes": 180,
+            "ruang": ""
+          }
+        ]
+      },
+      {
+        "kelas": "B",
+        "keterangan": "mahasiswa angkatan 2022",
+        "accepted": 0,
+        "capacity": 40,
+        "jadwal": [
+          {
+            "dayOfWeek": 2,
+            "startHour": 16,
+            "startMinute": 30,
+            "durasi": 180,
+            "ruang": "T.324/"
           }
         ],
         "jadwalUts": [
@@ -1314,7 +1371,7 @@
       {
         "kelas": "A",
         "accepted": 0,
-        "capacity": 40,
+        "capacity": 65,
         "jadwal": [
           {
             "dayOfWeek": 1,
@@ -1324,8 +1381,20 @@
             "ruang": "T.320/"
           }
         ],
-        "jadwalUts": [],
-        "jadwalUas": []
+        "jadwalUts": [
+          {
+            "date": "2025-04-16T03:30:00.000Z",
+            "lengthMinutes": 180,
+            "ruang": ""
+          }
+        ],
+        "jadwalUas": [
+          {
+            "date": "2025-06-25T03:30:00.000Z",
+            "lengthMinutes": 180,
+            "ruang": ""
+          }
+        ]
       }
     ]
   },
@@ -3660,8 +3729,20 @@
             "ruang": "/"
           }
         ],
-        "jadwalUts": [],
-        "jadwalUas": []
+        "jadwalUts": [
+          {
+            "date": "2025-04-09T00:30:00.000Z",
+            "lengthMinutes": 180,
+            "ruang": ""
+          }
+        ],
+        "jadwalUas": [
+          {
+            "date": "2025-06-18T00:30:00.000Z",
+            "lengthMinutes": 180,
+            "ruang": ""
+          }
+        ]
       }
     ]
   },
@@ -4175,7 +4256,7 @@
     "prsId": "2024:SI4373:01:1",
     "nama": "BUSINESS WRITING",
     "semester": 6,
-    "sks": 3,
+    "sks": 2,
     "unit": "English for Business",
     "kode": "SI4373",
     "kelas": [
@@ -4810,64 +4891,7 @@
     "sks": 3,
     "unit": "English for Business",
     "kode": "SI4745",
-    "kelas": [
-      {
-        "kelas": "A",
-        "accepted": 0,
-        "capacity": 25,
-        "jadwal": [
-          {
-            "dayOfWeek": 3,
-            "startHour": 9,
-            "startMinute": 30,
-            "durasi": 180,
-            "ruang": "Q.04.08a/"
-          }
-        ],
-        "jadwalUts": [
-          {
-            "date": "2025-04-16T02:30:00.000Z",
-            "lengthMinutes": 180,
-            "ruang": ""
-          }
-        ],
-        "jadwalUas": [
-          {
-            "date": "2025-06-25T02:30:00.000Z",
-            "lengthMinutes": 180,
-            "ruang": ""
-          }
-        ]
-      },
-      {
-        "kelas": "B",
-        "accepted": 0,
-        "capacity": 25,
-        "jadwal": [
-          {
-            "dayOfWeek": 3,
-            "startHour": 9,
-            "startMinute": 30,
-            "durasi": 180,
-            "ruang": "Q.04.11/"
-          }
-        ],
-        "jadwalUts": [
-          {
-            "date": "2025-04-16T02:30:00.000Z",
-            "lengthMinutes": 180,
-            "ruang": ""
-          }
-        ],
-        "jadwalUas": [
-          {
-            "date": "2025-06-25T02:30:00.000Z",
-            "lengthMinutes": 180,
-            "ruang": ""
-          }
-        ]
-      }
-    ]
+    "kelas": []
   },
   {
     "prsId": "2024:EI4114:65:1",
@@ -5646,9 +5670,9 @@
         "capacity": 30,
         "jadwal": [
           {
-            "dayOfWeek": 1,
-            "startHour": 13,
-            "startMinute": 30,
+            "dayOfWeek": 5,
+            "startHour": 15,
+            "startMinute": 0,
             "durasi": 180,
             "ruang": "P.202/"
           }
@@ -6167,7 +6191,7 @@
       {
         "kelas": "A",
         "accepted": 0,
-        "capacity": 30,
+        "capacity": 50,
         "jadwal": [
           {
             "dayOfWeek": 5,
@@ -7543,8 +7567,20 @@
             "ruang": "/"
           }
         ],
-        "jadwalUts": [],
-        "jadwalUas": []
+        "jadwalUts": [
+          {
+            "date": "2025-04-09T03:30:00.000Z",
+            "lengthMinutes": 180,
+            "ruang": ""
+          }
+        ],
+        "jadwalUas": [
+          {
+            "date": "2025-06-18T03:30:00.000Z",
+            "lengthMinutes": 180,
+            "ruang": ""
+          }
+        ]
       }
     ]
   },
@@ -8768,8 +8804,20 @@
             "ruang": "T.501/"
           }
         ],
-        "jadwalUts": [],
-        "jadwalUas": []
+        "jadwalUts": [
+          {
+            "date": "2025-04-11T03:30:00.000Z",
+            "lengthMinutes": 180,
+            "ruang": ""
+          }
+        ],
+        "jadwalUas": [
+          {
+            "date": "2025-06-20T03:30:00.000Z",
+            "lengthMinutes": 180,
+            "ruang": ""
+          }
+        ]
       }
     ]
   },
@@ -10784,49 +10832,18 @@
     "sks": 3,
     "unit": "Keguruan dan Ilmu Pendidikan",
     "kode": "GF 4128",
-    "kelas": [
-      {
-        "kelas": "A",
-        "accepted": 0,
-        "capacity": 40,
-        "jadwal": [
-          {
-            "dayOfWeek": 3,
-            "startHour": 8,
-            "startMinute": 30,
-            "durasi": 180,
-            "ruang": "Q.04.08b/"
-          }
-        ],
-        "jadwalUts": [
-          {
-            "date": "2025-04-09T01:30:00.000Z",
-            "lengthMinutes": 180,
-            "ruang": ""
-          }
-        ],
-        "jadwalUas": [
-          {
-            "date": "2025-06-18T01:30:00.000Z",
-            "lengthMinutes": 180,
-            "ruang": ""
-          }
-        ]
-      }
-    ]
+    "kelas": []
   },
   {
-    "prsId": "2024:EU4324:23:1",
+    "prsId": "",
     "nama": "INVESTASI ASET RIIL",
-    "semester": 4,
+    "semester": null,
     "sks": 3,
     "unit": "Finance and Investment",
-    "kode": "EU4324",
+    "kode": "~FA003",
     "kelas": [
       {
         "kelas": "A",
-        "accepted": 0,
-        "capacity": 40,
         "jadwal": [
           {
             "dayOfWeek": 4,
@@ -10836,8 +10853,20 @@
             "ruang": "T.319/"
           }
         ],
-        "jadwalUts": [],
-        "jadwalUas": []
+        "jadwalUts": [
+          {
+            "date": "2025-04-17T00:30:00.000Z",
+            "lengthMinutes": 180,
+            "ruang": ""
+          }
+        ],
+        "jadwalUas": [
+          {
+            "date": "2025-06-25T00:30:00.000Z",
+            "lengthMinutes": 180,
+            "ruang": ""
+          }
+        ]
       }
     ]
   },
@@ -11536,7 +11565,36 @@
     "sks": 2,
     "unit": "Business Accounting",
     "kode": "EA4328",
-    "kelas": []
+    "kelas": [
+      {
+        "kelas": "A",
+        "accepted": 0,
+        "capacity": 60,
+        "jadwal": [
+          {
+            "dayOfWeek": 6,
+            "startHour": 8,
+            "startMinute": 30,
+            "durasi": 120,
+            "ruang": "/"
+          }
+        ],
+        "jadwalUts": [
+          {
+            "date": "2025-04-11T03:30:00.000Z",
+            "lengthMinutes": 180,
+            "ruang": ""
+          }
+        ],
+        "jadwalUas": [
+          {
+            "date": "2025-06-20T03:30:00.000Z",
+            "lengthMinutes": 180,
+            "ruang": ""
+          }
+        ]
+      }
+    ]
   },
   {
     "prsId": "2024:EM4590:07:1",
@@ -12211,8 +12269,20 @@
             "ruang": "T.313/"
           }
         ],
-        "jadwalUts": [],
-        "jadwalUas": []
+        "jadwalUts": [
+          {
+            "date": "2025-04-16T06:30:00.000Z",
+            "lengthMinutes": 180,
+            "ruang": ""
+          }
+        ],
+        "jadwalUas": [
+          {
+            "date": "2025-06-25T06:30:00.000Z",
+            "lengthMinutes": 180,
+            "ruang": ""
+          }
+        ]
       }
     ]
   },
@@ -12237,8 +12307,20 @@
             "ruang": "T.501/"
           }
         ],
-        "jadwalUts": [],
-        "jadwalUas": []
+        "jadwalUts": [
+          {
+            "date": "2025-04-16T03:30:00.000Z",
+            "lengthMinutes": 180,
+            "ruang": ""
+          }
+        ],
+        "jadwalUas": [
+          {
+            "date": "2025-06-25T03:30:00.000Z",
+            "lengthMinutes": 180,
+            "ruang": ""
+          }
+        ]
       }
     ]
   },
@@ -14280,9 +14362,29 @@
         "kelas": "A",
         "accepted": 0,
         "capacity": 80,
-        "jadwal": [],
-        "jadwalUts": [],
-        "jadwalUas": []
+        "jadwal": [
+          {
+            "dayOfWeek": 1,
+            "startHour": 13,
+            "startMinute": 30,
+            "durasi": 180,
+            "ruang": "/"
+          }
+        ],
+        "jadwalUts": [
+          {
+            "date": "2025-04-09T00:30:00.000Z",
+            "lengthMinutes": 180,
+            "ruang": ""
+          }
+        ],
+        "jadwalUas": [
+          {
+            "date": "2025-06-18T00:30:00.000Z",
+            "lengthMinutes": 180,
+            "ruang": ""
+          }
+        ]
       }
     ]
   },
@@ -14513,17 +14615,15 @@
     ]
   },
   {
-    "prsId": "2023:EU4336:23:1",
+    "prsId": "",
     "nama": "MANAJEMEN KEUANGAN INTERNASIONAL",
-    "semester": 6,
+    "semester": null,
     "sks": 3,
     "unit": "Finance and Investment",
-    "kode": "EU4336",
+    "kode": "~FA004",
     "kelas": [
       {
         "kelas": "A",
-        "accepted": 0,
-        "capacity": 100,
         "jadwal": [
           {
             "dayOfWeek": 4,
@@ -14533,8 +14633,20 @@
             "ruang": "T.501/"
           }
         ],
-        "jadwalUts": [],
-        "jadwalUas": []
+        "jadwalUts": [
+          {
+            "date": "2025-04-16T00:30:00.000Z",
+            "lengthMinutes": 180,
+            "ruang": ""
+          }
+        ],
+        "jadwalUas": [
+          {
+            "date": "2025-06-25T00:30:00.000Z",
+            "lengthMinutes": 180,
+            "ruang": ""
+          }
+        ]
       }
     ]
   },
@@ -14662,15 +14774,17 @@
     ]
   },
   {
-    "prsId": "",
+    "prsId": "2021:EA4482:26:1",
     "nama": "MANAJEMEN PAJAK",
-    "semester": null,
+    "semester": 8,
     "sks": 3,
     "unit": "Tax Accounting",
-    "kode": "~TA001",
+    "kode": "EA4482",
     "kelas": [
       {
         "kelas": "A",
+        "accepted": 0,
+        "capacity": 60,
         "jadwal": [
           {
             "dayOfWeek": 5,
@@ -14741,7 +14855,7 @@
       {
         "kelas": "A",
         "accepted": 0,
-        "capacity": 40,
+        "capacity": 70,
         "jadwal": [
           {
             "dayOfWeek": 6,
@@ -14751,8 +14865,20 @@
             "ruang": "T.320/"
           }
         ],
-        "jadwalUts": [],
-        "jadwalUas": []
+        "jadwalUts": [
+          {
+            "date": "2025-04-11T00:30:00.000Z",
+            "lengthMinutes": 180,
+            "ruang": ""
+          }
+        ],
+        "jadwalUas": [
+          {
+            "date": "2025-06-20T00:30:00.000Z",
+            "lengthMinutes": 180,
+            "ruang": ""
+          }
+        ]
       }
     ]
   },
@@ -16398,7 +16524,7 @@
       {
         "kelas": "A",
         "accepted": 0,
-        "capacity": 40,
+        "capacity": 65,
         "jadwal": [
           {
             "dayOfWeek": 2,
@@ -16408,8 +16534,20 @@
             "ruang": "T.314/"
           }
         ],
-        "jadwalUts": [],
-        "jadwalUas": []
+        "jadwalUts": [
+          {
+            "date": "2025-04-15T06:30:00.000Z",
+            "lengthMinutes": 180,
+            "ruang": ""
+          }
+        ],
+        "jadwalUas": [
+          {
+            "date": "2025-06-24T06:30:00.000Z",
+            "lengthMinutes": 180,
+            "ruang": ""
+          }
+        ]
       }
     ]
   },
@@ -17202,24 +17340,7 @@
     "sks": 3,
     "unit": "Culinary Business Management",
     "kode": "EH4202",
-    "kelas": [
-      {
-        "kelas": "A",
-        "accepted": 0,
-        "capacity": 45,
-        "jadwal": [
-          {
-            "dayOfWeek": 5,
-            "startHour": 7,
-            "startMinute": 30,
-            "durasi": 180,
-            "ruang": "A.401/"
-          }
-        ],
-        "jadwalUts": [],
-        "jadwalUas": []
-      }
-    ]
+    "kelas": []
   },
   {
     "prsId": "2024:BE4168:43:1",
@@ -18630,11 +18751,11 @@
             "ruang": "P.613/"
           },
           {
-            "dayOfWeek": 4,
-            "startHour": 10,
+            "dayOfWeek": 5,
+            "startHour": 14,
             "startMinute": 30,
             "durasi": 180,
-            "ruang": "LAB.MOBDEV/"
+            "ruang": "LAB.STUDIO/"
           }
         ],
         "jadwalUts": [
@@ -19021,7 +19142,14 @@
             "dayOfWeek": 4,
             "startHour": 13,
             "startMinute": 30,
-            "durasi": 100,
+            "durasi": 50,
+            "ruang": "Q.04.07/"
+          },
+          {
+            "dayOfWeek": 4,
+            "startHour": 14,
+            "startMinute": 20,
+            "durasi": 50,
             "ruang": "Q.04.07/"
           }
         ],
@@ -19417,7 +19545,7 @@
       {
         "kelas": "A",
         "accepted": 0,
-        "capacity": 40,
+        "capacity": 70,
         "jadwal": [
           {
             "dayOfWeek": 3,
@@ -19427,8 +19555,20 @@
             "ruang": "T.314/"
           }
         ],
-        "jadwalUts": [],
-        "jadwalUas": []
+        "jadwalUts": [
+          {
+            "date": "2025-04-10T00:30:00.000Z",
+            "lengthMinutes": 180,
+            "ruang": ""
+          }
+        ],
+        "jadwalUas": [
+          {
+            "date": "2025-06-19T00:30:00.000Z",
+            "lengthMinutes": 180,
+            "ruang": ""
+          }
+        ]
       }
     ]
   },
@@ -21684,6 +21824,15 @@
         "jadwalUas": []
       }
     ]
+  },
+  {
+    "prsId": "2024:IK4543:21:1",
+    "nama": "RESEARCH AND INNOVATION PROCESS",
+    "semester": 7,
+    "sks": 5,
+    "unit": "Ilmu Komunikasi",
+    "kode": "IK4543",
+    "kelas": []
   },
   {
     "prsId": "2024:TS4601:02:1",
@@ -24535,24 +24684,7 @@
     "sks": 3,
     "unit": "International Business Accounting",
     "kode": "IA4190",
-    "kelas": [
-      {
-        "kelas": "A",
-        "accepted": 0,
-        "capacity": 40,
-        "jadwal": [
-          {
-            "dayOfWeek": 4,
-            "startHour": 9,
-            "startMinute": 0,
-            "durasi": 180,
-            "ruang": "T.418/IBAc/"
-          }
-        ],
-        "jadwalUts": [],
-        "jadwalUas": []
-      }
-    ]
+    "kelas": []
   },
   {
     "prsId": "2024:IA4191:36:1",
@@ -25128,8 +25260,20 @@
             "ruang": "T.213/"
           }
         ],
-        "jadwalUts": [],
-        "jadwalUas": []
+        "jadwalUts": [
+          {
+            "date": "2025-04-10T06:30:00.000Z",
+            "lengthMinutes": 180,
+            "ruang": ""
+          }
+        ],
+        "jadwalUas": [
+          {
+            "date": "2025-06-19T06:30:00.000Z",
+            "lengthMinutes": 180,
+            "ruang": ""
+          }
+        ]
       },
       {
         "kelas": "A2",
@@ -25142,8 +25286,20 @@
             "ruang": "T.316/"
           }
         ],
-        "jadwalUts": [],
-        "jadwalUas": []
+        "jadwalUts": [
+          {
+            "date": "2025-04-10T06:30:00.000Z",
+            "lengthMinutes": 180,
+            "ruang": ""
+          }
+        ],
+        "jadwalUas": [
+          {
+            "date": "2025-06-19T06:30:00.000Z",
+            "lengthMinutes": 180,
+            "ruang": ""
+          }
+        ]
       }
     ]
   },

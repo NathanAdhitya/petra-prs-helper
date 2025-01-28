@@ -22,6 +22,7 @@ export const prsSubmitted = writable(false);
 export const chosenJurusanFilters = writable<string[]>(['Informatika', 'D.M.U']);
 export const semesterFilters = writable<Record<string, boolean>>();
 export const jadwalDiffs = writable<(false | null | MataKuliahWithColor)[]>([]);
+export const isNewUser = writable(false);
 
 export class ChosenMatkulUtils {
 	static sksLimit = 24;
@@ -628,6 +629,12 @@ try {
 	console.error(e);
 }
 
+try {
+	isNewUser.set(JSON.parse(localStorage.getItem('isNewUser') || 'null') ?? true);
+} catch (e) {
+	console.error(e);
+}
+
 // Back the writable by localStorage
 chosenMatkul.subscribe((value) => {
 	localStorage.setItem('chosenMatkul', JSON.stringify(value));
@@ -640,4 +647,7 @@ chosenJurusanFilters.subscribe((value) => {
 });
 semesterFilters.subscribe((value) => {
 	localStorage.setItem('semesterFilters', JSON.stringify(value));
+});
+isNewUser.subscribe((value) => {
+	localStorage.setItem('isNewUser', JSON.stringify(value));
 });
