@@ -1450,11 +1450,11 @@
         "capacity": 20,
         "jadwal": [
           {
-            "dayOfWeek": 2,
+            "dayOfWeek": 3,
             "startHour": 9,
             "startMinute": 30,
             "durasi": 180,
-            "ruang": "P.502/"
+            "ruang": "P.614/"
           }
         ],
         "jadwalUts": [
@@ -3188,8 +3188,20 @@
             "ruang": "Lab Bakeri/"
           }
         ],
-        "jadwalUts": [],
-        "jadwalUas": []
+        "jadwalUts": [
+          {
+            "date": "2025-04-15T06:30:00.000Z",
+            "lengthMinutes": 180,
+            "ruang": ""
+          }
+        ],
+        "jadwalUas": [
+          {
+            "date": "2025-06-24T06:30:00.000Z",
+            "lengthMinutes": 180,
+            "ruang": ""
+          }
+        ]
       },
       {
         "kelas": "B",
@@ -3204,8 +3216,20 @@
             "ruang": "Lab Bakeri/"
           }
         ],
-        "jadwalUts": [],
-        "jadwalUas": []
+        "jadwalUts": [
+          {
+            "date": "2025-04-15T06:30:00.000Z",
+            "lengthMinutes": 180,
+            "ruang": ""
+          }
+        ],
+        "jadwalUas": [
+          {
+            "date": "2025-06-24T06:30:00.000Z",
+            "lengthMinutes": 180,
+            "ruang": ""
+          }
+        ]
       },
       {
         "kelas": "C",
@@ -3220,8 +3244,20 @@
             "ruang": "Lab Bakeri/"
           }
         ],
-        "jadwalUts": [],
-        "jadwalUas": []
+        "jadwalUts": [
+          {
+            "date": "2025-04-15T06:30:00.000Z",
+            "lengthMinutes": 180,
+            "ruang": ""
+          }
+        ],
+        "jadwalUas": [
+          {
+            "date": "2025-06-24T06:30:00.000Z",
+            "lengthMinutes": 180,
+            "ruang": ""
+          }
+        ]
       },
       {
         "kelas": "D",
@@ -3236,8 +3272,20 @@
             "ruang": "Lab Bakeri/"
           }
         ],
-        "jadwalUts": [],
-        "jadwalUas": []
+        "jadwalUts": [
+          {
+            "date": "2025-04-15T06:30:00.000Z",
+            "lengthMinutes": 180,
+            "ruang": ""
+          }
+        ],
+        "jadwalUas": [
+          {
+            "date": "2025-06-24T06:30:00.000Z",
+            "lengthMinutes": 180,
+            "ruang": ""
+          }
+        ]
       }
     ]
   },
@@ -3733,6 +3781,114 @@
     ]
   },
   {
+    "prsId": "2024:KU4203:62:1",
+    "nama": "BIOSCIENCE-3",
+    "semester": 2,
+    "sks": 6,
+    "unit": "Kedokteran",
+    "kode": "KU4203",
+    "kelas": [
+      {
+        "kelas": "A",
+        "accepted": 0,
+        "capacity": 50,
+        "jadwal": [
+          {
+            "dayOfWeek": 1,
+            "startHour": 7,
+            "startMinute": 30,
+            "durasi": 720,
+            "ruang": "Q.08.09a/"
+          },
+          {
+            "dayOfWeek": 2,
+            "startHour": 7,
+            "startMinute": 30,
+            "durasi": 720,
+            "ruang": "Q.08.09a/"
+          },
+          {
+            "dayOfWeek": 3,
+            "startHour": 7,
+            "startMinute": 30,
+            "durasi": 720,
+            "ruang": "Q.08.09a/"
+          },
+          {
+            "dayOfWeek": 4,
+            "startHour": 7,
+            "startMinute": 30,
+            "durasi": 720,
+            "ruang": "Q.08.09a/"
+          },
+          {
+            "dayOfWeek": 5,
+            "startHour": 7,
+            "startMinute": 30,
+            "durasi": 720,
+            "ruang": "Q.08.09a/"
+          }
+        ],
+        "jadwalUts": [],
+        "jadwalUas": []
+      }
+    ]
+  },
+  {
+    "prsId": "2024:KU4204:62:1",
+    "nama": "BIOSCIENCE-4",
+    "semester": 2,
+    "sks": 5,
+    "unit": "Kedokteran",
+    "kode": "KU4204",
+    "kelas": [
+      {
+        "kelas": "A",
+        "accepted": 0,
+        "capacity": 50,
+        "jadwal": [
+          {
+            "dayOfWeek": 1,
+            "startHour": 7,
+            "startMinute": 30,
+            "durasi": 720,
+            "ruang": "Q.08.09a/"
+          },
+          {
+            "dayOfWeek": 2,
+            "startHour": 7,
+            "startMinute": 30,
+            "durasi": 720,
+            "ruang": "Q.08.09a/"
+          },
+          {
+            "dayOfWeek": 3,
+            "startHour": 7,
+            "startMinute": 30,
+            "durasi": 720,
+            "ruang": "Q.08.09a/"
+          },
+          {
+            "dayOfWeek": 4,
+            "startHour": 7,
+            "startMinute": 30,
+            "durasi": 720,
+            "ruang": "Q.08.09a/"
+          },
+          {
+            "dayOfWeek": 5,
+            "startHour": 7,
+            "startMinute": 30,
+            "durasi": 720,
+            "ruang": "Q.08.09a/"
+          }
+        ],
+        "jadwalUts": [],
+        "jadwalUas": []
+      }
+    ]
+  },
+  {
     "prsId": "2024:EK4303:XX2:1",
     "nama": "BISNIS DAN MANAJEMEN",
     "semester": 1,
@@ -3791,8 +3947,20 @@
             "ruang": "T.314/"
           }
         ],
-        "jadwalUts": [],
-        "jadwalUas": []
+        "jadwalUts": [
+          {
+            "date": "2025-04-17T03:30:00.000Z",
+            "lengthMinutes": 180,
+            "ruang": ""
+          }
+        ],
+        "jadwalUas": [
+          {
+            "date": "2025-06-26T03:30:00.000Z",
+            "lengthMinutes": 180,
+            "ruang": ""
+          }
+        ]
       },
       {
         "kelas": "B",
@@ -3807,8 +3975,20 @@
             "ruang": "T.321/"
           }
         ],
-        "jadwalUts": [],
-        "jadwalUas": []
+        "jadwalUts": [
+          {
+            "date": "2025-04-17T03:30:00.000Z",
+            "lengthMinutes": 180,
+            "ruang": ""
+          }
+        ],
+        "jadwalUas": [
+          {
+            "date": "2025-06-26T03:30:00.000Z",
+            "lengthMinutes": 180,
+            "ruang": ""
+          }
+        ]
       },
       {
         "kelas": "C",
@@ -3823,8 +4003,20 @@
             "ruang": "/"
           }
         ],
-        "jadwalUts": [],
-        "jadwalUas": []
+        "jadwalUts": [
+          {
+            "date": "2025-04-17T03:30:00.000Z",
+            "lengthMinutes": 180,
+            "ruang": ""
+          }
+        ],
+        "jadwalUas": [
+          {
+            "date": "2025-06-26T03:30:00.000Z",
+            "lengthMinutes": 180,
+            "ruang": ""
+          }
+        ]
       }
     ]
   },
@@ -5847,18 +6039,18 @@
         "capacity": 30,
         "jadwal": [
           {
+            "dayOfWeek": 1,
+            "startHour": 13,
+            "startMinute": 30,
+            "durasi": 180,
+            "ruang": "P.614/"
+          },
+          {
             "dayOfWeek": 2,
             "startHour": 7,
             "startMinute": 30,
             "durasi": 120,
             "ruang": "P.502/"
-          },
-          {
-            "dayOfWeek": 3,
-            "startHour": 13,
-            "startMinute": 30,
-            "durasi": 120,
-            "ruang": "P.614/"
           }
         ],
         "jadwalUts": [
@@ -6033,11 +6225,11 @@
         "capacity": 40,
         "jadwal": [
           {
-            "dayOfWeek": 4,
+            "dayOfWeek": 2,
             "startHour": 9,
             "startMinute": 30,
             "durasi": 180,
-            "ruang": "P.433/"
+            "ruang": "P.502/"
           }
         ],
         "jadwalUts": [
@@ -6071,11 +6263,11 @@
         "capacity": 30,
         "jadwal": [
           {
-            "dayOfWeek": 3,
+            "dayOfWeek": 4,
             "startHour": 9,
             "startMinute": 30,
             "durasi": 180,
-            "ruang": "P.617/"
+            "ruang": "P.612/"
           }
         ],
         "jadwalUts": [
@@ -7227,8 +7419,20 @@
             "ruang": "/"
           }
         ],
-        "jadwalUts": [],
-        "jadwalUas": []
+        "jadwalUts": [
+          {
+            "date": "2025-04-14T03:30:00.000Z",
+            "lengthMinutes": 180,
+            "ruang": ""
+          }
+        ],
+        "jadwalUas": [
+          {
+            "date": "2025-06-23T03:30:00.000Z",
+            "lengthMinutes": 180,
+            "ruang": ""
+          }
+        ]
       }
     ]
   },
@@ -7774,8 +7978,20 @@
             "ruang": "T.314/"
           }
         ],
-        "jadwalUts": [],
-        "jadwalUas": []
+        "jadwalUts": [
+          {
+            "date": "2025-04-17T06:30:00.000Z",
+            "lengthMinutes": 180,
+            "ruang": ""
+          }
+        ],
+        "jadwalUas": [
+          {
+            "date": "2025-06-26T06:30:00.000Z",
+            "lengthMinutes": 180,
+            "ruang": ""
+          }
+        ]
       }
     ]
   },
@@ -8847,6 +9063,32 @@
     ]
   },
   {
+    "prsId": "2024:KU4202:62:1",
+    "nama": "FUNDAMENTAL BIOETHICS-1",
+    "semester": 2,
+    "sks": 3,
+    "unit": "Kedokteran",
+    "kode": "KU4202",
+    "kelas": [
+      {
+        "kelas": "A",
+        "accepted": 0,
+        "capacity": 50,
+        "jadwal": [
+          {
+            "dayOfWeek": 5,
+            "startHour": 7,
+            "startMinute": 0,
+            "durasi": 180,
+            "ruang": "Q.08.09a/"
+          }
+        ],
+        "jadwalUts": [],
+        "jadwalUas": []
+      }
+    ]
+  },
+  {
     "prsId": "2024:EU4210:23:1",
     "nama": "FUNDAMENTAL KEUANGAN DAN INVESTASI",
     "semester": 2,
@@ -8905,8 +9147,20 @@
             "ruang": "Lab Resto/"
           }
         ],
-        "jadwalUts": [],
-        "jadwalUas": []
+        "jadwalUts": [
+          {
+            "date": "2025-04-14T00:30:00.000Z",
+            "lengthMinutes": 180,
+            "ruang": ""
+          }
+        ],
+        "jadwalUas": [
+          {
+            "date": "2025-06-23T00:30:00.000Z",
+            "lengthMinutes": 180,
+            "ruang": ""
+          }
+        ]
       },
       {
         "kelas": "B",
@@ -8921,8 +9175,20 @@
             "ruang": "Lab Resto/"
           }
         ],
-        "jadwalUts": [],
-        "jadwalUas": []
+        "jadwalUts": [
+          {
+            "date": "2025-04-14T00:30:00.000Z",
+            "lengthMinutes": 180,
+            "ruang": ""
+          }
+        ],
+        "jadwalUas": [
+          {
+            "date": "2025-06-23T00:30:00.000Z",
+            "lengthMinutes": 180,
+            "ruang": ""
+          }
+        ]
       },
       {
         "kelas": "C",
@@ -8937,8 +9203,20 @@
             "ruang": "Lab Resto/"
           }
         ],
-        "jadwalUts": [],
-        "jadwalUas": []
+        "jadwalUts": [
+          {
+            "date": "2025-04-14T00:30:00.000Z",
+            "lengthMinutes": 180,
+            "ruang": ""
+          }
+        ],
+        "jadwalUas": [
+          {
+            "date": "2025-06-23T00:30:00.000Z",
+            "lengthMinutes": 180,
+            "ruang": ""
+          }
+        ]
       },
       {
         "kelas": "D",
@@ -8953,8 +9231,20 @@
             "ruang": "Lab Resto/"
           }
         ],
-        "jadwalUts": [],
-        "jadwalUas": []
+        "jadwalUts": [
+          {
+            "date": "2025-04-14T00:30:00.000Z",
+            "lengthMinutes": 180,
+            "ruang": ""
+          }
+        ],
+        "jadwalUas": [
+          {
+            "date": "2025-06-23T00:30:00.000Z",
+            "lengthMinutes": 180,
+            "ruang": ""
+          }
+        ]
       },
       {
         "kelas": "E",
@@ -8970,8 +9260,20 @@
             "ruang": "/"
           }
         ],
-        "jadwalUts": [],
-        "jadwalUas": []
+        "jadwalUts": [
+          {
+            "date": "2025-04-14T00:30:00.000Z",
+            "lengthMinutes": 180,
+            "ruang": ""
+          }
+        ],
+        "jadwalUas": [
+          {
+            "date": "2025-06-23T00:30:00.000Z",
+            "lengthMinutes": 180,
+            "ruang": ""
+          }
+        ]
       }
     ]
   },
@@ -9088,6 +9390,58 @@
             "ruang": "T.506/"
           }
         ],
+        "jadwalUts": [],
+        "jadwalUas": []
+      }
+    ]
+  },
+  {
+    "prsId": "2024:EA4581:09:1",
+    "nama": "GLOBAL EXPERIENCE",
+    "semester": 7,
+    "sks": 10,
+    "unit": "Akuntansi",
+    "kode": "EA4581",
+    "kelas": [
+      {
+        "kelas": "A",
+        "accepted": 0,
+        "capacity": 100,
+        "jadwal": [],
+        "jadwalUts": [],
+        "jadwalUas": []
+      },
+      {
+        "kelas": "B",
+        "accepted": 0,
+        "capacity": 100,
+        "jadwal": [],
+        "jadwalUts": [],
+        "jadwalUas": []
+      }
+    ]
+  },
+  {
+    "prsId": "2024:EA4580:09:1",
+    "nama": "GLOBAL EXPOSURE",
+    "semester": 7,
+    "sks": 10,
+    "unit": "Akuntansi",
+    "kode": "EA4580",
+    "kelas": [
+      {
+        "kelas": "A",
+        "accepted": 0,
+        "capacity": 100,
+        "jadwal": [],
+        "jadwalUts": [],
+        "jadwalUas": []
+      },
+      {
+        "kelas": "B",
+        "accepted": 0,
+        "capacity": 100,
+        "jadwal": [],
         "jadwalUts": [],
         "jadwalUas": []
       }
@@ -9264,8 +9618,20 @@
             "ruang": "/"
           }
         ],
-        "jadwalUts": [],
-        "jadwalUas": []
+        "jadwalUts": [
+          {
+            "date": "2025-04-17T03:30:00.000Z",
+            "lengthMinutes": 180,
+            "ruang": ""
+          }
+        ],
+        "jadwalUas": [
+          {
+            "date": "2025-06-25T03:30:00.000Z",
+            "lengthMinutes": 180,
+            "ruang": ""
+          }
+        ]
       },
       {
         "kelas": "B",
@@ -9280,8 +9646,20 @@
             "ruang": "/"
           }
         ],
-        "jadwalUts": [],
-        "jadwalUas": []
+        "jadwalUts": [
+          {
+            "date": "2025-04-17T03:30:00.000Z",
+            "lengthMinutes": 180,
+            "ruang": ""
+          }
+        ],
+        "jadwalUas": [
+          {
+            "date": "2025-06-25T03:30:00.000Z",
+            "lengthMinutes": 180,
+            "ruang": ""
+          }
+        ]
       }
     ]
   },
@@ -9344,8 +9722,20 @@
             "ruang": "/"
           }
         ],
-        "jadwalUts": [],
-        "jadwalUas": []
+        "jadwalUts": [
+          {
+            "date": "2025-04-14T03:30:00.000Z",
+            "lengthMinutes": 180,
+            "ruang": ""
+          }
+        ],
+        "jadwalUas": [
+          {
+            "date": "2025-06-23T03:30:00.000Z",
+            "lengthMinutes": 180,
+            "ruang": ""
+          }
+        ]
       }
     ]
   },
@@ -9370,8 +9760,20 @@
             "ruang": "T.501/"
           }
         ],
-        "jadwalUts": [],
-        "jadwalUas": []
+        "jadwalUts": [
+          {
+            "date": "2025-04-14T00:30:00.000Z",
+            "lengthMinutes": 180,
+            "ruang": ""
+          }
+        ],
+        "jadwalUas": [
+          {
+            "date": "2025-06-23T00:30:00.000Z",
+            "lengthMinutes": 180,
+            "ruang": ""
+          }
+        ]
       }
     ]
   },
@@ -9697,6 +10099,32 @@
     ]
   },
   {
+    "prsId": "2023:EA4582:09:1",
+    "nama": "INDUSTRIAL AWARENESS",
+    "semester": 8,
+    "sks": 10,
+    "unit": "Akuntansi",
+    "kode": "EA4582",
+    "kelas": [
+      {
+        "kelas": "A",
+        "accepted": 0,
+        "capacity": 100,
+        "jadwal": [],
+        "jadwalUts": [],
+        "jadwalUas": []
+      },
+      {
+        "kelas": "B",
+        "accepted": 0,
+        "capacity": 100,
+        "jadwal": [],
+        "jadwalUts": [],
+        "jadwalUas": []
+      }
+    ]
+  },
+  {
     "prsId": "2020:IA4207:36:1",
     "nama": "INDUSTRIAL AWARENESS",
     "semester": 7,
@@ -9708,6 +10136,32 @@
         "kelas": "A",
         "accepted": 0,
         "capacity": 40,
+        "jadwal": [],
+        "jadwalUts": [],
+        "jadwalUas": []
+      }
+    ]
+  },
+  {
+    "prsId": "2024:EA4583:09:1",
+    "nama": "INDUSTRIAL EXPERIENCE",
+    "semester": 7,
+    "sks": 10,
+    "unit": "Akuntansi",
+    "kode": "EA4583",
+    "kelas": [
+      {
+        "kelas": "A",
+        "accepted": 0,
+        "capacity": 100,
+        "jadwal": [],
+        "jadwalUts": [],
+        "jadwalUas": []
+      },
+      {
+        "kelas": "B",
+        "accepted": 0,
+        "capacity": 100,
         "jadwal": [],
         "jadwalUts": [],
         "jadwalUas": []
@@ -10980,7 +11434,7 @@
         ],
         "jadwalUas": [
           {
-            "date": "2025-06-25T00:30:00.000Z",
+            "date": "2025-06-26T00:30:00.000Z",
             "lengthMinutes": 180,
             "ruang": ""
           }
@@ -11661,8 +12115,20 @@
             "ruang": "T.501/"
           }
         ],
-        "jadwalUts": [],
-        "jadwalUas": []
+        "jadwalUts": [
+          {
+            "date": "2025-04-15T00:30:00.000Z",
+            "lengthMinutes": 180,
+            "ruang": ""
+          }
+        ],
+        "jadwalUas": [
+          {
+            "date": "2025-06-24T00:30:00.000Z",
+            "lengthMinutes": 180,
+            "ruang": ""
+          }
+        ]
       },
       {
         "kelas": "B",
@@ -11677,8 +12143,20 @@
             "ruang": "T.318/"
           }
         ],
-        "jadwalUts": [],
-        "jadwalUas": []
+        "jadwalUts": [
+          {
+            "date": "2025-04-15T00:30:00.000Z",
+            "lengthMinutes": 180,
+            "ruang": ""
+          }
+        ],
+        "jadwalUas": [
+          {
+            "date": "2025-06-24T00:30:00.000Z",
+            "lengthMinutes": 180,
+            "ruang": ""
+          }
+        ]
       },
       {
         "kelas": "C",
@@ -11693,8 +12171,20 @@
             "ruang": "T.321/"
           }
         ],
-        "jadwalUts": [],
-        "jadwalUas": []
+        "jadwalUts": [
+          {
+            "date": "2025-04-15T00:30:00.000Z",
+            "lengthMinutes": 180,
+            "ruang": ""
+          }
+        ],
+        "jadwalUas": [
+          {
+            "date": "2025-06-24T00:30:00.000Z",
+            "lengthMinutes": 180,
+            "ruang": ""
+          }
+        ]
       }
     ]
   },
@@ -11783,8 +12273,20 @@
             "ruang": "/"
           }
         ],
-        "jadwalUts": [],
-        "jadwalUas": []
+        "jadwalUts": [
+          {
+            "date": "2025-04-16T06:30:00.000Z",
+            "lengthMinutes": 180,
+            "ruang": ""
+          }
+        ],
+        "jadwalUas": [
+          {
+            "date": "2025-06-25T06:30:00.000Z",
+            "lengthMinutes": 180,
+            "ruang": ""
+          }
+        ]
       },
       {
         "kelas": "B",
@@ -11799,8 +12301,20 @@
             "ruang": "/"
           }
         ],
-        "jadwalUts": [],
-        "jadwalUas": []
+        "jadwalUts": [
+          {
+            "date": "2025-04-16T06:30:00.000Z",
+            "lengthMinutes": 180,
+            "ruang": ""
+          }
+        ],
+        "jadwalUas": [
+          {
+            "date": "2025-06-25T06:30:00.000Z",
+            "lengthMinutes": 180,
+            "ruang": ""
+          }
+        ]
       }
     ]
   },
@@ -11825,8 +12339,20 @@
             "ruang": "T.316/"
           }
         ],
-        "jadwalUts": [],
-        "jadwalUas": []
+        "jadwalUts": [
+          {
+            "date": "2025-04-17T00:30:00.000Z",
+            "lengthMinutes": 180,
+            "ruang": ""
+          }
+        ],
+        "jadwalUas": [
+          {
+            "date": "2025-06-26T00:30:00.000Z",
+            "lengthMinutes": 180,
+            "ruang": ""
+          }
+        ]
       }
     ]
   },
@@ -11851,8 +12377,20 @@
             "ruang": "A.401/"
           }
         ],
-        "jadwalUts": [],
-        "jadwalUas": []
+        "jadwalUts": [
+          {
+            "date": "2025-04-14T06:30:00.000Z",
+            "lengthMinutes": 180,
+            "ruang": ""
+          }
+        ],
+        "jadwalUas": [
+          {
+            "date": "2025-06-23T06:30:00.000Z",
+            "lengthMinutes": 180,
+            "ruang": ""
+          }
+        ]
       }
     ]
   },
@@ -12454,7 +12992,7 @@
         ],
         "jadwalUas": [
           {
-            "date": "2025-06-25T03:30:00.000Z",
+            "date": "2025-06-26T03:30:00.000Z",
             "lengthMinutes": 180,
             "ruang": ""
           }
@@ -12485,14 +13023,14 @@
         ],
         "jadwalUts": [
           {
-            "date": "2025-04-16T00:30:00.000Z",
+            "date": "2025-04-16T06:30:00.000Z",
             "lengthMinutes": 180,
             "ruang": ""
           }
         ],
         "jadwalUas": [
           {
-            "date": "2025-06-25T00:30:00.000Z",
+            "date": "2025-06-25T06:30:00.000Z",
             "lengthMinutes": 180,
             "ruang": ""
           }
@@ -12764,6 +13302,32 @@
     ]
   },
   {
+    "prsId": "2020:EA4684:09:1",
+    "nama": "KOMPREHENSIVE",
+    "semester": 7,
+    "sks": 0,
+    "unit": "Akuntansi",
+    "kode": "EA4684",
+    "kelas": [
+      {
+        "kelas": "A",
+        "accepted": 0,
+        "capacity": 100,
+        "jadwal": [
+          {
+            "dayOfWeek": 5,
+            "startHour": 8,
+            "startMinute": 0,
+            "durasi": 180,
+            "ruang": "/"
+          }
+        ],
+        "jadwalUts": [],
+        "jadwalUas": []
+      }
+    ]
+  },
+  {
     "prsId": "2024:TM4645:52:1",
     "nama": "KOMPUTASI DINAMIKA FLUIDA",
     "semester": 8,
@@ -12840,8 +13404,20 @@
             "ruang": "/"
           }
         ],
-        "jadwalUts": [],
-        "jadwalUas": []
+        "jadwalUts": [
+          {
+            "date": "2025-04-15T03:30:00.000Z",
+            "lengthMinutes": 180,
+            "ruang": ""
+          }
+        ],
+        "jadwalUas": [
+          {
+            "date": "2025-06-24T03:30:00.000Z",
+            "lengthMinutes": 180,
+            "ruang": ""
+          }
+        ]
       }
     ]
   },
@@ -14015,8 +14591,20 @@
             "ruang": "T.319/"
           }
         ],
-        "jadwalUts": [],
-        "jadwalUas": []
+        "jadwalUts": [
+          {
+            "date": "2025-04-16T00:30:00.000Z",
+            "lengthMinutes": 180,
+            "ruang": ""
+          }
+        ],
+        "jadwalUas": [
+          {
+            "date": "2025-06-25T00:30:00.000Z",
+            "lengthMinutes": 180,
+            "ruang": ""
+          }
+        ]
       }
     ]
   },
@@ -14258,8 +14846,20 @@
             "ruang": "T.322/"
           }
         ],
-        "jadwalUts": [],
-        "jadwalUas": []
+        "jadwalUts": [
+          {
+            "date": "2025-04-15T03:30:00.000Z",
+            "lengthMinutes": 180,
+            "ruang": ""
+          }
+        ],
+        "jadwalUas": [
+          {
+            "date": "2025-06-24T03:30:00.000Z",
+            "lengthMinutes": 180,
+            "ruang": ""
+          }
+        ]
       }
     ]
   },
@@ -14539,8 +15139,20 @@
             "ruang": "E.01.09 A/"
           }
         ],
-        "jadwalUts": [],
-        "jadwalUas": []
+        "jadwalUts": [
+          {
+            "date": "2025-04-17T06:30:00.000Z",
+            "lengthMinutes": 180,
+            "ruang": ""
+          }
+        ],
+        "jadwalUas": [
+          {
+            "date": "2025-06-25T06:30:00.000Z",
+            "lengthMinutes": 180,
+            "ruang": ""
+          }
+        ]
       }
     ]
   },
@@ -14643,14 +15255,14 @@
         ],
         "jadwalUts": [
           {
-            "date": "2025-04-15T00:30:00.000Z",
+            "date": "2025-04-16T00:30:00.000Z",
             "lengthMinutes": 180,
             "ruang": ""
           }
         ],
         "jadwalUas": [
           {
-            "date": "2025-06-24T00:30:00.000Z",
+            "date": "2025-06-25T00:30:00.000Z",
             "lengthMinutes": 180,
             "ruang": ""
           }
@@ -14679,8 +15291,20 @@
             "ruang": "A.402/"
           }
         ],
-        "jadwalUts": [],
-        "jadwalUas": []
+        "jadwalUts": [
+          {
+            "date": "2025-04-17T00:30:00.000Z",
+            "lengthMinutes": 180,
+            "ruang": ""
+          }
+        ],
+        "jadwalUas": [
+          {
+            "date": "2025-06-25T00:30:00.000Z",
+            "lengthMinutes": 180,
+            "ruang": ""
+          }
+        ]
       }
     ]
   },
@@ -14705,8 +15329,20 @@
             "ruang": "T.320/"
           }
         ],
-        "jadwalUts": [],
-        "jadwalUas": []
+        "jadwalUts": [
+          {
+            "date": "2025-04-11T06:30:00.000Z",
+            "lengthMinutes": 180,
+            "ruang": ""
+          }
+        ],
+        "jadwalUas": [
+          {
+            "date": "2025-06-20T06:30:00.000Z",
+            "lengthMinutes": 180,
+            "ruang": ""
+          }
+        ]
       }
     ]
   },
@@ -14731,8 +15367,20 @@
             "ruang": "T.316/"
           }
         ],
-        "jadwalUts": [],
-        "jadwalUas": []
+        "jadwalUts": [
+          {
+            "date": "2025-04-14T00:30:00.000Z",
+            "lengthMinutes": 180,
+            "ruang": ""
+          }
+        ],
+        "jadwalUas": [
+          {
+            "date": "2025-06-23T00:30:00.000Z",
+            "lengthMinutes": 180,
+            "ruang": ""
+          }
+        ]
       }
     ]
   },
@@ -14917,8 +15565,20 @@
             "ruang": "/"
           }
         ],
-        "jadwalUts": [],
-        "jadwalUas": []
+        "jadwalUts": [
+          {
+            "date": "2025-04-15T00:30:00.000Z",
+            "lengthMinutes": 180,
+            "ruang": ""
+          }
+        ],
+        "jadwalUas": [
+          {
+            "date": "2025-06-24T00:30:00.000Z",
+            "lengthMinutes": 180,
+            "ruang": ""
+          }
+        ]
       }
     ]
   },
@@ -15327,8 +15987,20 @@
             "ruang": "E.01.06/"
           }
         ],
-        "jadwalUts": [],
-        "jadwalUas": []
+        "jadwalUts": [
+          {
+            "date": "2025-04-16T00:30:00.000Z",
+            "lengthMinutes": 180,
+            "ruang": ""
+          }
+        ],
+        "jadwalUas": [
+          {
+            "date": "2025-06-25T00:30:00.000Z",
+            "lengthMinutes": 180,
+            "ruang": ""
+          }
+        ]
       }
     ]
   },
@@ -15516,8 +16188,20 @@
             "ruang": "T.321/"
           }
         ],
-        "jadwalUts": [],
-        "jadwalUas": []
+        "jadwalUts": [
+          {
+            "date": "2025-04-14T06:30:00.000Z",
+            "lengthMinutes": 180,
+            "ruang": ""
+          }
+        ],
+        "jadwalUas": [
+          {
+            "date": "2025-06-23T06:30:00.000Z",
+            "lengthMinutes": 180,
+            "ruang": ""
+          }
+        ]
       }
     ]
   },
@@ -16886,6 +17570,44 @@
     ]
   },
   {
+    "prsId": "2024:TF4247:32:1",
+    "nama": "METODE NUMERIK",
+    "semester": 5,
+    "sks": 3,
+    "unit": "Informatika",
+    "kode": "TF4247",
+    "kelas": [
+      {
+        "kelas": "A",
+        "accepted": 0,
+        "capacity": 40,
+        "jadwal": [
+          {
+            "dayOfWeek": 3,
+            "startHour": 13,
+            "startMinute": 30,
+            "durasi": 180,
+            "ruang": "/"
+          }
+        ],
+        "jadwalUts": [
+          {
+            "date": "2025-04-14T06:30:00.000Z",
+            "lengthMinutes": 180,
+            "ruang": ""
+          }
+        ],
+        "jadwalUas": [
+          {
+            "date": "2025-06-23T06:30:00.000Z",
+            "lengthMinutes": 180,
+            "ruang": ""
+          }
+        ]
+      }
+    ]
+  },
+  {
     "prsId": "2024:TS4367:02:1",
     "nama": "METODE PELAKSANAAN PONDASI",
     "semester": 7,
@@ -17010,8 +17732,20 @@
             "ruang": "T.320/"
           }
         ],
-        "jadwalUts": [],
-        "jadwalUas": []
+        "jadwalUts": [
+          {
+            "date": "2025-04-14T00:30:00.000Z",
+            "lengthMinutes": 180,
+            "ruang": ""
+          }
+        ],
+        "jadwalUas": [
+          {
+            "date": "2025-06-23T00:30:00.000Z",
+            "lengthMinutes": 180,
+            "ruang": ""
+          }
+        ]
       }
     ]
   },
@@ -17036,8 +17770,20 @@
             "ruang": "/"
           }
         ],
-        "jadwalUts": [],
-        "jadwalUas": []
+        "jadwalUts": [
+          {
+            "date": "2025-04-17T00:30:00.000Z",
+            "lengthMinutes": 180,
+            "ruang": ""
+          }
+        ],
+        "jadwalUas": [
+          {
+            "date": "2025-06-26T00:30:00.000Z",
+            "lengthMinutes": 180,
+            "ruang": ""
+          }
+        ]
       }
     ]
   },
@@ -17594,8 +18340,20 @@
             "ruang": "A.401/"
           }
         ],
-        "jadwalUts": [],
-        "jadwalUas": []
+        "jadwalUts": [
+          {
+            "date": "2025-04-15T00:30:00.000Z",
+            "lengthMinutes": 180,
+            "ruang": ""
+          }
+        ],
+        "jadwalUas": [
+          {
+            "date": "2025-06-24T00:30:00.000Z",
+            "lengthMinutes": 180,
+            "ruang": ""
+          }
+        ]
       }
     ]
   },
@@ -17650,16 +18408,40 @@
         "accepted": 0,
         "capacity": 40,
         "jadwal": [],
-        "jadwalUts": [],
-        "jadwalUas": []
+        "jadwalUts": [
+          {
+            "date": "2025-04-14T06:30:00.000Z",
+            "lengthMinutes": 180,
+            "ruang": ""
+          }
+        ],
+        "jadwalUas": [
+          {
+            "date": "2025-06-23T06:30:00.000Z",
+            "lengthMinutes": 180,
+            "ruang": ""
+          }
+        ]
       },
       {
         "kelas": "B",
         "accepted": 0,
         "capacity": 20,
         "jadwal": [],
-        "jadwalUts": [],
-        "jadwalUas": []
+        "jadwalUts": [
+          {
+            "date": "2025-04-14T06:30:00.000Z",
+            "lengthMinutes": 180,
+            "ruang": ""
+          }
+        ],
+        "jadwalUas": [
+          {
+            "date": "2025-06-23T06:30:00.000Z",
+            "lengthMinutes": 180,
+            "ruang": ""
+          }
+        ]
       }
     ]
   },
@@ -17684,8 +18466,20 @@
             "ruang": "A.404/"
           }
         ],
-        "jadwalUts": [],
-        "jadwalUas": []
+        "jadwalUts": [
+          {
+            "date": "2025-04-17T00:30:00.000Z",
+            "lengthMinutes": 180,
+            "ruang": ""
+          }
+        ],
+        "jadwalUas": [
+          {
+            "date": "2025-06-25T00:30:00.000Z",
+            "lengthMinutes": 180,
+            "ruang": ""
+          }
+        ]
       },
       {
         "kelas": "B",
@@ -17716,18 +18510,58 @@
       {
         "kelas": "A",
         "accepted": 0,
-        "capacity": 20,
+        "capacity": 10,
         "jadwal": [
           {
             "dayOfWeek": 4,
             "startHour": 7,
             "startMinute": 30,
-            "durasi": 180,
+            "durasi": 300,
             "ruang": "/"
           }
         ],
-        "jadwalUts": [],
-        "jadwalUas": []
+        "jadwalUts": [
+          {
+            "date": "2025-04-16T03:30:00.000Z",
+            "lengthMinutes": 180,
+            "ruang": ""
+          }
+        ],
+        "jadwalUas": [
+          {
+            "date": "2025-06-25T03:30:00.000Z",
+            "lengthMinutes": 180,
+            "ruang": ""
+          }
+        ]
+      },
+      {
+        "kelas": "B",
+        "accepted": 0,
+        "capacity": 10,
+        "jadwal": [
+          {
+            "dayOfWeek": 4,
+            "startHour": 13,
+            "startMinute": 30,
+            "durasi": 300,
+            "ruang": "/"
+          }
+        ],
+        "jadwalUts": [
+          {
+            "date": "2025-04-16T03:30:00.000Z",
+            "lengthMinutes": 180,
+            "ruang": ""
+          }
+        ],
+        "jadwalUas": [
+          {
+            "date": "2025-06-25T03:30:00.000Z",
+            "lengthMinutes": 180,
+            "ruang": ""
+          }
+        ]
       }
     ]
   },
@@ -18505,8 +19339,20 @@
             "ruang": "A.402/"
           }
         ],
-        "jadwalUts": [],
-        "jadwalUas": []
+        "jadwalUts": [
+          {
+            "date": "2025-04-14T06:30:00.000Z",
+            "lengthMinutes": 180,
+            "ruang": ""
+          }
+        ],
+        "jadwalUas": [
+          {
+            "date": "2025-06-23T06:30:00.000Z",
+            "lengthMinutes": 180,
+            "ruang": ""
+          }
+        ]
       }
     ]
   },
@@ -18687,15 +19533,17 @@
     ]
   },
   {
-    "prsId": "",
+    "prsId": "2021:EA4345:25:1",
     "nama": "PEMERIKSAAN AKUNTANSI ATAS SISTEM INFORMASI",
-    "semester": null,
+    "semester": 6,
     "sks": 3,
     "unit": "Business Accounting",
-    "kode": "~BU001",
+    "kode": "EA4345",
     "kelas": [
       {
         "kelas": "A",
+        "accepted": 0,
+        "capacity": 40,
         "jadwal": [
           {
             "dayOfWeek": 2,
@@ -18820,13 +19668,25 @@
             "ruang": "/"
           }
         ],
-        "jadwalUts": [],
-        "jadwalUas": []
+        "jadwalUts": [
+          {
+            "date": "2025-04-16T00:30:00.000Z",
+            "lengthMinutes": 180,
+            "ruang": ""
+          }
+        ],
+        "jadwalUas": [
+          {
+            "date": "2025-06-25T00:30:00.000Z",
+            "lengthMinutes": 180,
+            "ruang": ""
+          }
+        ]
       },
       {
         "kelas": "B",
         "accepted": 0,
-        "capacity": 80,
+        "capacity": 120,
         "jadwal": [
           {
             "dayOfWeek": 2,
@@ -18836,8 +19696,20 @@
             "ruang": "/"
           }
         ],
-        "jadwalUts": [],
-        "jadwalUas": []
+        "jadwalUts": [
+          {
+            "date": "2025-04-16T00:30:00.000Z",
+            "lengthMinutes": 180,
+            "ruang": ""
+          }
+        ],
+        "jadwalUas": [
+          {
+            "date": "2025-06-25T00:30:00.000Z",
+            "lengthMinutes": 180,
+            "ruang": ""
+          }
+        ]
       },
       {
         "kelas": "C",
@@ -18852,8 +19724,20 @@
             "ruang": "/"
           }
         ],
-        "jadwalUts": [],
-        "jadwalUas": []
+        "jadwalUts": [
+          {
+            "date": "2025-04-16T00:30:00.000Z",
+            "lengthMinutes": 180,
+            "ruang": ""
+          }
+        ],
+        "jadwalUas": [
+          {
+            "date": "2025-06-25T00:30:00.000Z",
+            "lengthMinutes": 180,
+            "ruang": ""
+          }
+        ]
       }
     ]
   },
@@ -19649,8 +20533,20 @@
             "ruang": "T.322/"
           }
         ],
-        "jadwalUts": [],
-        "jadwalUas": []
+        "jadwalUts": [
+          {
+            "date": "2025-04-11T03:30:00.000Z",
+            "lengthMinutes": 180,
+            "ruang": ""
+          }
+        ],
+        "jadwalUas": [
+          {
+            "date": "2025-06-20T03:30:00.000Z",
+            "lengthMinutes": 180,
+            "ruang": ""
+          }
+        ]
       }
     ]
   },
@@ -20052,8 +20948,20 @@
             "ruang": "T.322/"
           }
         ],
-        "jadwalUts": [],
-        "jadwalUas": []
+        "jadwalUts": [
+          {
+            "date": "2025-04-17T03:30:00.000Z",
+            "lengthMinutes": 180,
+            "ruang": ""
+          }
+        ],
+        "jadwalUas": [
+          {
+            "date": "2025-06-25T03:30:00.000Z",
+            "lengthMinutes": 180,
+            "ruang": ""
+          }
+        ]
       }
     ]
   },
@@ -20718,16 +21626,40 @@
             "ruang": "/"
           }
         ],
-        "jadwalUts": [],
-        "jadwalUas": []
+        "jadwalUts": [
+          {
+            "date": "2025-04-09T09:30:00.000Z",
+            "lengthMinutes": 180,
+            "ruang": ""
+          }
+        ],
+        "jadwalUas": [
+          {
+            "date": "2025-06-18T09:30:00.000Z",
+            "lengthMinutes": 180,
+            "ruang": ""
+          }
+        ]
       },
       {
         "kelas": "B",
         "accepted": 0,
         "capacity": 40,
         "jadwal": [],
-        "jadwalUts": [],
-        "jadwalUas": []
+        "jadwalUts": [
+          {
+            "date": "2025-04-09T09:30:00.000Z",
+            "lengthMinutes": 180,
+            "ruang": ""
+          }
+        ],
+        "jadwalUas": [
+          {
+            "date": "2025-06-18T09:30:00.000Z",
+            "lengthMinutes": 180,
+            "ruang": ""
+          }
+        ]
       }
     ]
   },
@@ -21567,6 +22499,32 @@
             "startMinute": 30,
             "durasi": 120,
             "ruang": "Q.04.05/"
+          }
+        ],
+        "jadwalUts": [],
+        "jadwalUas": []
+      }
+    ]
+  },
+  {
+    "prsId": "2024:KU4201:62:1",
+    "nama": "PUBLIC HEALTH AND COMMUNITY MEDICINE 1",
+    "semester": 2,
+    "sks": 2,
+    "unit": "Kedokteran",
+    "kode": "KU4201",
+    "kelas": [
+      {
+        "kelas": "A",
+        "accepted": 0,
+        "capacity": 50,
+        "jadwal": [
+          {
+            "dayOfWeek": 3,
+            "startHour": 9,
+            "startMinute": 0,
+            "durasi": 120,
+            "ruang": "Q.08.09a/"
           }
         ],
         "jadwalUts": [],
@@ -23180,7 +24138,15 @@
         "kelas": "B",
         "accepted": 0,
         "capacity": 40,
-        "jadwal": [],
+        "jadwal": [
+          {
+            "dayOfWeek": 4,
+            "startHour": 10,
+            "startMinute": 30,
+            "durasi": 120,
+            "ruang": "/"
+          }
+        ],
         "jadwalUts": [],
         "jadwalUas": []
       },
@@ -23188,7 +24154,15 @@
         "kelas": "C",
         "accepted": 0,
         "capacity": 40,
-        "jadwal": [],
+        "jadwal": [
+          {
+            "dayOfWeek": 4,
+            "startHour": 15,
+            "startMinute": 30,
+            "durasi": 120,
+            "ruang": "/"
+          }
+        ],
         "jadwalUts": [],
         "jadwalUas": []
       }
@@ -23606,8 +24580,20 @@
             "ruang": "A.310/"
           }
         ],
-        "jadwalUts": [],
-        "jadwalUas": []
+        "jadwalUts": [
+          {
+            "date": "2025-04-17T06:30:00.000Z",
+            "lengthMinutes": 180,
+            "ruang": ""
+          }
+        ],
+        "jadwalUas": [
+          {
+            "date": "2025-06-25T06:30:00.000Z",
+            "lengthMinutes": 180,
+            "ruang": ""
+          }
+        ]
       },
       {
         "kelas": "B",
@@ -23622,8 +24608,20 @@
             "ruang": "E.01.09 B/"
           }
         ],
-        "jadwalUts": [],
-        "jadwalUas": []
+        "jadwalUts": [
+          {
+            "date": "2025-04-17T06:30:00.000Z",
+            "lengthMinutes": 180,
+            "ruang": ""
+          }
+        ],
+        "jadwalUas": [
+          {
+            "date": "2025-06-25T06:30:00.000Z",
+            "lengthMinutes": 180,
+            "ruang": ""
+          }
+        ]
       }
     ]
   },
@@ -25471,8 +26469,20 @@
             "ruang": "T.321/"
           }
         ],
-        "jadwalUts": [],
-        "jadwalUas": []
+        "jadwalUts": [
+          {
+            "date": "2025-04-14T06:30:00.000Z",
+            "lengthMinutes": 180,
+            "ruang": ""
+          }
+        ],
+        "jadwalUas": [
+          {
+            "date": "2025-06-23T06:30:00.000Z",
+            "lengthMinutes": 180,
+            "ruang": ""
+          }
+        ]
       }
     ]
   },
