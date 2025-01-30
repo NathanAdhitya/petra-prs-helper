@@ -4336,7 +4336,7 @@
             "startHour": 13,
             "startMinute": 30,
             "durasi": 150,
-            "ruang": "/"
+            "ruang": "PBS.1/"
           }
         ],
         "jadwalUts": [],
@@ -5166,7 +5166,7 @@
             "startHour": 10,
             "startMinute": 30,
             "durasi": 150,
-            "ruang": "/"
+            "ruang": "PBS.1/"
           }
         ],
         "jadwalUts": [],
@@ -7446,14 +7446,14 @@
             "dayOfWeek": 1,
             "startHour": 13,
             "startMinute": 30,
-            "durasi": 240,
+            "durasi": 120,
             "ruang": "/"
           },
           {
             "dayOfWeek": 4,
             "startHour": 13,
             "startMinute": 30,
-            "durasi": 180,
+            "durasi": 120,
             "ruang": "/"
           }
         ],
@@ -9114,7 +9114,7 @@
         "capacity": 50,
         "jadwal": [
           {
-            "dayOfWeek": 5,
+            "dayOfWeek": 2,
             "startHour": 7,
             "startMinute": 0,
             "durasi": 180,
@@ -9613,7 +9613,7 @@
         ],
         "jadwalUas": [
           {
-            "date": "2025-06-25T03:30:00.000Z",
+            "date": "2025-06-26T03:30:00.000Z",
             "lengthMinutes": 180,
             "ruang": ""
           }
@@ -9641,7 +9641,7 @@
         ],
         "jadwalUas": [
           {
-            "date": "2025-06-25T03:30:00.000Z",
+            "date": "2025-06-26T03:30:00.000Z",
             "lengthMinutes": 180,
             "ruang": ""
           }
@@ -11925,15 +11925,15 @@
             "dayOfWeek": 4,
             "startHour": 7,
             "startMinute": 30,
-            "durasi": 120,
+            "durasi": 100,
             "ruang": "Q.06.01/"
           },
           {
             "dayOfWeek": 4,
             "startHour": 9,
-            "startMinute": 30,
-            "durasi": 120,
-            "ruang": "Q.04.12/"
+            "startMinute": 10,
+            "durasi": 100,
+            "ruang": "/"
           }
         ],
         "jadwalUts": [
@@ -13039,7 +13039,36 @@
     "sks": 3,
     "unit": "Keguruan dan Ilmu Pendidikan",
     "kode": "GF4132",
-    "kelas": []
+    "kelas": [
+      {
+        "kelas": "A",
+        "accepted": 0,
+        "capacity": 40,
+        "jadwal": [
+          {
+            "dayOfWeek": 1,
+            "startHour": 7,
+            "startMinute": 30,
+            "durasi": 180,
+            "ruang": "Q.04.08b/"
+          }
+        ],
+        "jadwalUts": [
+          {
+            "date": "2025-04-14T00:30:00.000Z",
+            "lengthMinutes": 180,
+            "ruang": ""
+          }
+        ],
+        "jadwalUas": [
+          {
+            "date": "2025-06-23T00:30:00.000Z",
+            "lengthMinutes": 180,
+            "ruang": ""
+          }
+        ]
+      }
+    ]
   },
   {
     "prsId": "2024:GF4133:XX7:1",
@@ -13048,7 +13077,36 @@
     "sks": 3,
     "unit": "Keguruan dan Ilmu Pendidikan",
     "kode": "GF4133",
-    "kelas": []
+    "kelas": [
+      {
+        "kelas": "A",
+        "accepted": 0,
+        "capacity": 40,
+        "jadwal": [
+          {
+            "dayOfWeek": 2,
+            "startHour": 7,
+            "startMinute": 30,
+            "durasi": 180,
+            "ruang": "Q.04.12/"
+          }
+        ],
+        "jadwalUts": [
+          {
+            "date": "2025-04-15T00:30:00.000Z",
+            "lengthMinutes": 180,
+            "ruang": ""
+          }
+        ],
+        "jadwalUas": [
+          {
+            "date": "2025-06-24T00:30:00.000Z",
+            "lengthMinutes": 180,
+            "ruang": ""
+          }
+        ]
+      }
+    ]
   },
   {
     "prsId": "2024:GF4134:XX7:1",
@@ -13057,7 +13115,36 @@
     "sks": 3,
     "unit": "Keguruan dan Ilmu Pendidikan",
     "kode": "GF4134",
-    "kelas": []
+    "kelas": [
+      {
+        "kelas": "A",
+        "accepted": 0,
+        "capacity": 40,
+        "jadwal": [
+          {
+            "dayOfWeek": 3,
+            "startHour": 7,
+            "startMinute": 30,
+            "durasi": 180,
+            "ruang": "Q.04.12/"
+          }
+        ],
+        "jadwalUts": [
+          {
+            "date": "2025-04-09T00:30:00.000Z",
+            "lengthMinutes": 180,
+            "ruang": ""
+          }
+        ],
+        "jadwalUas": [
+          {
+            "date": "2025-06-18T00:30:00.000Z",
+            "lengthMinutes": 180,
+            "ruang": ""
+          }
+        ]
+      }
+    ]
   },
   {
     "prsId": "2024:GF4135:XX7:1",
@@ -13066,7 +13153,24 @@
     "sks": 3,
     "unit": "Keguruan dan Ilmu Pendidikan",
     "kode": "GF4135",
-    "kelas": []
+    "kelas": [
+      {
+        "kelas": "A",
+        "accepted": 0,
+        "capacity": 40,
+        "jadwal": [
+          {
+            "dayOfWeek": 3,
+            "startHour": 12,
+            "startMinute": 30,
+            "durasi": 180,
+            "ruang": "Q.04.01/"
+          }
+        ],
+        "jadwalUts": [],
+        "jadwalUas": []
+      }
+    ]
   },
   {
     "prsId": "2024:GF4136:XX7:1",
@@ -13075,7 +13179,24 @@
     "sks": 3,
     "unit": "Keguruan dan Ilmu Pendidikan",
     "kode": "GF4136",
-    "kelas": []
+    "kelas": [
+      {
+        "kelas": "A",
+        "accepted": 0,
+        "capacity": 40,
+        "jadwal": [
+          {
+            "dayOfWeek": 4,
+            "startHour": 7,
+            "startMinute": 30,
+            "durasi": 180,
+            "ruang": "/"
+          }
+        ],
+        "jadwalUts": [],
+        "jadwalUas": []
+      }
+    ]
   },
   {
     "prsId": "2020:EU4312:23:1",
@@ -13434,7 +13555,7 @@
             "startHour": 8,
             "startMinute": 0,
             "durasi": 180,
-            "ruang": "/"
+            "ruang": "T.321/"
           }
         ],
         "jadwalUts": [],
@@ -14650,6 +14771,42 @@
     ]
   },
   {
+    "prsId": "2024:TE4705:04:1",
+    "nama": "LEAP-PENGEMBANGAN DIRI",
+    "semester": 7,
+    "sks": 2,
+    "unit": "Teknik Elektro",
+    "kode": "TE4705",
+    "kelas": [
+      {
+        "kelas": "A",
+        "accepted": 0,
+        "capacity": 40,
+        "jadwal": [],
+        "jadwalUts": [],
+        "jadwalUas": []
+      }
+    ]
+  },
+  {
+    "prsId": "2024:TE4704:04:1",
+    "nama": "LEAP-PENULISAN",
+    "semester": 7,
+    "sks": 2,
+    "unit": "Teknik Elektro",
+    "kode": "TE4704",
+    "kelas": [
+      {
+        "kelas": "A",
+        "accepted": 0,
+        "capacity": 40,
+        "jadwal": [],
+        "jadwalUts": [],
+        "jadwalUas": []
+      }
+    ]
+  },
+  {
     "prsId": "2024:DV4351:17:1",
     "nama": "LEAP: INDUSTRIAL EXPERIENCE",
     "semester": 7,
@@ -15113,8 +15270,8 @@
             "dayOfWeek": 1,
             "startHour": 10,
             "startMinute": 0,
-            "durasi": -570,
-            "ruang": "/"
+            "durasi": 180,
+            "ruang": "PBS.1/"
           }
         ],
         "jadwalUts": [],
@@ -15225,7 +15382,7 @@
             "startHour": 13,
             "startMinute": 30,
             "durasi": 180,
-            "ruang": "/"
+            "ruang": "PBS.1/"
           }
         ],
         "jadwalUts": [],
@@ -15263,7 +15420,7 @@
         ],
         "jadwalUas": [
           {
-            "date": "2025-06-25T06:30:00.000Z",
+            "date": "2025-06-26T06:30:00.000Z",
             "lengthMinutes": 180,
             "ruang": ""
           }
@@ -15415,7 +15572,7 @@
         ],
         "jadwalUas": [
           {
-            "date": "2025-06-25T00:30:00.000Z",
+            "date": "2025-06-26T00:30:00.000Z",
             "lengthMinutes": 180,
             "ruang": ""
           }
@@ -16102,6 +16259,40 @@
             "ruang": ""
           }
         ]
+      },
+      {
+        "kelas": "C",
+        "keterangan": "kelas khusus untuk Angkatan 2022 untuk proses transisi kurikulum 2020 ke 2024",
+        "accepted": 0,
+        "capacity": 40,
+        "jadwal": [
+          {
+            "dayOfWeek": 2,
+            "startHour": 7,
+            "startMinute": 30,
+            "durasi": 150,
+            "ruang": "Q.04.11/"
+          }
+        ],
+        "jadwalUts": [],
+        "jadwalUas": []
+      },
+      {
+        "kelas": "D",
+        "keterangan": "kelas khusus untuk Angkatan 2022 untuk proses transisi kurikulum 2020 ke 2024",
+        "accepted": 0,
+        "capacity": 40,
+        "jadwal": [
+          {
+            "dayOfWeek": 2,
+            "startHour": 10,
+            "startMinute": 30,
+            "durasi": 150,
+            "ruang": "Q.04.11/"
+          }
+        ],
+        "jadwalUts": [],
+        "jadwalUas": []
       }
     ]
   },
@@ -16433,7 +16624,7 @@
             "startHour": 7,
             "startMinute": 30,
             "durasi": 180,
-            "ruang": "/"
+            "ruang": "T.325/"
           }
         ],
         "jadwalUts": [],
@@ -18644,7 +18835,7 @@
         ],
         "jadwalUas": [
           {
-            "date": "2025-06-25T00:30:00.000Z",
+            "date": "2025-06-26T00:30:00.000Z",
             "lengthMinutes": 180,
             "ruang": ""
           }
@@ -18752,7 +18943,7 @@
             "startHour": 13,
             "startMinute": 30,
             "durasi": 150,
-            "ruang": "/"
+            "ruang": "PBS.1/"
           }
         ],
         "jadwalUts": [],
@@ -23245,13 +23436,13 @@
             "dayOfWeek": 3,
             "startHour": 14,
             "startMinute": 0,
-            "durasi": 150,
+            "durasi": 100,
             "ruang": "Q.04.12/"
           },
           {
             "dayOfWeek": 3,
-            "startHour": 16,
-            "startMinute": 30,
+            "startHour": 15,
+            "startMinute": 40,
             "durasi": 50,
             "ruang": "Q.04.12/"
           }
@@ -24800,7 +24991,7 @@
         ],
         "jadwalUas": [
           {
-            "date": "2025-06-25T06:30:00.000Z",
+            "date": "2025-06-26T06:30:00.000Z",
             "lengthMinutes": 180,
             "ruang": ""
           }
@@ -24828,7 +25019,7 @@
         ],
         "jadwalUas": [
           {
-            "date": "2025-06-25T06:30:00.000Z",
+            "date": "2025-06-26T06:30:00.000Z",
             "lengthMinutes": 180,
             "ruang": ""
           }
