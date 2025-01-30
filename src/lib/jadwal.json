@@ -1459,14 +1459,14 @@
         ],
         "jadwalUts": [
           {
-            "date": "2025-04-10T06:30:00.000Z",
+            "date": "2025-04-11T00:30:00.000Z",
             "lengthMinutes": 180,
             "ruang": ""
           }
         ],
         "jadwalUas": [
           {
-            "date": "2025-06-19T06:30:00.000Z",
+            "date": "2025-06-20T00:30:00.000Z",
             "lengthMinutes": 180,
             "ruang": ""
           }
@@ -5912,6 +5912,44 @@
     ]
   },
   {
+    "prsId": "2024:TI4667:54:1",
+    "nama": "DATA ANALYTICS IN LOGISTICS",
+    "semester": 4,
+    "sks": 3,
+    "unit": "Global Logistics and Supply Chain",
+    "kode": "TI4667",
+    "kelas": [
+      {
+        "kelas": "A",
+        "accepted": 0,
+        "capacity": 10,
+        "jadwal": [
+          {
+            "dayOfWeek": 2,
+            "startHour": 13,
+            "startMinute": 30,
+            "durasi": 180,
+            "ruang": "/"
+          }
+        ],
+        "jadwalUts": [
+          {
+            "date": "2025-04-15T01:00:00.000Z",
+            "lengthMinutes": 180,
+            "ruang": ""
+          }
+        ],
+        "jadwalUas": [
+          {
+            "date": "2025-06-24T01:00:00.000Z",
+            "lengthMinutes": 180,
+            "ruang": ""
+          }
+        ]
+      }
+    ]
+  },
+  {
     "prsId": "2024:TF4333:51:1",
     "nama": "DATA MINING",
     "semester": 3,
@@ -6225,11 +6263,11 @@
         "capacity": 40,
         "jadwal": [
           {
-            "dayOfWeek": 2,
+            "dayOfWeek": 4,
             "startHour": 9,
             "startMinute": 30,
             "durasi": 180,
-            "ruang": "P.502/"
+            "ruang": "P.433/"
           }
         ],
         "jadwalUts": [
@@ -6263,11 +6301,11 @@
         "capacity": 30,
         "jadwal": [
           {
-            "dayOfWeek": 4,
+            "dayOfWeek": 2,
             "startHour": 9,
             "startMinute": 30,
             "durasi": 180,
-            "ruang": "P.612/"
+            "ruang": "P.502/"
           }
         ],
         "jadwalUts": [
@@ -7216,7 +7254,7 @@
             "startHour": 10,
             "startMinute": 30,
             "durasi": 180,
-            "ruang": "E.01.06/"
+            "ruang": "W.302/"
           }
         ],
         "jadwalUts": [
@@ -8245,7 +8283,7 @@
             "dayOfWeek": 4,
             "startHour": 10,
             "startMinute": 30,
-            "durasi": 180,
+            "durasi": 120,
             "ruang": "/"
           }
         ],
@@ -9042,7 +9080,7 @@
             "startHour": 13,
             "startMinute": 30,
             "durasi": 180,
-            "ruang": "E.01.06/"
+            "ruang": "A.310/"
           }
         ],
         "jadwalUts": [
@@ -9396,58 +9434,6 @@
     ]
   },
   {
-    "prsId": "2024:EA4581:09:1",
-    "nama": "GLOBAL EXPERIENCE",
-    "semester": 7,
-    "sks": 10,
-    "unit": "Akuntansi",
-    "kode": "EA4581",
-    "kelas": [
-      {
-        "kelas": "A",
-        "accepted": 0,
-        "capacity": 100,
-        "jadwal": [],
-        "jadwalUts": [],
-        "jadwalUas": []
-      },
-      {
-        "kelas": "B",
-        "accepted": 0,
-        "capacity": 100,
-        "jadwal": [],
-        "jadwalUts": [],
-        "jadwalUas": []
-      }
-    ]
-  },
-  {
-    "prsId": "2024:EA4580:09:1",
-    "nama": "GLOBAL EXPOSURE",
-    "semester": 7,
-    "sks": 10,
-    "unit": "Akuntansi",
-    "kode": "EA4580",
-    "kelas": [
-      {
-        "kelas": "A",
-        "accepted": 0,
-        "capacity": 100,
-        "jadwal": [],
-        "jadwalUts": [],
-        "jadwalUas": []
-      },
-      {
-        "kelas": "B",
-        "accepted": 0,
-        "capacity": 100,
-        "jadwal": [],
-        "jadwalUts": [],
-        "jadwalUas": []
-      }
-    ]
-  },
-  {
     "prsId": "2024:DI4534:16:1",
     "nama": "GLOBAL INNOVATION AND INTERDISCIPLINARY COLLABORATION PROJECT",
     "semester": 7,
@@ -9724,14 +9710,14 @@
         ],
         "jadwalUts": [
           {
-            "date": "2025-04-14T03:30:00.000Z",
+            "date": "2025-04-14T06:30:00.000Z",
             "lengthMinutes": 180,
             "ruang": ""
           }
         ],
         "jadwalUas": [
           {
-            "date": "2025-06-23T03:30:00.000Z",
+            "date": "2025-06-23T06:30:00.000Z",
             "lengthMinutes": 180,
             "ruang": ""
           }
@@ -10125,6 +10111,34 @@
     ]
   },
   {
+    "prsId": "2020:EA4582:09:1",
+    "nama": "INDUSTRIAL AWARENESS",
+    "semester": 8,
+    "sks": 6,
+    "unit": "Akuntansi",
+    "kode": "EA4582",
+    "kelas": [
+      {
+        "kelas": "C",
+        "keterangan": "Untuk Mahasiswa Angkatan 2022 - Tax Accounting",
+        "accepted": 0,
+        "capacity": 100,
+        "jadwal": [],
+        "jadwalUts": [],
+        "jadwalUas": []
+      },
+      {
+        "kelas": "D",
+        "keterangan": "khusus mahasiswa angkatan 2022, Business Accounting",
+        "accepted": 0,
+        "capacity": 100,
+        "jadwal": [],
+        "jadwalUts": [],
+        "jadwalUas": []
+      }
+    ]
+  },
+  {
     "prsId": "2020:IA4207:36:1",
     "nama": "INDUSTRIAL AWARENESS",
     "semester": 7,
@@ -10143,15 +10157,16 @@
     ]
   },
   {
-    "prsId": "2024:EA4583:09:1",
+    "prsId": "2020:EA4583:09:1",
     "nama": "INDUSTRIAL EXPERIENCE",
-    "semester": 7,
-    "sks": 10,
+    "semester": 8,
+    "sks": 6,
     "unit": "Akuntansi",
     "kode": "EA4583",
     "kelas": [
       {
-        "kelas": "A",
+        "kelas": "C",
+        "keterangan": "untuk mahasiswa angkatan 2022, Tax Accounting",
         "accepted": 0,
         "capacity": 100,
         "jadwal": [],
@@ -10159,7 +10174,8 @@
         "jadwalUas": []
       },
       {
-        "kelas": "B",
+        "kelas": "D",
+        "keterangan": "untuk mahasiswa angkatan 2022-Business Accounting",
         "accepted": 0,
         "capacity": 100,
         "jadwal": [],
@@ -10423,7 +10439,7 @@
             "startHour": 14,
             "startMinute": 30,
             "durasi": 180,
-            "ruang": "E.01.09 B/"
+            "ruang": "W.303/"
           }
         ],
         "jadwalUts": [
@@ -10461,7 +10477,7 @@
             "startHour": 8,
             "startMinute": 30,
             "durasi": 180,
-            "ruang": "A.403/"
+            "ruang": "A.402/"
           }
         ],
         "jadwalUts": [
@@ -10748,6 +10764,43 @@
             "startMinute": 30,
             "durasi": 60,
             "ruang": "Q.04.01/"
+          },
+          {
+            "dayOfWeek": 1,
+            "startHour": 8,
+            "startMinute": 30,
+            "durasi": 120,
+            "ruang": "Q.10.02/"
+          },
+          {
+            "dayOfWeek": 1,
+            "startHour": 13,
+            "startMinute": 0,
+            "durasi": 330,
+            "ruang": "Q.10.02/"
+          },
+          {
+            "dayOfWeek": 3,
+            "startHour": 7,
+            "startMinute": 30,
+            "durasi": 660,
+            "ruang": "Q.10.02/"
+          }
+        ],
+        "jadwalUts": [],
+        "jadwalUas": []
+      },
+      {
+        "kelas": "B",
+        "accepted": 0,
+        "capacity": 20,
+        "jadwal": [
+          {
+            "dayOfWeek": 1,
+            "startHour": 7,
+            "startMinute": 30,
+            "durasi": 60,
+            "ruang": "Q.04.02b/"
           },
           {
             "dayOfWeek": 1,
@@ -12010,7 +12063,7 @@
             "startHour": 7,
             "startMinute": 30,
             "durasi": 180,
-            "ruang": "/"
+            "ruang": "T.318/"
           }
         ],
         "jadwalUts": [
@@ -12298,7 +12351,7 @@
             "startHour": 13,
             "startMinute": 30,
             "durasi": 180,
-            "ruang": "/"
+            "ruang": "T.324/"
           }
         ],
         "jadwalUts": [
@@ -12829,13 +12882,30 @@
     ]
   },
   {
-    "prsId": "",
+    "prsId": "2024:ST4507:20:1",
     "nama": "KETERAMPILAN MEMBACA DASAR",
-    "semester": null,
+    "semester": 2,
     "sks": 2,
     "unit": "Bahasa Mandarin",
-    "kode": "~BA003",
-    "kelas": []
+    "kode": "ST4507",
+    "kelas": [
+      {
+        "kelas": "A",
+        "accepted": 0,
+        "capacity": 20,
+        "jadwal": [
+          {
+            "dayOfWeek": 5,
+            "startHour": 8,
+            "startMinute": 30,
+            "durasi": 120,
+            "ruang": "/"
+          }
+        ],
+        "jadwalUts": [],
+        "jadwalUas": []
+      }
+    ]
   },
   {
     "prsId": "2024:ST4562:20:1",
@@ -12961,6 +13031,51 @@
         "jadwalUas": []
       }
     ]
+  },
+  {
+    "prsId": "2024:GF4132:XX7:1",
+    "nama": "KETRAMPILAN KONSELING ANAK 1",
+    "semester": 6,
+    "sks": 3,
+    "unit": "Keguruan dan Ilmu Pendidikan",
+    "kode": "GF4132",
+    "kelas": []
+  },
+  {
+    "prsId": "2024:GF4133:XX7:1",
+    "nama": "KETRAMPILAN KONSELING ANAK 2",
+    "semester": 6,
+    "sks": 3,
+    "unit": "Keguruan dan Ilmu Pendidikan",
+    "kode": "GF4133",
+    "kelas": []
+  },
+  {
+    "prsId": "2024:GF4134:XX7:1",
+    "nama": "KETRAMPILAN KONSELING ANAK 3",
+    "semester": 6,
+    "sks": 3,
+    "unit": "Keguruan dan Ilmu Pendidikan",
+    "kode": "GF4134",
+    "kelas": []
+  },
+  {
+    "prsId": "2024:GF4135:XX7:1",
+    "nama": "KETRAMPILAN KONSELING ANAK 4",
+    "semester": 6,
+    "sks": 3,
+    "unit": "Keguruan dan Ilmu Pendidikan",
+    "kode": "GF4135",
+    "kelas": []
+  },
+  {
+    "prsId": "2024:GF4136:XX7:1",
+    "nama": "KETRAMPILAN KONSELING ANAK 5",
+    "semester": 6,
+    "sks": 3,
+    "unit": "Keguruan dan Ilmu Pendidikan",
+    "kode": "GF4136",
+    "kelas": []
   },
   {
     "prsId": "2020:EU4312:23:1",
@@ -13435,11 +13550,11 @@
         "capacity": 40,
         "jadwal": [
           {
-            "dayOfWeek": 5,
-            "startHour": 8,
+            "dayOfWeek": 2,
+            "startHour": 14,
             "startMinute": 30,
             "durasi": 120,
-            "ruang": "P.503/"
+            "ruang": "P.433/"
           }
         ],
         "jadwalUts": [],
@@ -15136,7 +15251,7 @@
             "startHour": 13,
             "startMinute": 30,
             "durasi": 180,
-            "ruang": "E.01.09 A/"
+            "ruang": "B.304/"
           }
         ],
         "jadwalUts": [
@@ -15524,7 +15639,7 @@
             "startHour": 7,
             "startMinute": 30,
             "durasi": 180,
-            "ruang": "T.322/"
+            "ruang": "T.212/"
           }
         ],
         "jadwalUts": [
@@ -15632,8 +15747,20 @@
             "ruang": "/"
           }
         ],
-        "jadwalUts": [],
-        "jadwalUas": []
+        "jadwalUts": [
+          {
+            "date": "2025-04-10T03:30:00.000Z",
+            "lengthMinutes": 180,
+            "ruang": ""
+          }
+        ],
+        "jadwalUas": [
+          {
+            "date": "2025-06-19T03:30:00.000Z",
+            "lengthMinutes": 180,
+            "ruang": ""
+          }
+        ]
       },
       {
         "kelas": "C",
@@ -15648,8 +15775,20 @@
             "ruang": "/"
           }
         ],
-        "jadwalUts": [],
-        "jadwalUas": []
+        "jadwalUts": [
+          {
+            "date": "2025-04-10T03:30:00.000Z",
+            "lengthMinutes": 180,
+            "ruang": ""
+          }
+        ],
+        "jadwalUas": [
+          {
+            "date": "2025-06-19T03:30:00.000Z",
+            "lengthMinutes": 180,
+            "ruang": ""
+          }
+        ]
       }
     ]
   },
@@ -15836,7 +15975,7 @@
             "startHour": 13,
             "startMinute": 0,
             "durasi": 180,
-            "ruang": "P.614/"
+            "ruang": "P.709/"
           }
         ],
         "jadwalUts": [
@@ -15984,7 +16123,7 @@
             "startHour": 13,
             "startMinute": 30,
             "durasi": 180,
-            "ruang": "E.01.06/"
+            "ruang": "B.303/"
           }
         ],
         "jadwalUts": [
@@ -16190,14 +16329,14 @@
         ],
         "jadwalUts": [
           {
-            "date": "2025-04-14T06:30:00.000Z",
+            "date": "2025-04-14T09:30:00.000Z",
             "lengthMinutes": 180,
             "ruang": ""
           }
         ],
         "jadwalUas": [
           {
-            "date": "2025-06-23T06:30:00.000Z",
+            "date": "2025-06-23T09:30:00.000Z",
             "lengthMinutes": 180,
             "ruang": ""
           }
@@ -16984,6 +17123,13 @@
         "capacity": 40,
         "jadwal": [
           {
+            "dayOfWeek": 3,
+            "startHour": 12,
+            "startMinute": 0,
+            "durasi": 210,
+            "ruang": "P.711/P710/"
+          },
+          {
             "dayOfWeek": 4,
             "startHour": 7,
             "startMinute": 30,
@@ -17231,6 +17377,13 @@
             "startMinute": 30,
             "durasi": 120,
             "ruang": "P.614/"
+          },
+          {
+            "dayOfWeek": 3,
+            "startHour": 8,
+            "startMinute": 30,
+            "durasi": 210,
+            "ruang": "P.711/P710/"
           }
         ],
         "jadwalUts": [
@@ -17490,14 +17643,14 @@
         ],
         "jadwalUts": [
           {
-            "date": "2025-04-10T00:30:00.000Z",
+            "date": "2025-04-09T00:30:00.000Z",
             "lengthMinutes": 120,
             "ruang": ""
           }
         ],
         "jadwalUas": [
           {
-            "date": "2025-06-19T00:30:00.000Z",
+            "date": "2025-06-18T00:30:00.000Z",
             "lengthMinutes": 120,
             "ruang": ""
           }
@@ -18407,7 +18560,15 @@
         "kelas": "A",
         "accepted": 0,
         "capacity": 40,
-        "jadwal": [],
+        "jadwal": [
+          {
+            "dayOfWeek": 3,
+            "startHour": 7,
+            "startMinute": 30,
+            "durasi": 300,
+            "ruang": "/"
+          }
+        ],
         "jadwalUts": [
           {
             "date": "2025-04-14T06:30:00.000Z",
@@ -18427,7 +18588,15 @@
         "kelas": "B",
         "accepted": 0,
         "capacity": 20,
-        "jadwal": [],
+        "jadwal": [
+          {
+            "dayOfWeek": 4,
+            "startHour": 7,
+            "startMinute": 30,
+            "durasi": 300,
+            "ruang": "/"
+          }
+        ],
         "jadwalUts": [
           {
             "date": "2025-04-14T06:30:00.000Z",
@@ -18463,7 +18632,7 @@
             "startHour": 10,
             "startMinute": 30,
             "durasi": 300,
-            "ruang": "A.404/"
+            "ruang": "Lab Resto/"
           }
         ],
         "jadwalUts": [
@@ -19295,15 +19464,17 @@
     ]
   },
   {
-    "prsId": "",
+    "prsId": "2024:ST4527:20:1",
     "nama": "PEDAGOGI BAHASA MANDARIN",
-    "semester": null,
+    "semester": 4,
     "sks": 2,
     "unit": "Bahasa Mandarin",
-    "kode": "~BA002",
+    "kode": "ST4527",
     "kelas": [
       {
         "kelas": "A",
+        "accepted": 0,
+        "capacity": 15,
         "jadwal": [
           {
             "dayOfWeek": 2,
@@ -20070,6 +20241,44 @@
     ]
   },
   {
+    "prsId": "2024:TI4666:54:1",
+    "nama": "PENELITIAN OPERASIONAL LOGISTIK II",
+    "semester": 4,
+    "sks": 3,
+    "unit": "Global Logistics and Supply Chain",
+    "kode": "TI4666",
+    "kelas": [
+      {
+        "kelas": "A",
+        "accepted": 0,
+        "capacity": 10,
+        "jadwal": [
+          {
+            "dayOfWeek": 3,
+            "startHour": 13,
+            "startMinute": 30,
+            "durasi": 180,
+            "ruang": "/"
+          }
+        ],
+        "jadwalUts": [
+          {
+            "date": "2025-04-17T01:00:00.000Z",
+            "lengthMinutes": 120,
+            "ruang": ""
+          }
+        ],
+        "jadwalUas": [
+          {
+            "date": "2025-06-26T01:00:00.000Z",
+            "lengthMinutes": 120,
+            "ruang": ""
+          }
+        ]
+      }
+    ]
+  },
+  {
     "prsId": "2024:ST4401:20:1",
     "nama": "PENERJEMAHAN I",
     "semester": 6,
@@ -20096,15 +20305,17 @@
     ]
   },
   {
-    "prsId": "",
+    "prsId": "2024:ST4402:20:1",
     "nama": "PENERJEMAHAN II",
-    "semester": null,
+    "semester": 8,
     "sks": 2,
     "unit": "Bahasa Mandarin",
-    "kode": "~BA001",
+    "kode": "ST4402",
     "kelas": [
       {
         "kelas": "A",
+        "accepted": 0,
+        "capacity": 40,
         "jadwal": [
           {
             "dayOfWeek": 2,
@@ -20463,10 +20674,10 @@
         "jadwal": [
           {
             "dayOfWeek": 2,
-            "startHour": 10,
+            "startHour": 7,
             "startMinute": 30,
             "durasi": 180,
-            "ruang": "P.503A/"
+            "ruang": "LAB.TELEMA/"
           }
         ],
         "jadwalUts": [],
@@ -21082,10 +21293,10 @@
         "jadwal": [
           {
             "dayOfWeek": 2,
-            "startHour": 13,
+            "startHour": 7,
             "startMinute": 30,
             "durasi": 180,
-            "ruang": "P.433/"
+            "ruang": "P.504/"
           }
         ],
         "jadwalUts": [
@@ -22354,17 +22565,17 @@
         "jadwal": [
           {
             "dayOfWeek": 3,
-            "startHour": 14,
+            "startHour": 15,
             "startMinute": 30,
             "durasi": 120,
-            "ruang": "/"
+            "ruang": "P.502/"
           },
           {
             "dayOfWeek": 4,
             "startHour": 11,
             "startMinute": 30,
             "durasi": 60,
-            "ruang": "/"
+            "ruang": "P.502/"
           }
         ],
         "jadwalUts": [
@@ -22440,21 +22651,21 @@
             "startHour": 8,
             "startMinute": 30,
             "durasi": 450,
-            "ruang": "DUMMY/"
+            "ruang": "P.711/P710/"
           },
           {
             "dayOfWeek": 4,
             "startHour": 8,
             "startMinute": 30,
-            "durasi": 120,
-            "ruang": "P.617/"
+            "durasi": 330,
+            "ruang": "P.711/P710/"
           },
           {
             "dayOfWeek": 4,
-            "startHour": 10,
-            "startMinute": 30,
-            "durasi": 330,
-            "ruang": "DUMMY/"
+            "startHour": 14,
+            "startMinute": 0,
+            "durasi": 120,
+            "ruang": "P.711/P710/"
           }
         ],
         "jadwalUts": [],
@@ -22955,11 +23166,11 @@
         "capacity": 30,
         "jadwal": [
           {
-            "dayOfWeek": 5,
-            "startHour": 7,
+            "dayOfWeek": 3,
+            "startHour": 11,
             "startMinute": 30,
             "durasi": 120,
-            "ruang": "P.433/"
+            "ruang": "P.202/"
           }
         ],
         "jadwalUts": [
@@ -22993,8 +23204,8 @@
         "capacity": 20,
         "jadwal": [
           {
-            "dayOfWeek": 3,
-            "startHour": 10,
+            "dayOfWeek": 5,
+            "startHour": 7,
             "startMinute": 30,
             "durasi": 180,
             "ruang": "P.433/"
@@ -23021,7 +23232,7 @@
     "prsId": "2024:IK4515:46:1",
     "nama": "RELASI PUBLIK DAN KEWIRAUSAHAAN",
     "semester": 6,
-    "sks": 4,
+    "sks": 3,
     "unit": "Strategic Communication",
     "kode": "IK4515",
     "kelas": [
@@ -24333,7 +24544,7 @@
             "startHour": 16,
             "startMinute": 0,
             "durasi": 180,
-            "ruang": "PBS.6/"
+            "ruang": "/"
           }
         ],
         "jadwalUts": [
@@ -24605,7 +24816,7 @@
             "startHour": 13,
             "startMinute": 30,
             "durasi": 180,
-            "ruang": "E.01.09 B/"
+            "ruang": "B.302/"
           }
         ],
         "jadwalUts": [
@@ -25177,8 +25388,8 @@
             "dayOfWeek": 4,
             "startHour": 15,
             "startMinute": 30,
-            "durasi": 120,
-            "ruang": "/"
+            "durasi": 180,
+            "ruang": "P.502A/"
           }
         ],
         "jadwalUts": [
@@ -25217,6 +25428,13 @@
             "startMinute": 30,
             "durasi": 120,
             "ruang": "Q.09.07B/"
+          },
+          {
+            "dayOfWeek": 4,
+            "startHour": 9,
+            "startMinute": 30,
+            "durasi": 120,
+            "ruang": "/"
           }
         ],
         "jadwalUts": [
@@ -25229,34 +25447,6 @@
         "jadwalUas": [
           {
             "date": "2025-06-24T02:30:00.000Z",
-            "lengthMinutes": 120,
-            "ruang": ""
-          }
-        ]
-      },
-      {
-        "kelas": "B",
-        "accepted": 0,
-        "capacity": 20,
-        "jadwal": [
-          {
-            "dayOfWeek": 4,
-            "startHour": 9,
-            "startMinute": 30,
-            "durasi": 120,
-            "ruang": "Q.09.07B/"
-          }
-        ],
-        "jadwalUts": [
-          {
-            "date": "2025-04-10T02:30:00.000Z",
-            "lengthMinutes": 120,
-            "ruang": ""
-          }
-        ],
-        "jadwalUas": [
-          {
-            "date": "2025-06-19T02:30:00.000Z",
             "lengthMinutes": 120,
             "ruang": ""
           }
@@ -25627,14 +25817,14 @@
         ],
         "jadwalUts": [
           {
-            "date": "2025-04-14T03:30:00.000Z",
+            "date": "2025-04-10T00:30:00.000Z",
             "lengthMinutes": 180,
             "ruang": ""
           }
         ],
         "jadwalUas": [
           {
-            "date": "2025-06-23T03:30:00.000Z",
+            "date": "2025-06-19T00:30:00.000Z",
             "lengthMinutes": 180,
             "ruang": ""
           }
@@ -28182,6 +28372,24 @@
             "ruang": ""
           }
         ]
+      }
+    ]
+  },
+  {
+    "prsId": "2024:TM4671:24:1",
+    "nama": "WORKSHOP/CLINIC OTOMOTIF",
+    "semester": 6,
+    "sks": 3,
+    "unit": "Automotive",
+    "kode": "TM4671",
+    "kelas": [
+      {
+        "kelas": "A",
+        "accepted": 0,
+        "capacity": 20,
+        "jadwal": [],
+        "jadwalUts": [],
+        "jadwalUas": []
       }
     ]
   },
