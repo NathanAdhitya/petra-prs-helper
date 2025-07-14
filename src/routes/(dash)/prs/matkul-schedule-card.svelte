@@ -95,7 +95,7 @@
 		<span class="text-xs"> ({schedule.kelas.join(', ')})</span>
 	</div>
 	{#if isWide}
-		<div class="text-xs leading-3 text-muted-foreground max-xl:hidden">
+		<div class="text-xs leading-3 text-muted-foreground max-xl:hidden text-left">
 			{timeToString(schedule.startHour, schedule.startMinute)} - {timeToString(
 				schedule.startHour,
 				schedule.startMinute + schedule.lengthMinutes
