@@ -28,7 +28,7 @@
 </script>
 
 <svelte:head>
-	<title>{$titleStore} • PRS Helper</title>
+	<title>{$titleStore} • Petra PRS Helper</title>
 </svelte:head>
 
 <ModeWatcher track={false} defaultMode="light" />
