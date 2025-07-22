@@ -540,7 +540,7 @@
       {
         "kelas": "E",
         "keterangan": "KHUSUS MHS ELEKTRO + MHS AUTOMOTIVE + MHS SUSTAINABLE MECHANICAL ENGINEERING + MHS TEKNOLOGI PANGAN",
-        "accepted": 51,
+        "accepted": 52,
         "capacity": 42,
         "jadwal": [
           {
@@ -627,7 +627,7 @@
       {
         "kelas": "H",
         "keterangan": "KHUSUS MHS AKUNTANSI PAJAK",
-        "accepted": 46,
+        "accepted": 45,
         "capacity": 50,
         "jadwal": [
           {
@@ -714,7 +714,7 @@
       {
         "kelas": "K",
         "keterangan": "KHUSUS MHS PROGRAM MANAJEMEN",
-        "accepted": 48,
+        "accepted": 47,
         "capacity": 50,
         "jadwal": [
           {
@@ -743,7 +743,7 @@
       {
         "kelas": "L",
         "keterangan": "KHUSUS MHS PROGRAM MANAJEMEN",
-        "accepted": 43,
+        "accepted": 42,
         "capacity": 50,
         "jadwal": [
           {
@@ -801,7 +801,7 @@
       {
         "kelas": "N",
         "keterangan": "KHUSUS MHS BUSINESS ACOUNTING + INTERNATIONAL TRADE AND FINANCE",
-        "accepted": 44,
+        "accepted": 42,
         "capacity": 40,
         "jadwal": [
           {
@@ -1004,7 +1004,7 @@
       {
         "kelas": "U",
         "keterangan": "KHUSUS MHS AKUNTANSI + MANAJEMEN",
-        "accepted": 33,
+        "accepted": 38,
         "capacity": 40,
         "jadwal": [
           {
@@ -1204,7 +1204,7 @@
             "startHour": 14,
             "startMinute": 0,
             "durasi": 120,
-            "ruang": ""
+            "ruang": "PBS.6"
           }
         ],
         "jadwalUts": [],
@@ -1341,7 +1341,7 @@
       {
         "kelas": "A",
         "accepted": 0,
-        "capacity": 160,
+        "capacity": 80,
         "jadwal": [
           {
             "dayOfWeek": 1,
@@ -1369,7 +1369,7 @@
       {
         "kelas": "B",
         "accepted": 0,
-        "capacity": 80,
+        "capacity": 120,
         "jadwal": [
           {
             "dayOfWeek": 1,
@@ -1590,14 +1590,21 @@
             "startHour": 13,
             "startMinute": 0,
             "durasi": 180,
-            "ruang": "P.05.02"
+            "ruang": "P.05.03A"
+          },
+          {
+            "dayOfWeek": 2,
+            "startHour": 10,
+            "startMinute": 30,
+            "durasi": 180,
+            "ruang": "P.02.01\t\t\t\n\t\t\t\t\t\t\t / LAB MOBDEV"
           },
           {
             "dayOfWeek": 3,
             "startHour": 10,
             "startMinute": 30,
             "durasi": 120,
-            "ruang": "P.05.02A"
+            "ruang": "P.02.01A\t\t\t\n\t\t\t\t\t\t\t / Lab Studio Informatika"
           }
         ],
         "jadwalUts": [
@@ -1625,7 +1632,7 @@
             "startHour": 13,
             "startMinute": 30,
             "durasi": 180,
-            "ruang": "P.05.05"
+            "ruang": "P.02.05A\t\t\t\n\t\t\t\t\t\t\t / Lab Sistem Informasi"
           },
           {
             "dayOfWeek": 3,
@@ -1633,6 +1640,13 @@
             "startMinute": 30,
             "durasi": 120,
             "ruang": "P.06.12"
+          },
+          {
+            "dayOfWeek": 4,
+            "startHour": 13,
+            "startMinute": 30,
+            "durasi": 180,
+            "ruang": "P.02.01\t\t\t\n\t\t\t\t\t\t\t / LAB MOBDEV"
           }
         ],
         "jadwalUts": [
@@ -1660,14 +1674,21 @@
             "startHour": 13,
             "startMinute": 0,
             "durasi": 180,
-            "ruang": "Q.04.10"
+            "ruang": "P.02.05A\t\t\t\n\t\t\t\t\t\t\t / Lab Sistem Informasi"
           },
           {
             "dayOfWeek": 3,
             "startHour": 10,
             "startMinute": 30,
             "durasi": 120,
-            "ruang": "P.05.03"
+            "ruang": "P.02.05A\t\t\t\n\t\t\t\t\t\t\t / Lab Sistem Informasi"
+          },
+          {
+            "dayOfWeek": 4,
+            "startHour": 7,
+            "startMinute": 30,
+            "durasi": 180,
+            "ruang": "P.02.01\t\t\t\n\t\t\t\t\t\t\t / LAB MOBDEV"
           }
         ],
         "jadwalUts": [
@@ -1703,6 +1724,13 @@
             "startMinute": 30,
             "durasi": 120,
             "ruang": "P.05.01"
+          },
+          {
+            "dayOfWeek": 4,
+            "startHour": 13,
+            "startMinute": 30,
+            "durasi": 180,
+            "ruang": ""
           }
         ],
         "jadwalUts": [
@@ -2470,6 +2498,32 @@
     ]
   },
   {
+    "prsId": "2024:AR4282:03:1",
+    "nama": "ARSITEKTUR DAN SISTIM LISTRIK BANGUNAN",
+    "semester": 6,
+    "sks": 3,
+    "unit": "Arsitektur",
+    "kode": "AR4282",
+    "kelas": [
+      {
+        "kelas": "A",
+        "accepted": 0,
+        "capacity": 10,
+        "jadwal": [
+          {
+            "dayOfWeek": 5,
+            "startHour": 8,
+            "startMinute": 0,
+            "durasi": 150,
+            "ruang": "P.06.12"
+          }
+        ],
+        "jadwalUts": [],
+        "jadwalUas": []
+      }
+    ]
+  },
+  {
     "prsId": "2024:AR4283:03:1",
     "nama": "ARSITEKTUR DAN SISTIM TRANSPORTASI VERTIKAL",
     "semester": 6,
@@ -2700,7 +2754,7 @@
       {
         "kelas": "A",
         "accepted": 0,
-        "capacity": 12,
+        "capacity": 24,
         "jadwal": [
           {
             "dayOfWeek": 2,
@@ -2728,7 +2782,7 @@
       {
         "kelas": "B",
         "accepted": 0,
-        "capacity": 12,
+        "capacity": 24,
         "jadwal": [],
         "jadwalUts": [],
         "jadwalUas": []
@@ -4047,11 +4101,18 @@
         "capacity": 40,
         "jadwal": [
           {
+            "dayOfWeek": 2,
+            "startHour": 10,
+            "startMinute": 30,
+            "durasi": 180,
+            "ruang": "P.02.01A\t\t\t\n\t\t\t\t\t\t\t / Lab Studio Informatika"
+          },
+          {
             "dayOfWeek": 4,
             "startHour": 8,
             "startMinute": 30,
             "durasi": 120,
-            "ruang": "P.05.03A"
+            "ruang": "LAB.PG\t\t\t\n\t\t\t\t\t\t\t / Puskom"
           }
         ],
         "jadwalUts": [
@@ -4281,7 +4342,7 @@
       },
       {
         "kelas": "C",
-        "accepted": 32,
+        "accepted": 37,
         "capacity": 34,
         "jadwal": [
           {
@@ -4548,14 +4609,14 @@
             "startHour": 10,
             "startMinute": 0,
             "durasi": 120,
-            "ruang": ""
+            "ruang": "PBS.6"
           },
           {
             "dayOfWeek": 6,
             "startHour": 13,
             "startMinute": 0,
             "durasi": 120,
-            "ruang": ""
+            "ruang": "PBS.6"
           }
         ],
         "jadwalUts": [],
@@ -4801,21 +4862,21 @@
             "startHour": 13,
             "startMinute": 30,
             "durasi": 180,
-            "ruang": "A.03.10"
+            "ruang": "T.02.12"
           },
           {
             "dayOfWeek": 3,
             "startHour": 7,
             "startMinute": 30,
             "durasi": 180,
-            "ruang": ""
+            "ruang": "T.03.17"
           },
           {
             "dayOfWeek": 3,
             "startHour": 10,
             "startMinute": 30,
             "durasi": 180,
-            "ruang": ""
+            "ruang": "T.03.17"
           }
         ],
         "jadwalUts": [
@@ -4947,21 +5008,21 @@
             "startHour": 13,
             "startMinute": 30,
             "durasi": 180,
-            "ruang": ""
+            "ruang": "T.02.13"
           },
           {
             "dayOfWeek": 3,
             "startHour": 7,
             "startMinute": 30,
             "durasi": 180,
-            "ruang": ""
+            "ruang": "T.03.21"
           },
           {
             "dayOfWeek": 3,
             "startHour": 10,
             "startMinute": 30,
             "durasi": 180,
-            "ruang": ""
+            "ruang": "T.03.21"
           }
         ],
         "jadwalUts": [],
@@ -6810,7 +6871,7 @@
             "startHour": 7,
             "startMinute": 30,
             "durasi": 180,
-            "ruang": "I.03.05"
+            "ruang": "P.06.13"
           }
         ],
         "jadwalUts": [
@@ -8491,7 +8552,7 @@
             "startHour": 10,
             "startMinute": 0,
             "durasi": 240,
-            "ruang": ""
+            "ruang": "PBS.6"
           }
         ],
         "jadwalUts": [],
@@ -9264,7 +9325,7 @@
             "startHour": 10,
             "startMinute": 0,
             "durasi": 120,
-            "ruang": ""
+            "ruang": "PBS.5"
           }
         ],
         "jadwalUts": [],
@@ -9566,6 +9627,39 @@
     ]
   },
   {
+    "prsId": "2024:KG4104:72:1",
+    "nama": "FARMAKOLOGI DAN FARMASI",
+    "semester": 1,
+    "sks": 3,
+    "unit": "Kedokteran Gigi",
+    "kode": "KG4104",
+    "kelas": [
+      {
+        "kelas": "A",
+        "accepted": 0,
+        "capacity": 25,
+        "jadwal": [
+          {
+            "dayOfWeek": 4,
+            "startHour": 7,
+            "startMinute": 30,
+            "durasi": 180,
+            "ruang": ""
+          },
+          {
+            "dayOfWeek": 4,
+            "startHour": 13,
+            "startMinute": 30,
+            "durasi": 180,
+            "ruang": ""
+          }
+        ],
+        "jadwalUts": [],
+        "jadwalUas": []
+      }
+    ]
+  },
+  {
     "prsId": "2024:DF4314:45:1",
     "nama": "FASHION ESTHETIC AND SUSTAINABILITY",
     "semester": 3,
@@ -9829,7 +9923,7 @@
             "startHour": 14,
             "startMinute": 0,
             "durasi": 120,
-            "ruang": ""
+            "ruang": "PBS.6"
           }
         ],
         "jadwalUts": [],
@@ -9958,7 +10052,7 @@
     "kelas": [
       {
         "kelas": "A",
-        "accepted": 43,
+        "accepted": 44,
         "capacity": 40,
         "jadwal": [
           {
@@ -9993,7 +10087,7 @@
       },
       {
         "kelas": "B",
-        "accepted": 44,
+        "accepted": 45,
         "capacity": 40,
         "jadwal": [
           {
@@ -10237,7 +10331,7 @@
             "startHour": 15,
             "startMinute": 0,
             "durasi": 120,
-            "ruang": ""
+            "ruang": "PBS.5"
           }
         ],
         "jadwalUts": [],
@@ -10384,7 +10478,7 @@
             "startHour": 13,
             "startMinute": 30,
             "durasi": 120,
-            "ruang": ""
+            "ruang": "P.05.03"
           }
         ],
         "jadwalUts": [],
@@ -11071,7 +11165,7 @@
       },
       {
         "kelas": "D",
-        "accepted": 32,
+        "accepted": 37,
         "capacity": 34,
         "jadwal": [
           {
@@ -11118,6 +11212,39 @@
             "startMinute": 30,
             "durasi": 180,
             "ruang": "P.05.05"
+          }
+        ],
+        "jadwalUts": [],
+        "jadwalUas": []
+      }
+    ]
+  },
+  {
+    "prsId": "2024:KG4102:72:1",
+    "nama": "ILMU BIOMEDIK",
+    "semester": 1,
+    "sks": 3,
+    "unit": "Kedokteran Gigi",
+    "kode": "KG4102",
+    "kelas": [
+      {
+        "kelas": "A",
+        "accepted": 0,
+        "capacity": 25,
+        "jadwal": [
+          {
+            "dayOfWeek": 3,
+            "startHour": 13,
+            "startMinute": 30,
+            "durasi": 120,
+            "ruang": ""
+          },
+          {
+            "dayOfWeek": 5,
+            "startHour": 8,
+            "startMinute": 30,
+            "durasi": 120,
+            "ruang": ""
           }
         ],
         "jadwalUts": [],
@@ -11463,7 +11590,7 @@
             "startHour": 13,
             "startMinute": 30,
             "durasi": 180,
-            "ruang": "T.02.13"
+            "ruang": "PBS.7"
           }
         ],
         "jadwalUts": [
@@ -11963,7 +12090,7 @@
             "startHour": 10,
             "startMinute": 0,
             "durasi": 120,
-            "ruang": ""
+            "ruang": "PBS.5"
           }
         ],
         "jadwalUts": [],
@@ -12434,7 +12561,7 @@
             "startHour": 15,
             "startMinute": 0,
             "durasi": 120,
-            "ruang": ""
+            "ruang": "PBS.6"
           }
         ],
         "jadwalUts": [],
@@ -12636,7 +12763,7 @@
       },
       {
         "kelas": "C",
-        "accepted": 41,
+        "accepted": 42,
         "capacity": 39,
         "jadwal": [
           {
@@ -12671,7 +12798,7 @@
       },
       {
         "kelas": "D",
-        "accepted": 42,
+        "accepted": 43,
         "capacity": 39,
         "jadwal": [
           {
@@ -16810,7 +16937,7 @@
       },
       {
         "kelas": "B",
-        "accepted": 20,
+        "accepted": 22,
         "capacity": 22,
         "jadwal": [
           {
@@ -16835,6 +16962,22 @@
             "ruang": ""
           }
         ]
+      },
+      {
+        "kelas": "C",
+        "accepted": 0,
+        "capacity": 40,
+        "jadwal": [
+          {
+            "dayOfWeek": 3,
+            "startHour": 13,
+            "startMinute": 30,
+            "durasi": 180,
+            "ruang": ""
+          }
+        ],
+        "jadwalUts": [],
+        "jadwalUas": []
       }
     ]
   },
@@ -17120,7 +17263,7 @@
             "startHour": 14,
             "startMinute": 0,
             "durasi": 120,
-            "ruang": ""
+            "ruang": "PBS.5"
           }
         ],
         "jadwalUts": [],
@@ -17590,7 +17733,7 @@
     "kelas": [
       {
         "kelas": "A",
-        "accepted": 17,
+        "accepted": 18,
         "capacity": 50,
         "jadwal": [
           {
@@ -17840,7 +17983,7 @@
     "kelas": [
       {
         "kelas": "A",
-        "accepted": 17,
+        "accepted": 18,
         "capacity": 50,
         "jadwal": [
           {
@@ -17886,7 +18029,7 @@
             "startHour": 8,
             "startMinute": 30,
             "durasi": 210,
-            "ruang": ""
+            "ruang": "P.711/P710\t\t\t\n\t\t\t\t\t\t\t / MEJA/STUDIO SIPIL"
           },
           {
             "dayOfWeek": 4,
@@ -17928,7 +18071,7 @@
             "startHour": 8,
             "startMinute": 30,
             "durasi": 210,
-            "ruang": ""
+            "ruang": "P.07.05\t\t\t\n\t\t\t\t\t\t\t / Studio Ars"
           }
         ],
         "jadwalUts": [
@@ -18057,7 +18200,7 @@
             "startHour": 8,
             "startMinute": 0,
             "durasi": 150,
-            "ruang": "P.05.05"
+            "ruang": "P.07.07"
           },
           {
             "dayOfWeek": 1,
@@ -18071,28 +18214,28 @@
             "startHour": 10,
             "startMinute": 30,
             "durasi": 90,
-            "ruang": "P.07.05\t\t\t\n\t\t\t\t\t\t\t / Studio Ars"
+            "ruang": "P.08.04\t\t\t\n\t\t\t\t\t\t\t / Studio Ars"
           },
           {
             "dayOfWeek": 3,
             "startHour": 13,
             "startMinute": 0,
             "durasi": 270,
-            "ruang": "P.07.05\t\t\t\n\t\t\t\t\t\t\t / Studio Ars"
+            "ruang": "P.08.04\t\t\t\n\t\t\t\t\t\t\t / Studio Ars"
           },
           {
             "dayOfWeek": 4,
             "startHour": 8,
             "startMinute": 0,
             "durasi": 240,
-            "ruang": "P.07.05\t\t\t\n\t\t\t\t\t\t\t / Studio Ars"
+            "ruang": "P.08.04\t\t\t\n\t\t\t\t\t\t\t / Studio Ars"
           },
           {
             "dayOfWeek": 4,
             "startHour": 13,
             "startMinute": 0,
             "durasi": 270,
-            "ruang": "P.07.05\t\t\t\n\t\t\t\t\t\t\t / Studio Ars"
+            "ruang": "P.08.04\t\t\t\n\t\t\t\t\t\t\t / Studio Ars"
           }
         ],
         "jadwalUts": [
@@ -18511,6 +18654,39 @@
             "ruang": ""
           }
         ]
+      }
+    ]
+  },
+  {
+    "prsId": "2024:KG4103:72:1",
+    "nama": "MIKROBIOLOGI DAN PARASITOLOGI",
+    "semester": 1,
+    "sks": 2,
+    "unit": "Kedokteran Gigi",
+    "kode": "KG4103",
+    "kelas": [
+      {
+        "kelas": "A",
+        "accepted": 0,
+        "capacity": 25,
+        "jadwal": [
+          {
+            "dayOfWeek": 1,
+            "startHour": 13,
+            "startMinute": 30,
+            "durasi": 180,
+            "ruang": ""
+          },
+          {
+            "dayOfWeek": 2,
+            "startHour": 8,
+            "startMinute": 30,
+            "durasi": 120,
+            "ruang": ""
+          }
+        ],
+        "jadwalUts": [],
+        "jadwalUas": []
       }
     ]
   },
@@ -19175,7 +19351,7 @@
         "kelas": "A",
         "keterangan": "khusus Hotel Angkatan 2023",
         "accepted": 0,
-        "capacity": 25,
+        "capacity": 12,
         "jadwal": [
           {
             "dayOfWeek": 2,
@@ -19211,7 +19387,7 @@
         "kelas": "B",
         "keterangan": "khusus Hotel Angkatan 2023",
         "accepted": 0,
-        "capacity": 25,
+        "capacity": 12,
         "jadwal": [
           {
             "dayOfWeek": 2,
@@ -19246,7 +19422,7 @@
       {
         "kelas": "C",
         "accepted": 0,
-        "capacity": 25,
+        "capacity": 12,
         "jadwal": [
           {
             "dayOfWeek": 4,
@@ -19282,7 +19458,7 @@
         "kelas": "D",
         "keterangan": "khusus Hotel Angkatan 2023",
         "accepted": 0,
-        "capacity": 25,
+        "capacity": 12,
         "jadwal": [
           {
             "dayOfWeek": 5,
@@ -19328,14 +19504,14 @@
         "kelas": "A",
         "keterangan": "KHUSUS MAHASISWA CBM 2024 DAN M. PERHOTELAN YANG MENGULANG",
         "accepted": 0,
-        "capacity": 40,
+        "capacity": 15,
         "jadwal": [
           {
             "dayOfWeek": 4,
             "startHour": 13,
             "startMinute": 30,
             "durasi": 360,
-            "ruang": ""
+            "ruang": "A.01.05\t\t\t\n\t\t\t\t\t\t\t / Lab Food and Baverage"
           }
         ],
         "jadwalUts": [
@@ -19357,14 +19533,14 @@
         "kelas": "B",
         "keterangan": "KHUSUS MAHASISWA CBM 2024 DAN M. PERHOTELAN YANG MENGULANG",
         "accepted": 0,
-        "capacity": 40,
+        "capacity": 15,
         "jadwal": [
           {
             "dayOfWeek": 5,
             "startHour": 14,
             "startMinute": 30,
             "durasi": 240,
-            "ruang": ""
+            "ruang": "A.01.05\t\t\t\n\t\t\t\t\t\t\t / Lab Food and Baverage"
           }
         ],
         "jadwalUts": [
@@ -19386,14 +19562,14 @@
         "kelas": "C",
         "keterangan": "KHUSUS MAHASISWA CBM 2024 amp M. PERHOTELAN YANG MENGULANG",
         "accepted": 0,
-        "capacity": 40,
+        "capacity": 15,
         "jadwal": [
           {
             "dayOfWeek": 6,
             "startHour": 7,
             "startMinute": 30,
             "durasi": 360,
-            "ruang": ""
+            "ruang": "A.01.02\t\t\t\n\t\t\t\t\t\t\t / Lab Food Production"
           }
         ],
         "jadwalUts": [
@@ -19465,7 +19641,7 @@
         "capacity": 40,
         "jadwal": [
           {
-            "dayOfWeek": 2,
+            "dayOfWeek": 3,
             "startHour": 13,
             "startMinute": 30,
             "durasi": 180,
@@ -19747,7 +19923,7 @@
       {
         "kelas": "B",
         "accepted": 0,
-        "capacity": 36,
+        "capacity": 24,
         "jadwal": [],
         "jadwalUts": [],
         "jadwalUas": []
@@ -19763,7 +19939,7 @@
             "startHour": 13,
             "startMinute": 30,
             "durasi": 300,
-            "ruang": ""
+            "ruang": "A.02.06\t\t\t\n\t\t\t\t\t\t\t / Lab Pastry dan  Bakery"
           }
         ],
         "jadwalUts": [
@@ -20074,11 +20250,18 @@
         "capacity": 40,
         "jadwal": [
           {
+            "dayOfWeek": 2,
+            "startHour": 10,
+            "startMinute": 30,
+            "durasi": 180,
+            "ruang": "LAB.PG\t\t\t\n\t\t\t\t\t\t\t / Puskom"
+          },
+          {
             "dayOfWeek": 3,
             "startHour": 7,
             "startMinute": 30,
             "durasi": 120,
-            "ruang": "P.06.13"
+            "ruang": "P.02.05A\t\t\t\n\t\t\t\t\t\t\t / Lab Sistem Informasi"
           }
         ],
         "jadwalUts": [
@@ -20807,7 +20990,7 @@
     "kelas": [
       {
         "kelas": "A",
-        "accepted": 17,
+        "accepted": 18,
         "capacity": 40,
         "jadwal": [
           {
@@ -21278,7 +21461,7 @@
             "startHour": 10,
             "startMinute": 0,
             "durasi": 120,
-            "ruang": ""
+            "ruang": "PBS.6"
           }
         ],
         "jadwalUts": [],
@@ -21596,7 +21779,7 @@
             "startHour": 7,
             "startMinute": 30,
             "durasi": 170,
-            "ruang": "P.05.02A"
+            "ruang": "P.05.05"
           }
         ],
         "jadwalUts": [
@@ -21762,7 +21945,7 @@
             "startHour": 7,
             "startMinute": 30,
             "durasi": 180,
-            "ruang": "A.04.04"
+            "ruang": "T.03.20"
           }
         ],
         "jadwalUts": [
@@ -22202,11 +22385,11 @@
         "capacity": 40,
         "jadwal": [
           {
-            "dayOfWeek": 2,
+            "dayOfWeek": 4,
             "startHour": 10,
             "startMinute": 30,
             "durasi": 120,
-            "ruang": "T.03.22"
+            "ruang": "T.03.13"
           }
         ],
         "jadwalUts": [
@@ -22282,7 +22465,7 @@
             "startHour": 7,
             "startMinute": 30,
             "durasi": 120,
-            "ruang": "I.03.06"
+            "ruang": "P.05.03A"
           }
         ],
         "jadwalUts": [
@@ -23014,7 +23197,7 @@
             "startHour": 9,
             "startMinute": 0,
             "durasi": 180,
-            "ruang": ""
+            "ruang": "P.03.04/S2"
           }
         ],
         "jadwalUts": [],
@@ -23040,7 +23223,7 @@
             "startHour": 13,
             "startMinute": 0,
             "durasi": 180,
-            "ruang": ""
+            "ruang": "P.03.04/S2"
           }
         ],
         "jadwalUts": [],
@@ -23066,7 +23249,7 @@
             "startHour": 10,
             "startMinute": 0,
             "durasi": 120,
-            "ruang": ""
+            "ruang": "PBS.6"
           }
         ],
         "jadwalUts": [],
@@ -25067,7 +25250,7 @@
             "startHour": 7,
             "startMinute": 30,
             "durasi": 170,
-            "ruang": "P.05.05"
+            "ruang": "P.05.02A"
           }
         ],
         "jadwalUts": [
@@ -25097,6 +25280,7 @@
     "kelas": [
       {
         "kelas": "A",
+        "keterangan": "Khusus Mahasiswa M. Perhotelan dan CBM",
         "accepted": 0,
         "capacity": 55,
         "jadwal": [
@@ -25662,6 +25846,60 @@
     ]
   },
   {
+    "prsId": "2024:KG4101:72:1",
+    "nama": "SISTEM TUBUH MANUSIA",
+    "semester": 1,
+    "sks": 6,
+    "unit": "Kedokteran Gigi",
+    "kode": "KG4101",
+    "kelas": [
+      {
+        "kelas": "A",
+        "accepted": 0,
+        "capacity": 25,
+        "jadwal": [
+          {
+            "dayOfWeek": 1,
+            "startHour": 8,
+            "startMinute": 30,
+            "durasi": 120,
+            "ruang": ""
+          },
+          {
+            "dayOfWeek": 1,
+            "startHour": 13,
+            "startMinute": 30,
+            "durasi": 180,
+            "ruang": ""
+          },
+          {
+            "dayOfWeek": 3,
+            "startHour": 10,
+            "startMinute": 30,
+            "durasi": 120,
+            "ruang": ""
+          },
+          {
+            "dayOfWeek": 4,
+            "startHour": 10,
+            "startMinute": 30,
+            "durasi": 120,
+            "ruang": ""
+          },
+          {
+            "dayOfWeek": 4,
+            "startHour": 13,
+            "startMinute": 30,
+            "durasi": 180,
+            "ruang": ""
+          }
+        ],
+        "jadwalUts": [],
+        "jadwalUas": []
+      }
+    ]
+  },
+  {
     "prsId": "2024:TE4565:04:1",
     "nama": "SISTEM UTILITAS DI BANGUNAN",
     "semester": 8,
@@ -25679,7 +25917,7 @@
             "startHour": 8,
             "startMinute": 30,
             "durasi": 120,
-            "ruang": "I.03.06"
+            "ruang": "P.07.09"
           }
         ],
         "jadwalUts": [
@@ -26197,7 +26435,7 @@
             "startHour": 10,
             "startMinute": 30,
             "durasi": 180,
-            "ruang": "P.05.05"
+            "ruang": "P.07.09"
           }
         ],
         "jadwalUts": [
@@ -26355,7 +26593,7 @@
             "startHour": 10,
             "startMinute": 30,
             "durasi": 180,
-            "ruang": "T.03.25"
+            "ruang": "PBS.5"
           }
         ],
         "jadwalUts": [
@@ -28060,7 +28298,7 @@
             "startHour": 10,
             "startMinute": 30,
             "durasi": 120,
-            "ruang": "T.03.20"
+            "ruang": "T.03.22"
           },
           {
             "dayOfWeek": 2,
