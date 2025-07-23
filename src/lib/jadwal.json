@@ -201,7 +201,7 @@
             "startHour": 10,
             "startMinute": 30,
             "durasi": 180,
-            "ruang": "P.06.12"
+            "ruang": "P.02.01\t\t\t\n\t\t\t\t\t\t\t / LAB MOBDEV"
           }
         ],
         "jadwalUts": [
@@ -569,7 +569,7 @@
       {
         "kelas": "F",
         "keterangan": "KHUSUS MHS TEKNIK INDUSTRI + MHS GLOBAL LOGISTIC AND SUPPLY CHAIN",
-        "accepted": 39,
+        "accepted": 41,
         "capacity": 40,
         "jadwal": [
           {
@@ -946,7 +946,7 @@
       {
         "kelas": "S",
         "keterangan": "KHUSUS MHS INFORMATIC + INTERNET OF THINGS",
-        "accepted": 38,
+        "accepted": 39,
         "capacity": 45,
         "jadwal": [
           {
@@ -1466,7 +1466,7 @@
         "capacity": 50,
         "jadwal": [
           {
-            "dayOfWeek": 3,
+            "dayOfWeek": 4,
             "startHour": 7,
             "startMinute": 30,
             "durasi": 180,
@@ -1582,7 +1582,7 @@
     "kelas": [
       {
         "kelas": "A",
-        "accepted": 31,
+        "accepted": 29,
         "capacity": 29,
         "jadwal": [
           {
@@ -1632,7 +1632,7 @@
             "startHour": 13,
             "startMinute": 30,
             "durasi": 180,
-            "ruang": "P.02.05A\t\t\t\n\t\t\t\t\t\t\t / Lab Sistem Informasi"
+            "ruang": "P.05.05"
           },
           {
             "dayOfWeek": 3,
@@ -1674,7 +1674,7 @@
             "startHour": 13,
             "startMinute": 0,
             "durasi": 180,
-            "ruang": "P.02.05A\t\t\t\n\t\t\t\t\t\t\t / Lab Sistem Informasi"
+            "ruang": "P.05.05"
           },
           {
             "dayOfWeek": 3,
@@ -2012,7 +2012,7 @@
             "startHour": 13,
             "startMinute": 0,
             "durasi": 180,
-            "ruang": "P.06.15"
+            "ruang": "P.02.06\t\t\t\n\t\t\t\t\t\t\t / Lab PG"
           }
         ],
         "jadwalUts": [
@@ -2138,14 +2138,14 @@
         ],
         "jadwalUts": [
           {
-            "date": "2025-10-15T03:30:00.000Z",
+            "date": "2025-10-15T06:30:00.000Z",
             "lengthMinutes": 150,
             "ruang": ""
           }
         ],
         "jadwalUas": [
           {
-            "date": "2025-12-17T03:30:00.000Z",
+            "date": "2025-12-17T06:30:00.000Z",
             "lengthMinutes": 150,
             "ruang": ""
           }
@@ -2369,7 +2369,7 @@
             "startHour": 7,
             "startMinute": 30,
             "durasi": 150,
-            "ruang": "P.05.02"
+            "ruang": "P.05.02A"
           }
         ],
         "jadwalUts": [
@@ -2541,7 +2541,7 @@
             "startHour": 7,
             "startMinute": 30,
             "durasi": 150,
-            "ruang": "P.02.03"
+            "ruang": "P.06.23"
           }
         ],
         "jadwalUts": [
@@ -2685,7 +2685,7 @@
             "startHour": 13,
             "startMinute": 30,
             "durasi": 210,
-            "ruang": "I.03.05"
+            "ruang": "P.06.25"
           }
         ],
         "jadwalUts": [
@@ -3020,9 +3020,9 @@
         "jadwal": [
           {
             "dayOfWeek": 1,
-            "startHour": 9,
+            "startHour": 7,
             "startMinute": 0,
-            "durasi": 180,
+            "durasi": 210,
             "ruang": "T.04.18"
           }
         ],
@@ -3571,7 +3571,7 @@
     "kelas": [
       {
         "kelas": "A",
-        "accepted": 41,
+        "accepted": 42,
         "capacity": 39,
         "jadwal": [
           {
@@ -3983,6 +3983,34 @@
             "startMinute": 0,
             "durasi": 255,
             "ruang": ""
+          },
+          {
+            "dayOfWeek": 2,
+            "startHour": 7,
+            "startMinute": 0,
+            "durasi": 255,
+            "ruang": ""
+          },
+          {
+            "dayOfWeek": 3,
+            "startHour": 7,
+            "startMinute": 0,
+            "durasi": 255,
+            "ruang": ""
+          },
+          {
+            "dayOfWeek": 4,
+            "startHour": 7,
+            "startMinute": 0,
+            "durasi": 255,
+            "ruang": ""
+          },
+          {
+            "dayOfWeek": 5,
+            "startHour": 7,
+            "startMinute": 0,
+            "durasi": 255,
+            "ruang": ""
           }
         ],
         "jadwalUts": [],
@@ -4112,7 +4140,7 @@
             "startHour": 8,
             "startMinute": 30,
             "durasi": 120,
-            "ruang": "LAB.PG\t\t\t\n\t\t\t\t\t\t\t / Puskom"
+            "ruang": "P.02.06\t\t\t\n\t\t\t\t\t\t\t / Lab PG"
           }
         ],
         "jadwalUts": [
@@ -4342,7 +4370,7 @@
       },
       {
         "kelas": "C",
-        "accepted": 37,
+        "accepted": 38,
         "capacity": 34,
         "jadwal": [
           {
@@ -4367,6 +4395,22 @@
             "ruang": ""
           }
         ]
+      },
+      {
+        "kelas": "D",
+        "accepted": 0,
+        "capacity": 50,
+        "jadwal": [
+          {
+            "dayOfWeek": 3,
+            "startHour": 10,
+            "startMinute": 30,
+            "durasi": 180,
+            "ruang": ""
+          }
+        ],
+        "jadwalUts": [],
+        "jadwalUas": []
       }
     ]
   },
@@ -4395,7 +4439,7 @@
             "startHour": 10,
             "startMinute": 0,
             "durasi": 120,
-            "ruang": "P.05.03"
+            "ruang": "P.07.06"
           }
         ],
         "jadwalUts": [
@@ -4601,7 +4645,7 @@
     "kelas": [
       {
         "kelas": "A",
-        "accepted": 13,
+        "accepted": 14,
         "capacity": 20,
         "jadwal": [
           {
@@ -5332,7 +5376,7 @@
             "startHour": 13,
             "startMinute": 30,
             "durasi": 180,
-            "ruang": "P.06.13"
+            "ruang": "P.02.06\t\t\t\n\t\t\t\t\t\t\t / Lab PG"
           }
         ],
         "jadwalUts": [
@@ -5396,7 +5440,7 @@
             "startHour": 7,
             "startMinute": 30,
             "durasi": 180,
-            "ruang": ""
+            "ruang": "P.02.06\t\t\t\n\t\t\t\t\t\t\t / Lab PG"
           }
         ],
         "jadwalUts": [
@@ -5836,9 +5880,9 @@
         "capacity": 15,
         "jadwal": [
           {
-            "dayOfWeek": 2,
+            "dayOfWeek": 4,
             "startHour": 13,
-            "startMinute": 30,
+            "startMinute": 0,
             "durasi": 180,
             "ruang": "T.04.18"
           }
@@ -6901,7 +6945,7 @@
     "kelas": [
       {
         "kelas": "A",
-        "accepted": 41,
+        "accepted": 42,
         "capacity": 39,
         "jadwal": [
           {
@@ -7041,7 +7085,7 @@
             "startHour": 13,
             "startMinute": 30,
             "durasi": 180,
-            "ruang": "Q.04.01"
+            "ruang": "P.07.06"
           }
         ],
         "jadwalUts": [
@@ -7071,7 +7115,7 @@
     "kelas": [
       {
         "kelas": "A",
-        "accepted": 51,
+        "accepted": 52,
         "capacity": 49,
         "jadwal": [
           {
@@ -7079,7 +7123,7 @@
             "startHour": 8,
             "startMinute": 30,
             "durasi": 120,
-            "ruang": "I.02.05"
+            "ruang": "P.05.05"
           }
         ],
         "jadwalUts": [
@@ -7107,7 +7151,7 @@
             "startHour": 8,
             "startMinute": 30,
             "durasi": 120,
-            "ruang": ""
+            "ruang": "P.05.04"
           }
         ],
         "jadwalUts": [
@@ -7211,7 +7255,7 @@
             "startHour": 10,
             "startMinute": 30,
             "durasi": 180,
-            "ruang": "P.06.13"
+            "ruang": "P.02.06\t\t\t\n\t\t\t\t\t\t\t / Lab PG"
           }
         ],
         "jadwalUts": [
@@ -7250,6 +7294,13 @@
             "startMinute": 30,
             "durasi": 120,
             "ruang": "P.06.15"
+          },
+          {
+            "dayOfWeek": 4,
+            "startHour": 13,
+            "startMinute": 30,
+            "durasi": 120,
+            "ruang": "P.02.07B\t\t\t\n\t\t\t\t\t\t\t / LAB SC"
           }
         ],
         "jadwalUts": [
@@ -7278,6 +7329,13 @@
             "startMinute": 30,
             "durasi": 120,
             "ruang": "P.06.15"
+          },
+          {
+            "dayOfWeek": 4,
+            "startHour": 7,
+            "startMinute": 30,
+            "durasi": 120,
+            "ruang": "P.02.07B\t\t\t\n\t\t\t\t\t\t\t / LAB SC"
           }
         ],
         "jadwalUts": [
@@ -7300,6 +7358,13 @@
         "accepted": 0,
         "capacity": 42,
         "jadwal": [
+          {
+            "dayOfWeek": 2,
+            "startHour": 10,
+            "startMinute": 30,
+            "durasi": 120,
+            "ruang": "P.02.07B\t\t\t\n\t\t\t\t\t\t\t / LAB SC"
+          },
           {
             "dayOfWeek": 5,
             "startHour": 14,
@@ -7440,7 +7505,7 @@
             "startHour": 13,
             "startMinute": 30,
             "durasi": 180,
-            "ruang": "P.05.03A"
+            "ruang": "P.02.17\t\t\t\n\t\t\t\t\t\t\t / LAB MM"
           }
         ],
         "jadwalUts": [
@@ -7508,14 +7573,14 @@
         ],
         "jadwalUts": [
           {
-            "date": "2025-10-16T03:30:00.000Z",
+            "date": "2025-10-16T06:30:00.000Z",
             "lengthMinutes": 150,
             "ruang": ""
           }
         ],
         "jadwalUas": [
           {
-            "date": "2025-12-18T03:30:00.000Z",
+            "date": "2025-12-18T06:30:00.000Z",
             "lengthMinutes": 150,
             "ruang": ""
           }
@@ -7617,19 +7682,19 @@
             "startHour": 10,
             "startMinute": 30,
             "durasi": 170,
-            "ruang": "I.03.05"
+            "ruang": "P.07.08"
           }
         ],
         "jadwalUts": [
           {
-            "date": "2025-10-15T06:30:00.000Z",
+            "date": "2025-10-15T03:30:00.000Z",
             "lengthMinutes": 150,
             "ruang": ""
           }
         ],
         "jadwalUas": [
           {
-            "date": "2025-12-17T06:30:00.000Z",
+            "date": "2025-12-17T03:30:00.000Z",
             "lengthMinutes": 150,
             "ruang": ""
           }
@@ -7791,11 +7856,11 @@
         "capacity": 5,
         "jadwal": [
           {
-            "dayOfWeek": 4,
-            "startHour": 13,
-            "startMinute": 0,
+            "dayOfWeek": 5,
+            "startHour": 7,
+            "startMinute": 30,
             "durasi": 180,
-            "ruang": "T.04.30"
+            "ruang": "T.05.04"
           }
         ],
         "jadwalUts": [],
@@ -8544,7 +8609,7 @@
     "kelas": [
       {
         "kelas": "A",
-        "accepted": 13,
+        "accepted": 14,
         "capacity": 20,
         "jadwal": [
           {
@@ -8974,7 +9039,7 @@
       },
       {
         "kelas": "B",
-        "keterangan": "khusus mahasiswa non DBT",
+        "keterangan": "UMUM",
         "accepted": 0,
         "capacity": 60,
         "jadwal": [
@@ -9287,7 +9352,7 @@
             "startHour": 10,
             "startMinute": 30,
             "durasi": 180,
-            "ruang": ""
+            "ruang": "P.02.05\t\t\t\n\t\t\t\t\t\t\t / Lab Sistem Informasi"
           }
         ],
         "jadwalUts": [
@@ -10022,7 +10087,7 @@
             "startHour": 10,
             "startMinute": 30,
             "durasi": 170,
-            "ruang": "I.02.05"
+            "ruang": "P.05.03"
           }
         ],
         "jadwalUts": [
@@ -10140,7 +10205,7 @@
             "startHour": 8,
             "startMinute": 30,
             "durasi": 120,
-            "ruang": "I.02.05"
+            "ruang": "P.05.05"
           },
           {
             "dayOfWeek": 5,
@@ -10323,7 +10388,7 @@
     "kelas": [
       {
         "kelas": "A",
-        "accepted": 13,
+        "accepted": 14,
         "capacity": 20,
         "jadwal": [
           {
@@ -10673,7 +10738,14 @@
             "startHour": 10,
             "startMinute": 30,
             "durasi": 120,
-            "ruang": "P.06.15"
+            "ruang": "P.02.03"
+          },
+          {
+            "dayOfWeek": 3,
+            "startHour": 10,
+            "startMinute": 30,
+            "durasi": 180,
+            "ruang": "P.02.07B\t\t\t\n\t\t\t\t\t\t\t / LAB SC"
           }
         ],
         "jadwalUts": [
@@ -10702,6 +10774,13 @@
             "startMinute": 30,
             "durasi": 120,
             "ruang": "P.06.17"
+          },
+          {
+            "dayOfWeek": 4,
+            "startHour": 13,
+            "startMinute": 30,
+            "durasi": 180,
+            "ruang": "P.02.05\t\t\t\n\t\t\t\t\t\t\t / Lab Sistem Informasi"
           }
         ],
         "jadwalUts": [
@@ -10905,11 +10984,11 @@
         "capacity": 30,
         "jadwal": [
           {
-            "dayOfWeek": 2,
+            "dayOfWeek": 3,
             "startHour": 7,
             "startMinute": 30,
             "durasi": 110,
-            "ruang": "P.04.33"
+            "ruang": "P.07.06"
           }
         ],
         "jadwalUts": [
@@ -11114,7 +11193,7 @@
         "jadwal": [
           {
             "dayOfWeek": 4,
-            "startHour": 13,
+            "startHour": 10,
             "startMinute": 30,
             "durasi": 180,
             "ruang": ""
@@ -11165,7 +11244,7 @@
       },
       {
         "kelas": "D",
-        "accepted": 37,
+        "accepted": 38,
         "capacity": 34,
         "jadwal": [
           {
@@ -11299,12 +11378,12 @@
     ]
   },
   {
-    "prsId": "2023:IA4247:36:1",
+    "prsId": "2020:IA4207:36:1",
     "nama": "INDUSTRIAL AWARENESS",
     "semester": 7,
-    "sks": 10,
+    "sks": 6,
     "unit": "International Business Accounting",
-    "kode": "IA4247",
+    "kode": "IA4207",
     "kelas": [
       {
         "kelas": "A",
@@ -11317,12 +11396,12 @@
     ]
   },
   {
-    "prsId": "2020:IA4207:36:1",
+    "prsId": "2023:IA4247:36:1",
     "nama": "INDUSTRIAL AWARENESS",
     "semester": 7,
-    "sks": 6,
+    "sks": 10,
     "unit": "International Business Accounting",
-    "kode": "IA4207",
+    "kode": "IA4247",
     "kelas": [
       {
         "kelas": "A",
@@ -12060,11 +12139,11 @@
         "capacity": 5,
         "jadwal": [
           {
-            "dayOfWeek": 5,
-            "startHour": 7,
-            "startMinute": 30,
+            "dayOfWeek": 2,
+            "startHour": 13,
+            "startMinute": 0,
             "durasi": 180,
-            "ruang": "T.04.30"
+            "ruang": "T.05.04"
           }
         ],
         "jadwalUts": [],
@@ -12806,7 +12885,7 @@
             "startHour": 8,
             "startMinute": 30,
             "durasi": 120,
-            "ruang": "I.02.05"
+            "ruang": "P.06.15"
           },
           {
             "dayOfWeek": 4,
@@ -13090,7 +13169,7 @@
             "startHour": 14,
             "startMinute": 30,
             "durasi": 180,
-            "ruang": "P.06.11"
+            "ruang": "P.02.17\t\t\t\n\t\t\t\t\t\t\t / LAB MM"
           }
         ],
         "jadwalUts": [
@@ -15181,7 +15260,7 @@
     "kelas": [
       {
         "kelas": "A",
-        "accepted": 57,
+        "accepted": 58,
         "capacity": 70,
         "jadwal": [
           {
@@ -15540,7 +15619,7 @@
             "startHour": 15,
             "startMinute": 0,
             "durasi": 180,
-            "ruang": "Q.04.03B"
+            "ruang": "P.06.25"
           }
         ],
         "jadwalUts": [],
@@ -16246,11 +16325,11 @@
         "capacity": 30,
         "jadwal": [
           {
-            "dayOfWeek": 2,
-            "startHour": 7,
+            "dayOfWeek": 4,
+            "startHour": 9,
             "startMinute": 30,
             "durasi": 120,
-            "ruang": "I.03.05"
+            "ruang": "I.03.06"
           }
         ],
         "jadwalUts": [
@@ -16543,15 +16622,15 @@
         ],
         "jadwalUts": [
           {
-            "date": "2025-10-15T06:30:00.000Z",
-            "lengthMinutes": 180,
+            "date": "2025-10-15T03:30:00.000Z",
+            "lengthMinutes": 150,
             "ruang": ""
           }
         ],
         "jadwalUas": [
           {
-            "date": "2025-12-17T06:30:00.000Z",
-            "lengthMinutes": 180,
+            "date": "2025-12-17T03:30:00.000Z",
+            "lengthMinutes": 150,
             "ruang": ""
           }
         ]
@@ -16937,7 +17016,7 @@
       },
       {
         "kelas": "B",
-        "accepted": 22,
+        "accepted": 23,
         "capacity": 22,
         "jadwal": [
           {
@@ -17055,7 +17134,7 @@
             "startHour": 10,
             "startMinute": 30,
             "durasi": 170,
-            "ruang": "Q.04.03B"
+            "ruang": "P.07.09"
           }
         ],
         "jadwalUts": [
@@ -17255,7 +17334,7 @@
     "kelas": [
       {
         "kelas": "A",
-        "accepted": 13,
+        "accepted": 14,
         "capacity": 20,
         "jadwal": [
           {
@@ -17886,11 +17965,11 @@
         "capacity": 20,
         "jadwal": [
           {
-            "dayOfWeek": 2,
+            "dayOfWeek": 4,
             "startHour": 7,
             "startMinute": 30,
-            "durasi": 110,
-            "ruang": "P.02.02"
+            "durasi": 120,
+            "ruang": "P.04.33"
           }
         ],
         "jadwalUts": [
@@ -18419,7 +18498,7 @@
             "startHour": 13,
             "startMinute": 0,
             "durasi": 120,
-            "ruang": ""
+            "ruang": "P.06.26"
           }
         ],
         "jadwalUts": [
@@ -20337,7 +20416,7 @@
             "startHour": 13,
             "startMinute": 0,
             "durasi": 180,
-            "ruang": "P.06.11"
+            "ruang": "P.02.17\t\t\t\n\t\t\t\t\t\t\t / LAB MM"
           }
         ],
         "jadwalUts": [
@@ -20675,7 +20754,7 @@
     "kelas": [
       {
         "kelas": "A",
-        "accepted": 18,
+        "accepted": 20,
         "capacity": 20,
         "jadwal": [
           {
@@ -20952,7 +21031,7 @@
     "kelas": [
       {
         "kelas": "A",
-        "accepted": 40,
+        "accepted": 42,
         "capacity": 46,
         "jadwal": [
           {
@@ -20960,7 +21039,7 @@
             "startHour": 8,
             "startMinute": 30,
             "durasi": 120,
-            "ruang": "I.03.07"
+            "ruang": "P.06.14"
           }
         ],
         "jadwalUts": [
@@ -21119,7 +21198,7 @@
             "startHour": 17,
             "startMinute": 30,
             "durasi": 180,
-            "ruang": "P.06.17"
+            "ruang": "P.02.05\t\t\t\n\t\t\t\t\t\t\t / Lab Sistem Informasi"
           }
         ],
         "jadwalUts": [
@@ -21264,7 +21343,7 @@
       {
         "kelas": "A",
         "accepted": 0,
-        "capacity": 40,
+        "capacity": 60,
         "jadwal": [
           {
             "dayOfWeek": 4,
@@ -21347,7 +21426,7 @@
             "startHour": 13,
             "startMinute": 30,
             "durasi": 120,
-            "ruang": "P.04.33"
+            "ruang": "P.06.12"
           }
         ],
         "jadwalUts": [
@@ -21423,7 +21502,7 @@
             "startHour": 13,
             "startMinute": 30,
             "durasi": 210,
-            "ruang": "I.03.06"
+            "ruang": "P.06.23"
           }
         ],
         "jadwalUts": [
@@ -21453,7 +21532,7 @@
     "kelas": [
       {
         "kelas": "A",
-        "accepted": 13,
+        "accepted": 14,
         "capacity": 20,
         "jadwal": [
           {
@@ -21525,7 +21604,7 @@
             "startHour": 7,
             "startMinute": 30,
             "durasi": 180,
-            "ruang": "P.06.12"
+            "ruang": "P.06.23"
           }
         ],
         "jadwalUts": [
@@ -21775,11 +21854,11 @@
         "capacity": 30,
         "jadwal": [
           {
-            "dayOfWeek": 3,
-            "startHour": 7,
-            "startMinute": 30,
-            "durasi": 170,
-            "ruang": "P.05.05"
+            "dayOfWeek": 1,
+            "startHour": 13,
+            "startMinute": 0,
+            "durasi": 180,
+            "ruang": "P.07.06"
           }
         ],
         "jadwalUts": [
@@ -21938,7 +22017,7 @@
       {
         "kelas": "A",
         "accepted": 0,
-        "capacity": 40,
+        "capacity": 60,
         "jadwal": [
           {
             "dayOfWeek": 5,
@@ -22267,7 +22346,7 @@
     "kelas": [
       {
         "kelas": "A",
-        "accepted": 40,
+        "accepted": 42,
         "capacity": 46,
         "jadwal": [
           {
@@ -22852,7 +22931,7 @@
             "startHour": 13,
             "startMinute": 30,
             "durasi": 180,
-            "ruang": "P.06.12"
+            "ruang": "P.02.06\t\t\t\n\t\t\t\t\t\t\t / Lab PG"
           }
         ],
         "jadwalUts": [
@@ -23720,7 +23799,7 @@
     "kelas": [
       {
         "kelas": "A",
-        "accepted": 0,
+        "accepted": 31,
         "capacity": 40,
         "jadwal": [
           {
@@ -23748,7 +23827,7 @@
       },
       {
         "kelas": "B",
-        "accepted": 0,
+        "accepted": 34,
         "capacity": 40,
         "jadwal": [
           {
@@ -23866,23 +23945,23 @@
         "capacity": 25,
         "jadwal": [
           {
-            "dayOfWeek": 4,
+            "dayOfWeek": 2,
             "startHour": 7,
             "startMinute": 30,
-            "durasi": 170,
-            "ruang": "P.06.12"
+            "durasi": 180,
+            "ruang": "I.02.05"
           }
         ],
         "jadwalUts": [
           {
-            "date": "2025-10-09T00:30:00.000Z",
+            "date": "2025-10-08T00:30:00.000Z",
             "lengthMinutes": 150,
             "ruang": ""
           }
         ],
         "jadwalUas": [
           {
-            "date": "2025-12-11T00:30:00.000Z",
+            "date": "2025-12-10T00:30:00.000Z",
             "lengthMinutes": 150,
             "ruang": ""
           }
@@ -23904,11 +23983,11 @@
         "capacity": 25,
         "jadwal": [
           {
-            "dayOfWeek": 3,
+            "dayOfWeek": 2,
             "startHour": 7,
             "startMinute": 30,
-            "durasi": 170,
-            "ruang": "P.05.03"
+            "durasi": 120,
+            "ruang": "P.04.33"
           }
         ],
         "jadwalUts": [
@@ -23943,22 +24022,22 @@
         "jadwal": [
           {
             "dayOfWeek": 3,
-            "startHour": 13,
+            "startHour": 7,
             "startMinute": 30,
-            "durasi": 110,
-            "ruang": "P.06.14"
+            "durasi": 120,
+            "ruang": "P.05.02"
           }
         ],
         "jadwalUts": [
           {
-            "date": "2025-10-16T06:30:00.000Z",
+            "date": "2025-10-16T03:30:00.000Z",
             "lengthMinutes": 150,
             "ruang": ""
           }
         ],
         "jadwalUas": [
           {
-            "date": "2025-12-18T06:30:00.000Z",
+            "date": "2025-12-18T03:30:00.000Z",
             "lengthMinutes": 150,
             "ruang": ""
           }
@@ -23984,7 +24063,7 @@
             "startHour": 10,
             "startMinute": 30,
             "durasi": 170,
-            "ruang": "P.02.03"
+            "ruang": "P.05.02"
           }
         ],
         "jadwalUts": [
@@ -25023,7 +25102,7 @@
             "startHour": 7,
             "startMinute": 30,
             "durasi": 180,
-            "ruang": "P.06.15"
+            "ruang": "P.05.03"
           }
         ],
         "jadwalUts": [
@@ -25250,7 +25329,7 @@
             "startHour": 7,
             "startMinute": 30,
             "durasi": 170,
-            "ruang": "P.05.02A"
+            "ruang": "P.07.09"
           }
         ],
         "jadwalUts": [
@@ -25355,7 +25434,7 @@
             "startHour": 7,
             "startMinute": 30,
             "durasi": 120,
-            "ruang": "P.04.33"
+            "ruang": "P.02.05\t\t\t\n\t\t\t\t\t\t\t / Lab Sistem Informasi"
           }
         ],
         "jadwalUts": [],
@@ -25495,7 +25574,7 @@
             "startHour": 13,
             "startMinute": 0,
             "durasi": 180,
-            "ruang": "P.06.26"
+            "ruang": "P.05.02A"
           }
         ],
         "jadwalUts": [
@@ -25528,6 +25607,13 @@
         "accepted": 0,
         "capacity": 40,
         "jadwal": [
+          {
+            "dayOfWeek": 1,
+            "startHour": 13,
+            "startMinute": 0,
+            "durasi": 180,
+            "ruang": "P.02.01\t\t\t\n\t\t\t\t\t\t\t / LAB MOBDEV"
+          },
           {
             "dayOfWeek": 6,
             "startHour": 7,
@@ -25685,7 +25771,7 @@
             "startHour": 10,
             "startMinute": 30,
             "durasi": 180,
-            "ruang": "P.06.11"
+            "ruang": "P.02.01\t\t\t\n\t\t\t\t\t\t\t / LAB MOBDEV"
           }
         ],
         "jadwalUts": [
@@ -25713,7 +25799,7 @@
             "startHour": 13,
             "startMinute": 30,
             "durasi": 180,
-            "ruang": "P.06.17"
+            "ruang": "P.02.06\t\t\t\n\t\t\t\t\t\t\t / Lab PG"
           }
         ],
         "jadwalUts": [
@@ -25741,7 +25827,7 @@
             "startHour": 16,
             "startMinute": 30,
             "durasi": 180,
-            "ruang": "P.06.14"
+            "ruang": "P.02.06\t\t\t\n\t\t\t\t\t\t\t / Lab PG"
           }
         ],
         "jadwalUts": [
@@ -25769,7 +25855,7 @@
             "startHour": 13,
             "startMinute": 30,
             "durasi": 180,
-            "ruang": "P.06.11"
+            "ruang": "P.02.01\t\t\t\n\t\t\t\t\t\t\t / LAB MOBDEV"
           }
         ],
         "jadwalUts": [
@@ -25807,7 +25893,7 @@
             "startHour": 13,
             "startMinute": 30,
             "durasi": 120,
-            "ruang": "I.03.06"
+            "ruang": "P.04.33"
           },
           {
             "dayOfWeek": 2,
@@ -26511,7 +26597,7 @@
             "startHour": 7,
             "startMinute": 30,
             "durasi": 180,
-            "ruang": "P.06.14"
+            "ruang": "P.06.12"
           }
         ],
         "jadwalUts": [
@@ -26790,7 +26876,7 @@
             "startHour": 11,
             "startMinute": 0,
             "durasi": 120,
-            "ruang": "Q.04.08A"
+            "ruang": "P.05.02A"
           },
           {
             "dayOfWeek": 2,
@@ -26813,7 +26899,7 @@
             "startHour": 11,
             "startMinute": 0,
             "durasi": 120,
-            "ruang": "Q.04.08B"
+            "ruang": "P.06.15"
           },
           {
             "dayOfWeek": 2,
@@ -26847,6 +26933,13 @@
             "startMinute": 30,
             "durasi": 120,
             "ruang": "P.06.17"
+          },
+          {
+            "dayOfWeek": 5,
+            "startHour": 14,
+            "startMinute": 30,
+            "durasi": 180,
+            "ruang": "P.02.05\t\t\t\n\t\t\t\t\t\t\t / Lab Sistem Informasi"
           }
         ],
         "jadwalUts": [
@@ -26875,6 +26968,13 @@
             "startMinute": 30,
             "durasi": 120,
             "ruang": ""
+          },
+          {
+            "dayOfWeek": 5,
+            "startHour": 7,
+            "startMinute": 30,
+            "durasi": 180,
+            "ruang": "P.02.06\t\t\t\n\t\t\t\t\t\t\t / Lab PG"
           }
         ],
         "jadwalUts": [
@@ -26897,6 +26997,13 @@
         "accepted": 0,
         "capacity": 49,
         "jadwal": [
+          {
+            "dayOfWeek": 4,
+            "startHour": 13,
+            "startMinute": 30,
+            "durasi": 180,
+            "ruang": "P.02.01A\t\t\t\n\t\t\t\t\t\t\t / Lab Studio Informatika"
+          },
           {
             "dayOfWeek": 5,
             "startHour": 7,
@@ -26959,7 +27066,7 @@
     "kelas": [
       {
         "kelas": "A",
-        "accepted": 32,
+        "accepted": 40,
         "capacity": 40,
         "jadwal": [
           {
@@ -27142,7 +27249,7 @@
             "startHour": 10,
             "startMinute": 30,
             "durasi": 180,
-            "ruang": "Q.04.11"
+            "ruang": "P.06.23"
           }
         ],
         "jadwalUts": [
@@ -27177,7 +27284,7 @@
         "jadwal": [
           {
             "dayOfWeek": 2,
-            "startHour": 13,
+            "startHour": 10,
             "startMinute": 30,
             "durasi": 180,
             "ruang": "T.04.15"
@@ -27349,23 +27456,23 @@
         "capacity": 25,
         "jadwal": [
           {
-            "dayOfWeek": 3,
+            "dayOfWeek": 4,
             "startHour": 7,
             "startMinute": 30,
-            "durasi": 170,
-            "ruang": "P.05.04"
+            "durasi": 180,
+            "ruang": "P.06.12"
           }
         ],
         "jadwalUts": [
           {
-            "date": "2025-10-08T00:30:00.000Z",
+            "date": "2025-10-09T00:30:00.000Z",
             "lengthMinutes": 150,
             "ruang": ""
           }
         ],
         "jadwalUas": [
           {
-            "date": "2025-12-10T00:30:00.000Z",
+            "date": "2025-12-11T00:30:00.000Z",
             "lengthMinutes": 150,
             "ruang": ""
           }
@@ -27432,11 +27539,11 @@
         "capacity": 25,
         "jadwal": [
           {
-            "dayOfWeek": 1,
+            "dayOfWeek": 3,
             "startHour": 13,
-            "startMinute": 0,
-            "durasi": 110,
-            "ruang": "P.05.02A"
+            "startMinute": 30,
+            "durasi": 120,
+            "ruang": "P.06.26"
           }
         ],
         "jadwalUts": [
@@ -27550,7 +27657,7 @@
             "startHour": 7,
             "startMinute": 30,
             "durasi": 180,
-            "ruang": "P.04.33"
+            "ruang": "P.02.05\t\t\t\n\t\t\t\t\t\t\t / Lab Sistem Informasi"
           }
         ],
         "jadwalUts": [
@@ -27578,7 +27685,7 @@
             "startHour": 13,
             "startMinute": 30,
             "durasi": 180,
-            "ruang": "P.06.13"
+            "ruang": "P.02.05\t\t\t\n\t\t\t\t\t\t\t / Lab Sistem Informasi"
           }
         ],
         "jadwalUts": [
@@ -27606,7 +27713,7 @@
             "startHour": 16,
             "startMinute": 30,
             "durasi": 180,
-            "ruang": "P.06.11"
+            "ruang": "P.02.05\t\t\t\n\t\t\t\t\t\t\t / Lab Sistem Informasi"
           }
         ],
         "jadwalUts": [
@@ -27634,7 +27741,7 @@
             "startHour": 16,
             "startMinute": 0,
             "durasi": 180,
-            "ruang": "P.06.17"
+            "ruang": "P.02.05\t\t\t\n\t\t\t\t\t\t\t / Lab Sistem Informasi"
           }
         ],
         "jadwalUts": [
@@ -27769,9 +27876,9 @@
         "capacity": 50,
         "jadwal": [
           {
-            "dayOfWeek": 1,
-            "startHour": 10,
-            "startMinute": 0,
+            "dayOfWeek": 2,
+            "startHour": 13,
+            "startMinute": 30,
             "durasi": 180,
             "ruang": ""
           }
@@ -27877,7 +27984,7 @@
             "startHour": 13,
             "startMinute": 30,
             "durasi": 180,
-            "ruang": "I.03.07"
+            "ruang": "P.06.24"
           }
         ],
         "jadwalUts": [
@@ -28956,7 +29063,7 @@
     "kelas": [
       {
         "kelas": "A",
-        "accepted": 32,
+        "accepted": 40,
         "capacity": 40,
         "jadwal": [
           {
@@ -29155,7 +29262,7 @@
             "startHour": 16,
             "startMinute": 30,
             "durasi": 180,
-            "ruang": "P.06.26"
+            "ruang": "P.02.05\t\t\t\n\t\t\t\t\t\t\t / Lab Sistem Informasi"
           }
         ],
         "jadwalUts": [
